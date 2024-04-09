@@ -1,0 +1,1333 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="数字图像处理, Welcome to gnn&#39;s blogs！">
+    <meta name="description" content="数字图像处理（Digital Image Processing），python0.任务要求
+
+教材：数字图像处理-冈萨雷斯第二或三版(PDF)，网站上有电子版可看。
+学习内容：绪论、数字图像基础、空间域&amp;#x2F;频域图像增强、图像复原、图">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>数字图像处理 | Welcome to gnn&#39;s blogs！</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Welcome to gnn&#39;s blogs！</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Welcome to gnn&#39;s blogs！</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">数字图像处理</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">
+                                <span class="chip bg-color">数字图像处理</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%A4%A7%E5%9B%9B%E4%B8%8A/">
+                                <span class="chip bg-color">大四上</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E9%A2%84%E4%B9%A0/" class="post-category">
+                                预习
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-11-01
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="数字图像处理（Digital-Image-Processing），python"><a href="#数字图像处理（Digital-Image-Processing），python" class="headerlink" title="数字图像处理（Digital Image Processing），python"></a>数字图像处理（Digital Image Processing），python</h2><h3 id="0-任务要求"><a href="#0-任务要求" class="headerlink" title="0.任务要求"></a>0.任务要求</h3><span id="more"></span>
+
+<p><strong>教材</strong>：数字图像处理-冈萨雷斯第二或三版(PDF)，网站上有电子版可看。</p>
+<p><strong>学习内容</strong>：绪论、数字图像基础、空间域&#x2F;频域图像增强、图像复原、图像压缩、形态图像处理、图像分割。</p>
+<p><strong>视频课程</strong>： <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Kh411X7Qv?p=11">https://www.bilibili.com/video/BV1Kh411X7Qv?p=11</a></p>
+<p><strong>要求</strong>：每两周讨论一下。</p>
+<p><code>2023.9.26</code></p>
+<hr>
+<h3 id="1-绪论、数字图像基础、空间域-频域图像增强、图像复原、图像压缩、"><a href="#1-绪论、数字图像基础、空间域-频域图像增强、图像复原、图像压缩、" class="headerlink" title="1.绪论、数字图像基础、空间域&#x2F;频域图像增强、图像复原、图像压缩、"></a>1.绪论、数字图像基础、空间域&#x2F;频域图像增强、图像复原、图像压缩、</h3><p>前段时间把这部分看的差不多了。</p>
+<hr>
+<h3 id="2-形态学图像处理"><a href="#2-形态学图像处理" class="headerlink" title="2.形态学图像处理"></a>2.形态学图像处理</h3><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Kh411X7Qv?p=26">[5.1.1]–3.1形态学基本概念视频_哔哩哔哩_bilibili</a></p>
+<h4 id="2-1基础"><a href="#2-1基础" class="headerlink" title="2.1基础"></a>2.1基础</h4><h5 id="1-概念"><a href="#1-概念" class="headerlink" title="(1)概念"></a>(1)概念</h5><p><strong>形态学</strong>：生物学中研究动植物<code>结构</code>的分支。</p>
+<p><strong>数学形态学</strong>：<code>集合代数</code>为基础，用<code>集合论</code>描述<code>目标几何结构</code>。</p>
+<p><strong>图像数学形态学处理</strong>：<code>形态</code>为基础，对<code>图像</code>进行分析。根据形态的<code>结构元素</code>，度量提取图像中相应<code>形状</code>。</p>
+<h5 id="2-集合论"><a href="#2-集合论" class="headerlink" title="(2)集合论"></a>(2)集合论</h5><p>点集—&gt;结构特征。</p>
+<p>运算：并交补差、平移(A)z—将A平移到点z、反射A^—关于原点对称。</p>
+<h4 id="2-2实现算法"><a href="#2-2实现算法" class="headerlink" title="2.2实现算法"></a>2.2实现算法</h4><p><strong>膨胀</strong>：A被B膨胀⊕，则结果点集是满足条件：B的反射的平移和A的交集不为空。<code>可用来修复断裂图像，填补物体空洞，边界向外扩张。</code></p>
+<p><strong>腐蚀</strong>：A被B腐蚀⊝，则结果点集是满足条件：B的z平移完全包含于A。可用来<code>匹配</code>两图像，若两图像一样则腐蚀结果为一点。也可用来处理膨胀后结果图像中的<code>毛刺</code>。<code>消除边界点，边界向内收缩，消除小且无意义的物体。</code>比滤波器效果更好。</p>
+<p><strong>应用</strong>：筛选出15*15大小的方块。先腐蚀匹配，再膨胀复原。</p>
+<p><img src="file:///D:/others/useful/Hexo/picture/487c50b2-42c6-4ca9-ac4e-751da0e1f5a3.png?msec=1698833554682" alt="487c50b242c64ca9ac4e751da0e1f5a3"></p>
+<p><strong>图像形态学处理的运算实现：二值图像</strong></p>
+<p>实际上是利用一个<code>邻域</code>内的<code>结构元素（模板：正方形等）</code>对给定<code>二值图像</code>每个元素进行<code>逻辑运算</code>。有点类似空间域（算术运算）。并：膨胀。与：腐蚀。</p>
+<h4 id="2-3应用"><a href="#2-3应用" class="headerlink" title="2.3应用"></a>2.3应用</h4><p><strong>开运算</strong>：A○B，先腐蚀再膨胀。<code>平滑大物体边界，消除小物体，在纤细处分离物体</code>。</p>
+<p><strong>闭运算</strong>：A●B，先膨胀再腐蚀。<code>平滑大物体边界，填充空洞或断裂，连接临近物体</code>。</p>
+<p><strong>例子</strong>：</p>
+<p>(1)指纹识别采集</p>
+<img src="file:///D:/others/useful/Hexo/picture/dfb4b858-ed9c-4bec-b260-26e3ede90423.png" title alt="dfb4b858-ed9c-4bec-b260-26e3ede90423" style="zoom:50%;">
+
+<p>(2)边界提取：先膨胀或腐蚀，再做和原图的减运算。</p>
+<p>(3)识别物体形状：击中击不中变换</p>
+<p>原图像A，结构元素对B&#x3D;(E,F)，E和F分别为两个结构元素。识别物体形状的结果*<em>A</em>B&#x3D;(A⊝E)∩(A补⊝F)**，即先用和A相同的内部形状E腐蚀A，再用和A相同的外部形状F腐蚀A的补集，相交的结果。识别结果为匹配则为一点。</p>
+<img title src="file:///D:/others/useful/Hexo/picture/2eee6959-2e51-4b22-b32a-3472919c3a5b.png" alt="2eee6959-2e51-4b22-b32a-3472919c3a5b" style="zoom:67%;">
+
+<h4 id="2-4-实验"><a href="#2-4-实验" class="headerlink" title="2.4 实验"></a>2.4 实验</h4><p>(1)平台搭建：</p>
+<p>之前都是看的课本，这里才刷视频。公众号：啥都会一点的研究生，本节课资料对应序号【04】。</p>
+<p>找到”D:\study\DIP\04 北交-图像处理与机器学习{1}–第一章绪论{6}–课程实验平台及实验图像“。</p>
+<p>新建文件夹platform，将bb.rar和实验平台程序包1和2.rar中内容均加压至platform中。</p>
+<p>打开vs2019，打开解决方案MFCApplication1.sln。我一开始就是2019，MFC、环境什么的最初也是扩展好的，只需要把顶部配置管理器改为X86，再重新<code>生成</code>解决方案，再<code>调试</code>开始执行(不调试)。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">环境配置教程：https://pan.baidu.com/s/1cny086ha2QAdb6AOfaQw3g提取码：zje0</span><br></pre></td></tr></table></figure>
+
+<p>至此，平台安装调试成功。</p>
+<img src="file:///D:/others/useful/Hexo/picture/b27a17a1-194f-47f0-9c01-ed40c26f2ed3.png" title alt="b27a17a1-194f-47f0-9c01-ed40c26f2ed3" style="zoom:50%;">
+
+<p>(2)实验一《打开图像》</p>
+<p>D:\study\DIP\04 北交-图像处理与机器学习{1}–第一章绪论{6}–课程实验平台及实验图像\platform(1.6.2)–bb。</p>
+<p>修改bb.lst第二行为自己的路径，这个文件用于连续显示图片。</p>
+<p>不过这里不涉及图像处理算法，不作要求。</p>
+<p>(3)实验二《图像直方图计算》</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//MFCApplication1View.cpp.histCompute()基于理论知识不难理解该代码，直方图就是求解图像中对应每个灰度级的元素个数，所以涉及一个累加的过程。此外，MFCApplication1View.h里面已经对直方图所需数据结构及其显示函数进行过了定义。MFCApplication1View.cpp也已经对实验平台MFC界面“直方图绘制”的事件响应函数进行了定义。重点只在于考察对于直方图求解原理的掌握。</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">CMFCApplication1View::histCompute</span><span class="params">(BYTE*image, <span class="type">int</span> width, <span class="type">int</span> height)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//计算直方图</span></span><br><span class="line">    <span class="type">int</span> n;<span class="comment">//初始化</span></span><br><span class="line">    <span class="keyword">for</span> (n = <span class="number">0</span>; n &lt; <span class="number">256</span>; n++)</span><br><span class="line">        hist[n] = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> i, j;<span class="comment">//累加计算</span></span><br><span class="line">    BYTE gray;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; height; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; width; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            gray = image[i * width + j];</span><br><span class="line">            hist[gray]++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="file:///D:/others/useful/Hexo/picture/e3280b6f-6fb1-473e-8d18-9d132b128310.png" alt="e3280b6f-6fb1-473e-8d18-9d132b128310"></p>
+<p><code>2023.11.1</code></p>
+<hr>
+<p>(4)实验三《直方图均衡》</p>
+<img title src="file:///D:/others/useful/Hexo/picture/4dddfdb8-6535-4a65-b457-0de37d60819a.png" alt="4dddfdb8-6535-4a65-b457-0de37d60819a" style="zoom:100%;">
+
+<p>计算直方图Ha(D)——计算新的灰度级——用新的灰度级替换原来的灰度级。</p>
+<p>直方图均衡，实际上就是先计算出原来图像的直方图，也就是每个灰度级对应元素的个数。然后用累加结果除以总的元素个数，得到相应比例，再乘以255灰度级，得到新的标准的、均衡化后的灰度级。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//MFCApplication1View.h里面已经对直方图均衡所需变量和方法进行声明，MFCApplication1View.cpp也对相应MFC实验平台“直方图均衡”按钮的事件响应函数进行了定义。重点只在于考察直方图均衡的计算方式和编程实现。编写MFCApplication1View.cpp下hisEqualiz()函数。</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">CMFCApplication1View::hisEqualiz</span><span class="params">(BYTE* image, <span class="type">int</span> w, <span class="type">int</span> h, BYTE* outImg)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//<span class="doctag">TODO:</span>直方图均衡</span></span><br><span class="line">    <span class="comment">//计算直方图</span></span><br><span class="line">    <span class="type">int</span> n, i, j;</span><br><span class="line">    <span class="type">int</span> his[<span class="number">256</span>];</span><br><span class="line">    <span class="keyword">for</span> (n = <span class="number">0</span>; n &lt; <span class="number">256</span>; n++)<span class="comment">//初始化</span></span><br><span class="line">    &#123;</span><br><span class="line">        his[n] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; h; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; w; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            his[image[i * w + j]]++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//计算新的灰度级</span></span><br><span class="line">    <span class="keyword">for</span> (n = <span class="number">1</span>; n &lt; <span class="number">256</span>; n++)</span><br><span class="line">    &#123;</span><br><span class="line">        his[n] += his[n - <span class="number">1</span>];<span class="comment">//累加</span></span><br><span class="line">    &#125;</span><br><span class="line">    BYTE gray[<span class="number">256</span>];<span class="comment">//存放新的灰度级</span></span><br><span class="line">    <span class="type">float</span> cons;</span><br><span class="line">    <span class="comment">//这里还要注意下面是255.0,否则结果错误</span></span><br><span class="line">    cons = <span class="number">255.0</span> / his[<span class="number">255</span>];<span class="comment">//Dm/Ao，Dm是灰度级255，Ao是元素个数，既是前面累加的结果也是宽乘高</span></span><br><span class="line">    <span class="keyword">for</span> (n = <span class="number">0</span>; n &lt; <span class="number">256</span>; n++)</span><br><span class="line">    &#123;</span><br><span class="line">        gray[n] = (BYTE)(cons * his[n]);<span class="comment">//计算每个元素新的灰度级</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//用新的灰度级替换原来的灰度级</span></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; h; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; w; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            outImg[i * w + j] = gray[image[i * w + j]];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<img src="file:///D:/others/useful/Hexo/picture/47a79205-d64d-43b0-ad46-4fa34304905a.png" title alt="47a79205-d64d-43b0-ad46-4fa34304905a" style="zoom:50%;">
+
+<p>(5)实验四《均值、高斯 低通滤波》</p>
+<p>分别利用均值和高斯低通滤波来增强四类噪声图像：加性、高斯、乘性、椒盐噪声。实验材料还包括一副原图。</p>
+<img src="file:///D:/others/useful/Hexo/picture/e5277287-52da-482a-9db8-2f5f6f7f8f75.png" title alt="e5277287-52da-482a-9db8-2f5f6f7f8f75" style="zoom:67%;">
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//还是头文件MFCApplication1View.h和MFCApplication1View.cpp分别定义好了所需变量、方法声明以及时间响应函数。重点考察算法。</span></span><br><span class="line"><span class="comment">//均值滤波：一个3*3的smth均值滤波器模板，一个3*3的block块遍历image。一个convolution函数计算卷积和。一个1/9的规划因子。</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">CMFCApplication1View::meanFilter</span><span class="params">(BYTE* image, <span class="type">int</span> width, <span class="type">int</span> heigth, BYTE* outImg)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//<span class="doctag">TODO:</span>均值滤波</span></span><br><span class="line">    <span class="type">int</span> smth[<span class="number">9</span>];</span><br><span class="line">    <span class="type">int</span> i, j, m, n, value;</span><br><span class="line">    BYTE block[<span class="number">9</span>];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">9</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        smth[i] = <span class="number">1</span>;<span class="comment">//均值滤波模板</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; height; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; width; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (i == <span class="number">0</span> || j == <span class="number">0</span> || i == height - <span class="number">1</span> || j == width - <span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                outImg[i * width + j] = <span class="number">0</span>;<span class="comment">//外圈由于没办法使用模板</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span><span class="comment">//卷积和÷9替换中心元素灰度</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span> (m = <span class="number">-1</span>; m &lt; <span class="number">2</span>; m++)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">for</span> (n = <span class="number">-1</span>; n &lt; <span class="number">2</span>; n++)</span><br><span class="line">                    &#123;</span><br><span class="line">                        block[(m + <span class="number">1</span>) * <span class="number">3</span> + (n + <span class="number">1</span>)] = image[(i + m) * width + (j + n)];<span class="comment">//3*3块遍历image外圈内层</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                value = <span class="built_in">convolution</span>(smth, block);<span class="comment">//卷积和</span></span><br><span class="line"></span><br><span class="line">                outImg[i * width + j] = <span class="built_in">BYTE</span>(value / <span class="number">9</span>);<span class="comment">//冲激响应</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//卷积函数convolution：就是点对点相乘再累加</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">CMFCApplication1View::convolution</span><span class="params">(<span class="type">int</span>* operatr, BYTE* block)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> value;</span><br><span class="line">    <span class="type">int</span> i, j;</span><br><span class="line">    value = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//<span class="doctag">TODO:</span>卷积运算，</span></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            value += operatr[i * <span class="number">3</span> + j] * block[i * <span class="number">3</span> + j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> value;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//高斯滤波:跟均值滤波主要差别在：1模板，2规划因子。其余都一样</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">CMFCApplication1View::gaussian</span><span class="params">(BYTE* image, <span class="type">int</span> width, <span class="type">int</span> heigth, BYTE* outImg)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//高斯滤波</span></span><br><span class="line">    <span class="type">int</span> smth[<span class="number">9</span>] = &#123; <span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span> &#125;;<span class="comment">//高斯滤波模板</span></span><br><span class="line">    <span class="type">int</span> i, j, m, n, value;</span><br><span class="line">    BYTE block[<span class="number">9</span>];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; height; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; width; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (i == <span class="number">0</span> || j == <span class="number">0</span> || i == height - <span class="number">1</span> || j == width - <span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                outImg[i * width + j] = <span class="number">0</span>;<span class="comment">//外圈由于没办法使用模板</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span><span class="comment">//卷积和÷16替换中心元素灰度</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span> (m = <span class="number">-1</span>; m &lt; <span class="number">2</span>; m++)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">for</span> (n = <span class="number">-1</span>; n &lt; <span class="number">2</span>; n++)</span><br><span class="line">                    &#123;</span><br><span class="line">                        block[(m + <span class="number">1</span>) * <span class="number">3</span> + (n + <span class="number">1</span>)] = image[(i + m) * width + (j + n)];<span class="comment">//3*3块遍历image外圈内层</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                value = <span class="built_in">convolution</span>(smth, block);<span class="comment">//卷积和</span></span><br><span class="line"></span><br><span class="line">                outImg[i * width + j] = <span class="built_in">BYTE</span>(value / <span class="number">16</span>);<span class="comment">//冲激响应</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>测试的时候出了点问题，打开图片出错，查看MFCApplication1View.cpp的OnFileOpen()里的打开路径，将所需图片放到相应路径下即可。</p>
+<img src="file:///D:/others/useful/Hexo/picture/4dc719ee-b63c-4075-bfa7-91df2ad03f68.png" title alt="4dc719ee-b63c-4075-bfa7-91df2ad03f68" style="zoom:67%;">
+
+<p>均值滤波：</p>
+<img title src="file:///D:/others/useful/Hexo/picture/3f1a0c6b-ed95-4a1c-b718-f9b9192ce4e1.png" alt="3f1a0c6b-ed95-4a1c-b718-f9b9192ce4e1" style="zoom:67%;">
+
+<p>高斯滤波：</p>
+<img src="file:///D:/others/useful/Hexo/picture/9b105c75-1147-4ddd-ac43-b9ee00b7a176.png" title alt="9b105c75-1147-4ddd-ac43-b9ee00b7a176" style="zoom:67%;">
+
+<p><strong>结论：均值、高斯滤波对椒盐噪声滤波效果不太理想。</strong></p>
+<p>(6)实验五《中值滤波》</p>
+<p><code>本质同均值高斯滤波，就是在选取每个元素最终的灰度的时候的算法不一样。</code></p>
+<p>同样的前置准备工作已经给好了，只需完成核心算法。他和均值啊高斯啊的区别是他不额外需要模板，也没有规划因子，只需要块遍历image，然后调用中值算法。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//MFCApplication1View.cpp下midFindFiltering()中值滤波</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">CMFCApplication1View::midFindFiltering</span><span class="params">(BYTE* image, <span class="type">int</span> width, <span class="type">int</span> heigth, BYTE* outImg)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//中值滤波</span></span><br><span class="line">    <span class="type">int</span> i, j, m, n, value;</span><br><span class="line">    <span class="type">int</span> blockNum = <span class="number">9</span>;</span><br><span class="line">    BYTE block[<span class="number">9</span>];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; height; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; width; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (i == <span class="number">0</span> || j == <span class="number">0</span> || i == height - <span class="number">1</span> || j == width - <span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                outImg[i * width + j] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span><span class="comment">//块遍历</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span> (m = <span class="number">-1</span>; m &lt; <span class="number">2</span>; m++)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">for</span> (n = <span class="number">-1</span>; n &lt; <span class="number">2</span>; n++)</span><br><span class="line">                    &#123;</span><br><span class="line">                        block[(m + <span class="number">1</span>) * <span class="number">3</span> + (n + <span class="number">1</span>)] = image[(i + m) * width + (j + n)];</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                value = <span class="built_in">MidValueFind</span>(blockNum, block);</span><br><span class="line">                outImg[i * width + j] = value;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//MFCApplication1View.cpp下MidValueFind()中值函数</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">CMFCApplication1View::MidValueFind</span><span class="params">(<span class="type">int</span> num, BYTE* d)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> value;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> i, j;</span><br><span class="line">    <span class="type">int</span> temp;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; num - <span class="number">1</span>; i++)<span class="comment">//冒泡：从大到小</span></span><br><span class="line">        <span class="keyword">for</span> (j = i + <span class="number">1</span>; j &lt; num; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (d[i] &lt; d[j])</span><br><span class="line">            &#123;</span><br><span class="line">                temp = d[i];</span><br><span class="line">                d[i] = d[j];</span><br><span class="line">                d[j] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> d[num / <span class="number">2</span>];<span class="comment">//取中值</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<img src="file:///D:/others/useful/Hexo/picture/86d6fc24-eede-44f4-baf3-52964fcba2a7.png" title alt="86d6fc24-eede-44f4-baf3-52964fcba2a7" style="zoom:67%;">
+
+<p>可见中值滤波对椒盐噪声的处理效果还是很好地，可以<strong>去除噪声</strong>，也可<strong>保留边缘</strong>。</p>
+<p><strong>(7)实验七《图像形态学处理》：二值图像</strong></p>
+<p>类似于空间域前面介绍的均值和高斯滤波的处理方式，也是一个模板，然后块遍历image，不过做的是逻辑运算而非卷积和。也没有规划因子。<strong>膨胀或，腐蚀与</strong>。</p>
+<p>腐蚀erosion：图形点(gray&#x3D;255)在其3*3邻域只要有若干个背景点(gray&#x3D;0)则该点设为背景点。</p>
+<p><code>准备工作已经在头文件和cpp文件弄好了，只需完成核心算法。</code></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//腐蚀erosion：内缩边界，消除小物体，所以本质是找到图形点，然后统计其周围背景点，再决策是否同化为背景点。</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">CMFCApplication1View::erosion</span><span class="params">(BYTE* image, <span class="type">int</span> w, <span class="type">int</span> h, BYTE* outImg)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> rept;</span><br><span class="line">    <span class="comment">//腐蚀</span></span><br><span class="line">    <span class="built_in">memcpy</span>(outImg, image, <span class="built_in">sizeof</span>(BYTE) * w * h);<span class="comment">//先把原图复制过来，因为是对原图中的图形点变背景点。memcpy(outImg, image, sizeof(BYTE) * width * height)应该是w和h？</span></span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> i, j, m, n;</span><br><span class="line">    BYTE flag;<span class="comment">//统计每一邻域背景点的个数</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (rept = <span class="number">0</span>; rept &lt; <span class="number">3</span>; rept++)<span class="comment">//腐蚀3次</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt; h - <span class="number">1</span>; i++)<span class="comment">//外圈直接不腐蚀，即不变</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; w - <span class="number">1</span>; j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (image[i * w + j] == <span class="number">255</span>)<span class="comment">//如果是图形点</span></span><br><span class="line">                &#123;</span><br><span class="line">                    flag = <span class="number">0</span>;<span class="comment">//每趟大循环都要清零</span></span><br><span class="line"></span><br><span class="line">                    <span class="keyword">for</span> (m = <span class="number">-1</span>; m &lt; <span class="number">2</span>; m++)</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">for</span> (n = <span class="number">-1</span>; n &lt; <span class="number">2</span>; n++)</span><br><span class="line">                        &#123;</span><br><span class="line">                            <span class="keyword">if</span> (image[(i + m) * w + (j + n)] == <span class="number">0</span>)</span><br><span class="line">                            &#123;</span><br><span class="line">                                flag++;</span><br><span class="line">                                <span class="comment">//break;总感觉这句没必要，有问题</span></span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">if</span> (flag &gt; <span class="number">2</span>)<span class="comment">//这里设置的是若邻域内有3及以上背景点则腐蚀，否则outImg不变</span></span><br><span class="line">                        outImg[i * w + j] = <span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">memcpy</span>(image, outImg, <span class="built_in">sizeof</span>(BYTE) * w * h);<span class="comment">//返回下一轮腐蚀的原图</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//膨胀dilation：外扩边界，填补断裂，所以本质是找到背景点，然后统计其周围图形点，在决策是否同化为图形点。和腐蚀相反</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">CMFCApplication1View::dilation</span><span class="params">(BYTE* image, <span class="type">int</span> w, <span class="type">int</span> h, BYTE* outImg)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> rept;</span><br><span class="line">    <span class="comment">//膨胀</span></span><br><span class="line">    <span class="built_in">memcpy</span>(outImg, image, <span class="built_in">sizeof</span>(BYTE) * w * h);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> i, j, m, n;</span><br><span class="line">    BYTE flag;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (rept = <span class="number">0</span>; rept &lt; <span class="number">3</span>; rept++)<span class="comment">//膨胀多次</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt; h - <span class="number">1</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (j = <span class="number">1</span>; j &lt; w - <span class="number">1</span>; j++)</span><br><span class="line">            &#123;</span><br><span class="line">                flag = <span class="number">0</span>;<span class="comment">//每次邻域清理</span></span><br><span class="line">                <span class="keyword">if</span> (image[i * w + j] == <span class="number">0</span>)<span class="comment">//统计背景点邻域内图形点个数</span></span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">for</span> (m = <span class="number">-1</span>; m &lt; <span class="number">2</span>; m++)</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">for</span> (n = <span class="number">-1</span>; n &lt; <span class="number">2</span>; n++)</span><br><span class="line">                        &#123;</span><br><span class="line">                            <span class="keyword">if</span> (image[(i + m) * w + (j + n)] == <span class="number">255</span>)</span><br><span class="line">                            &#123;</span><br><span class="line">                                flag++;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">if</span> (flag &gt; <span class="number">1</span>)<span class="comment">//每个邻域有2及以上图形点则同化为图形点</span></span><br><span class="line">                        outImg[i * w + j] = <span class="number">255</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">memcpy</span>(image, outImg, <span class="built_in">sizeof</span>(BYTE) * w * h);<span class="comment">//返回下次要膨胀的原图</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//开运算open：先腐蚀后膨胀。材料好像已经提前给写好了开闭运算</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//闭运算close：欲使其自闭，必先让其膨胀。</span></span><br></pre></td></tr></table></figure>
+
+<p>腐蚀：</p>
+<img src="file:///D:/others/useful/Hexo/picture/e72952d5-2388-4aa0-988b-2435e105b6b7.png" title alt="e72952d5-2388-4aa0-988b-2435e105b6b7" style="zoom:67%;">
+
+<p>膨胀：</p>
+<img src="file:///D:/others/useful/Hexo/picture/06dd7ec5-1182-4ae4-a793-81f2843ce480.png" title alt="06dd7ec5-1182-4ae4-a793-81f2843ce480" style="zoom:67%;">
+
+<p>开运算：</p>
+<img src="file:///D:/others/useful/Hexo/picture/a7c7890f-ac1d-48ff-abf7-6b528791b5cb.png" title alt="a7c7890f-ac1d-48ff-abf7-6b528791b5cb" style="zoom:67%;">
+
+<p>闭运算：</p>
+<img src="file:///D:/others/useful/Hexo/picture/5f32e2ef-2931-4ccb-872d-ce023350f96c.png" title alt="5f32e2ef-2931-4ccb-872d-ce023350f96c" style="zoom:67%;">
+
+<p><code>2023.11.2</code></p>
+<hr>
+<h3 id="3-图像分割"><a href="#3-图像分割" class="headerlink" title="3.图像分割"></a>3.图像分割</h3><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Kh411X7Qv?p=30">[7.1.1]–4.1图像分割引言_哔哩哔哩_bilibili</a></p>
+<h4 id="3-1引言"><a href="#3-1引言" class="headerlink" title="3.1引言"></a>3.1引言</h4><p>【为什么图像分割？】</p>
+<p>因为划出感兴趣的部分并进行分析。</p>
+<p>【什么是图像分割？】</p>
+<p>将图像划分为若干不相交的区域。</p>
+<p>【如何进行图像分割？】</p>
+<ul>
+<li><p>以花粉图为例，基于阈值。</p>
+</li>
+<li><p>以肝脏CT图为例，基于边缘、区域。</p>
+</li>
+<li><p>以合照为例，基于学习，预处理(pre-processing)，然进行特征提取(feature extraction)，最后进行分类(classification)。</p>
+</li>
+</ul>
+<h4 id="3-2基于阈值的分割算法"><a href="#3-2基于阈值的分割算法" class="headerlink" title="3.2基于阈值的分割算法"></a>3.2基于阈值的分割算法</h4><p>(1)阈值分割</p>
+<ul>
+<li><p>f(x,y)为原图，g(x,y)为分割后图像，T为阈值。</p>
+</li>
+<li><p>T分为：全局(整幅图像)、局部(局部图像)、动态阈值(空间坐标)。</p>
+</li>
+<li><p>$ g(x,y)&#x3D;\begin{cases}<br>1 &amp; f(x,y)&gt;T \<br>0 &amp; f(x,y)≥T<br>\end{cases}$</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Markdown</span>里面公示的编辑方法：</span><br><span class="line">$$：双dollar间编辑公示内容；</span><br><span class="line">分段函数的写法(\\换行):表达式=\<span class="title function_">begin</span>(cases)</span><br><span class="line">                    公式一 &amp; 条件一 \\</span><br><span class="line">                    公式二 &amp; 条件二 \\</span><br><span class="line">                    公式三 &amp; 条件三</span><br><span class="line">                    \<span class="title function_">end</span>(cases)</span><br><span class="line">上标和下标的写法：_下标，^上标，双或多标&#123;ij…&#125;</span><br><span class="line">分数的写法：表达式=\frac&#123;分子&#125;&#123;分母&#125;</span><br></pre></td></tr></table></figure>
+
+<p>(2)阈值选取</p>
+<ul>
+<li><p>直方图技术：<br>前景背景灰度值差别大，且前景灰度分布均匀。<br>基于直方图的全局阈值算法：初始阈值$T_0$—&gt;根据$T_0$将图像像素分为两组$G_1,G_2$—&gt;分别计算两组平均灰度$μ_1,μ_2$—&gt;计算新阈值$T’&#x3D;\frac{1}{2}(μ_1+μ_2)$。重复上述步骤，直至满足要求。</p>
+</li>
+<li><p>最小误差阈值法：<br>X&#x3D;Minimize{ θP(t)+(1-θ)Q(t) }<br>θ：目标图像占整幅图像的比例；<br>P(t)：是目标图像灰度分布的概率密度函数p(t)从阈值t到+∞的积分，也就是目标图像的误差；<br>Q(t)：是背景灰度分布的概率密度函数p(t)从阈值-∞到阈值t的积分，也就是背景的误差；<br>要想使总误差最小，应该对X求导，并令X’&#x3D;0，求出阈值t。</p>
+</li>
+<li><p>最大方差阈值法(大津阈值法)：应用很多<br>根据直方图选取初始阈值$T_0$—&gt;根据$T_0$将像素分为两组$G_1,G_2$—&gt;计算两组灰度之间的方差$σ^2$—&gt;找出使得方差最大时的阈值$T’$。</p>
+</li>
+</ul>
+<h4 id="3-3基于边缘的分割算法"><a href="#3-3基于边缘的分割算法" class="headerlink" title="3.3基于边缘的分割算法"></a>3.3基于边缘的分割算法</h4><p>(1)检测模板</p>
+<p>点、线……</p>
+<p>(2)边缘提取</p>
+<p>一阶、二阶<strong>导数</strong>：Robert&#x2F;Prewitt&#x2F;Sobel算子、Laplace算子</p>
+<p>图像<strong>高通</strong>滤波器</p>
+<p>(3)多级边缘检测—Canny算子</p>
+<p>预处理降噪：高斯低通滤波，平滑图像；</p>
+<p>计算梯度：4方向；</p>
+<p>非极大值移植：局部最大值；</p>
+<p>边缘跟踪：双阈值检测；</p>
+<h4 id="3-4霍夫变换"><a href="#3-4霍夫变换" class="headerlink" title="3.4霍夫变换"></a>3.4霍夫变换</h4><p>(1)边界点不连续问题 </p>
+<p>找x,y平面中共线点最多的那条直线；</p>
+<p>x,y平面——参数平面；</p>
+<p>霍夫(Hough)变换——参数平面中相交直线最多的点，对应x,y平面的直线即为所求直线；</p>
+<p>(2)Hough变换</p>
+<ul>
+<li>优点：</li>
+</ul>
+<p>    抗噪；</p>
+<p>    可在信噪比低的条件检测定位<strong>直</strong>线、解析<strong>曲</strong>线；</p>
+<p>    将二值图变换到hough参数空间；</p>
+<p>    在参数空间内用极值点检测完成目标检测；</p>
+<ul>
+<li>缺点</li>
+</ul>
+<p>    二值化；</p>
+<p>    边缘检测；</p>
+<p>    损失原图信息；</p>
+<p>(3)算法实现hough</p>
+<ul>
+<li><p>由于直线y&#x3D;ax+b，垂直时a无穷大；</p>
+</li>
+<li><p>因此采用极坐标xcosθ+ysinθ&#x3D;ρ，有曲线(θ，ρ)；</p>
+</li>
+<li><p>思路：根据点的分布<strong>预测θ</strong>的大致范围——利用<strong>交点累加器</strong>或<strong>统计直方图</strong>找出相交线最多的点。</p>
+</li>
+</ul>
+<p>(4)Hough变换应用</p>
+<p>倾斜表格校正：原图—二值化—直线检测—矫正</p>
+<h4 id="3-5基于区域的分割算法"><a href="#3-5基于区域的分割算法" class="headerlink" title="3.5基于区域的分割算法"></a>3.5基于区域的分割算法</h4><p>(1)前言</p>
+<p>利用像素空间性区域相同，性质相似；</p>
+<p>分为：区域生长法，分裂合并法；</p>
+<p>区域5大性质：完备、连通、独立、单一、互斥性</p>
+<p><strong>(2)区域生长法</strong></p>
+<ul>
+<li>思路</li>
+</ul>
+<p>    种子像素——？性质相似？——合并像素到区域——新种子重复——直至没有满足条件的像素</p>
+<ul>
+<li>如何确定种子像素</li>
+</ul>
+<p>    人机交互式分割(医学图像)：人为选择一个种子；</p>
+<p>    基于直方图粗分割结果；</p>
+<ul>
+<li>如何判断性质相似</li>
+</ul>
+<p>    基于区域灰度差：存在欠分割、过分割问题；</p>
+<p>    基于区域灰度分布统计性质：划分若干区域——累计每个区域灰度——作出直方图  </p>
+<p><strong>(3)分裂合并法</strong></p>
+<p>思路：根据方差是否为零(即图中是否至少包含二值)划分若干区域，直至方差为零则不再分裂。再根据区域一致性决定是否进行合并；</p>
+<p>一致性测度：累计灰度统计直方图；</p>
+<p><code>2023.11.3</code></p>
+<hr>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Gnn</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://gnn.github.io/2023/11/01/%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">http://gnn.github.io/2023/11/01/%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Gnn</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">
+                                    <span class="chip bg-color">数字图像处理</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%A4%A7%E5%9B%9B%E4%B8%8A/">
+                                    <span class="chip bg-color">大四上</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2023/11/02/%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="机器学习">
+                        
+                        <span class="card-title">机器学习</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            机器学习（Machine Learning）, python, pytorch0.任务要求
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-02
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E9%A2%84%E4%B9%A0/" class="post-category">
+                                    预习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%A4%A7%E5%9B%9B%E4%B8%8A/">
+                        <span class="chip bg-color">大四上</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">机器学习</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/10/20/%E5%88%9D%E8%AF%86%E5%8D%9A%E5%AE%A2/create-blog/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="搭建个人博客">
+                        
+                        <span class="card-title">搭建个人博客</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            关于VPN
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/init/" class="post-category">
+                                    init
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%A4%A7%E4%B8%89%E4%B8%8B/">
+                        <span class="chip bg-color">大三下</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2024</span>
+            
+            <a href="/about" target="_blank">Gnn</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

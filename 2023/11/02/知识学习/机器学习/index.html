@@ -1,0 +1,1670 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="机器学习, Welcome to gnn&#39;s blogs！">
+    <meta name="description" content="机器学习（Machine Learning）, python, pytorch0.任务要求
+
+课程：李宏毅2021&amp;#x2F;2022春机器学习课程
+学习内容：Introduction of Deep Learning, What to d">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>机器学习 | Welcome to gnn&#39;s blogs！</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Welcome to gnn&#39;s blogs！</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Welcome to gnn&#39;s blogs！</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">机器学习</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%A4%A7%E5%9B%9B%E4%B8%8A/">
+                                <span class="chip bg-color">大四上</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">机器学习</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E9%A2%84%E4%B9%A0/" class="post-category">
+                                预习
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-11-02
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="机器学习（Machine-Learning）-python-pytorch"><a href="#机器学习（Machine-Learning）-python-pytorch" class="headerlink" title="机器学习（Machine Learning）, python, pytorch"></a>机器学习（Machine Learning）, python, pytorch</h2><h3 id="0-任务要求"><a href="#0-任务要求" class="headerlink" title="0.任务要求"></a>0.任务要求</h3><span id="more"></span>
+
+<p><strong>课程</strong>：李宏毅2021&#x2F;2022春机器学习课程</p>
+<p><strong>学习内容</strong>：Introduction of Deep Learning, What to do if my network fails to train, Image as input, Generation, Self-supervised Learning</p>
+<p><strong>课程视频</strong>： <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Wv411h7kN">https://www.bilibili.com/video/BV1Wv411h7kN</a></p>
+<p><strong>包括30</strong>：P1, P3, P4, P5, P6, P7, P13, P14, P15, P16, P17, P18, P19-21, P31-35, P38-39, P44, P49-51, P58, P62, P80-81</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">P1：2022-机器学习相关规定</span><br><span class="line">P3: 第一节（上）机器学习基本概念简介</span><br><span class="line">P4：（下）机器学习基本概念简介</span><br><span class="line">P5：2022-Colab教学</span><br><span class="line">P6：2022-PyTorch Tutorial 1</span><br><span class="line">P7：2022-PyTorch Tutorial 2</span><br><span class="line">P13：To Learn More - 深度学习简介</span><br><span class="line">P14：To Learn More - 反向传播(Backpropagation)</span><br><span class="line">P15：To Learn More - 预测神奇宝贝Pokemon</span><br><span class="line">P16：To Learn More - 分类神奇宝贝Pokemon</span><br><span class="line">P17：To Learn More - 逻辑回归</span><br><span class="line">P18：第二节 2021 - 机器学习任务攻略</span><br><span class="line">P19：2021 - 类神经网络训练不起来怎么办(一) 局部最小值 (local minima) 与鞍点 (saddle point)</span><br><span class="line">P20：2021 - 类神经网络训练不起来怎么办(二) 批次 (batch) 与动量 (momentum)</span><br><span class="line">P21：2021 - 类神经网络训练不起来怎么办(三) 自动调整学习率 (Learning Rate)</span><br><span class="line">P31：第三节 2021 - 卷积神经网络(CNN)</span><br><span class="line">P32：2022 - 为什么用了验证集 (validation set) 结果却还是过拟合(overfitting)了呢？</span><br><span class="line">P33：2022 - 鱼与熊掌可以兼得的机器学习</span><br><span class="line">P34：To Learn More - Spatial Transformer Layer</span><br><span class="line">P35：2022 - 作业说明HW3</span><br><span class="line">P38：第四节 2021 - 自注意力机制(Self-attention)(上)</span><br><span class="line">P39：2021 - 自注意力机制 (Self-attention) (下)</span><br><span class="line">P44：To Learn More - Unsupervised Learning - Word Embedding</span><br><span class="line">P49：2021 - Transformer (上)</span><br><span class="line">P50：2021 - Transformer (下)</span><br><span class="line">P51：2022 - 各式各样神奇的自注意力机制 (Self-attention) 变型</span><br><span class="line">P58：第六节 2021 - 生成式对抗网络(GAN) (一) – 基本概念介紹</span><br><span class="line">P62：To Learn More - GAN Basic Theory</span><br><span class="line">P80：第八节 自编码器 (Auto-encoder) (上) – 基本概念</span><br><span class="line">P81：自编码器 (Auto-encoder) (下) – 领结变声器与更多应用</span><br></pre></td></tr></table></figure>
+
+<p><strong>课程笔记：</strong><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/398323656">干货！李宏毅机器学习课程 | 笔记(全) - 知乎 (zhihu.com)</a></p>
+<p><strong>代码</strong>：学习使用google colab，或者kaggle kernel，注册</p>
+<p>       Kaggle kernel视频： <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV14T4y1f71B">https://www.bilibili.com/video/BV14T4y1f71B</a></p>
+<p>       或者使用百度飞桨： <a target="_blank" rel="noopener" href="https://aistudio.baidu.com/aistudio/index">https://aistudio.baidu.com/aistudio/index</a></p>
+<p><strong>要求</strong>：11.16（周四），计A326-1，下午4点，汇报进度。</p>
+<p><code>2023.11.1</code></p>
+<hr>
+<h3 id="1-学习路线"><a href="#1-学习路线" class="headerlink" title="1.学习路线"></a>1.学习路线</h3><p><strong>机器学习 ≈</strong> 通过训练机器<strong>找</strong>出人类写不出来的复杂<strong>函数f()</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">语音识别(speech recognition) ——&gt; <span class="title function_">f</span>(audio)=<span class="string">&quot;character&quot;</span></span><br><span class="line">图像识别(image recognition) ——&gt; <span class="title function_">f</span>(image)=<span class="string">&quot;character&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>着重研究里面的<strong>深度学习</strong>技术</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">1、函数f是(类)神经网络(neural network)。</span><br><span class="line">2、函数任务——输入——输出：</span><br><span class="line">    (1)regression回归任务——向量(vector)——标量(scalar)；</span><br><span class="line">    (2)classification分类任务——矩阵(matrix：图像等)——类(class)；</span><br><span class="line">    (3)structured learning结构任务——序列(sequence：语音、文本等)——text文本、image图像；</span><br><span class="line">3、例如：第i讲的作业</span><br><span class="line">HomeWork1：COVID-19确诊率预测的输入是vector，输出是scalar；</span><br><span class="line">HomeWork2：Phoneme Classification(语音识别的简化版)的输入是vector，输出是class；</span><br><span class="line">HomeWork3：Image Classification的输入时matrix，输出是classification；</span><br><span class="line">HomeWork4：Speaker Classification的输入是sequence，输出是classification；</span><br><span class="line">HomeWork5：Machine Translation的输入是sequence，输出是text；</span><br><span class="line">HomeWork6：Anime Face Generation(动漫人脸生成)的输出是image；</span><br><span class="line">4、学习路线：</span><br><span class="line">【lecture 1-5】————supervised learning(监督学习-标注)</span><br><span class="line">               |————宝可梦或数码宝贝(pokemon or digimon)</span><br><span class="line">               |————training data</span><br><span class="line">               |————labels</span><br><span class="line">【lecture 7】————self-supervised learning(自监督学习-不用标注)</span><br><span class="line">               |————预训练Pre-train</span><br><span class="line">               |————基础任务：原图——变色图——翻转图对比判断</span><br><span class="line">               |————下流任务(Downstream Tasks)：宝可梦or数码宝贝、汽车or自行车、猫or狗、苹果or橘子</span><br><span class="line">               |————Pre-train Model(Foundation Model)和Downstream Tasks==OS和Application</span><br><span class="line">               |————常见的预训练模型有BERT，后来又有GPT等</span><br><span class="line">【lecture 6】————Generative Adversarial[ˌædvəˈseərɪəl] Network(生成对抗网络GAN)</span><br><span class="line">               |————Unsupervised abstractive summarization</span><br><span class="line">               |————Unsupervised translation</span><br><span class="line">               |————Unsupervised ASR(automatic speech recognition)</span><br><span class="line">【lecture 12】————Reinforcement[ˌri:ɪnˈfɔ:smənt] Learning(强化学习RL)</span><br><span class="line">               |————不好human label的时候，如下围棋等 </span><br><span class="line">               |————但是可以人为判断result好坏</span><br><span class="line">【lecture 8】————Anomaly[əˈnɑməli] Detection(异常检测)</span><br><span class="line">               |————可以回答&quot;I don&#x27;t know.&quot; </span><br><span class="line">【lecture 9】————Explainable AI</span><br><span class="line">               |————可以解释why </span><br><span class="line">【lecture 10】————Model Attack(模型攻击)</span><br><span class="line">【lecture 11】————Domain Adaptaion(迁移学习/域适应/领域自适应)</span><br><span class="line">               |————解决“黑白yes而彩色no”的情况 </span><br><span class="line">【lecture 13】————Network Compression(网络/模型压缩)</span><br><span class="line">               |————如：BERT太大了 </span><br><span class="line">【lecture 14】————Life-long Learning(终身学习、Few-shot Learning)</span><br><span class="line">               |————天网 </span><br><span class="line">【lecture 15】————Meta Learning=Learn to Learn(元学习/小样本学习)</span><br><span class="line">               |————用非常少的数据学习 </span><br></pre></td></tr></table></figure>
+
+<p><code>2023.11.2</code></p>
+<hr>
+<h3 id="2-基本概念"><a href="#2-基本概念" class="headerlink" title="2.基本概念"></a>2.基本概念</h3><p>(1)我们常说的<code>model</code>就是带有<code>未知参数</code>的<code>函数</code></p>
+<p>(2)ML找出函数的Training三大步骤：</p>
+<p>以<strong>Linear models</strong>为例：</p>
+<ul>
+<li>未知参数——function with unknown parameters</li>
+</ul>
+<p>比如y&#x3D;wx+b的w和b就是unknown parameters：weight，bias；</p>
+<ul>
+<li>定义关于未知参数的损失函数——define loss from training data</li>
+</ul>
+<p>L(b,w)，Loss用于判断一组输入的好坏，可作误差曲面error surface；</p>
+<p>$L&#x3D;\frac{1}{N}Σ_{i&#x3D;1}^ne_i$ ，$e_i$计算方式有两种：一种是绝对误差<strong>MAE</strong>为$e&#x3D;|y’-y_0|$，一种是方差<strong>MSE</strong>为$e&#x3D;(y’-y_0)^2$。</p>
+<ul>
+<li>优化——optimization</li>
+</ul>
+<p>找到一组(b*,w*)使得L最小；</p>
+<p>gradient descent梯度下降法：</p>
+<p>        以线性模型Linear Model为例：</p>
+<p>        <code>先假设只有一个未知参数w，得到L关于w的曲线。随机指定一个初始值w0，根据曲线的微分和η(自设的参数learning rate，是超参数hyperparameter)来更新w。这里可能涉及极小值和最小值的概念，也就是说斜率为0停止更新w的时候，此时的w并不一定是使得L全局最小的，local minima和global minima，但这是一个假问题。</code></p>
+<p>        <code>推广到两个参数，随机指定初始值(w0,b0)，分别对w和b求L的微分，同样还要结合η来更新w和b。</code></p>
+<p>        但是Linear models有severe严重的局限性，model bias。我们需要更复杂sophisticated的函数、更灵活的模型。</p>
+<p>(3)更复杂的function(<strong>Sigmoid</strong>)</p>
+<ul>
+<li><p>复杂曲线都可以用一个常数c(constant)和足够多的分段折线线段近似化表示出来。分段折线可以使用一个sigmoid(S型)曲线近似表示，这条曲线为y&#x3D;c sigmoid(b+wx)。调整c，b，w就可以表示各种折线hard sigmoid。$y&#x3D;m+Σ_ic_i sigmoid(b_i+w_ix)$。</p>
+</li>
+<li><p>进一步扩展，有若干x，则$y&#x3D;m+Σ_ic_i sigmoid(b_i+Σ_jw_{ij}x_j)$。实际上，就是<strong>向量</strong>表示为y&#x3D;m+<strong>c</strong>$^T$sigmoid(<strong>b</strong>+<strong>wx</strong>)。</p>
+</li>
+<li><p><strong>对应复杂函数的ML</strong></p>
+</li>
+</ul>
+<p>    未知参数<strong>θ</strong>&#x3D;{m，<strong>c</strong>，<strong>b</strong>，<strong>w</strong>}；</p>
+<p>    损失函数L(<strong>θ</strong>)；</p>
+<p>    优化$θ^*$让L最小，还是那些步骤：随机选择一个$θ^0$作为初始值，求每个θ分量的微分组成<strong>g</strong>(gradient)&#x3D;▽L(<strong>θ</strong>)，然后结合η更新<strong>θ</strong>；</p>
+<ul>
+<li>关于Loss的计算</li>
+</ul>
+<p>【注】原来作业为N，随机分为若干作业为 B 的 batch。在每次更新上述<strong>θ</strong>(update)的时候，计算每次更新后的 L 每次均采用不同的一份 batch (此过程也叫 epoch [‘i:pok])，分别得到$L^1,L^2,L^3,…$。</p>
+<p>比如：N&#x3D;10000，B&#x3D;10，则共1000个batches。那也就是update有1000次，分别对应<strong>g</strong>(gradient)&#x3D;▽L$^i$(<strong>θ</strong>)，i&#x3D;1~1000；</p>
+<p>(4)复杂function(<strong>ReLU</strong>:rectified linear unit矫正的斜线单元)</p>
+<p>cmax(0,b+wx)；</p>
+<p>对应有$y&#x3D;m+Σ_ic_i max(b_i+Σ_jw_{ij}x_j)$；</p>
+<p>这里的max和sigmoid均为激活函数(activation function)；</p>
+<p><code>ReLU要优于sigmoid；</code></p>
+<p>(5)总结：</p>
+<p>学了ML寻找函数的三大步骤；</p>
+<p>学了几个函数&#x2F;模型：Linear modles——Sigmoid——ReLU；</p>
+<p>sigmoid和relu都是neuron(神经元)，多次优化就是neural network(神经网络)；每层优化是一个Hidden layer，多层就叫做Deep Learning；但是过多层会overfitting过拟合。</p>
+<p><code>2023.11.3</code></p>
+<hr>
+<h3 id="3-Google-Colab和Kaggle-Kernel"><a href="#3-Google-Colab和Kaggle-Kernel" class="headerlink" title="3.Google Colab和Kaggle Kernel"></a>3.Google Colab和Kaggle Kernel</h3><h4 id="3-1-Colab"><a href="#3-1-Colab" class="headerlink" title="3.1 Colab"></a>3.1 Colab</h4><h5 id="3-1-1概览"><a href="#3-1-1概览" class="headerlink" title="3.1.1概览"></a>3.1.1概览</h5><p>(1) google colab tutorial link:   <a target="_blank" rel="noopener" href="https://reurl.cc/Epg3M0">https://reurl.cc/Epg3M0</a>    或    <a target="_blank" rel="noopener" href="https://colab.research.google.com/drive/1lB_rx79_pqEY7JCCeKylq84PtMvnxhw3?usp=sharing#scrollTo=ca2CpPPUvO-h">Google Colab</a>   。</p>
+<p>(2) colab就是一个可以直接在浏览器上编写运行Python程序的平台，优点是0配置、便捷免费使用GPUs、快速分享。使用！还可以编写bash shell的Linux程序，(有点像jupyter notebook ？不过colab主要是可以白嫖谷歌的gpu)。</p>
+<p>(3) outline：</p>
+<p>getting start——changing runtime——executing code book——check GPU type——file manipulation——mounting Google drive——saving notebook——useful Linux commands——problems you may encounter</p>
+<h5 id="3-1-2安装和使用"><a href="#3-1-2安装和使用" class="headerlink" title="3.1.2安装和使用"></a>3.1.2安装和使用</h5><p>（1）Getting Start</p>
+<p><code>创建新cell：+代码，+文本</code>、<code>对代码框或文本框的操作选项</code></p>
+<img title src="file:///D:/others/useful/Hexo/picture/57f098f0-bcd7-443e-9525-a43a244de177.png" alt="57f098f0-bcd7-443e-9525-a43a244de177" style="zoom:50%;">
+
+<img title src="file:///D:/others/useful/Hexo/picture/10779a9f-9991-41b1-adae-9e71eed4bc53.png" alt="10779a9f-9991-41b1-adae-9e71eed4bc53" style="zoom:50%;">
+
+<p><code>编程：直接键入Python代码或加上前导！执行shell代码Linux命令</code></p>
+<img src="file:///D:/others/useful/Hexo/picture/90269f3d-bf84-471b-a5d4-9c3727b1e29c.png" title alt="90269f3d-bf84-471b-a5d4-9c3727b1e29c" style="zoom:67%;">
+
+<p><strong>在执行终端命令的时候，若要切换目录使用cd命令时，前面不是！而是%，用于执行magic command。</strong></p>
+<p>（2）Changing Runtime</p>
+<p>更改运行时类型：</p>
+<p><img title src="file:///D:/others/useful/Hexo/picture/a91eec65-4210-4fbd-8f48-1376f68c2d4d.png" alt="a91eec65-4210-4fbd-8f48-1376f68c2d4d" style="zoom:80%;"><img title src="file:///D:/others/useful/Hexo/picture/9d6dcccf-5300-4a0a-8610-9c7fd3451513.png" alt="9d6dcccf-5300-4a0a-8610-9c7fd3451513" style="zoom:50%;"></p>
+<p>（3）Executing Code Book</p>
+<p><code>执行当前程序</code></p>
+<p><img src="file:///D:/others/useful/Hexo/picture/86ce474d-d0e8-43d5-9e52-7e16ced4aa78.png" alt="86ce474d-d0e8-43d5-9e52-7e16ced4aa78"></p>
+<p><code>其他执行选项</code></p>
+<img src="file:///D:/others/useful/Hexo/picture/430757a3-a001-43ca-9997-697a68f53347.png" title alt="430757a3-a001-43ca-9997-697a68f53347" style="zoom:50%;">
+
+<p>（4）Check GPU Type</p>
+<img src="file:///D:/others/useful/Hexo/picture/8e21a081-b387-4819-9ad2-6ba26e26a022.png" title alt="8e21a081-b387-4819-9ad2-6ba26e26a022" style="zoom:50%;">
+
+<p>（5）File Manipulation [&#x2F;məˌnɪp.jəˈleɪ.ʃən&#x2F; 操纵]</p>
+<p><code>文件存储链接解释：</code></p>
+<img src="file:///D:/others/useful/Hexo/picture/47097749-8933-4295-ac72-e1514014e97d.png" title alt="47097749-8933-4295-ac72-e1514014e97d" style="zoom:67%;">
+
+<p><code>文件操纵 !gdown --id &#39;&#39; --output </code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Download the file with file_id <span class="string">&quot;sUr1x-GhJ_80vIGzVGEqFUSDYfwV50YW&quot;</span>, and rename it to pikachu.png</span></span><br><span class="line">!gdown --id &#x27;1sUr1x-GhJ_80vIGzVGEqFUSDYfwV50YW&#x27; --output pikachu.png</span><br></pre></td></tr></table></figure>
+
+<p><code>查看当前目录下的文件</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">List all the files under the working directory</span></span><br><span class="line">!ls</span><br></pre></td></tr></table></figure>
+
+<p><code>文件结构</code></p>
+<img title src="file:///D:/others/useful/Hexo/picture/f22d9ebb-27d3-4c43-b266-4b518f186ba3.png" alt="f22d9ebb-27d3-4c43-b266-4b518f186ba3" style="zoom:67%;">
+
+<p><code>上传和下载</code></p>
+<img title src="file:///D:/others/useful/Hexo/picture/e33f67ed-7058-4535-a59b-8dd63509b9b1.png" alt="e33f67ed-7058-4535-a59b-8dd63509b9b1" style="zoom:67%;">
+
+<p>（6）Mounting Google Drive</p>
+<p><code>添加谷歌硬盘(云存储服务)，也就是连接个人谷歌账号的云盘，可永久存储。这也是使用colab的另一个好处，就是可以便捷的直接使用很多谷歌服务。</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from google.colab import drive</span><br><span class="line">drive.mount(&#x27;/content/drive&#x27;)</span><br></pre></td></tr></table></figure>
+
+<img src="file:///D:/others/useful/Hexo/picture/8153bf9b-445b-46ba-b653-9aa25bee3794.png" title alt="8153bf9b-445b-46ba-b653-9aa25bee3794" style="zoom:50%;">
+
+<p><code>对谷歌云盘进行的部分操作（不过要确保自己的云盘空间够用）</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">%</span><span class="language-bash"><span class="built_in">cd</span> /content/drive/MyDrive <span class="comment">#change directory to google drive</span></span></span><br><span class="line">!mkdir ML2022 #make a directory named ML2022</span><br><span class="line"><span class="meta prompt_">%</span><span class="language-bash"><span class="built_in">cd</span> ./ML2022 <span class="comment">#change directory to ML2022</span></span></span><br><span class="line">!pwd #output the current directory</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">下面可以在云盘路径下执行前面说过的gdown等操作</span></span><br></pre></td></tr></table></figure>
+
+<p>（7）Saving Notebook(<strong>.ipynb</strong>)</p>
+<p><code>保存到本地</code></p>
+<img src="file:///D:/others/useful/Hexo/picture/46a2b85c-16c4-4545-85f3-046d70553d28.png" title alt="46a2b85c-16c4-4545-85f3-046d70553d28" style="zoom:50%;">
+
+<p><code>保存到谷歌云盘</code></p>
+<img src="file:///D:/others/useful/Hexo/picture/95eaf79e-ab7b-4bb1-b940-d1544677a54a.png" title alt="95eaf79e-ab7b-4bb1-b940-d1544677a54a" style="zoom:50%;">
+
+<p><code>转换为 .py 并下载</code></p>
+<img src="file:///D:/others/useful/Hexo/picture/1bb01655-71e5-49aa-8779-4a29fec8eb88.png" title alt="1bb01655-71e5-49aa-8779-4a29fec8eb88" style="zoom:50%;">
+
+<p>（8）Useful Linux Commands</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">!ls #显示当前目录下所有文件</span><br><span class="line">!ls -l #显示当前目录下所有文件的更多细节</span><br><span class="line">!pwd #显示当前目录</span><br><span class="line">!mkdir &lt;dirname&gt; #创建目录</span><br><span class="line"><span class="meta prompt_">%</span><span class="language-bash"><span class="built_in">cd</span> &lt;<span class="built_in">dirname</span>&gt;或&lt;./dirname&gt; <span class="comment">#更改工作目录</span></span></span><br><span class="line">!gdown #从云盘下载文件</span><br><span class="line">!wget #从网络下载文件</span><br><span class="line">!python &lt;py_file&gt; #执行Python文件</span><br></pre></td></tr></table></figure>
+
+<p>（9）Problems you may encounter</p>
+<p><code>自动掉线：保持屏幕亮着或写一个js程序</code></p>
+<p><code>GPU资源使用量受限，隔段时间会禁用：多开几个账号或购买colab pro</code></p>
+<h4 id="3-2-Kaggle"><a href="#3-2-Kaggle" class="headerlink" title="3.2 Kaggle"></a>3.2 Kaggle</h4><p><code>2023.11.4</code></p>
+<hr>
+<h3 id="4-Pytorch"><a href="#4-Pytorch" class="headerlink" title="4.Pytorch"></a>4.Pytorch</h3><h4 id="4-1-Pytorch理论"><a href="#4-1-Pytorch理论" class="headerlink" title="4.1 Pytorch理论"></a>4.1 Pytorch理论</h4><h5 id="4-1-1-Background"><a href="#4-1-1-Background" class="headerlink" title="4.1.1 Background"></a>4.1.1 Background</h5><p><strong>前提(prerequisites  &#x2F;ˌpriːˈrek.wɪ.zɪt&#x2F; )</strong></p>
+<p>Python3语法知识、深度学习基础(李宏毅前几节课)、NumPy(一个py库)……</p>
+<p><strong>什么是pytorch</strong></p>
+<p>基于Python的机器学习框架，就是一个<strong>库</strong>，<strong>计算器</strong>，加快向量计算速度；</p>
+<p>在GPU上高速计算高维矩阵&#x2F;向量，即Tensor(张量)，像NumPy的多维数组；</p>
+<p>训练深度神经网络时进行自动微分(automatic differentiation)计算；</p>
+<h5 id="4-1-2-Training-Testing"><a href="#4-1-2-Training-Testing" class="headerlink" title="4.1.2 Training &amp; Testing"></a>4.1.2 Training &amp; Testing</h5><p>训练的三大步骤：定义神经网络(带未知参的函数)—定义损失函数—优化算法(寻找最小损失)</p>
+<p>整体（均包含load data）：训练&lt;—&gt;验证(validation)—&gt;测试（反复的训练和验证）</p>
+<h5 id="4-1-3-Dataset-Dataloader"><a href="#4-1-3-Dataset-Dataloader" class="headerlink" title="4.1.3 Dataset &amp; Dataloader"></a>4.1.3 Dataset &amp; Dataloader</h5><p>(1) Load Data &#x3D; torch.utils.data.Dataset &amp; torch.utils.data.Dataloader   <code>utils是Python的一个模块</code></p>
+<p>(2) Dataset：数据样本+期望值</p>
+<p>dataset&#x3D;MyDataset(file)</p>
+<p>将数据一笔一笔读进来，打包进MyDataset类</p>
+<p>(3) Dataloader：分组成批</p>
+<p>dataloader&#x3D;DataLoader(dataset, batch_size, shuffle&#x3D;True)，training&#x3D;True，testing&#x3D;False</p>
+<p>(4) 具体用法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> torch.utils.data <span class="keyword">import</span> Dataset, DataLoader</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyDataset</span>(<span class="title class_ inherited__">Dataset</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">_init_</span>(<span class="params">self,file</span>):</span><br><span class="line">        self.data=...  <span class="comment">#读数据，预处理</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">_getitem</span>(<span class="params">self,index</span>):</span><br><span class="line">        <span class="keyword">return</span> self.data[index]  <span class="comment">#一次返回一笔</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">_len_</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(self.data)  <span class="comment">#返回数据集长度</span></span><br><span class="line"></span><br><span class="line">dataloader=DataLoader(dataset, batch_size, shuffle=<span class="literal">True</span>):</span><br></pre></td></tr></table></figure>
+
+<p>(5) 注释</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[1]Shuffle在ml里面的意思是打乱数据集，愿意是“洗牌，移动。”</span><br><span class="line">[2]epoch时期，batch批次分量，iterate重复。</span><br></pre></td></tr></table></figure>
+
+<h5 id="4-1-4-Tensors"><a href="#4-1-4-Tensors" class="headerlink" title="4.1.4 Tensors"></a>4.1.4 Tensors</h5><p>(1)what？</p>
+<p>张量、高维向量、阵列</p>
+<p>(2)函数</p>
+<ul>
+<li>查看维度dim大小</li>
+</ul>
+<p><code>torch.shape</code></p>
+<p><code>pytorch的dim=numpy的axis；</code></p>
+<ul>
+<li>创建tensors</li>
+</ul>
+<p><code>torch.tensor([[1,-1],[-1,1]])以list的方式直接从数据创建；</code></p>
+<p><code>torch.from_numpy(np.array([[1,1],[1,1]]))以numpy数组方式从数据直接创建；</code></p>
+<p><code>torch.zeros([2,2])创建一个全为0的2×2的2维矩阵；</code></p>
+<p><code>torch.ones([1,2,5])创建一个全为1的1×2×5的3维矩阵；</code></p>
+<p><strong>还有就提一下，DIP、ML里面涉及到的好多数组的值基本都是浮点型类型。</strong></p>
+<p><code>y=x.sum()加法；</code></p>
+<p><code>y=x.mean()减法；</code></p>
+<p><code>y=x.pow(2)幂运算；</code></p>
+<p><code>x=x.transpose(0,1)互换第0维和第1维的维度；</code></p>
+<p><code>x=x.squeeze(dim)消除掉维度为1的第dim维；</code></p>
+<p><code>x=x.unsqueeze(dim)在第dim维添加维度为1的一层；</code></p>
+<p><code>w=torch.cat([x,y,z],dim=1)沿着第1维合并x，y，z这三个阵列，前提是可以合并；</code></p>
+<p>在pytorch中好多属性方法的调用都类似于numpy。</p>
+<p>(3)数据类型</p>
+<p><img src="file:///D:/others/useful/Hexo/picture/7ffdc9b9-2eff-4f72-b4d6-04da631c93a5.png" alt="7ffdc9b9-2eff-4f72-b4d6-04da631c93a5"></p>
+<p>(4)模型的runtime类型or训练device</p>
+<p>用.to(‘cuda’)切换GPU类型</p>
+<p>或用.to(‘cpu’)切换为CPU类型，默认是CPU。</p>
+<p>用torch.cuda.is_available()可以检测目前设备有没有可用的GPU，若有多个GPU还需得做出选择用哪一个。</p>
+<p>(5)梯度计算</p>
+<p>x&#x3D;torch.tensor([[1,-1],[0,1]], <strong>requires_grad&#x3D;True</strong>)</p>
+<p>z&#x3D;f(x);</p>
+<p>z.backward();&#x2F;&#x2F;反向传播求导，也就是最终的梯度结果</p>
+<p>z.grad检查最终结果的梯度；</p>
+<p><code>2023.11.30</code></p>
+<hr>
+<h5 id="4-1-5-Torch-nn"><a href="#4-1-5-Torch-nn" class="headerlink" title="4.1.5 Torch.nn"></a>4.1.5 Torch.nn</h5><p><strong>模型</strong></p>
+<p>(1) Linear Layer</p>
+<p>nn.Linear(in_features, out_features)，比如说给出输入维度和输出维度，输入的维度的最后一个值只要为in_feature，经过nn.Linear(in_features, out_features)运算后就能得出最后一个维度为out_features的输出维度。</p>
+<p>Linear Layer实际上就是前面讲过的<strong>y</strong>&#x3D;<strong>wx</strong>+<strong>b</strong>。</p>
+<p>(2)此外还有nn.Sigmoid()和nn.ReLU()。</p>
+<p>(3)实际用法：定义模型or定义神经网络</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyModel</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">_init_</span>(<span class="params">self</span>): <span class="comment">#初始化模型或layer(神经网络基本单元-层)</span></span><br><span class="line">        <span class="built_in">super</span>(MyModel, self)._init_()</span><br><span class="line">        self.net=nn.Sequential( <span class="comment">#所有的神经网络NN层layer序列</span></span><br><span class="line">            nn.Linear(<span class="number">10</span>, <span class="number">32</span>),</span><br><span class="line">            nn.Sigmoid(),</span><br><span class="line">            nn.Linear(<span class="number">32</span>, <span class="number">1</span>)</span><br><span class="line">        )</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">_forward</span>(<span class="params">self, x</span>): <span class="comment">#计算神经网络的输出结果</span></span><br><span class="line">        <span class="keyword">return</span> self.net(x)</span><br></pre></td></tr></table></figure>
+
+<p>上面是将三层layer封装为一个nn的方式，也可分层定义：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyModel</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">_init_</span>(<span class="params">self</span>): <span class="comment">#初始化模型或layer(神经网络基本单元-层)</span></span><br><span class="line">        <span class="built_in">super</span>(MyModel, self)._init_()</span><br><span class="line">        self.layer1=nn.Linear(<span class="number">10</span>, <span class="number">32</span>)</span><br><span class="line">        self.layer2=nn.Sigmoid(),</span><br><span class="line">        self.layer3=nn.Linear(<span class="number">32</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">_forward</span>(<span class="params">self, x</span>): <span class="comment">#计算神经网络的输出结果</span></span><br><span class="line">        out=self.layer1(x)</span><br><span class="line">        out=self.layer2(out)</span><br><span class="line">        out=self.layer3(out)</span><br><span class="line">        <span class="keyword">return</span> out</span><br></pre></td></tr></table></figure>
+
+<p><strong>损失函数</strong></p>
+<p>(1)上图：</p>
+<p><img src="file:///D:/others/useful/Hexo/picture/8343a713-37a9-4757-a509-a3ef1e18a332.png" alt="8343a713-37a9-4757-a509-a3ef1e18a332"></p>
+<p>(2)损失函数</p>
+<ul>
+<li>误差：</li>
+</ul>
+<p>    criterion&#x3D;nn.MSELoss() #方差误差</p>
+<p>    criterion&#x3D;nn.CrossEntropyLoss()</p>
+<ul>
+<li>损失：</li>
+</ul>
+<p>    loss&#x3D;criterion(model_output, expexted_value)</p>
+<ul>
+<li>我们是希望loss越小越好</li>
+</ul>
+<h5 id="4-1-6-Torch-optim"><a href="#4-1-6-Torch-optim" class="headerlink" title="4.1.6 Torch.optim"></a>4.1.6 Torch.optim</h5><p><strong>优化(optimization)</strong></p>
+<ul>
+<li><p>pytorch里面已经定义好了许多优化算法：比如–基于梯度的</p>
+</li>
+<li><p>Stochatic梯度下降法SGD：torch.optim.SGD(model.parameters(), lr, momentum&#x3D;0)</p>
+</li>
+<li><p>分为三步：将前面梯度归零optimizer.zero_grad()+计算梯度loss.backward()+调整模型参数optimizer.step()</p>
+</li>
+</ul>
+<h5 id="4-1-7整体流程：训练-3-验证-测试"><a href="#4-1-7整体流程：训练-3-验证-测试" class="headerlink" title="4.1.7整体流程：训练(3)+验证+测试"></a>4.1.7整体流程：训练(3)+验证+测试</h5><p>训练：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># load data</span></span><br><span class="line">dataset=MyDataset(file)</span><br><span class="line">tr_set=DataLoader(dataset, batch_size常数, shuffle=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># 定义模型/nn和训练的设备类型：首先在MyModel里定义自己的模型，然后调用.to()切换GPU/CPU</span></span><br><span class="line">model=MyModel().to(cuda或cpu)</span><br><span class="line"><span class="comment"># 定义损失函数</span></span><br><span class="line">criterion=nn.MSELoss()</span><br><span class="line"><span class="comment"># 优化</span></span><br><span class="line">optimizer=torch.optim.SGD(model.parameters(), <span class="number">0.1</span>, …)  <span class="comment"># 定义优化器</span></span><br><span class="line"><span class="keyword">for</span> epoch <span class="keyword">in</span> <span class="built_in">range</span>(n_epochs):</span><br><span class="line">    model.train()  <span class="comment"># 将模型设置为训练模式下</span></span><br><span class="line">    <span class="keyword">for</span> x, y <span class="keyword">in</span> tr_set:  <span class="comment">#对于dataloader的每一对数据：样本x——期望值y</span></span><br><span class="line">        optimizer.zero_grad()  <span class="comment"># 将之前计算的梯度先清零</span></span><br><span class="line">        x, y =x.to(device), y.to(device)  <span class="comment"># 将数据放入device</span></span><br><span class="line">        pred=model(x)  <span class="comment">#临时结果</span></span><br><span class="line">        loss=criterion(pred, y)  <span class="comment">#计算损失</span></span><br><span class="line">        loss.backward()  <span class="comment"># 计算梯度：反向传播求导</span></span><br><span class="line">        optimizer.step()  <span class="comment"># 调整模型参数</span></span><br></pre></td></tr></table></figure>
+
+<p>测试：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">model.<span class="built_in">eval</span>()  <span class="comment"># 将模型设置为测试模式下</span></span><br><span class="line">total_loss=<span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> x, y <span class="keyword">in</span> dv_set:  <span class="comment"># 对于每份测试数据集</span></span><br><span class="line">    x, y = x.to(device), y.to(device)  <span class="comment"># 将数据移到gpu或cpu</span></span><br><span class="line">    <span class="keyword">with</span> torch.no_grad():  <span class="comment"># 停止梯度计算</span></span><br><span class="line">        pred=model(x)</span><br><span class="line">        loss=criterion(pred, y)</span><br><span class="line">    total_loss+=loss.cpu().item()+<span class="built_in">len</span>(x)  <span class="comment"># 累加误差，这里len相当于前面提过的μ?</span></span><br><span class="line">    avg_loss=total_loss/<span class="built_in">len</span>(dv_set.dataset)  <span class="comment"># 平均损失</span></span><br></pre></td></tr></table></figure>
+
+<p>实际测试：由于不知道输出的预测结果是什么样子</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">model.<span class="built_in">eval</span>()</span><br><span class="line">preds=[]</span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> tt_set:</span><br><span class="line">    x=x.to(device)</span><br><span class="line">    <span class="keyword">with</span> torch.no_grad():</span><br><span class="line">        pred=model(x)</span><br><span class="line">        preds.append(pred.cpu())  <span class="comment"># 拼接预测结果为列表</span></span><br></pre></td></tr></table></figure>
+
+<p>为什么关掉grad：测试不需要优化模型，所以不需要计算grad优化参数。还有就是再计算grad会对模型产生影响。</p>
+<p>为什么model.eval()调整测试模式：改变原本某些模型单元的功能。</p>
+<h5 id="4-1-8-Save-Load-models-存-读档"><a href="#4-1-8-Save-Load-models-存-读档" class="headerlink" title="4.1.8 Save&#x2F;Load models 存&#x2F;读档"></a>4.1.8 Save&#x2F;Load models 存&#x2F;读档</h5><p>你训练完、验证完、测试完的模型如何保存下来和使用呢？</p>
+<ul>
+<li>保存</li>
+</ul>
+<p>保存整个模型：torch.save(model, path)</p>
+<p>只保存训练好的权重：torch.save(model.state_dict(), path)</p>
+<ul>
+<li>调用</li>
+</ul>
+<p>ckpt&#x3D;torch.load(path)</p>
+<p>model.load_state_dict(ckpt)</p>
+<p><code>2023.12.01 hexo g -d</code></p>
+<hr>
+<h4 id="4-2-Pytorch应用"><a href="#4-2-Pytorch应用" class="headerlink" title="4.2 Pytorch应用"></a>4.2 Pytorch应用</h4><h5 id="4-2-1新冠病毒阳性案例预测"><a href="#4-2-1新冠病毒阳性案例预测" class="headerlink" title="4.2.1新冠病毒阳性案例预测"></a>4.2.1新冠病毒阳性案例预测</h5><p><strong>(1)前言</strong></p>
+<ul>
+<li>题目描述</li>
+</ul>
+<p>给出美国某些州的前5天的阳性病例的调查结果，预测出第5天的阳性病例情况。</p>
+<ul>
+<li>数据</li>
+</ul>
+<p>.csv文件(一种逗号分隔的纯文本数据，一行是数据表一行，方便录入表格或数据库)。</p>
+<p>本案例的数据文件的每一行代表一个样本，每一行包含118个特征，分别是样本id、37个州、(下分)5天里各16个features(可能是一天里采集16个cases的情况)。</p>
+<p>每行的最后一个feature是label。</p>
+<p><strong>(2)正式编写pytorch</strong></p>
+<ul>
+<li>加载数据&#x2F;预处理1min36s</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># pandas处理.csv数据文件</span></span><br><span class="line">train_data=pd.read_csv(<span class="string">&#x27;./covid.train.csv&#x27;</span>).drop(columns=[<span class="string">&#x27;date&#x27;</span>]).values</span><br><span class="line"></span><br><span class="line"><span class="comment"># 预处理模型输入数据和label：具体来说，先将train_data分为训练样本x和预期值y【这里是label】。其中x包括原数据样本的除了最后一列的所有数据，即:所有行，：-1除去最后一列所有列。其中y是原数据样本的最后一列，即:所有行和-1最后一列。</span></span><br><span class="line">x_train, y_train=train_data[:, :-<span class="number">1</span>], train_data[:, -<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># dataset: COVID19Dataset(Dataset)在前面定义</span></span><br><span class="line">train_dataset=COVID19Dataset(x_train, y_train)</span><br><span class="line"></span><br><span class="line"><span class="comment"># dataloader：pin_memory=True时，将数据加载到固定内存中的锁页内存，以便更快地将数据从主机内存传输到设备内存（例如GPU内存）。只在使用CUDA设备（如GPU）进行训练时才起作用，对于CPU训练没有影响。</span></span><br><span class="line">train_loader=DataLoader(train_dataset, batch_size=<span class="number">32</span>, shuffle=<span class="literal">True</span>, pin_memory=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>模型</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 调用模型：input_dim是传参数给前面定义的My_Model()作为输入维度，x_train.shape[1]是列数，也就是输入数据的最后一维，没毛病，至于输出维度自己给。</span></span><br><span class="line">model=My_Model(input_dim=x_train.shape[<span class="number">1</span>]).to(<span class="string">&#x27;cuda&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>损失函数</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># reduction=&#x27;mean&#x27;是总方差误差的均值</span></span><br><span class="line">criterion=torch.nn.MSELoss(reduction=<span class="string">&#x27;mean&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>优化</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># lr控制学习率的大小，影响参数更新的步长；momentum控制动量的大小，影响参数更新的平滑程度。这两个参数都是在优化过程中调整的超参数，需要根据具体问题进行调优。</span></span><br><span class="line">optimizer=torch.optim.SGD(model.parameters(), lr=<span class="number">1e-5</span>, momentum=<span class="number">0.9</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>训练循环loop</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 3000轮循环。tqdm用于可视化创建一个进度条，position=0代表进度条位置, leave=True代表进度条走完后仍留在屏幕上。</span></span><br><span class="line"><span class="keyword">for</span> epoch <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3000</span>):</span><br><span class="line">    model.train()</span><br><span class="line">    train_pbar=tqdm(train_loader, position=<span class="number">0</span>, leave=<span class="literal">True</span>)</span><br><span class="line">    <span class="keyword">for</span> x, y <span class="keyword">in</span> train_pbar:</span><br><span class="line">        x, y = x.to(<span class="string">&#x27;cuda&#x27;</span>), y.to(<span class="string">&#x27;cuda&#x27;</span>)</span><br><span class="line">        pred=model(x)</span><br><span class="line">        loss=criterion(pred, y)</span><br><span class="line">        loss.backward()</span><br><span class="line">        optimizer.step()</span><br><span class="line">        optimizer.zero_grad()  <span class="comment"># 前面讲过在前面的，这里是每趟循环后清零grad</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="4-2-2其他说明"><a href="#4-2-2其他说明" class="headerlink" title="4.2.2其他说明"></a>4.2.2其他说明</h5><p>[1] pytorch官方文档的说明，输入+输出。一般输入有两种参数类型parameters和keyword arguments。parameters不用明确指出参数名字，keyword arguments要明确指出参数名，且二者用*进行分割区别开来。</p>
+<p>[2] pytorch三类torch.max()函数</p>
+<p>torch.max(input)输入一个tensor，输出一个最大value</p>
+<p>torch.max(input, dim, keepdim&#x3D;False, *, out&#x3D;None)输入一个tensor和dim，输出沿着dim的tensor的最大value和其对应的索引值。</p>
+<p>torch.max(input, other)输入两个同样大小的tensor，以两个tensor同位置的每个元素的最大值构建出一个同样size的tensor。</p>
+<p>[3] 常见error</p>
+<p>model和数据x,y一定要是在同样的device上的！！！</p>
+<p>两个维度不同的tensor执行+运算是错误的！！！</p>
+<p>显卡爆存，batch size大于显卡内存的时候，调整batch size。</p>
+<p>还有就是原来是Float但是计算后变成Long的情况，如果还是用原来的float存储结果报错，要result.Long执行类型强制转化.</p>
+<p><code>2023.12.02</code></p>
+<hr>
+<p>如果想要做作业实操，去 D:\study\ML\2022 ML\ 找PPT教程，包括环境安装、实验说明和教程等。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">D:\study\ML\2022 ML\01 Introduction of Deep Learning</span><br><span class="line">D:\study\ML\2022 ML\02 What to do if my network fails to train</span><br><span class="line">D:\study\ML\2022 ML\03 Images input</span><br><span class="line">D:\study\ML\2022 ML\04 Sequence as input</span><br><span class="line">D:\study\ML\2022 ML\05 Sequence to sequence</span><br><span class="line">D:\study\ML\2022 ML\06 Generation</span><br><span class="line">D:\study\ML\2022 ML\07 Self-supervised learning for Speech and Image</span><br><span class="line">D:\study\ML\2022 ML\08 Auto-encoder Anomaly Detection</span><br><span class="line">D:\study\ML\2022 ML\09 Explainable AI</span><br><span class="line">D:\study\ML\2022 ML\10 Attack</span><br></pre></td></tr></table></figure>
+
+<p>实验所需的训练和测试数据、图像等材料均在 D:\study\ML\2022 ML\作业 里面。</p>
+<p><strong><mark>选修部分</mark>的PPT均在 D:\study\ML\2022 ML\选修 To Learn More 目录里面。</strong></p>
+<hr>
+<h3 id="5-选修To-Learn-More"><a href="#5-选修To-Learn-More" class="headerlink" title="5.选修To Learn More"></a>5.选修To Learn More</h3><h4 id="5-1深度学习"><a href="#5-1深度学习" class="headerlink" title="5.1深度学习"></a>5.1深度学习</h4><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/347362999#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%8E%86%E5%8F%B2">李宏毅机器学习课程笔记-5.1深度学习之引言 - 知乎 (zhihu.com)</a>没什么太新鲜的。。。。</p>
+<p><strong>(1)DL的历史</strong></p>
+<p>perceptron model——linear model感知机模型</p>
+<p><strong>(2)DL的三个步骤</strong>—同ML</p>
+<p>ML：确定function或model——定义loss function——optimization</p>
+<p>DL：确定neural network(模型，函数集)——确定如何评价nn好坏(loss)——如何找到最好函数（优化，GD：backpropagation)</p>
+<p><strong>(3)nn神经网络&#x3D;特征提取器</strong></p>
+<ul>
+<li>nn结构</li>
+</ul>
+<p><strong><mark>所谓神经网络nn就相当于一个特征提取器。用来代替机器学习里面的人工label特征工程的东西。</mark></strong></p>
+<p>输入层——隐藏层——输出层</p>
+<ul>
+<li>全连接前馈神经网络</li>
+</ul>
+<img src="file:///D:/others/useful/Hexo/picture/583a78a1-1773-49c8-9608-5ed5d72c1746.png" title alt="583a78a1-1773-49c8-9608-5ed5d72c1746" style="zoom:80%;">
+
+<p>FFN：fully connected feedforward neural network</p>
+<p>全连接是指每个神经元与上一层的所有神经元相连。</p>
+<p>FFN是指各神经元分层排列，每个神经元只与前一层的神经元相连，接收前一层的输出，并输出给下一层，各层间没有反馈。</p>
+<ul>
+<li>一些nn</li>
+</ul>
+<p>卷积神经网络<strong>CNN</strong>：AlexNet、VGGNet、GoogleNet、Residual Net、Taipei 101，随着nn的更新换代，层数不断增加，也就是deep的含义，错误率逐渐下降。</p>
+<ul>
+<li>ML和DL</li>
+</ul>
+<p>ML是人只需要做好特征工程(label)，然后套用已知的or定义好的model去做训练和预测，侧重于人为提取特征。</p>
+<p>DL是人不需要进行特征工程，让nn自己找到特征，所以nn就是特征提取器。</p>
+<p><strong>(4)DL应用举例</strong></p>
+<ul>
+<li>手写数字识别(handwriting digit recognition)</li>
+</ul>
+<p>将图像分为若干维(2D)。定义输出数组input的值每一维有字迹值为1，否则为0。中间有若干hidden layer(NN)对特征进行提取。最后得到一个output数组是0-9的分别的可能性，则选取可能性最大的作为最终预测结果。</p>
+<p>这个应用还证明了另外一个结论：<strong>通过nn，可以将原本n维的input转变为m维的output</strong>。</p>
+<p><strong>(5)Loss</strong></p>
+<p>给出<strong>input</strong>，经过nn隐藏层计算，得出<strong>output</strong>，将目标值<strong>target</strong>和<strong>output</strong>的绝对差之和作为Total Loss。</p>
+<p><strong>(6)梯度下降</strong></p>
+<ul>
+<li><p>所谓梯度下降就是微分运算，对于特征集&#x2F;参数集，分别对每一个参数分量不断进行梯度运算，让loss最小。</p>
+</li>
+<li><p>初识反向传播</p>
+</li>
+</ul>
+<p>backpropagation，神经网络里面用来进行梯度计算(微分运算)的一个高效方法。</p>
+<h4 id="5-2反向传播"><a href="#5-2反向传播" class="headerlink" title="5.2反向传播"></a>5.2反向传播</h4><p>（1）前言</p>
+<ul>
+<li>GD、ML、DL、NN、BP：</li>
+</ul>
+<p>GD是gradient descent梯度下降，是ML和DL(nn)里面进行优化的方法。ML里面介绍过torch.optim.SGD()的优化算法，但是ML要人为进行特征提取；DL是ML的一个特例，DL是不需要进行人为label的ML，但是要定义NN。而BP就是反向传播backpropagation，是实现GD高效计算的一种方式。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">关于GD计算：</span><br><span class="line">NN的参数θ的含义：NN(含θ)对input进行运算最后得到output再跟target进行差运算得到总损失和L(θ)；</span><br><span class="line">θ=&#123;w1,w2,...,b1,b2,...,a1,a2,...,......&#125;；</span><br><span class="line">那么GD实现的就是不断对θ进行微分得到▽L(θ)，并进行θ&#x27;=θ-μ▽L(θ)的运算，并重复上述步骤；</span><br><span class="line">BP实现的就是加速上述计算的过程；</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>链式法则Chain Rule</li>
+</ul>
+<p>就是复合求导法则；</p>
+<p>设$z&#x3D;g(y), y&#x3D;f(x)$, 则有$\frac{dz}{dx}&#x3D;\frac{dz}{dy}\frac{dy}{dx}$;</p>
+<p>设$z&#x3D;g(x,y),x&#x3D;f(m),y&#x3D;h(m)$，则有$\frac{dz}{dx}&#x3D;\frac{dz}{dx}\frac{dx}{dm}+\frac{dz}{dy}\frac{dy}{dm}$</p>
+<p>（2）backpropagation反向传播算法</p>
+<ul>
+<li>基础</li>
+</ul>
+<p>前面讲过了GD的原理和L(θ)的含义；</p>
+<ul>
+<li>Forward Pass：$z&#x3D;x_1w_1+x_2w_2+b$</li>
+</ul>
+<img title src="file:///D:/others/useful/Hexo/picture/b00de18e-ee4e-445d-9f7c-e449851e54ed.png" alt="b00de18e-ee4e-445d-9f7c-e449851e54ed" style="zoom:50%;">
+
+<p>前传递计算；</p>
+<p>计算的是：为权重参数w计算偏微分$\frac{∂z}{∂w}$，计算结果应该是对应w的输入，方向是从前往后。</p>
+<ul>
+<li>Backforward Pass：$a&#x3D;h(z)$。<mark>感觉这里理解的还不透彻。</mark></li>
+</ul>
+<img src="file:///D:/others/useful/Hexo/picture/84506adb-b1e1-45d6-a6ab-f0a824a58a9f.png" title alt="84506adb-b1e1-45d6-a6ab-f0a824a58a9f" style="zoom:50%;">
+
+<p>后传递计算；</p>
+<p>计算的是：为激活函数(model&#x2F;nn&#x2F;function)的输入z计算偏微分$\frac{∂C}{∂z}$，由于要全部求出C才能计算，所以方向从后往前。</p>
+<p>至于$\frac{∂C}{∂a}&#x3D;h’(z)[w_3\frac{∂C}{∂z’}+w_4\frac{∂C}{∂z’’}]$是怎么得到的：已知$a&#x3D;h(z)$，所以$\frac{∂C}{∂z}&#x3D;\frac{∂C}{∂a}\frac{∂a}{∂z}$，而$\frac{∂a}{∂z}$就是$h’(z)$，且z已经在FP计算出来，所以$h’(z)$是常数，所以$\frac{∂C}{∂z}&#x3D;h’(z)\frac{∂C}{∂a}$。已知z是逐层梯度计算微分的，z也是关于a的函数，所以z’和z’’都是关于a的函数，且有图可知w3&#x3D;$\frac{∂z’}{∂a}$，w4&#x3D;$\frac{∂z’’}{∂a}$。$\frac{∂C}{∂a}&#x3D;\frac{∂C}{∂z’}\frac{∂z’}{∂a}+\frac{∂C}{∂z’’}\frac{∂z’’}{∂a}$，由于是从后往前的，而从前往后的时候正好$\frac{∂C}{∂z’}和\frac{∂C}{∂z’’}$都是对应z和z’输出的，所以可得$\frac{∂C}{∂a}&#x3D;h’(z)[w_3\frac{∂C}{∂z’}+w_4\frac{∂C}{∂z’’}]$。</p>
+<p>也就是如下图：sigmoid就是C对z的第n次∂计算结果，也就是最后输出的y。所以有a&#x3D;∂，倒过来</p>
+<img title src="file:///D:/others/useful/Hexo/picture/a094532a-f8af-4de5-8348-e633899e6305.png" alt="a094532a-f8af-4de5-8348-e633899e6305" style="zoom:100%;">
+
+<p>（3）最终GD结果</p>
+<img title src="file:///D:/others/useful/Hexo/picture/d23c515e-3f12-4946-a3f3-ad45b774d4a1.png" alt="d23c515e-3f12-4946-a3f3-ad45b774d4a1" style="zoom:67%;">
+
+<p>$\frac{∂C}{∂w}&#x3D;\frac{∂C}{∂z}\frac{∂z}{∂w}$，也就是GD&#x3D;FP*BP。</p>
+<p><code>2023.12.03</code></p>
+<hr>
+<h4 id="5-3regression回归"><a href="#5-3regression回归" class="headerlink" title="5.3regression回归"></a>5.3regression回归</h4><p><strong>5.3.1线性回归模型</strong></p>
+<p>没啥新东西……</p>
+<ul>
+<li>回归模型应用案例</li>
+</ul>
+<p>股票市场预测、自动驾驶、推荐系统</p>
+<ul>
+<li>线性回归模型linear regression model</li>
+</ul>
+<p>函数，如$y&#x3D;f(x)&#x3D;wx+b$；w权重，b偏置，x输入&#x2F;特征，y输出，$y^*$期望值&#x2F;label；</p>
+<p>损失函数；</p>
+<p>梯度下降；</p>
+<p><strong>5.3.2模型选择&amp;减小误差</strong></p>
+<p>模型越复杂，在training dataset的err越小，但是在testing dataset的err越大；</p>
+<p>误差由两部分共同决定，一个是bias就是y和y*的差距，一个variance就是y的离散程度。模型越复杂bias越小，因为更能逼近上帝函数；但是variance越大，因为模型函数越简单受数据影响越小。</p>
+<p><strong>5.3.3欠拟合&amp;过拟合</strong>-underfitting&amp;overfitting</p>
+<p>underfitting：模型过于简单，在训练集上err大，bias大，variance小；使用更复杂的模型或输入解决。</p>
+<p>overfitting：模型过于复杂，在测试集上err大，bias小，variance大；使用更简单的模型或复杂输入解决，或正则化regularization(但可能增大bias所以要调参)。</p>
+<p>smooth平滑：输入和输出影响程度。要平滑但不要太平滑。</p>
+<p><strong>5.3.4交叉验证</strong>-就是训练集+测试集的划分方法</p>
+<p>将数据集分为training set和testing set两部分，缺点有依赖于划分的方法且训练只用了部分数据；</p>
+<ul>
+<li>LOOCV–leave one out cross validation</li>
+</ul>
+<p>就是设N个数据，每次训练采用1+N-1的划分方式，缺点是整个training loop计算量大。</p>
+<ul>
+<li>K折交叉验证</li>
+</ul>
+<p>就是分为K分的LOOCV，一般K取值5或10，K越大bias越小，但是variance越大。</p>
+<p><strong>5.3.5线性回归python实战</strong></p>
+<p><strong>(1)numpy</strong></p>
+<ul>
+<li><p>链接：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/339412955">李宏毅机器学习课程笔记-2.5线性回归Python实战 - 知乎 (zhihu.com)</a></p>
+</li>
+<li><p>任务描述</p>
+</li>
+</ul>
+<p>现在有某地空气质量的观测数据，请使用线性回归拟合数据，预测PM2.5。</p>
+<ul>
+<li>数据集描述</li>
+</ul>
+<p>train.csv：2014年每月前20天每小时的观察数据，每小时数据有18维度(有一个维度是PM2.5)。</p>
+<p>test.csv：240组，每组是连续9小时的观测数据(18维度)，要求预测出每组数据第10小时的PM2.5值。</p>
+<ul>
+<li>结果格式要求</li>
+</ul>
+<p>必须提交.csv文件；</p>
+<p>最后结果应该有240个预测值；</p>
+<p>第一行必须是id,value；</p>
+<p>从第二行开始每行分别是id值和预测的PM2.5值，两者逗号间隔。</p>
+<ul>
+<li>Python代码：在CPU上直接训练</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np  <span class="comment"># 利用np进行本地cpu训练的典例</span></span><br><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"></span><br><span class="line"><span class="comment">## 数据处理</span></span><br><span class="line">data = pd.read_csv(<span class="string">&#x27;./train.csv&#x27;</span>, encoding=<span class="string">&#x27;big5&#x27;</span>)  <span class="comment"># pandas读取.csv</span></span><br><span class="line"></span><br><span class="line">data = data.iloc[:, <span class="number">3</span>:]  <span class="comment"># 预处理</span></span><br><span class="line">data[data == <span class="string">&#x27;NR&#x27;</span>] = <span class="number">0</span></span><br><span class="line">raw_data = data.to_numpy()</span><br><span class="line"></span><br><span class="line">month_data = &#123;&#125;  <span class="comment"># 按月封装数据</span></span><br><span class="line"><span class="keyword">for</span> month <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">12</span>):</span><br><span class="line">    sample = np.empty([<span class="number">18</span>, <span class="number">480</span>])</span><br><span class="line">    <span class="keyword">for</span> day <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">20</span>):</span><br><span class="line">        sample[:, <span class="number">24</span> * day:<span class="number">24</span> * (day + <span class="number">1</span>)] = raw_data[(month * <span class="number">20</span> + day) * <span class="number">18</span> :(month * <span class="number">20</span> + day+<span class="number">1</span>) * <span class="number">18</span>, :]</span><br><span class="line">    month_data[month] = sample</span><br><span class="line"></span><br><span class="line">x = np.empty([<span class="number">471</span> * <span class="number">12</span>, <span class="number">18</span> * <span class="number">9</span>], dtype=<span class="built_in">float</span>)  <span class="comment"># 按object封装数据，10h为1object</span></span><br><span class="line">y = np.empty([<span class="number">471</span> * <span class="number">12</span>, <span class="number">1</span>], dtype=<span class="built_in">float</span>)  <span class="comment"># 用9小时里18features的样本数据x和最后1h里的PM2.5的target值y</span></span><br><span class="line"><span class="keyword">for</span> month <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">12</span>):</span><br><span class="line">    <span class="keyword">for</span> day <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">20</span>):</span><br><span class="line">        <span class="keyword">for</span> hour <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">24</span>):</span><br><span class="line">            <span class="keyword">if</span> day == <span class="number">19</span> <span class="keyword">and</span> hour &gt; <span class="number">14</span>:  <span class="comment"># 最后一个10h的object从第20天14时</span></span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            x[month * <span class="number">471</span> + day * <span class="number">24</span> + hour, :] = month_data[month][:, day * <span class="number">24</span> + hour:day * <span class="number">24</span> + hour + <span class="number">9</span>].reshape(<span class="number">1</span>,</span><br><span class="line">                                                                                                                    -<span class="number">1</span>)  <span class="comment"># 9为单位，reshape(1,-1)第一行，列自动往后</span></span><br><span class="line">            y[month * <span class="number">471</span> + day * <span class="number">24</span> + hour, <span class="number">0</span>] = month_data[month][<span class="number">9</span>, day * <span class="number">24</span> + <span class="number">9</span>]  <span class="comment"># 每个第10小时的PM2.5</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 标准化：线性回归、逻辑回归都用</span></span><br><span class="line">mean_x = np.mean(x, axis=<span class="number">0</span>)  <span class="comment"># 按列计算平均值</span></span><br><span class="line">std_x = np.std(x, axis=<span class="number">0</span>)  <span class="comment"># 按列计算标准差</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(x)):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(x[<span class="number">0</span>])):</span><br><span class="line">        <span class="keyword">if</span> std_x[j] != <span class="number">0</span>:</span><br><span class="line">            x[i][j] = (x[i][j] - mean_x[j]) / std_x[j]  <span class="comment"># 标准化数据样本</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 训练</span></span><br><span class="line">dim = <span class="number">18</span> * <span class="number">9</span> + <span class="number">1</span>  <span class="comment"># 增加最后一行是bias</span></span><br><span class="line">w = np.zeros([dim, <span class="number">1</span>])</span><br><span class="line">x = np.concatenate((np.ones([<span class="number">471</span> * <span class="number">12</span>, <span class="number">1</span>]), x), axis=<span class="number">1</span>).astype(<span class="built_in">float</span>)  <span class="comment"># x原列18*9，多拼接一列便于和(w,b)进行矩阵乘法</span></span><br><span class="line">learning_rate = <span class="number">100</span></span><br><span class="line">iter_time = <span class="number">1000</span></span><br><span class="line">adagrad = np.zeros([dim, <span class="number">1</span>])</span><br><span class="line">eps = <span class="number">1e-10</span>  <span class="comment"># 防止adagrad作为分母为0</span></span><br><span class="line"><span class="keyword">for</span> t <span class="keyword">in</span> <span class="built_in">range</span>(iter_time):</span><br><span class="line">    loss = np.sqrt(np.<span class="built_in">sum</span>(np.power(np.dot(x, w) - y, <span class="number">2</span>)) / <span class="number">471</span> / <span class="number">12</span>)</span><br><span class="line">    <span class="keyword">if</span> t % <span class="number">100</span> == <span class="number">0</span>:</span><br><span class="line">        <span class="built_in">print</span>(t, loss)  <span class="comment"># 每100次打印一次loss</span></span><br><span class="line">    gradient = <span class="number">2</span> * np.dot(x.transpose(), np.dot(x, w) - y)</span><br><span class="line">    adagrad += gradient ** <span class="number">2</span></span><br><span class="line">    w -= learning_rate * gradient / np.sqrt(adagrad + eps)</span><br><span class="line">np.save(<span class="string">&#x27;weight.npy&#x27;</span>, w)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Training Done&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 测试</span></span><br><span class="line"><span class="comment"># 数据处理</span></span><br><span class="line">test_data = pd.read_csv(<span class="string">&#x27;test.csv&#x27;</span>, header=<span class="literal">None</span>, encodings=<span class="string">&#x27;big5&#x27;</span>)</span><br><span class="line">test_data = test_data.iloc[:, <span class="number">2</span>:]</span><br><span class="line">test_data[test_data == <span class="string">&#x27;NR&#x27;</span>] = <span class="number">0</span></span><br><span class="line">test_data = test_data.to_numpy()</span><br><span class="line">test_x = np.empty([<span class="number">240</span>, <span class="number">18</span> * <span class="number">9</span>])</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">240</span>):</span><br><span class="line">    test_x[i, :] = test_data[i * <span class="number">18</span>:(i + <span class="number">1</span>) * <span class="number">18</span>, :]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(test_x)):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(test_x[<span class="number">0</span>])):</span><br><span class="line">        <span class="keyword">if</span> std_x[j] != <span class="number">0</span>:</span><br><span class="line">            test_x[i, j] = (test_x[i, j] - mean_x[j]) / std_x[j]</span><br><span class="line">test_x = np.concatenate((np.ones([<span class="number">240</span>, <span class="number">1</span>]), test_x), axis=<span class="number">1</span>).astype(<span class="built_in">float</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 预测&amp;保存</span></span><br><span class="line">w = np.load(<span class="string">&#x27;weight.npy&#x27;</span>)</span><br><span class="line">ans_y = np.dot(test_x, w)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;answer.csv&#x27;</span>, mode=<span class="string">&#x27;w&#x27;</span>, newline=<span class="string">&#x27; &#x27;</span>) <span class="keyword">as</span> answer_file:</span><br><span class="line">    csv_writer = csv.writer(answer_file)</span><br><span class="line">    csv_writer.writerow([<span class="string">&#x27;id&#x27;</span>, <span class="string">&#x27;value&#x27;</span>])</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">240</span>):</span><br><span class="line">        row = [<span class="string">&#x27;id_&#x27;</span> + <span class="built_in">str</span>(i), ans_y[i][<span class="number">0</span>]]</span><br><span class="line">        csv_writer.writerow(row)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<img title src="file:///D:/others/useful/Hexo/picture/5fa2f4f9-b035-4170-928f-fd297a58a1ea.png" alt="5fa2f4f9-b035-4170-928f-fd297a58a1ea" style="zoom:50%;">
+
+<ul>
+<li>注释</li>
+</ul>
+<p>[1]encoding &#x3D; ‘big5’，繁体中文字符编码，以便文件被正确解析和显示。简体中文utf-8。</p>
+<p>[2]data.describle()计算数据的统计信息。</p>
+<p><img src="/2023/11/02/%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/others\useful\Hexo\picture\982a2a2c-b95f-407b-bda4-ec6c6870b291.png" alt="982a2a2c-b95f-407b-bda4-ec6c6870b291"></p>
+<p>[3]data.iloc[:, 3:]，iloc是pandas里面进行数据切片的函数，注意它是对data进行了操作而不是简单的筛选。还有[:,:]这种类似的操作，逗号隔开行列。每个:都是前闭后开，且索引从0开始。:代表所有行&#x2F;列，像3：这种是从第四列的所有行&#x2F;列，像3:8就表示从第4到第8行&#x2F;列。特殊的-1表示最后一行&#x2F;列，:-1表示除掉最后一行&#x2F;列。</p>
+<p>[4]data[data &#x3D;&#x3D; ‘NR’] &#x3D; 0，data[condition]筛选符合条件的行。</p>
+<p>[5]data.to_numpy()，pandas数据(表格)转换为numpy数组(数值)。</p>
+<p>[6]python的for in range循环范围是0到n-1。</p>
+<p>[7]np.empty([m,n])是创建一个m*n空数组。</p>
+<p>[8]numpy和pytorch：numpy依赖于cpu训练，并且缺乏DL支持。pytorch支持gpu训练，且支持DL。</p>
+<p>[9]iter_time是迭代次数，literate重复的意思。</p>
+<p>[10]concatenate连接，拼接。axis&#x3D;1是按行，axis&#x3D;0是按列。</p>
+<p>[11]np里面astype()函数用来转化数组、对象的数据类型。</p>
+<p>[12]RMSE是root mean square error，均方根误差。方差，求和，平均，方根。</p>
+<p>[13]np.dot(x, w)是矩阵乘法，执行的是线性回归y&#x3D;wx+b运算，得到的是以当前权重w，偏置b参数预测的结果。</p>
+<p>[14]adagrad可以看做是调整参数更改速率的，累加梯度的平方和。</p>
+<p>[15]<strong>是python里面的指数运算符，</strong>2就是平方的意思。</p>
+<p>(2)pytorch</p>
+<h4 id="5-4分类模型classification"><a href="#5-4分类模型classification" class="headerlink" title="5.4分类模型classification"></a>5.4分类模型classification</h4><h5 id="5-4-1分类模型简介及与回归的区别"><a href="#5-4-1分类模型简介及与回归的区别" class="headerlink" title="5.4.1分类模型简介及与回归的区别"></a>5.4.1分类模型简介及与回归的区别</h5><ul>
+<li>应用</li>
+</ul>
+<p>信用评分、医疗诊断、手写文字识别、人脸识别</p>
+<ul>
+<li>分类与回归</li>
+</ul>
+<p>回归模型限制很多，不能用于更复杂的任务。</p>
+<p>分类模型可以根据特征输入判断输出类型，他的损失函数用于预测错误的次数且不可微。他的优化方式有感知机（perceptron），支持向量机（SVM）。</p>
+<h5 id="5-4-2分类模型—概率生成模型"><a href="#5-4-2分类模型—概率生成模型" class="headerlink" title="5.4.2分类模型—概率生成模型"></a>5.4.2分类模型—概率生成模型</h5><ul>
+<li>概率论知识</li>
+</ul>
+<p>贝叶斯公式、全概率公式</p>
+<ul>
+<li>概率生成模型</li>
+</ul>
+<p>本质上是概率分布；</p>
+<p>假设有俩类别C1,C2，判断对象x属于哪类。计算P(C1|x)，若这个值大于0.5，则x∈C1，否则属于C2。</p>
+<p>实质上是通过这个模型来生成一个x，是通过模型计算出x的概率分布P(x)，然后得到x。根据全概率公式P(x)&#x3D;P(C1)P(x|C1)+P(C2)P(x|C2)，我们就是要通过训练计算出先验概率P(C1)，P(C2)，后验概率P(x|C1)，P(x|C2)这四个东西。</p>
+<p>要计算先验概率很简单，就是最简单的比例问题。</p>
+<p>计算后验概率要通过正态分布公式计算概率密度然后积分。μ是均值-正态分布中心，Σ是协方差矩阵-正态分布离散程度，D是多维特征维度。最后通过极大似然估计找到概率最大的分布。过程中可以采用协方差矩阵共享。</p>
+<p><img src="file:///D:/others/useful/Hexo/picture/846ce86a-6390-414b-b2e1-3210d46fcddd.png" alt="846ce86a-6390-414b-b2e1-3210d46fcddd"></p>
+<p>其他概率模型：伯努利分布-二值特征、朴素贝叶斯-样本各维度独立</p>
+<ul>
+<li>sigmoid函数</li>
+</ul>
+<p>通过一系列的简化可以得到分类模型实质上是sigmoid函数。当共享协方差时，分类模型则是linear函数。</p>
+<p><code>2023.12.05</code></p>
+<hr>
+<p><mark><strong>后面只看高亮部分就行了。</strong></mark></p>
+<p><code>2023.12.14</code></p>
+<hr>
+<h5 id="5-4-3分类模型—逻辑回归"><a href="#5-4-3分类模型—逻辑回归" class="headerlink" title="5.4.3分类模型—逻辑回归"></a>5.4.3分类模型—逻辑回归</h5><p>对应：斯坦福231课程里面关于分类的介绍，全连接线性、svm、softmax、two_layer，基于特征的神经网络分类器等等。<mark>这里可以粗略看下笔记总结，知道有哪些模型，怎么用，原理大概是什么就行。</mark></p>
+<h5 id="5-4-4分类模型python实战"><a href="#5-4-4分类模型python实战" class="headerlink" title="5.4.4分类模型python实战"></a>5.4.4分类模型python实战</h5><p><strong>(1)概率生成模型</strong></p>
+<p><strong>(2)逻辑回归模型</strong></p>
+<h4 id="5-5逻辑回归-67-12"><a href="#5-5逻辑回归-67-12" class="headerlink" title="5.5逻辑回归 67.12"></a>5.5逻辑回归 67.12</h4><p>前面看过回归了。。。</p>
+<p><code>2023.12.</code></p>
+<hr>
+<h3 id="6-任务攻略"><a href="#6-任务攻略" class="headerlink" title="6.任务攻略"></a>6.任务攻略</h3><p><code>2023.11.</code></p>
+<hr>
+<h3 id="7-Neural-Network-can’t-train类神经网络训练不起来怎么办"><a href="#7-Neural-Network-can’t-train类神经网络训练不起来怎么办" class="headerlink" title="7.Neural Network can’t train类神经网络训练不起来怎么办"></a>7.Neural Network can’t train类神经网络训练不起来怎么办</h3><h4 id="7-1局部最小值与鞍点"><a href="#7-1局部最小值与鞍点" class="headerlink" title="7.1局部最小值与鞍点"></a>7.1<mark>局部最小值与鞍点</mark></h4><h4 id="7-2批次与动量"><a href="#7-2批次与动量" class="headerlink" title="7.2批次与动量"></a>7.2批次与<mark>动量</mark></h4><h4 id="7-3自动调整学习率"><a href="#7-3自动调整学习率" class="headerlink" title="7.3自动调整学习率"></a>7.3自动调整学习率</h4><p><mark>稍微看一下</mark></p>
+<h4 id="7-4损失函数loss"><a href="#7-4损失函数loss" class="headerlink" title="7.4损失函数loss"></a>7.4损失函数loss</h4><p><code>2023.11.</code></p>
+<hr>
+<h3 id="8-卷积神经网络-CNN"><a href="#8-卷积神经网络-CNN" class="headerlink" title="8.卷积神经网络(CNN)"></a>8.卷积神经网络(<mark>CNN</mark>)</h3><p>这个看完斯坦福那个先不看了，快该开题了，有时间再说。</p>
+<p><code>2023.11.</code></p>
+<hr>
+<h3 id="9-使用验证集，结果还是过拟合"><a href="#9-使用验证集，结果还是过拟合" class="headerlink" title="9.使用验证集，结果还是过拟合"></a>9.使用验证集，结果还是过拟合</h3><p>根据作业经验，感觉这种情况就是那几个超参数的问题了。学习率lr和衰减lr_decay，regularization_strength，批量batch_size和迭代次数num_epochs等。还有就是优化算法sgd等等。</p>
+<p><code>2023.12.14</code></p>
+<hr>
+<h3 id="10-熊与鱼掌可以兼得的ML"><a href="#10-熊与鱼掌可以兼得的ML" class="headerlink" title="10.熊与鱼掌可以兼得的ML"></a>10.熊与鱼掌可以兼得的ML</h3><p><code>2023.11.</code></p>
+<hr>
+<h3 id="11-选修Spatial-Transformer-Layer"><a href="#11-选修Spatial-Transformer-Layer" class="headerlink" title="11.选修Spatial Transformer Layer"></a>11.选修Spatial <mark>Transformer </mark>Layer</h3><p><code>2023.11.</code></p>
+<hr>
+<h3 id="12-作业HW3"><a href="#12-作业HW3" class="headerlink" title="12.作业HW3"></a>12.作业HW3</h3><p><code>2023.11.</code></p>
+<hr>
+<h3 id="13-自注意力机制attention"><a href="#13-自注意力机制attention" class="headerlink" title="13.自注意力机制attention"></a>13.自注意力机制<mark>attention</mark></h3><p><code>2023.11.</code></p>
+<hr>
+<h3 id="14-选修Unsupervised-Learning-Word-Embedding"><a href="#14-选修Unsupervised-Learning-Word-Embedding" class="headerlink" title="14.选修Unsupervised Learning-Word Embedding"></a>14.选修<mark>Unsupervised Learning</mark>-Word Embedding</h3><p><code>2023.11.</code></p>
+<hr>
+<h3 id="15-Transformer"><a href="#15-Transformer" class="headerlink" title="15.Transformer"></a>15.<mark>Transformer</mark></h3><p><code>2023.11.</code></p>
+<hr>
+<h3 id="16-自注意力机制变型"><a href="#16-自注意力机制变型" class="headerlink" title="16.自注意力机制变型"></a>16.自注意力机制变型</h3><p><code>2023.11.</code></p>
+<hr>
+<h3 id="17-生成式对抗网络-GAN-基本概念"><a href="#17-生成式对抗网络-GAN-基本概念" class="headerlink" title="17.生成式对抗网络(GAN)-基本概念"></a>17.生成式对抗网络(<mark>GAN</mark>)-基本概念</h3><p><code>2023.11.</code></p>
+<hr>
+<h3 id="18-选修GAN-Basic-Theory"><a href="#18-选修GAN-Basic-Theory" class="headerlink" title="18.选修GAN Basic Theory"></a>18.选修GAN Basic Theory</h3><p><code>2023.11.</code></p>
+<hr>
+<h3 id="19-选修GPT-3来自猎人暗黑大陆的模型"><a href="#19-选修GPT-3来自猎人暗黑大陆的模型" class="headerlink" title="19.选修GPT-3来自猎人暗黑大陆的模型"></a>19.选修GPT-3来自猎人暗黑大陆的模型</h3><p><code>2023.11.</code></p>
+<hr>
+<h3 id="20-作业HW7"><a href="#20-作业HW7" class="headerlink" title="20.作业HW7"></a>20.作业HW7</h3><p><code>2023.11.</code></p>
+<hr>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Gnn</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://gnn.github.io/2023/11/02/%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">http://gnn.github.io/2023/11/02/%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Gnn</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%A4%A7%E5%9B%9B%E4%B8%8A/">
+                                    <span class="chip bg-color">大四上</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">机器学习</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2023/12/12/%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="计算机视觉">
+                        
+                        <span class="card-title">计算机视觉</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            计算机视觉（Deep Learning for Computer Vision）, python, pytorch0.任务要求
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-12-12
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E9%A2%84%E4%B9%A0/" class="post-category">
+                                    预习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%A4%A7%E5%9B%9B%E4%B8%8A/">
+                        <span class="chip bg-color">大四上</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">
+                        <span class="chip bg-color">计算机视觉</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/11/01/%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="数字图像处理">
+                        
+                        <span class="card-title">数字图像处理</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            数字图像处理（Digital Image Processing），python0.任务要求
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E9%A2%84%E4%B9%A0/" class="post-category">
+                                    预习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">
+                        <span class="chip bg-color">数字图像处理</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%A4%A7%E5%9B%9B%E4%B8%8A/">
+                        <span class="chip bg-color">大四上</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2024</span>
+            
+            <a href="/about" target="_blank">Gnn</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
