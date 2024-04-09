@@ -452,7 +452,7 @@
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2023.08</span>.<span class="number">07</span> <span class="number">19</span>:<span class="number">33</span></span><br></pre></td></tr></table></figure>
 
 <hr>
-<h2 id="基于hexo搭建github个人博客"><a href="#基于hexo搭建github个人博客" class="headerlink" title="基于hexo搭建github个人博客"></a>基于hexo搭建github个人博客</h2><h3 id="大纲"><a href="#大纲" class="headerlink" title="大纲"></a>大纲</h3><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/60578464#:~:text=%E4%BD%BF%E7%94%A8%20Hexo%2BGitHub%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%85%8D%E8%B4%B9%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B%EF%BC%88%E5%B0%8F%E7%99%BD%E5%90%91%EF%BC%89%201%201.%20%E5%87%86%E5%A4%87%20%23%20%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9,...%207%207.%20%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8%20%23%207.1%20%E5%8F%91%E5%B8%83%E6%96%87%E7%AB%A0%20">使用 Hexo+GitHub 搭建个人免费博客教程（小白向） - 知乎 (zhihu.com)</a></p>
+<h2 id="基于hexo搭建github个人博客"><a href="#基于hexo搭建github个人博客" class="headerlink" title="基于hexo搭建github个人博客"></a>基于hexo搭建github个人博客</h2><h3 id="一、大纲"><a href="#一、大纲" class="headerlink" title="一、大纲"></a>一、大纲</h3><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/60578464#:~:text=%E4%BD%BF%E7%94%A8%20Hexo%2BGitHub%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%85%8D%E8%B4%B9%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B%EF%BC%88%E5%B0%8F%E7%99%BD%E5%90%91%EF%BC%89%201%201.%20%E5%87%86%E5%A4%87%20%23%20%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9,...%207%207.%20%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8%20%23%207.1%20%E5%8F%91%E5%B8%83%E6%96%87%E7%AB%A0%20">使用 Hexo+GitHub 搭建个人免费博客教程（小白向） - 知乎 (zhihu.com)</a></p>
 <ol>
 <li>准备：环境搭建<br>1.1. 注意事项<br>1.2. 环境搭建</li>
 <li>连接 Github</li>
@@ -462,8 +462,8 @@
 <li>绑定域名（可选）</li>
 <li>开始使用<br>7.1. 发布文章<br>7.2. 网站设置<br>7.3. 更换主题<br>7.4. 常用代码</li>
 </ol>
-<h3 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h3><h4 id="初始"><a href="#初始" class="headerlink" title="初始"></a>初始</h4><h4 id="将hexo部署到github"><a href="#将hexo部署到github" class="headerlink" title="将hexo部署到github"></a>将hexo部署到github</h4><p>        注意_config.yml的末尾deploy修改：根据个人情况来，注意分支</p>
-<h4 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a>发布文章</h4><p>        <strong>1.命令式</strong></p>
+<h3 id="二、过程"><a href="#二、过程" class="headerlink" title="二、过程"></a>二、过程</h3><h4 id="1、初始"><a href="#1、初始" class="headerlink" title="1、初始"></a>1、初始</h4><h4 id="2、将hexo部署到github"><a href="#2、将hexo部署到github" class="headerlink" title="2、将hexo部署到github"></a>2、将hexo部署到github</h4><p>        注意_config.yml的末尾deploy修改：根据个人情况来，注意分支</p>
+<h4 id="3、发布文章"><a href="#3、发布文章" class="headerlink" title="3、发布文章"></a>3、发布文章</h4><p>        <strong>1.命令式</strong></p>
 <p>        创建md文件：进入博客目录hexo&#x2F;source，右键 Git Bash Here，<u><strong>hexo new “名字”</strong></u>；</p>
 <p>        写md文件：正常打开.md文件，正常写，编辑保存；</p>
 <p>        渲染部署：</p>
@@ -477,44 +477,24 @@
 <figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: xxx </span><br><span class="line">date: 2019/3/26 hh:mm:ss </span><br><span class="line">categories: </span><br><span class="line"><span class="bullet">-</span> Diary</span><br><span class="line">tags: </span><br><span class="line"><span class="bullet">-</span> PS3</span><br><span class="line"><span class="section">- Games</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line">摘要</span><br><span class="line">&lt;!--more--&gt;</span><br><span class="line">正文        </span><br></pre></td></tr></table></figure>
 
 <p>        生成发布，hexo g -d</p>
-<h4 id="美化"><a href="#美化" class="headerlink" title="美化"></a>美化</h4><h5 id="主题链接（一般要找到github上存储这个的文件夹，也就是仓库）"><a href="#主题链接（一般要找到github上存储这个的文件夹，也就是仓库）" class="headerlink" title="主题链接（一般要找到github上存储这个的文件夹，也就是仓库）"></a>主题链接（一般要找到github上存储这个的文件夹，也就是仓库）</h5><p>        <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/376367026">「第三期」 hexo+github搭建博客（主题美化） - 知乎 (zhihu.com)</a></p>
-<p>        <a target="_blank" rel="noopener" href="https://juejin.cn/post/7053744641383874574">九个好看实用的Hexo主题推荐 - 掘金 (juejin.cn)</a></p>
-<p>        <a target="_blank" rel="noopener" href="https://www.yunyoujun.cn/categories?category=%E4%BA%91%E6%B8%B8%E7%9A%84%E5%B0%8F%E6%97%A5%E8%AE%B0">云游的小分类 - 云游君的小站 (yunyoujun.cn)</a>这个比较复杂</p>
-<p>        <a target="_blank" rel="noopener" href="https://preccrepad.github.io/">Jelly (preccrepad.github.io)</a></p>
-<p>        <a target="_blank" rel="noopener" href="https://github.com/wxyxai/hexo-theme-jelly">wxyxai&#x2F;hexo-theme-jelly: A simple, elegant light theme for hexo. (github.com)</a></p>
-<p>        <a target="_blank" rel="noopener" href="https://haojen.github.io/Claudia-theme-blog/">Haojen’s blog</a></p>
-<p>        <a target="_blank" rel="noopener" href="https://chengkang.me/hexo-theme-qna/">Theme QnA for Hexo (chengkang.me)</a></p>
-<p>        <a target="_blank" rel="noopener" href="https://joeybling.github.io/">試毅-思伟 (joeybling.github.io)</a></p>
-<p>        <a target="_blank" rel="noopener" href="https://smallyunet.github.io/hexo-theme-syefe/">syefe - 仿百度EFE主题 (smallyunet.github.io)</a></p>
-<h5 id="步骤（以yunyoujun为例）"><a href="#步骤（以yunyoujun为例）" class="headerlink" title="步骤（以yunyoujun为例）"></a>步骤（以yunyoujun为例）</h5><p>            下载主题：先进入hexo文件夹下git bash here（直接终端cd也行）–找到主题对应仓库链接–</p>
+<h4 id="4、美化"><a href="#4、美化" class="headerlink" title="4、美化"></a>4、美化</h4><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/376367026">「第三期」 hexo+github搭建博客（主题美化） - 知乎 (zhihu.com)</a></p>
+<p>步骤（以yunyoujun为例）</p>
+<p>            下载主题：先进入hexo文件夹下git bash here（直接终端cd也行）–找到主题对应仓库链接–</p>
 <p>            git clone <a target="_blank" rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun">https://github.com/YunYouJun/hexo-theme-yun</a> themes&#x2F;yunyoujun(这里就是你在themes文件夹下自己定义个文件夹)</p>
 <p>            更改配置文件：打开hexo&#x2F;_config.yml–修改Extension&#x2F;theme标签为刚刚自定义的文件夹yunyoujun</p>
 <p>            清除缓存：hexo clean</p>
 <p>            启动&amp;调试本地站点：hexo s –debug   ， 然后访问  <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a>   ，检查是否正常运行</p>
 <p>            部署推送：hexo d</p>
-<h5 id="issue："><a href="#issue：" class="headerlink" title="issue："></a>issue：</h5><p>            手欠改成private的了，然后再改回来也访问不了，解决方式，重新添加点东西生成部署一下。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2023.10</span>.<span class="number">20</span> <span class="number">15</span>:<span class="number">27</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2023.10.20 15:27</span><br></pre></td></tr></table></figure>
 
+<h3 id="三、问题"><a href="#三、问题" class="headerlink" title="三、问题"></a>三、问题</h3><h5 id="1、仓库权限私有"><a href="#1、仓库权限私有" class="headerlink" title="1、仓库权限私有"></a>1、仓库权限私有</h5><p>手欠改成private的了，然后再改回来也访问不了，解决方式，重新添加点东西生成部署一下。</p>
+<h5 id="2、GH013"><a href="#2、GH013" class="headerlink" title="2、GH013"></a>2、GH013</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">remote: error: GH013: Repository rule violations found <span class="keyword">for</span> refs/heads/main.</span><br><span class="line">remote: - GITHUB PUSH PROTECTION</span><br><span class="line">remote:     Resolve the following violations before pushing again</span><br><span class="line">remote:     - GITHUB PUSH PROTECTION</span><br><span class="line">remote:        Resolve the following secrets before pushing again.</span><br><span class="line">remote:        (?) Learn how to resolve a blocked push</span><br><span class="line"> ! [remote rejected] HEAD -&gt; main (push declined due to repository rule violations)</span><br><span class="line">error: failed to push some refs to <span class="string">&#x27;github.com:Camellia-GNN/Camellia-GNN.github.io.git&#x27;</span></span><br><span class="line">FATAL Something<span class="string">&#x27;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html</span></span><br><span class="line"><span class="string">Error: Spawn failed</span></span><br><span class="line"><span class="string">    at ChildProcess.&lt;anonymous&gt; (D:\others\useful\Hexo\node_modules\hexo-util\lib\spawn.js:51:21)</span></span><br><span class="line"><span class="string">    at ChildProcess.emit (node:events:517:28)</span></span><br><span class="line"><span class="string">    at cp.emit (D:\others\useful\Hexo\node_modules\cross-spawn\lib\enoent.js:34:29)</span></span><br><span class="line"><span class="string">    at ChildProcess._handle.onexit (node:internal/child_process:292:12)</span></span><br></pre></td></tr></table></figure>
 
-
-<hr>
-<h2 id="基于Serverless搭建WordPress个人博客【弃稿】"><a href="#基于Serverless搭建WordPress个人博客【弃稿】" class="headerlink" title="基于Serverless搭建WordPress个人博客【弃稿】"></a>基于Serverless搭建WordPress个人博客【弃稿】</h2><h3 id="一、基础知识"><a href="#一、基础知识" class="headerlink" title="一、基础知识"></a>一、基础知识</h3><h5 id="1、WP的部署"><a href="#1、WP的部署" class="headerlink" title="1、WP的部署"></a>1、WP的部署</h5><p>        WordPress搭建博客有两种部署方式，可以使用腾讯云的Serverless服务部署，也可以部署到github pages进行静态部署。</p>
-<h5 id="2、Serverless（无服务器）"><a href="#2、Serverless（无服务器）" class="headerlink" title="2、Serverless（无服务器）"></a>2、Serverless（无服务器）</h5><p>        Serverless Framework 无服务器应用框架，SFC 是腾讯云云函数，是腾讯云提供的无服务器执行环境。serverless 只是一个定义，SFC 是其的实现。</p>
-<p>        使用传统方式部署应用时首先要购买云服务器，再在服务器上进行环境配置，然后再去部署我们的应用代码，而用Serverless部署应用不需要购买服务器。</p>
-<p>        无服务器不是没有服务器，因为开发应用不可能没有服务器，Serverless 只是表示当使用 Serverless 时，不需要关心底层资源，不需登录和优化服务器，只需关注最核心的代码片段。当使用 Serverless 部署应用时，不用每次都去部署开发环境，可以大大节省时间。</p>
-<h5 id="3、WordPress介绍"><a href="#3、WordPress介绍" class="headerlink" title="3、WordPress介绍"></a>3、WordPress介绍</h5><p>        WordPress 是基于 PHP 和 MySQL 的免费开源内容管理系统（CMS）。WordPress 始于 2003 年，最开始仅为一款简单的博客系统，但现已发展成为具有数千款插件，小工具和主题功能完整的CMS系统。</p>
-<h3 id="二、搭建过程"><a href="#二、搭建过程" class="headerlink" title="二、搭建过程"></a>二、搭建过程</h3><h4 id="1、登录腾讯云Serverless控制台"><a href="#1、登录腾讯云Serverless控制台" class="headerlink" title="1、登录腾讯云Serverless控制台"></a>1、登录腾讯云Serverless控制台</h4><p>        <a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/sls">Serverless 应用 - Serverless - 控制台 (tencent.com)</a></p>
-<h4 id="2、创建Serverless应用"><a href="#2、创建Serverless应用" class="headerlink" title="2、创建Serverless应用"></a>2、创建Serverless应用</h4><p>【首页地址（前端入口）】<a target="_blank" rel="noopener" href="https://service-nts8x69a-1319999760.gz.apigw.tencentcs.com/">小郭的冥卫一 – 又一个WordPress站点 (tencentcs.com)</a></p>
-<p>【管理登录地址（后台管理）】<a target="_blank" rel="noopener" href="https://service-nts8x69a-1319999760.gz.apigw.tencentcs.com/wp-admin/index.php">仪表盘 ‹ 小郭的冥卫一 — WordPress (tencentcs.com)</a></p>
-<h4 id="3、WordPress配置"><a href="#3、WordPress配置" class="headerlink" title="3、WordPress配置"></a>3、WordPress配置</h4><h6 id="（1）wp安装"><a href="#（1）wp安装" class="headerlink" title="（1）wp安装"></a>（1）wp安装</h6><h6 id="（2）wp管理员后台初始化"><a href="#（2）wp管理员后台初始化" class="headerlink" title="（2）wp管理员后台初始化"></a>（2）wp管理员后台初始化</h6><p><a target="_blank" rel="noopener" href="https://service-nts8x69a-1319999760.gz.apigw.tencentcs.com/wp-admin/index.php">仪表盘 ‹ 小郭的冥卫一 — WordPress (tencentcs.com)</a></p>
-<h6 id="（3）wp前台配置"><a href="#（3）wp前台配置" class="headerlink" title="（3）wp前台配置"></a>（3）wp前台配置</h6><p>进入前端界面：<a target="_blank" rel="noopener" href="https://service-nts8x69a-1319999760.gz.apigw.tencentcs.com/">小郭的冥卫一 – 又一个WordPress站点 (tencentcs.com)</a></p>
-<p>点击左上角仪表盘——点击自定义站点——</p>
-<h4 id="4、WP测试写博客"><a href="#4、WP测试写博客" class="headerlink" title="4、WP测试写博客"></a>4、WP测试写博客</h4><h3 id="三、Serverless应用域名配置（可跳过）"><a href="#三、Serverless应用域名配置（可跳过）" class="headerlink" title="三、Serverless应用域名配置（可跳过）"></a>三、Serverless应用域名配置（可跳过）</h3><p>        个人使用的话对域名并没有太高的要求，域名还得买，其实没什么必要……虽然一年就几十也不贵……</p>
-<h3 id="四、Serverless应用监控"><a href="#四、Serverless应用监控" class="headerlink" title="四、Serverless应用监控"></a>四、Serverless应用监控</h3><p>        Serverless 为开发者提供了应用监控平台，监控数据都可以进行可视化分析。</p>
-<p>        在应用监控中我们可以看到可选择时间范围内的应用请求数，外网出流量，应用响应时间，前台出错数等等。在概览中我们可以看到 Serverless 应用一些基本信息。在部署日志中我们也可以详细的看到 Serverless 应用的使用情况。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2023.08</span>.<span class="number">08</span> <span class="number">22</span>:<span class="number">33</span></span><br></pre></td></tr></table></figure>
-
-<hr>
+<p>github—settings—Code security and analysis—User—Push protection for yourself将disabled改成enable；</p>
+<p>github—settings—Emails—Block command line pushes that expose my email将这个√去掉；</p>
+<p>重新hexo clean g d；</p>
+<p>再将Push protection for yourself改成disable；</p>
+<h5 id="3、"><a href="#3、" class="headerlink" title="3、"></a>3、</h5><hr>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>        很无语，眼看就要成功，结果，，，，什么免费，早就没有了。。。结束，还是直接从头github吧。。。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2023.09</span>.<span class="number">26</span> <span class="number">22</span>:<span class="number">38</span></span><br></pre></td></tr></table></figure>
 
@@ -539,7 +519,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">Gnn</a>
+                    <a href="/about" rel="external nofollow noreferrer">gnn</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -549,7 +529,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://gnn.github.io/2023/10/20/%E5%88%9D%E8%AF%86%E5%8D%9A%E5%AE%A2/create-blog/">http://gnn.github.io/2023/10/20/%E5%88%9D%E8%AF%86%E5%8D%9A%E5%AE%A2/create-blog/</a>
+                    <a href="https://camellia-gnn.github.io/2023/10/20/%E5%88%9D%E8%AF%86%E5%8D%9A%E5%AE%A2/create-blog/">https://camellia-gnn.github.io/2023/10/20/%E5%88%9D%E8%AF%86%E5%8D%9A%E5%AE%A2/create-blog/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -562,7 +542,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">Gnn</a>
+                    <a href="/about" target="_blank">gnn</a>
                     !
                 </span>
             </div>
@@ -946,9 +926,9 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2019-2024</span>
+                <span id="year">2023-2024</span>
             
-            <a href="/about" target="_blank">Gnn</a>
+            <a href="/about" target="_blank">gnn</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             
