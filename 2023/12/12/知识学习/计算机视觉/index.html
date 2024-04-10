@@ -1,0 +1,1583 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="计算机视觉, Welcome to gnn&#39;s blogs！">
+    <meta name="description" content="计算机视觉（Deep Learning for Computer Vision）, python, pytorch0.任务要求
+
+课程：CS231n: Deep Learning for Computer Vision 2023&amp;#x2F;">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>计算机视觉 | Welcome to gnn&#39;s blogs！</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Welcome to gnn&#39;s blogs！</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Welcome to gnn&#39;s blogs！</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">计算机视觉</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%A4%A7%E5%9B%9B%E4%B8%8A/">
+                                <span class="chip bg-color">大四上</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">
+                                <span class="chip bg-color">计算机视觉</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E9%A2%84%E4%B9%A0/" class="post-category">
+                                预习
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-12-12
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="计算机视觉（Deep-Learning-for-Computer-Vision）-python-pytorch"><a href="#计算机视觉（Deep-Learning-for-Computer-Vision）-python-pytorch" class="headerlink" title="计算机视觉（Deep Learning for Computer Vision）, python, pytorch"></a>计算机视觉（Deep Learning for Computer Vision）, python, pytorch</h2><h3 id="0-任务要求"><a href="#0-任务要求" class="headerlink" title="0.任务要求"></a>0.任务要求</h3><span id="more"></span>
+
+<p><strong>课程</strong>：CS231n: Deep Learning for Computer Vision 2023&#x2F;2022<br><strong>链接</strong> ： <a target="_blank" rel="noopener" href="http://cs231n.stanford.edu/schedule.html%EF%BC%89">http://cs231n.stanford.edu/schedule.html）</a></p>
+<p><a target="_blank" rel="noopener" href="http://cs231n.stanford.edu/2022/">Stanford University CS231n: Deep Learning for Computer Vision</a></p>
+<p><strong>材料</strong>：【D:\study\DL for CV】</p>
+<p><strong>学习内容</strong>： <a target="_blank" rel="noopener" href="http://cs231n.stanford.edu/schedule.html">Stanford University CS231n: Deep Learning for Computer Vision</a></p>
+<ul>
+<li>Lecture 1: Introduction</li>
+</ul>
+<p>Computer vision overview<br>Course overview<br>Course logistics</p>
+<ul>
+<li><strong>Lecture 2: Image Classification with Linear Classifiers</strong></li>
+</ul>
+<p>The data-driven approach<br>K-nearest neighbor<br>Linear Classifiers<br>Algebraic &#x2F; Visual &#x2F; Geometric viewpoints<br>SVM and Softmax loss</p>
+<p><a target="_blank" rel="noopener" href="https://cs231n.github.io/classification/">CS231n Convolutional Neural Networks for Visual Recognition</a></p>
+<p><a target="_blank" rel="noopener" href="https://cs231n.github.io/linear-classify/">CS231n Convolutional Neural Networks for Visual Recognition</a></p>
+<p><code>作业一</code></p>
+<ul>
+<li>Lecture 3: Regularization and Optimization</li>
+</ul>
+<p>Regularization<br>Stochastic Gradient Descent<br>Momentum, AdaGrad, Adam<br>Learning rate schedules  </p>
+<p><a target="_blank" rel="noopener" href="https://cs231n.github.io/optimization-1/">CS231n Convolutional Neural Networks for Visual Recognition</a></p>
+<ul>
+<li>Lecture 4: Neural Networks and Backpropagation</li>
+</ul>
+<p>Multi-layer Perceptron<br>Backpropagation</p>
+<p><a target="_blank" rel="noopener" href="https://cs231n.github.io/optimization-2/">CS231n Convolutional Neural Networks for Visual Recognition</a></p>
+<ul>
+<li><strong>Lecture 5: Image Classification with CNNs</strong></li>
+</ul>
+<p><strong>History<br>Higher-level representations, image features<br>Convolution and pooling</strong></p>
+<p><a target="_blank" rel="noopener" href="https://cs231n.github.io/convolutional-networks/">CS231n Convolutional Neural Networks for Visual Recognition</a></p>
+<ul>
+<li><strong>Lecture 6: CNN Architectures</strong></li>
+</ul>
+<p>Batch Normalization<br>Transfer learning<br>AlexNet, VGG, GoogLeNet, ResNet</p>
+<p><code>作业二</code></p>
+<ul>
+<li>Lecture 7: Training Neural Networks</li>
+</ul>
+<p>Activation functions<br>Data processing<br>Weight initialization<br>Hyperparameter tuning<br>Data augmentation</p>
+<ul>
+<li><strong>Lecture 11: Object Detection and Image Segmentation</strong></li>
+</ul>
+<p>Single-stage detectors<br>Two-stage detectors<br>Semantic&#x2F;Instance&#x2F;Panoptic segmentation</p>
+<ul>
+<li>Lecture 8: Recurrent Neural Networks</li>
+</ul>
+<p>RNN, LSTM, GRU<br>Language modeling<br>Image captioning<br>Sequence-to-sequence</p>
+<ul>
+<li>Lecture 9: Attention and Transformers</li>
+</ul>
+<p>Self-Attention<br>Transformers</p>
+<p><strong>课程视频</strong>： B站很多中文字幕CS231n课程</p>
+<p><strong>笔记</strong>：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/21930884">贺完结！CS231n官方笔记授权翻译总集篇发布 - 知乎 (zhihu.com)</a></p>
+<p><strong>作业</strong>： 独立完成（GPU可以使用google colab或kaggle kernel的免费GPU资源）</p>
+<p>说明：<a target="_blank" rel="noopener" href="http://cs231n.stanford.edu/assignments.html">Stanford University CS231n: Deep Learning for Computer Vision</a></p>
+<p>入口：<a target="_blank" rel="noopener" href="http://cs231n.stanford.edu/schedule.html">Stanford University CS231n: Deep Learning for Computer Vision</a></p>
+<ul>
+<li>Assignment 1</li>
+</ul>
+<p>讲义：<a target="_blank" rel="noopener" href="https://cs231n.github.io/assignments2023/assignment1/">Assignment 1 (cs231n.github.io)</a></p>
+<ul>
+<li>Assignment 2</li>
+</ul>
+<p>讲义：<a target="_blank" rel="noopener" href="https://cs231n.github.io/assignments2023/assignment2/">Assignment 2 (cs231n.github.io)</a></p>
+<p><strong>要求</strong>：每两周，计A326-1，下午4点，汇报进度。</p>
+<h3 id="1-学习路线"><a href="#1-学习路线" class="headerlink" title="1.学习路线"></a>1.学习路线</h3><p>我看了下只要把机器学习那些看完了后面这些看不看没太大影响，基本都是一些重复的概念。只要把两个作业做了，熟悉实操流程和方法。</p>
+<h3 id="2-作业一"><a href="#2-作业一" class="headerlink" title="2.作业一"></a>2.作业一</h3><p>Image Classification, kNN(k近邻分类), SVM, Softmax(激活函数), Fully-Connected Neural Network；</p>
+<p>根据ipynb引导完成四个分类器classifier&#x2F;k:lasifaier&#x2F;，以及最后一项improve的任务，共五项任务。最后根据教程提交。</p>
+<p><a target="_blank" rel="noopener" href="https://cs231n.github.io/assignments2023/assignment1/">Assignment 1 (cs231n.github.io)</a></p>
+<h4 id="2-1准备工作"><a href="#2-1准备工作" class="headerlink" title="2.1准备工作"></a>2.1准备工作</h4><p><strong>打开谷歌硬盘My Drive</strong></p>
+<p><img src="file:///D:/others/useful/Hexo/picture/62354def-d555-4a50-8257-1d2715f6c6a1.png" alt="62354def-d555-4a50-8257-1d2715f6c6a1"></p>
+<p><strong>关联Colab</strong></p>
+<p><img src="file:///D:/others/useful/Hexo/picture/0ecf7b92-4a4d-4b65-a952-626c34ad29e8.png" alt="0ecf7b92-4a4d-4b65-a952-626c34ad29e8"></p>
+<p><strong>新建folder</strong></p>
+<p><img title src="file:///D:/others/useful/Hexo/picture/b6571365-2d42-4d21-8510-123621dc8b59.png" alt="b6571365-2d42-4d21-8510-123621dc8b59" style="zoom:50%;"><img title src="file:///D:/others/useful/Hexo/picture/8b5c53df-525a-402b-a2dd-817e834605d3.png" alt="8b5c53df-525a-402b-a2dd-817e834605d3" style="zoom:50%;"></p>
+<p><strong>上传材料</strong></p>
+<p><img src="file:///D:/others/useful/Hexo/picture/a0259891-9f28-4e20-ba63-23bd67139425.png" alt="a0259891-9f28-4e20-ba63-23bd67139425"></p>
+<h4 id="2-2-k-NN-Classifier"><a href="#2-2-k-NN-Classifier" class="headerlink" title="2.2 k-NN Classifier"></a>2.2 k-NN Classifier</h4><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/45753372">cs231n作业：assignment1 - knn - 知乎 (zhihu.com)</a></p>
+<p>(1)连接云盘和colab</p>
+<p><img src="file:///D:/others/useful/Hexo/picture/c8261066-bd1f-43c2-9a62-cbfb3b6bbbee.png" alt="c8261066-bd1f-43c2-9a62-cbfb3b6bbbee"></p>
+<p>(2)跟着讲义走</p>
+<p>内联而非开辟新窗口设置；</p>
+<p>规范数据：</p>
+<p><img src="file:///D:/others/useful/Hexo/picture/ebec0961-5dad-4756-b13c-2a6f279a885f.png" title alt="ebec0961-5dad-4756-b13c-2a6f279a885f" style="zoom:67%;">；</p>
+<p>每类展示7个实例：</p>
+<p><img src="file:///D:/others/useful/Hexo/picture/e2c45fbc-6533-43c1-96bb-e8939a7ec2b1.png" title alt="e2c45fbc-6533-43c1-96bb-e8939a7ec2b1" style="zoom:50%;">；</p>
+<p>数据预处理：<img title src="file:///D:/others/useful/Hexo/picture/fc9440cc-a687-4b25-bbd8-8a108821c556.png" alt="fc9440cc-a687-4b25-bbd8-8a108821c556" style="zoom:50%;">；</p>
+<p>计算训练点和测试点间距<img title src="file:///D:/others/useful/Hexo/picture/717452da-eb22-47ff-81f8-5984f91a5fa8.png" alt="717452da-eb22-47ff-81f8-5984f91a5fa8" style="zoom:67%;">（noop&#x3D;no operation空操作），结果是一个500*5000的矩阵<img src="file:///D:/others/useful/Hexo/picture/017bee35-fd56-42ab-acb1-06ba406f6926.png" title alt="017bee35-fd56-42ab-acb1-06ba406f6926" style="zoom:67%;">；</p>
+<p>结果可视化：<img title src="file:///D:/others/useful/Hexo/picture/2c1f9798-bed1-4804-aae7-8487e945cb9f.png" alt="2c1f9798-bed1-4804-aae7-8487e945cb9f" style="zoom:50%;">；</p>
+<p>计算预测准确率：</p>
+<img src="file:///D:/others/useful/Hexo/picture/e4e69e38-2020-434c-81f0-c54760c568d8.png" title alt="e4e69e38-2020-434c-81f0-c54760c568d8" style="zoom:67%;">
+
+<img title src="file:///D:/others/useful/Hexo/picture/bc17ecff-643c-4d17-86b7-d2712a8beed1.png" alt="bc17ecff-643c-4d17-86b7-d2712a8beed1" style="zoom:67%;">
+
+<p><img src="file:///D:/others/useful/Hexo/picture/7a489ee0-d9ec-4163-a83f-ae6ed5576d30.png" title alt="7a489ee0-d9ec-4163-a83f-ae6ed5576d30" style="zoom:67%;">；</p>
+<p>尝试k&#x3D;5：</p>
+<img src="file:///D:/others/useful/Hexo/picture/c7bc165b-6956-4aa0-9b76-536d2ae09af6.png" title alt="c7bc165b-6956-4aa0-9b76-536d2ae09af6" style="zoom:67%;">
+
+<img title src="file:///D:/others/useful/Hexo/picture/988a95e8-e377-45f2-8b65-73f3df709068.png" alt="988a95e8-e377-45f2-8b65-73f3df709068" style="zoom:67%;">
+
+<p><img src="file:///D:/others/useful/Hexo/picture/e06cbf83-bf51-4ca4-b9f4-020fcfb1daf6.png" title alt="e06cbf83-bf51-4ca4-b9f4-020fcfb1daf6" style="zoom:67%;">；</p>
+<p>(3)问题</p>
+<p><img src="file:///D:/others/useful/Hexo/picture/ae779795-5ea6-404d-8c75-477813af0f9d.png" alt="ae779795-5ea6-404d-8c75-477813af0f9d"></p>
+<p><img src="file:///D:/others/useful/Hexo/picture/3b5b61e2-aae5-4b04-91d8-ac49dec8c9f7.png" alt="3b5b61e2-aae5-4b04-91d8-ac49dec8c9f7"></p>
+<img title src="file:///D:/others/useful/Hexo/picture/9dca4be8-48e5-48c4-ac38-e80f83b99b41.png" alt="9dca4be8-48e5-48c4-ac38-e80f83b99b41" style="zoom:50%;">
+
+<p>(4)采用不同循环次数对比</p>
+<p>一层：</p>
+<p><img src="file:///D:/others/useful/Hexo/picture/f11d6045-f981-45ac-9278-7f4561ced447.png" alt="f11d6045-f981-45ac-9278-7f4561ced447"></p>
+<p><img src="file:///D:/others/useful/Hexo/picture/e21f2017-21d7-453d-ab0b-df5d0f2831d6.png" alt="e21f2017-21d7-453d-ab0b-df5d0f2831d6"></p>
+<p>零层：</p>
+<img title src="file:///D:/others/useful/Hexo/picture/cfbab145-a196-43b6-a389-28e71188768a.png" alt="cfbab145-a196-43b6-a389-28e71188768a" style="zoom:67%;">
+
+<p><img src="file:///D:/others/useful/Hexo/picture/8857e407-0595-4693-af15-13912032b533.png" alt="8857e407-0595-4693-af15-13912032b533"></p>
+<p>对比速度：</p>
+<p><img src="file:///D:/others/useful/Hexo/picture/24c42743-3f04-442c-b917-fe2f88f0455f.png" alt="24c42743-3f04-442c-b917-fe2f88f0455f"></p>
+<p>(5)交叉验证-选取最优k</p>
+<img src="file:///D:/others/useful/Hexo/picture/20c1d9d5-4bbe-4cfc-8b5c-33495c8dd707.png" title alt="20c1d9d5-4bbe-4cfc-8b5c-33495c8dd707" style="zoom:67%;">
+
+<p>可视化：<img title src="file:///D:/others/useful/Hexo/picture/67d349a1-7ceb-4798-a354-632c6ee0bf5b.png" alt="67d349a1-7ceb-4798-a354-632c6ee0bf5b" style="zoom:33%;"></p>
+<p>最优k&#x3D;10，<img src="file:///D:/others/useful/Hexo/picture/15a23f11-7bb2-4a96-89e2-f4f2aa604713.png" alt="15a23f11-7bb2-4a96-89e2-f4f2aa604713"></p>
+<h4 id="2-3-SVM-Classifier"><a href="#2-3-SVM-Classifier" class="headerlink" title="2.3 SVM Classifier"></a>2.3 SVM Classifier</h4><p>基本流程类似，走一遍即可。</p>
+<p>数据预处理结果：</p>
+<img src="file:///D:/others/useful/Hexo/picture/b1cb1fb9-c3a1-438e-bd7a-55f35534ac44.png" title alt="b1cb1fb9-c3a1-438e-bd7a-55f35534ac44" style="zoom:50%;">
+
+<p>初始损失：<img src="file:///D:/others/useful/Hexo/picture/4a26f72a-ff9b-40d6-8d0a-c8b30e471aa4.png" title alt="4a26f72a-ff9b-40d6-8d0a-c8b30e471aa4" style="zoom:50%;"></p>
+<p>SGD梯度下降：<img src="file:///D:/others/useful/Hexo/picture/bbe28b43-cb53-478d-8d3c-1043301a0bfe.png" title alt="bbe28b43-cb53-478d-8d3c-1043301a0bfe" style="zoom:50%;"></p>
+<p>可视化：<img src="file:///D:/others/useful/Hexo/picture/0940906c-6fd6-4160-b40e-5314f44b02ad.png" title alt="0940906c-6fd6-4160-b40e-5314f44b02ad" style="zoom:33%;"></p>
+<p>预测：</p>
+<img title src="file:///D:/others/useful/Hexo/picture/39aa1e5f-3990-4e40-8caa-24d31aaceeef.png" alt="39aa1e5f-3990-4e40-8caa-24d31aaceeef" style="zoom:67%;">
+
+<p>人为调超参数+交叉验证：<img src="file:///D:/others/useful/Hexo/picture/a87e8cca-4b52-4eb2-abf8-300937f625d6.png" title alt="a87e8cca-4b52-4eb2-abf8-300937f625d6" style="zoom:67%;"></p>
+<p>可视化：<img src="file:///D:/others/useful/Hexo/picture/d5f40162-e765-4885-9f18-138fcd99a06c.png" title alt="d5f40162-e765-4885-9f18-138fcd99a06c" style="zoom:50%;"></p>
+<p>测试：<img src="file:///D:/others/useful/Hexo/picture/59fc1ef1-90a9-43ec-a274-5563a14e7db8.png" title alt="59fc1ef1-90a9-43ec-a274-5563a14e7db8" style="zoom:50%;"></p>
+<p>可视化权重：<img src="file:///D:/others/useful/Hexo/picture/1a689ac5-f20e-436b-86dc-75ab13fe1a26.png" title alt="1a689ac5-f20e-436b-86dc-75ab13fe1a26" style="zoom:50%;"></p>
+<p><code>2023.12.12</code></p>
+<hr>
+<h4 id="2-4-Softmax-Classifier"><a href="#2-4-Softmax-Classifier" class="headerlink" title="2.4 Softmax Classifier"></a>2.4 Softmax Classifier</h4><p>(1)准备工作</p>
+<img title src="file:///D:/others/useful/Hexo/picture/e1aea818-9981-44fb-bdff-63cfa10ce926.png" alt="e1aea818-9981-44fb-bdff-63cfa10ce926" style="zoom:67%;">
+
+<p>(2)Softmax分类器</p>
+<p>完善softmax.py的softmax_loss_naive简易版损失计算函数：<img src="file:///D:/others/useful/Hexo/picture/f00c91c1-9918-4c1f-a874-c52c3462ac7b.png" title alt="f00c91c1-9918-4c1f-a874-c52c3462ac7b" style="zoom:67%;"></p>
+<p>计算loss和grad：<img src="file:///D:/others/useful/Hexo/picture/3ab6f649-ce17-43c6-8ee7-e3662f60413f.png" title alt="3ab6f649-ce17-43c6-8ee7-e3662f60413f" style="zoom:67%;"></p>
+<p>测试梯度：<img src="file:///D:/others/useful/Hexo/picture/ed97acbb-ac1d-4410-96c1-32809beb1730.png" title alt="ed97acbb-ac1d-4410-96c1-32809beb1730" style="zoom:67%;"></p>
+<p>完善softmax.py的softmax_loss_vectorized向量化版损失计算函数：<img title src="file:///D:/others/useful/Hexo/picture/6cfbae48-82f5-4830-b399-714f1d1f21b9.png" alt="6cfbae48-82f5-4830-b399-714f1d1f21b9" style="zoom:67%;"></p>
+<img src="file:///D:/others/useful/Hexo/picture/bc15b2d9-a5be-4448-b8ac-fbc2c7e77eaa.png" title alt="bc15b2d9-a5be-4448-b8ac-fbc2c7e77eaa" style="zoom:67%;">
+
+<p>验证不同超参lr和rs等：<img src="file:///D:/others/useful/Hexo/picture/92e24bcc-a0fb-4730-aef1-a5ec7bf0b7ab.png" title alt="92e24bcc-a0fb-4730-aef1-a5ec7bf0b7ab" style="zoom:80%;"></p>
+<p>直至准确率达到0.35：<img src="file:///D:/others/useful/Hexo/picture/252c633f-5a3b-420f-b653-7ab7c2959b05.png" title alt="252c633f-5a3b-420f-b653-7ab7c2959b05" style="zoom:67%;"></p>
+<p>测试：<img src="file:///D:/others/useful/Hexo/picture/ae57523c-fe13-4167-9029-9bbabcb509f6.png" title alt="ae57523c-fe13-4167-9029-9bbabcb509f6" style="zoom:67%;"></p>
+<p>可视化各类学习权重：<img src="file:///D:/others/useful/Hexo/picture/d242bed5-b5d2-434f-8cab-b6f26b54d606.png" title alt="d242bed5-b5d2-434f-8cab-b6f26b54d606" style="zoom:50%;"><img src="file:///D:/others/useful/Hexo/picture/6f62701a-2701-46b3-bd8b-675b71a20dd5.png" title alt="6f62701a-2701-46b3-bd8b-675b71a20dd5" style="zoom:50%;"></p>
+<h4 id="2-5-Two-Layer-NN-Classifier——"><a href="#2-5-Two-Layer-NN-Classifier——" class="headerlink" title="2.5 Two-Layer NN Classifier——"></a>2.5 Two-Layer NN Classifier——</h4><p>(1)准备工作</p>
+<p><img src="file:///D:/others/useful/Hexo/picture/732c0aca-f3c4-4d80-aa85-303a715774ec.png" alt="732c0aca-f3c4-4d80-aa85-303a715774ec"></p>
+<img src="file:///D:/others/useful/Hexo/picture/1abc1c1b-b4da-47a3-9674-78357ab2cc37.png" title alt="1abc1c1b-b4da-47a3-9674-78357ab2cc37" style="zoom:67%;">
+
+<p>(2)affine仿射层&#x3D;wx+b&#x3D;线性变换+平移变换</p>
+<p>也就是全连接</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">## forward：接收输入，返回输出、权重和其它参数以及一个cache对象存储backward需要的数据</span>
+out <span class="token operator">=</span> np<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token punctuation">(</span>x<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> @ w <span class="token operator">+</span> b  <span class="token comment"># @是np乘法</span>
+<span class="token comment"># 结果：</span>
+Testing affine_forward function<span class="token punctuation">:</span>difference<span class="token punctuation">:</span> <span class="token number">9.769849468192957e-10</span>
+<span class="token comment">## backward：接收cache对象和衍生</span>
+dx <span class="token operator">=</span> np<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span>dout @ w<span class="token punctuation">.</span>T<span class="token punctuation">,</span> x<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+dw <span class="token operator">=</span> np<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token punctuation">(</span>x<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>T @ dout
+db <span class="token operator">=</span> np<span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">(</span>dout<span class="token punctuation">,</span>axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token comment"># 结果：</span>
+Testing affine_backward function<span class="token punctuation">:</span>
+dx error<span class="token punctuation">:</span>  <span class="token number">5.399100368651805e-11</span>
+dw error<span class="token punctuation">:</span>  <span class="token number">9.904211865398145e-11</span>
+db error<span class="token punctuation">:</span>  <span class="token number">2.4122867568119087e-11</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(3)ReLU层：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">## forward</span>
+out <span class="token operator">=</span> x<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># Note: "out = x" is NG!</span>
+out<span class="token punctuation">[</span>x<span class="token operator">&lt;</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token comment"># 结果：</span>
+Testing relu_forward function<span class="token punctuation">:</span>
+difference<span class="token punctuation">:</span>  <span class="token number">4.999999798022158e-08</span>
+<span class="token comment">## backward</span>
+dx <span class="token operator">=</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span>x<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+dx<span class="token punctuation">[</span>x<span class="token operator">></span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
+dx <span class="token operator">=</span> np<span class="token punctuation">.</span>multiply<span class="token punctuation">(</span>dx<span class="token punctuation">,</span> dout<span class="token punctuation">)</span>
+<span class="token comment"># 结果：</span>
+Testing relu_backward function<span class="token punctuation">:</span>
+dx error<span class="token punctuation">:</span>  <span class="token number">3.2756349136310288e-12</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(4)sandwich layer&#x3D;several 前面定义过的 layers</p>
+<p>结果：</p>
+<p>Testing affine_relu_forward and affine_relu_backward:dx error: 2.299579177309368e-11dw error: 8.162011105764925e-11db error: 7.826724021458994e-12</p>
+<p>(5)损失层：svm和softmax</p>
+<p>Testing svm_loss:loss: 8.999602749096233dx error: 1.4021566006651672e-09Testing softmax_loss:loss: 2.3025458445007376dx error: 8.234144091578429e-09</p>
+<p>(6)二层NN</p>
+<p>Testing initialization … Testing test-time forward pass … Testing training loss (no regularization)Running numeric gradient check with reg &#x3D; 0.0W1 relative error: 1.83e-08W2 relative error: 3.20e-10b1 relative error: 9.83e-09b2 relative error: 4.33e-10Running numeric gradient check with reg &#x3D; 0.7W1 relative error: 2.53e-07W2 relative error: 2.85e-08b1 relative error: 1.56e-08b2 relative error: 9.09e-10</p>
+<p>(7)solver</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">data_mini <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+<span class="token keyword">for</span> k<span class="token punctuation">,</span> v <span class="token keyword">in</span> data<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    N <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>v<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">/</span> <span class="token number">5</span><span class="token punctuation">)</span>
+    data_mini<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">=</span> data<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">:</span>N<span class="token punctuation">]</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>k<span class="token punctuation">,</span> N<span class="token punctuation">)</span>
+solver <span class="token operator">=</span> Solver<span class="token punctuation">(</span>model<span class="token punctuation">,</span> data_mini<span class="token punctuation">,</span>
+                num_train_samples<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">,</span>
+                lr_decay<span class="token operator">=</span><span class="token number">0.9</span><span class="token punctuation">,</span>
+                num_epochs<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span>
+                optim_config<span class="token operator">=</span><span class="token punctuation">&#123;</span>
+                    <span class="token string">'learning_rate'</span><span class="token punctuation">:</span> <span class="token number">1e-3</span><span class="token punctuation">,</span>
+
+                <span class="token punctuation">&#125;</span>
+               <span class="token punctuation">)</span>
+solver<span class="token punctuation">.</span>train<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<img src="file:///D:/others/useful/Hexo/picture/5b853115-f41b-4e20-85fa-c47c41e204b6.png" title alt="5b853115-f41b-4e20-85fa-c47c41e204b6" style="zoom:67%;">
+
+<p>可视化：</p>
+<p><img title src="file:///D:/others/useful/Hexo/picture/67a05c59-bde0-4cbc-8198-76e00a1b93c7.png" alt="67a05c59-bde0-4cbc-8198-76e00a1b93c7" style="zoom:50%;"><img src="file:///D:/others/useful/Hexo/picture/dfc495c6-f815-4d88-a5d1-16580011973e.png" title alt="dfc495c6-f815-4d88-a5d1-16580011973e" style="zoom:50%;"></p>
+<p>调整超参：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">input_size   <span class="token operator">=</span> <span class="token number">32</span> <span class="token operator">*</span> <span class="token number">32</span> <span class="token operator">*</span> <span class="token number">3</span>
+num_classes  <span class="token operator">=</span> <span class="token number">10</span>
+best_val_acc <span class="token operator">=</span> <span class="token number">0</span>
+best_config  <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> hidden_size <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token number">64</span><span class="token punctuation">,</span><span class="token number">128</span><span class="token punctuation">,</span><span class="token number">300</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>hidden_size<span class="token punctuation">)</span>
+    model <span class="token operator">=</span> TwoLayerNet<span class="token punctuation">(</span>input_size<span class="token punctuation">,</span> hidden_size<span class="token punctuation">,</span> num_classes<span class="token punctuation">)</span>
+    solver <span class="token operator">=</span> Solver<span class="token punctuation">(</span>model<span class="token punctuation">,</span> data_mini<span class="token punctuation">,</span>
+                num_train_samples<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">,</span>
+                optim_config<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token string">'learning_rate'</span><span class="token punctuation">:</span> <span class="token number">1e-3</span><span class="token punctuation">,</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+                lr_decay<span class="token operator">=</span><span class="token number">0.9</span><span class="token punctuation">,</span>
+                num_epochs<span class="token operator">=</span><span class="token number">50</span><span class="token punctuation">)</span>
+    solver<span class="token punctuation">.</span>train<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> best_val_acc <span class="token operator">&lt;</span> solver<span class="token punctuation">.</span>best_val_acc<span class="token punctuation">:</span>
+        best_val_acc <span class="token operator">=</span> best_val_acc
+        best_model   <span class="token operator">=</span> model
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'best_val_acc'</span><span class="token punctuation">)</span>
+y_val_pred <span class="token operator">=</span> np<span class="token punctuation">.</span>argmax<span class="token punctuation">(</span>best_model<span class="token punctuation">.</span>loss<span class="token punctuation">(</span>data<span class="token punctuation">[</span><span class="token string">'X_val'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Validation set accuracy: '</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>y_val_pred <span class="token operator">==</span> data<span class="token punctuation">[</span><span class="token string">'y_val'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+y_test_pred <span class="token operator">=</span> np<span class="token punctuation">.</span>argmax<span class="token punctuation">(</span>best_model<span class="token punctuation">.</span>loss<span class="token punctuation">(</span>data<span class="token punctuation">[</span><span class="token string">'X_test'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Test set accuracy: '</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>y_test_pred <span class="token operator">==</span> data<span class="token punctuation">[</span><span class="token string">'y_test'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="file:///D:/others/useful/Hexo/picture/7ad2943f-c3aa-452b-a95a-cfc1cb8184c1.png" alt="7ad2943f-c3aa-452b-a95a-cfc1cb8184c1"></p>
+<h4 id="2-6-更高级别：Features提取训练"><a href="#2-6-更高级别：Features提取训练" class="headerlink" title="2.6 更高级别：Features提取训练"></a>2.6 更高级别：Features提取训练</h4><p>不同于之前通过原始像素训练出来的分类器，这里通过原始像素提取出来的特征进行训练分类器。</p>
+<p>特征向量由面向梯度的直方图和颜色直方图拼接而成。梯度直方图展示图像纹理忽略颜色，颜色直方图展示颜色忽视纹理。</p>
+<p>(1)准备工作</p>
+<p><img src="file:///D:/others/useful/Hexo/picture/0811ed40-236f-4e52-b5a1-6faee08554a6.png" alt="0811ed40-236f-4e52-b5a1-6faee08554a6"></p>
+<p>(2)特征提取</p>
+<p>三个函数：分别负责提取梯度、颜色特征，以及形成多幅图像的多个特征的向量。</p>
+<p>(3)训练基于特征的SVM分类器</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">for</span> lr <span class="token keyword">in</span> learning_rates<span class="token punctuation">:</span>
+    <span class="token keyword">for</span> reg_str <span class="token keyword">in</span> regularization_strengths<span class="token punctuation">:</span>
+        svm <span class="token operator">=</span> LinearSVM<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 模型定义：SVM实例</span>
+        loss_hist <span class="token operator">=</span> svm<span class="token punctuation">.</span>train<span class="token punctuation">(</span>X_train_feats<span class="token punctuation">,</span> y_train<span class="token punctuation">,</span> learning_rate<span class="token operator">=</span>lr<span class="token punctuation">,</span> reg<span class="token operator">=</span>reg_str<span class="token punctuation">,</span>
+                              num_iters<span class="token operator">=</span><span class="token number">1500</span><span class="token punctuation">,</span> verbose<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+        y_train_pred <span class="token operator">=</span> svm<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>X_train_feats<span class="token punctuation">)</span>
+        accuracy_train <span class="token operator">=</span> np<span class="token punctuation">.</span>mean<span class="token punctuation">(</span>y_train <span class="token operator">==</span> y_train_pred<span class="token punctuation">)</span>
+        y_val_pred <span class="token operator">=</span> svm<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>X_val_feats<span class="token punctuation">)</span>
+        accuracy_val <span class="token operator">=</span> np<span class="token punctuation">.</span>mean<span class="token punctuation">(</span>y_val <span class="token operator">==</span> y_val_pred<span class="token punctuation">)</span>
+
+        results<span class="token punctuation">[</span><span class="token punctuation">(</span>lr<span class="token punctuation">,</span> reg_str<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>accuracy_train<span class="token punctuation">,</span> accuracy_val<span class="token punctuation">)</span> 
+
+        <span class="token keyword">if</span> accuracy_val <span class="token operator">></span> best_val<span class="token punctuation">:</span>
+          <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'lr: %f'</span> <span class="token operator">%</span> lr<span class="token punctuation">)</span>
+          <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'reg: %f'</span> <span class="token operator">%</span> reg_str<span class="token punctuation">)</span>
+          best_val <span class="token operator">=</span> accuracy_val
+          best_svm <span class="token operator">=</span> svm
+<span class="token comment">## 结果</span>
+lr<span class="token punctuation">:</span> <span class="token number">0.000000</span>
+reg<span class="token punctuation">:</span> <span class="token number">50000.000000</span>
+lr<span class="token punctuation">:</span> <span class="token number">0.000000</span>
+reg<span class="token punctuation">:</span> <span class="token number">5000000.000000</span>
+lr <span class="token number">1.000000e-09</span> reg <span class="token number">5.000000e+04</span> train accuracy<span class="token punctuation">:</span> <span class="token number">0.098245</span> val accuracy<span class="token punctuation">:</span> <span class="token number">0.104000</span>
+lr <span class="token number">1.000000e-09</span> reg <span class="token number">5.000000e+05</span> train accuracy<span class="token punctuation">:</span> <span class="token number">0.087551</span> val accuracy<span class="token punctuation">:</span> <span class="token number">0.079000</span>
+lr <span class="token number">1.000000e-09</span> reg <span class="token number">5.000000e+06</span> train accuracy<span class="token punctuation">:</span> <span class="token number">0.413837</span> val accuracy<span class="token punctuation">:</span> <span class="token number">0.421000</span>
+lr <span class="token number">1.000000e-08</span> reg <span class="token number">5.000000e+04</span> train accuracy<span class="token punctuation">:</span> <span class="token number">0.124735</span> val accuracy<span class="token punctuation">:</span> <span class="token number">0.113000</span>
+lr <span class="token number">1.000000e-08</span> reg <span class="token number">5.000000e+05</span> train accuracy<span class="token punctuation">:</span> <span class="token number">0.416776</span> val accuracy<span class="token punctuation">:</span> <span class="token number">0.412000</span>
+lr <span class="token number">1.000000e-08</span> reg <span class="token number">5.000000e+06</span> train accuracy<span class="token punctuation">:</span> <span class="token number">0.387265</span> val accuracy<span class="token punctuation">:</span> <span class="token number">0.370000</span>
+lr <span class="token number">1.000000e-07</span> reg <span class="token number">5.000000e+04</span> train accuracy<span class="token punctuation">:</span> <span class="token number">0.414388</span> val accuracy<span class="token punctuation">:</span> <span class="token number">0.417000</span>
+lr <span class="token number">1.000000e-07</span> reg <span class="token number">5.000000e+05</span> train accuracy<span class="token punctuation">:</span> <span class="token number">0.406980</span> val accuracy<span class="token punctuation">:</span> <span class="token number">0.398000</span>
+lr <span class="token number">1.000000e-07</span> reg <span class="token number">5.000000e+06</span> train accuracy<span class="token punctuation">:</span> <span class="token number">0.318204</span> val accuracy<span class="token punctuation">:</span> <span class="token number">0.326000</span>
+best validation accuracy achieved<span class="token punctuation">:</span> <span class="token number">0.421000</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(4)测试：要求准确度至少0.40</p>
+<p>结果：0.411</p>
+<p>(5)可视化：将误分类的图像可视化</p>
+<img src="file:///D:/others/useful/Hexo/picture/61fffda3-669b-4962-88d4-b17d32d968c2.png" title alt="61fffda3-669b-4962-88d4-b17d32d968c2" style="zoom:67%;">
+
+<p>(6)基于features的多层NN</p>
+<p>我们前面训练过基于原始像素的单层分类器，但是效果不如刚刚的基于特征的分类器。也训练过基于原始像素的多层分类器，效果要好于单层的。因此下面要尝试训练一个基于图像特征的多层的神经网络。</p>
+<ul>
+<li>预处理：移除偏置一维</li>
+</ul>
+<p>只执行一次！</p>
+<p>结果：(49000, 155) ——&gt; (49000, 154)</p>
+<ul>
+<li>基于特征训练多层NN</li>
+</ul>
+<p>关键是要熟悉Solver和TwoLayerNet的各个接口</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> cs231n<span class="token punctuation">.</span>classifiers<span class="token punctuation">.</span>fc_net <span class="token keyword">import</span> TwoLayerNet
+<span class="token keyword">from</span> cs231n<span class="token punctuation">.</span>solver <span class="token keyword">import</span> Solver
+
+input_dim <span class="token operator">=</span> X_train_feats<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+hidden_dim <span class="token operator">=</span> <span class="token number">500</span>
+num_classes <span class="token operator">=</span> <span class="token number">10</span>
+
+data <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token string">'X_train'</span><span class="token punctuation">:</span> X_train_feats<span class="token punctuation">,</span>
+    <span class="token string">'y_train'</span><span class="token punctuation">:</span> y_train<span class="token punctuation">,</span>
+    <span class="token string">'X_val'</span><span class="token punctuation">:</span> X_val_feats<span class="token punctuation">,</span>
+    <span class="token string">'y_val'</span><span class="token punctuation">:</span> y_val<span class="token punctuation">,</span>
+    <span class="token string">'X_test'</span><span class="token punctuation">:</span> X_test_feats<span class="token punctuation">,</span>
+    <span class="token string">'y_test'</span><span class="token punctuation">:</span> y_test<span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span>
+
+solver <span class="token operator">=</span> <span class="token boolean">None</span>
+best_net <span class="token operator">=</span> <span class="token boolean">None</span>
+
+<span class="token comment">################################################################################</span>
+<span class="token comment"># TODO: Train a two-layer neural network on image features. You may want to    #</span>
+<span class="token comment"># cross-validate various parameters as in previous sections. Store your best   #</span>
+<span class="token comment"># model in the best_net variable.                                              #</span>
+<span class="token comment">################################################################################</span>
+<span class="token comment"># *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****</span>
+
+best_acc <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+input_size <span class="token operator">=</span> <span class="token number">32</span> <span class="token operator">*</span> <span class="token number">32</span> <span class="token operator">*</span> <span class="token number">3</span>
+
+learning_rate_choice <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1.8</span><span class="token punctuation">,</span><span class="token number">1.7</span><span class="token punctuation">,</span> <span class="token number">1.6</span><span class="token punctuation">,</span> <span class="token number">1.5</span><span class="token punctuation">]</span>
+reg_choice <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.011</span><span class="token punctuation">]</span>
+
+<span class="token keyword">for</span> learning_rate_curr <span class="token keyword">in</span> learning_rate_choice<span class="token punctuation">:</span>
+    <span class="token keyword">for</span> reg_cur <span class="token keyword">in</span> reg_choice<span class="token punctuation">:</span>
+        <span class="token keyword">for</span> num_iters_curr <span class="token keyword">in</span> num_iters_choice<span class="token punctuation">:</span>
+          <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'current training learning_rate %f'</span> <span class="token operator">%</span> learning_rate_curr<span class="token punctuation">)</span>
+          <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'current training reg: %f'</span> <span class="token operator">%</span> reg_cur<span class="token punctuation">)</span>
+          net <span class="token operator">=</span> TwoLayerNet<span class="token punctuation">(</span>input_dim<span class="token punctuation">,</span> hidden_dim<span class="token punctuation">,</span> num_classes<span class="token punctuation">,</span> reg<span class="token operator">=</span>reg_cur<span class="token punctuation">)</span>
+          solver <span class="token operator">=</span> Solver<span class="token punctuation">(</span>net<span class="token punctuation">,</span> data<span class="token punctuation">,</span> update_rule<span class="token operator">=</span><span class="token string">'sgd'</span><span class="token punctuation">,</span> optim_config<span class="token operator">=</span><span class="token punctuation">&#123;</span>
+              <span class="token string">'learning_rate'</span><span class="token punctuation">:</span> learning_rate_curr<span class="token punctuation">,</span>
+          <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> lr_decay<span class="token operator">=</span><span class="token number">0.95</span><span class="token punctuation">,</span> num_epochs<span class="token operator">=</span><span class="token number">800</span><span class="token punctuation">,</span> batch_size<span class="token operator">=</span><span class="token number">1500</span><span class="token punctuation">,</span> verbose<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+          solver<span class="token punctuation">.</span>train<span class="token punctuation">(</span><span class="token punctuation">)</span>
+          val_acc <span class="token operator">=</span> solver<span class="token punctuation">.</span>check_accuracy<span class="token punctuation">(</span>X_val_feats<span class="token punctuation">,</span> y_val<span class="token punctuation">)</span>
+          <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'current val_acc: %f'</span> <span class="token operator">%</span> val_acc<span class="token punctuation">)</span>
+          <span class="token keyword">if</span> val_acc<span class="token operator">></span>best_acc<span class="token punctuation">:</span>
+            best_acc <span class="token operator">=</span> val_acc
+            best_net <span class="token operator">=</span> net
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'best_acc: %f'</span> <span class="token operator">%</span> best_acc<span class="token punctuation">)</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'best learning_rate: %f'</span> <span class="token operator">%</span> learning_rate_curr<span class="token punctuation">)</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'best reg: %f'</span> <span class="token operator">%</span> reg_cur<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'best_val_acc: %f'</span> <span class="token operator">%</span> best_acc<span class="token punctuation">)</span>
+
+<span class="token comment"># *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****</span>
+
+<span class="token comment">#最后缩减范围lr=1.6，reg=0.01，epochs=800，重新训练20min即可。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>结果</li>
+</ul>
+<p>beat_val_acc&#x3D;0.557000</p>
+<p>test_acc&#x3D;0.542</p>
+<p>显而易见不满足“测试集上超过55%”的要求。</p>
+<ul>
+<li>调整超参</li>
+</ul>
+<p>增加迭代次数num_epochs&#x3D;800</p>
+<p>结果：</p>
+<p>beat_val_acc&#x3D;0.586000</p>
+<p><img src="file:///D:/others/useful/Hexo/picture/2272fefd-d2dc-45c0-94cf-aa9d12408c7c.png" alt="2272fefd-d2dc-45c0-94cf-aa9d12408c7c"></p>
+<p>test_acc&#x3D;0.556</p>
+<p><img src="file:///D:/others/useful/Hexo/picture/7c8750db-ad6f-4e2c-a529-e6f53d46df95.png" alt="7c8750db-ad6f-4e2c-a529-e6f53d46df95"></p>
+<h4 id="2-7-Submit"><a href="#2-7-Submit" class="headerlink" title="2.7 Submit"></a>2.7 Submit</h4><p><img src="file:///D:/others/useful/Hexo/picture/f666ff3a-4748-4464-867d-4c3eda2dc277.png" alt="f666ff3a-4748-4464-867d-4c3eda2dc277"></p>
+<p><code>2023.12.14</code></p>
+<hr>
+<h3 id="3-作业二"><a href="#3-作业二" class="headerlink" title="3.作业二"></a>3.作业二</h3><ul>
+<li>主要内容：</li>
+</ul>
+<p>进一步理解NN的概念和多层架构是怎么构造的；</p>
+<p>理解反向回归，主要是用于全连接网络的优化和加速梯度计算的；</p>
+<p>了解除了SGD以外的其他的优化算法；</p>
+<p>完成批量归一化和分层归一化；</p>
+<p>学会dropout正则化方法；</p>
+<p>理解CNN并学会怎么训练CNN；</p>
+<p>学会应用pytorch解决DL问题；</p>
+<ul>
+<li>Fully-Connected Nets, Batch Normalization, Dropout, Convolutional Nets, Network Visualization</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://cs231n.github.io/assignments2023/assignment2/">Assignment 2 (cs231n.github.io)</a></p>
+<h4 id="3-1多层全连接神经网络"><a href="#3-1多层全连接神经网络" class="headerlink" title="3.1多层全连接神经网络"></a>3.1多层全连接神经网络</h4><p>(1)铺垫知识</p>
+<p>Multi-Layer Fully Connected Neural Networks（FullyConnectedNets.ipynb）</p>
+<p>(2)准备工作</p>
+<p>新建谷歌云端文件夹，上传作业二所需材料；</p>
+<p>进入相应作业材料云端目录，关联colab和google drive；</p>
+<p>加载数据、处理数据；</p>
+<p>对格式进行约束等；</p>
+<p>(3)整体</p>
+<p>就是亲手搭建一个神经网络，包括全连接层affine、relu层的前后向传播，以及组合层。好像还有实现任意层的神经网络。</p>
+<p>(4)参考</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/166133106">CS231n Assignment 2 Q1-FullyConnectedNet - 知乎 (zhihu.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/xieyi4650/article/details/53839308">cs231n：assignment2——Q1: Fully-connected Neural Network-CSDN博客</a></p>
+<p>(5)</p>
+<h4 id="3-2批量归一化"><a href="#3-2批量归一化" class="headerlink" title="3.2批量归一化"></a>3.2批量归一化</h4><p>(1)铺垫知识</p>
+<ul>
+<li>Batch Normalization（BatchNormalization.ipynb）：</li>
+</ul>
+<p>ML的DL里面的NN的一种技术，用于加速NN的训练以及改善NN的性能，之前在DL课程里面实验写过。常用于CNN和FCN里。</p>
+<ul>
+<li>具体包括4步：</li>
+</ul>
+<p>对于每一小批量的输入，计算均值mean和方差；</p>
+<p>用得到的均值和方差对输入进行归一化，使其具有零均值和单位方差；</p>
+<p>对归一化后的数据进行线性变换和缩放，恢复数据的表示能力；</p>
+<p>引入可学习的参数，用于调整归一化和缩放的结果；</p>
+<p>(2)准备工作：略</p>
+<p>(3)</p>
+<h4 id="3-3丢弃正则化"><a href="#3-3丢弃正则化" class="headerlink" title="3.3丢弃正则化"></a>3.3丢弃正则化</h4><p>(1)铺垫知识</p>
+<ul>
+<li>Dropout：</li>
+</ul>
+<p>是一种正则化技术，用于减少NN过拟合、提高泛化性能、更加鲁棒(更能处理坏情况)。具体来说原理是防止NN过度依赖某些神经元。常用于CNN和FCN。</p>
+<ul>
+<li>具体包括：</li>
+</ul>
+<p>每次训练迭代，对于某些神经元，以一定的概率（通常为0.5）将其输出置为零，即丢弃；</p>
+<p>对于被保留的神经元，将其输出值乘以一个保留概率的倒数(&gt;1)，以使神经元的总输出期望保持不变；</p>
+<p>测试阶段，为了保持期望输出值不变，通常将每个神经元的权重乘以训练时的保留概率；</p>
+<p>(2)准备工作：略</p>
+<p>(3)</p>
+<h4 id="3-4卷积神经网络"><a href="#3-4卷积神经网络" class="headerlink" title="3.4卷积神经网络"></a>3.4卷积神经网络</h4><p>(1)铺垫知识</p>
+<ul>
+<li>Convolutional Neural Networks（ConvolutionalNetworks.ipynb）：</li>
+</ul>
+<p>CNN由卷积层、池化层、全连接层这三部分组成，旨在模拟视觉皮层；</p>
+<p>卷积层：是CNN核心，用一组可学习的滤波器、滑动窗口对输入进行遍历和卷积，输出特征图；</p>
+<p>池化层：减少特征图的空间尺寸和参数量，并保持输入的(特征图)空间不变性(平移、旋转、缩放)；</p>
+<p>全连接层提取特征，经过(非)线性(Linear、ReLU和Sigmoid)变换和训练，输出结果。</p>
+<p>(2)准备工作：略</p>
+<p>(3)</p>
+<h4 id="3-5深度学习框架PyTorch"><a href="#3-5深度学习框架PyTorch" class="headerlink" title="3.5深度学习框架PyTorch"></a>3.5深度学习框架PyTorch</h4><p>(1)铺垫知识</p>
+<ul>
+<li>PyTorch（PyTorch.ipynb）</li>
+</ul>
+<p>前面已经学习过了，跳。</p>
+<p>(2)准备工作：略</p>
+<p>(3)</p>
+<h4 id="3-6提交submission"><a href="#3-6提交submission" class="headerlink" title="3.6提交submission"></a>3.6提交submission</h4><p>完成除了collect_submission.ipynb所有的笔记本教程；</p>
+<p>打开collect_submission.ipynb笔记本，逐步执行；</p>
+<p>打包和生成pdf；</p>
+<p>下载到本地；</p>
+<p><code>2023.12.15</code></p>
+<hr>
+<h3 id="4-补充"><a href="#4-补充" class="headerlink" title="4.补充"></a>4.补充</h3><h4 id="4-1"><a href="#4-1" class="headerlink" title="4.1"></a>4.1</h4><h4 id="4-2"><a href="#4-2" class="headerlink" title="4.2"></a>4.2</h4><p><code>2023.12.14</code></p>
+<hr>
+<h3 id="5-总结"><a href="#5-总结" class="headerlink" title="5.总结"></a>5.总结</h3><p>(1)使用谷歌硬盘是为了防止你如果只直接上传在colab进行作业，万一中断或者网络波动，你之前的运行时和变量、文件全都没了。将colab和google drive关联在一起，是为了保证随时作业且不丢失任何东西，随用随拿，然后想结束就结束。</p>
+<p>(2)</p>
+<p>(3)</p>
+<p>(4)</p>
+<p><code>2023.12.14</code></p>
+<hr>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">gnn</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://camellia-gnn.github.io/2023/12/12/%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">https://camellia-gnn.github.io/2023/12/12/%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">gnn</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%A4%A7%E5%9B%9B%E4%B8%8A/">
+                                    <span class="chip bg-color">大四上</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">
+                                    <span class="chip bg-color">计算机视觉</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2023/12/17/%E5%B7%A5%E4%BD%9C/%E5%AE%9E%E4%B9%A0%E6%80%BB%E6%88%98%E7%BA%BF/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="找实习...找实习...">
+                        
+                        <span class="card-title">找实习...找实习...</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            1.一些碎碎念
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-12-17
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AE%9E%E4%B9%A0/" class="post-category">
+                                    实习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%A4%A7%E5%9B%9B%E4%B8%8A%E3%80%81%E4%B8%8B/">
+                        <span class="chip bg-color">大四上、下</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%AE%9E%E4%B9%A0/">
+                        <span class="chip bg-color">实习</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/11/02/%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="机器学习">
+                        
+                        <span class="card-title">机器学习</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            机器学习（Machine Learning）, python, pytorch0.任务要求
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-02
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E9%A2%84%E4%B9%A0/" class="post-category">
+                                    预习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%A4%A7%E5%9B%9B%E4%B8%8A/">
+                        <span class="chip bg-color">大四上</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">机器学习</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2024</span>
+            
+            <a href="/about" target="_blank">gnn</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
