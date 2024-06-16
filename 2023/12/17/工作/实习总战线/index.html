@@ -447,7 +447,359 @@
 <p><code>2024.04.09</code></p>
 <hr>
 <h3 id="3-1剑指offer"><a href="#3-1剑指offer" class="headerlink" title="3.1剑指offer"></a>3.1剑指offer</h3><h4 id="3-1-1一刷23-9-24-3"><a href="#3-1-1一刷23-9-24-3" class="headerlink" title="3.1.1一刷23.9~24.3"></a>3.1.1一刷23.9~24.3</h4><p>也是够拖延的。是完整的过了一遍了，但是有多大氵分我心里最清楚，好多都是看答案AC的。</p>
-<h4 id="3-1-2二刷24-6-11-24-6-30"><a href="#3-1-2二刷24-6-11-24-6-30" class="headerlink" title="3.1.2二刷24.6.11~24.6.30"></a>3.1.2二刷24.6.11~24.6.30</h4><hr>
+<hr>
+<h4 id="3-1-2二刷24-6-11-24-6-30"><a href="#3-1-2二刷24-6-11-24-6-30" class="headerlink" title="3.1.2二刷24.6.11~24.6.30"></a>3.1.2二刷24.6.11~24.6.30</h4><h5 id="一、字符串"><a href="#一、字符串" class="headerlink" title="一、字符串"></a>一、字符串</h5><h6 id="1、路径加密【简单】"><a href="#1、路径加密【简单】" class="headerlink" title="1、路径加密【简单】"></a>1、路径加密【简单】</h6><p>字符替换</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
+public:
+    string pathEncryption(string path) &#123;
+        for (int i&#x3D;0; i&lt;path.size(); i++) &#123;
+            if(path[i]&#x3D;&#x3D;&#39;.&#39;) &#123;
+                path[i]&#x3D;&#39; &#39;;
+            &#125;
+        &#125;
+        return path;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h6 id="2、动态口令【简单】"><a href="#2、动态口令【简单】" class="headerlink" title="2、动态口令【简单】"></a>2、动态口令【简单】</h6><p>字符串截取拼接，substr()函数</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
+public:
+    string dynamicPassword(string password, int target) &#123;
+        string p1, p2;
+        p1&#x3D;password.substr(0,target);
+        p2&#x3D;password.substr(target);
+        return p2+p1;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h6 id="3、有效数字【中等】"><a href="#3、有效数字【中等】" class="headerlink" title="3、有效数字【中等】"></a>3、有效数字【中等】</h6><p>判断一串字符串是否为有效数字，enum枚举自定义数据类型，unordered_map实现状态转换机，字符只能算函数实现分类问题</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
+public:
+    enum CharType &#123;
+        CT_SPACE,
+        CT_OP,
+        CT_INT,
+        CT_POINT,
+        CT_EXP,
+        CT_ILLEGAL
+    &#125;;
+    CharType toCharType(char c) &#123;
+        if(c&#x3D;&#x3D;&#39; &#39;)  return CT_SPACE;
+        else if(c&#x3D;&#x3D;&#39;+&#39;||c&#x3D;&#x3D;&#39;-&#39;) return CT_OP;
+        else if(c&gt;&#x3D;&#39;0&#39;&amp;&amp;c&lt;&#x3D;&#39;9&#39;) return CT_INT;
+        else if(c&#x3D;&#x3D;&#39;.&#39;) return CT_POINT;
+        else if(c&#x3D;&#x3D;&#39;e&#39;||c&#x3D;&#x3D;&#39;E&#39;) return CT_EXP;
+        else return CT_ILLEGAL;
+    &#125;
+    enum State &#123;
+        S_INIT,
+        S_OP,
+        S_INT,
+        S_INT_POINT,&#x2F;&#x2F;点前是整数
+        S_WITHOUT_INT_POINT,&#x2F;&#x2F;点前无整数
+        S_FRACTION,&#x2F;&#x2F;小数
+        S_EXP,
+        S_EXP_OP,&#x2F;&#x2F;其实不细分exp的操作符和后面整数应该也是没问题的，就是最终状态判断的时候有区别，细分更踏实点
+        S_EXP_INT,
+        S_END
+    &#125;;
+    bool validNumber(string s) &#123;
+        unordered_map&lt;State, unordered_map&lt;CharType, State&gt;&gt; StateList &#123;
+            &#123;
+                S_INIT, &#123;
+                    &#123;CT_SPACE, S_INIT&#125;,
+                    &#123;CT_OP, S_OP&#125;,
+                    &#123;CT_INT, S_INT&#125;,
+                    &#123;CT_POINT, S_WITHOUT_INT_POINT&#125;
+                &#125;
+            &#125;,
+            &#123;
+                S_OP, &#123;
+                    &#123;CT_INT, S_INT&#125;,
+                    &#123;CT_POINT, S_WITHOUT_INT_POINT&#125;
+                &#125;
+            &#125;,
+            &#123;
+                S_INT, &#123;
+                    &#123;CT_INT, S_INT&#125;,
+                    &#123;CT_POINT, S_INT_POINT&#125;,
+                    &#123;CT_EXP, S_EXP&#125;,
+                    &#123;CT_SPACE, S_END&#125;
+                &#125;
+            &#125;,
+            &#123;
+                S_INT_POINT, &#123;
+                    &#123;CT_INT, S_FRACTION&#125;,
+                    &#123;CT_EXP, S_EXP&#125;,
+                    &#123;CT_SPACE, S_END&#125;
+                &#125;
+            &#125;,
+            &#123;
+                S_WITHOUT_INT_POINT, &#123;
+                    &#123;CT_INT, S_FRACTION&#125;
+                &#125;
+            &#125;,
+            &#123;
+                S_FRACTION, &#123;
+                    &#123;CT_INT, S_FRACTION&#125;,
+                    &#123;CT_EXP, S_EXP&#125;,
+                    &#123;CT_SPACE, S_END&#125;
+                &#125;
+            &#125;,
+            &#123;
+                S_EXP, &#123;
+                    &#123;CT_OP, S_EXP_OP&#125;,
+                    &#123;CT_INT, S_EXP_INT&#125;
+                &#125;
+            &#125;,
+            &#123;
+                S_EXP_OP, &#123;
+                    &#123;CT_INT, S_EXP_INT&#125;
+                &#125;
+            &#125;,
+            &#123;
+                S_EXP_INT, &#123;
+                    &#123;CT_INT, S_EXP_INT&#125;,
+                    &#123;CT_SPACE, S_END&#125;
+                &#125;
+            &#125;,
+            &#123;
+                S_END, &#123;
+                    &#123;CT_SPACE, S_END&#125;
+                &#125;
+            &#125;
+        &#125;;
+
+        State st&#x3D;S_INIT;
+        for(int i&#x3D;0;i&lt;s.length();i++) &#123;
+            if(toCharType(s[i])&#x3D;&#x3D;CT_ILLEGAL)    return false;&#x2F;&#x2F;非法字符
+            &#x2F;&#x2F; if(StateList[st].find(s[i])&#x3D;&#x3D;StateList[st].end())   return false;错在查找的应该是自定义的字符类型
+            if(StateList[st].find(toCharType(s[i]))&#x3D;&#x3D;StateList[st].end())   return false;&#x2F;&#x2F;不在状态转换表内
+            &#x2F;&#x2F; st &#x3D; StateList[st][s[i]]错在没有分号和s[i]
+            st &#x3D; StateList[st][toCharType(s[i])];
+        &#125;
+        if(st&#x3D;&#x3D;S_END||st&#x3D;&#x3D;S_EXP_INT||st&#x3D;&#x3D;S_INT||st&#x3D;&#x3D;S_FRACTION||st&#x3D;&#x3D;S_INT_POINT)    return true;
+        return false;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h6 id="4、把字符串转换成整数（atoi）【中等】"><a href="#4、把字符串转换成整数（atoi）【中等】" class="headerlink" title="4、把字符串转换成整数（atoi）【中等】"></a>4、把字符串转换成整数（atoi）【中等】</h6><p>string到int类型转换，条件循环考虑全面，字符减法循环10次幂实现字符转整数</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
+public:
+    int myAtoi(string str) &#123;
+        string s&#x3D;&quot;&quot;;&#x2F;&#x2F;定义或者使用空字符串不可用单引号
+        int i&#x3D;0, len&#x3D;str.length(), flag&#x3D;0;
+        while(str[i]&#x3D;&#x3D;&#39; &#39;&amp;&amp;i&lt;len) &#123;&#x2F;&#x2F;跳过前导空格
+            i++;
+        &#125;
+        if(i&lt;len&amp;&amp;(str[i]&#x3D;&#x3D;&#39;+&#39;||str[i]&#x3D;&#x3D;&#39;-&#39;)) &#123;
+            if(str[i]&#x3D;&#x3D;&#39;-&#39;) &#123;
+                flag&#x3D;1;&#x2F;&#x2F;0正1负
+            &#125;
+            i++;
+        &#125;
+        while(i&lt;len&amp;&amp;str[i]&#x3D;&#x3D;&#39;0&#39;) &#123;&#x2F;&#x2F;跳过前导0
+            i++;
+        &#125;
+        while(i&lt;len&amp;&amp;(str[i]&gt;&#x3D;&#39;0&#39;&amp;&amp;str[i]&lt;&#x3D;&#39;9&#39;)) &#123;
+            s+&#x3D;str[i];
+            i++;
+        &#125;
+
+        int ans&#x3D;0;
+        if(s&#x3D;&#x3D;&quot;&quot;)   return ans;&#x2F;&#x2F;定义或者使用空字符串不可用单引号
+        int len1&#x3D;s.length();
+        if(flag&#x3D;&#x3D;0) &#123;
+            for(int i&#x3D;0;i&lt;s.length();i++) &#123;
+                if((ans+(s[i]-&#39;0&#39;)*pow(10,len1-1))&gt;&#x3D;pow(2,31)-1)    return pow(2,31)-1;
+                ans+&#x3D;(s[i]-&#39;0&#39;)*pow(10,--len1);
+            &#125;
+            return ans;
+        &#125; else &#123;
+            for(int i&#x3D;0;i&lt;s.length();i++) &#123;
+                if((ans+(s[i]-&#39;0&#39;)*pow(10,len1-1))&gt;&#x3D;pow(2,31))    return 0-pow(2,31);
+                ans+&#x3D;(s[i]-&#39;0&#39;)*pow(10,--len1);
+            &#125;
+            return 0-ans;
+        &#125;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h6 id="【小结】"><a href="#【小结】" class="headerlink" title="【小结】"></a>【小结】</h6><ul>
+<li><p>‘encryption’—加密</p>
+</li>
+<li><p>‘size()’—vector&#x2F;string；’length’—string</p>
+</li>
+<li><p>‘substr(x1,x2)’—string—前闭后开</p>
+</li>
+<li><p>string重载了运算符’+’</p>
+</li>
+<li><p>enum枚举大括号外为’;’，括号内’,’分隔</p>
+</li>
+<li><p>‘函数名’首字母小写，其余分词首字母均大写；’数据类型’每个分次首字母均大写</p>
+</li>
+<li><p>定义或者使用空string字符串不可用单引号’’，一定要用双引号””</p>
+</li>
+<li><p>atoi—ascii to integer—爱死尅 特 英题杰</p>
+</li>
+<li><p>unordered_map—无序map容器—使用&lt;&gt;{}嵌套定义—大括号外为;—内部元素分隔为,—使用时只能是&lt;&gt;内部写的数据类型</p>
+</li>
+<li><p>返回负整数不可直接前面加负号—使用0-x实现</p>
+</li>
+<li><p>字符串转整数根本思想就是循环(‘x’-‘0’)*pow(10,y)—只不过具体题目幂底数或字符串复杂度有差异</p>
+</li>
+</ul>
+<p><strong>考字符串无非就是对字符串本身进行操作，或者就是字符串转整数。</strong></p>
+<hr>
+<h5 id="二、链表"><a href="#二、链表" class="headerlink" title="二、链表"></a>二、链表</h5><h6 id="1、图书整理【简单】"><a href="#1、图书整理【简单】" class="headerlink" title="1、图书整理【简单】"></a>1、图书整理【简单】</h6><p>insert()前插实现链表到数组倒序</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;**
+ * Definition for singly-linked list.
+ * struct ListNode &#123;
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) &#123;&#125;
+ *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;
+ *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;
+ * &#125;;
+ *&#x2F;
+class Solution &#123;
+public:
+    vector&lt;int&gt; reverseBookList(ListNode* head) &#123;
+        vector&lt;int&gt; ans;
+        while(head) &#123;
+            ans.insert(ans.begin(), head-&gt;val);
+            head&#x3D;head-&gt;next;
+        &#125;
+        return ans;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h6 id="2、单链表倒序【简单】"><a href="#2、单链表倒序【简单】" class="headerlink" title="2、单链表倒序【简单】"></a>2、单链表倒序【简单】</h6><p>借助中间数组容器和多个头指针实现链表倒序</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;**
+ * Definition for singly-linked list.
+ * struct ListNode &#123;
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) &#123;&#125;
+ *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;
+ *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;
+ * &#125;;
+ *&#x2F;
+class Solution &#123;
+public:
+    ListNode* trainningPlan(ListNode* head) &#123;
+        vector&lt;int&gt; tmp;
+        ListNode* renew&#x3D;head, * ans&#x3D;head;
+        while(head) &#123;
+            tmp.insert(tmp.begin(), head-&gt;val);
+            head&#x3D;head-&gt;next;
+        &#125;
+        int i&#x3D;0;
+        while(renew) &#123;
+            renew-&gt;val&#x3D;tmp[i++];
+            renew&#x3D;renew-&gt;next;
+        &#125;
+        return ans;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h6 id="3、复杂链表的复制【中等】"><a href="#3、复杂链表的复制【中等】" class="headerlink" title="3、复杂链表的复制【中等】"></a>3、复杂链表的复制【中等】</h6><p>随机链表复制，利用无序map容器的key-value映射节点-节点，重新复制构造每个节点（值val），将节点串联起来（两个指针next、random重新串起来）。关键在于分清[]内调用指针（原节点的指针）和[]外调用指针（新建节点的指针）的含义。</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;*
+&#x2F;&#x2F; Definition for a Node.
+class Node &#123;
+public:
+    int val;
+    Node* next;
+    Node* random;
+    
+    Node(int _val) &#123;
+        val &#x3D; _val;
+        next &#x3D; NULL;
+        random &#x3D; NULL;
+    &#125;
+&#125;;
+*&#x2F;
+class Solution &#123;
+public:
+    Node* copyRandomList(Node* head) &#123;
+        Node* ptr &#x3D; head;
+        unordered_map&lt;Node*, Node*&gt; tmp;
+        while(ptr) &#123;
+            tmp[ptr] &#x3D; new Node(ptr-&gt;val);
+            ptr&#x3D;ptr-&gt;next;
+        &#125;
+        ptr&#x3D;head;
+        while(ptr) &#123;
+            tmp[ptr]-&gt;next&#x3D;tmp[ptr-&gt;next];
+            tmp[ptr]-&gt;random&#x3D;tmp[ptr-&gt;random];
+            ptr&#x3D;ptr-&gt;next;
+        &#125;
+        return tmp[head];
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h6 id="【小结】-1"><a href="#【小结】-1" class="headerlink" title="【小结】"></a>【小结】</h6><ul>
+<li>看准函数返回值类型和参数类型</li>
+<li>指针不等价于链表，指针取内容的*不适用于链表，链表用箭头？</li>
+<li>vector对于数组的插入操作—insert(x,y)任意位置插，x是指针，y是要插内容—push_back(y)尾插—push_front(y)前插—begin()和end()返回头尾指针</li>
+<li>链表倒序—中间容器—多个头指针—本质是原链表指向不变，只修改val</li>
+<li>并行定义链表节点每个变量前都要加*</li>
+<li>无序map容器可用来复制复杂链表</li>
+</ul>
+<p><strong>链表—结构体指针(单)&#x2F;Node指针(多)—对链表的操作分为两大步：先处理val(一般有顺序要求)，再串联指针。</strong></p>
+<hr>
+<h5 id="三、双指针【简单】"><a href="#三、双指针【简单】" class="headerlink" title="三、双指针【简单】"></a>三、双指针【简单】</h5><h6 id="1、删除链表节点"><a href="#1、删除链表节点" class="headerlink" title="1、删除链表节点"></a>1、删除链表节点</h6><p>预留头指针(返回用)+考虑头结点就是的特殊情况+同时用到待删节点和其前节点</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;**
+ * Definition for singly-linked list.
+ * struct ListNode &#123;
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) &#123;&#125;
+ * &#125;;
+ *&#x2F;
+class Solution &#123;
+public:
+    ListNode* deleteNode(ListNode* head, int val) &#123;
+        if(head-&gt;val&#x3D;&#x3D;val)  return head-&gt;next;
+
+        ListNode* ans&#x3D;head;
+        while(head) &#123;
+            ListNode* tmp&#x3D;head-&gt;next;
+            if(tmp-&gt;val&#x3D;&#x3D;val) &#123;
+                head-&gt;next&#x3D;tmp-&gt;next;
+                return ans;
+            &#125;
+            head&#x3D;head-&gt;next;
+        &#125;
+        return ans;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h6 id="2、训练计划"><a href="#2、训练计划" class="headerlink" title="2、训练计划"></a>2、训练计划</h6><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h6 id="3、训练计划"><a href="#3、训练计划" class="headerlink" title="3、训练计划"></a>3、训练计划</h6><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h6 id="4、训练计划"><a href="#4、训练计划" class="headerlink" title="4、训练计划"></a>4、训练计划</h6><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h6 id="5、训练计划"><a href="#5、训练计划" class="headerlink" title="5、训练计划"></a>5、训练计划</h6><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h6 id="6、查找总价格为目标值的两个商品"><a href="#6、查找总价格为目标值的两个商品" class="headerlink" title="6、查找总价格为目标值的两个商品"></a>6、查找总价格为目标值的两个商品</h6><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h6 id="7、字符串中的单词反转"><a href="#7、字符串中的单词反转" class="headerlink" title="7、字符串中的单词反转"></a>7、字符串中的单词反转</h6><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h6 id="【小结】-2"><a href="#【小结】-2" class="headerlink" title="【小结】"></a>【小结】</h6><ul>
+<li>单链表节点删除就是节点的跳过串联</li>
+</ul>
+<hr>
+<h5 id="四、栈-队列"><a href="#四、栈-队列" class="headerlink" title="四、栈&amp;队列"></a>四、栈&amp;队列</h5><h6 id="1、"><a href="#1、" class="headerlink" title="1、"></a>1、</h6><hr>
+<h5 id="五、模拟"><a href="#五、模拟" class="headerlink" title="五、模拟"></a>五、模拟</h5><h6 id="1、-1"><a href="#1、-1" class="headerlink" title="1、"></a>1、</h6><hr>
+<h5 id="六、查找"><a href="#六、查找" class="headerlink" title="六、查找"></a>六、查找</h5><h6 id="1、-2"><a href="#1、-2" class="headerlink" title="1、"></a>1、</h6><hr>
+<h5 id="七、搜索-回溯"><a href="#七、搜索-回溯" class="headerlink" title="七、搜索&amp;回溯"></a>七、搜索&amp;回溯</h5><h6 id="1、-3"><a href="#1、-3" class="headerlink" title="1、"></a>1、</h6><hr>
+<h5 id="八、分治"><a href="#八、分治" class="headerlink" title="八、分治"></a>八、分治</h5><h6 id="1、-4"><a href="#1、-4" class="headerlink" title="1、"></a>1、</h6><hr>
+<h5 id="九、排序"><a href="#九、排序" class="headerlink" title="九、排序"></a>九、排序</h5><h6 id="1、-5"><a href="#1、-5" class="headerlink" title="1、"></a>1、</h6><hr>
+<h5 id="十、动态规划（dp）"><a href="#十、动态规划（dp）" class="headerlink" title="十、动态规划（dp）"></a>十、动态规划（dp）</h5><h6 id="1、-6"><a href="#1、-6" class="headerlink" title="1、"></a>1、</h6><hr>
+<h5 id="十一、位运算"><a href="#十一、位运算" class="headerlink" title="十一、位运算"></a>十一、位运算</h5><h6 id="1、-7"><a href="#1、-7" class="headerlink" title="1、"></a>1、</h6><hr>
+<h5 id="十二、数学"><a href="#十二、数学" class="headerlink" title="十二、数学"></a>十二、数学</h5><h6 id="1、-8"><a href="#1、-8" class="headerlink" title="1、"></a>1、</h6><hr>
 <h3 id="3-2力扣hot100"><a href="#3-2力扣hot100" class="headerlink" title="3.2力扣hot100"></a>3.2力扣hot100</h3><h3 id="3-3力扣前300"><a href="#3-3力扣前300" class="headerlink" title="3.3力扣前300"></a>3.3力扣前300</h3><hr>
 <h2 id="4-八股准备"><a href="#4-八股准备" class="headerlink" title="4.八股准备"></a>4.八股准备</h2><h3 id="4-1仓库"><a href="#4-1仓库" class="headerlink" title="4.1仓库"></a>4.1仓库</h3><p>【①】<a target="_blank" rel="noopener" href="https://github.com/GYee/CV_interviews_Q-A">GYee：CV算法岗知识点及面试问答汇总，主要分为计算机视觉、机器学习、图像处理和 C++基础四大块</a></p>
 <p>【②】<a target="_blank" rel="noopener" href="https://github.com/kongyan66/CV-Algorithm-Interview-Notes">kongyan66：CV算法工程师自学路线&#x2F;秋招冲刺（python、C++、数据结构、传统图像、深度学习、目标检测等）</a></p>
