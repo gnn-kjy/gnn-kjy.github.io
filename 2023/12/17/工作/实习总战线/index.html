@@ -675,17 +675,7 @@ public:
 &#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h6 id="2、单链表倒序【简单】"><a href="#2、单链表倒序【简单】" class="headerlink" title="2、单链表倒序【简单】"></a>2、单链表倒序【简单】</h6><p>借助中间数组容器和多个头指针实现链表倒序</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;**
- * Definition for singly-linked list.
- * struct ListNode &#123;
- *     int val;
- *     ListNode *next;
- *     ListNode() : val(0), next(nullptr) &#123;&#125;
- *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;
- *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;
- * &#125;;
- *&#x2F;
-class Solution &#123;
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
 public:
     ListNode* trainningPlan(ListNode* head) &#123;
         vector&lt;int&gt; tmp;
@@ -701,7 +691,7 @@ public:
         &#125;
         return ans;
     &#125;
-&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h6 id="3、复杂链表的复制【中等】"><a href="#3、复杂链表的复制【中等】" class="headerlink" title="3、复杂链表的复制【中等】"></a>3、复杂链表的复制【中等】</h6><p>随机链表复制，利用无序map容器的key-value映射节点-节点，重新复制构造每个节点（值val），将节点串联起来（两个指针next、random重新串起来）。关键在于分清[]内调用指针（原节点的指针）和[]外调用指针（新建节点的指针）的含义。</p>
 <pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;*
@@ -741,7 +731,7 @@ public:
 <h6 id="【小结】-1"><a href="#【小结】-1" class="headerlink" title="【小结】"></a>【小结】</h6><ul>
 <li>看准函数返回值类型和参数类型</li>
 <li>指针不等价于链表，指针取内容的*不适用于链表，链表用箭头？</li>
-<li>vector对于数组的插入操作—insert(x,y)任意位置插，x是指针，y是要插内容—push_back(y)尾插—push_front(y)前插—begin()和end()返回头尾指针</li>
+<li>vector对于数组的插入操作—insert(x,y)任意位置插，x是指针，y是要插内容—push_back(y)尾插—begin()和end()返回头尾指针</li>
 <li>链表倒序—中间容器—多个头指针—本质是原链表指向不变，只修改val</li>
 <li>并行定义链表节点每个变量前都要加*</li>
 <li>无序map容器可用来复制复杂链表</li>
@@ -749,14 +739,7 @@ public:
 <p><strong>链表—结构体指针(单)&#x2F;Node指针(多)—对链表的操作分为两大步：先处理val(一般有顺序要求)，再串联指针。</strong></p>
 <hr>
 <h5 id="三、双指针【简单】"><a href="#三、双指针【简单】" class="headerlink" title="三、双指针【简单】"></a>三、双指针【简单】</h5><h6 id="1、删除链表节点"><a href="#1、删除链表节点" class="headerlink" title="1、删除链表节点"></a>1、删除链表节点</h6><p>预留头指针(返回用)+考虑头结点就是的特殊情况+同时用到待删节点和其前节点</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;**
- * Definition for singly-linked list.
- * struct ListNode &#123;
- *     int val;
- *     ListNode *next;
- *     ListNode(int x) : val(x), next(NULL) &#123;&#125;
- * &#125;;
- *&#x2F;
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">等下刷完双指针这个专题从头再刷一遍的时候用双指针的格式former和latter写一遍
 class Solution &#123;
 public:
     ListNode* deleteNode(ListNode* head, int val) &#123;
@@ -773,13 +756,108 @@ public:
         &#125;
         return ans;
     &#125;
-&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h6 id="2、训练计划"><a href="#2、训练计划" class="headerlink" title="2、训练计划"></a>2、训练计划</h6><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h6 id="2、倒第n节点链表"><a href="#2、倒第n节点链表" class="headerlink" title="2、倒第n节点链表"></a>2、倒第n节点链表</h6><p>不是返回单个节点，是倒第cnt个节点和其之后的一整条，统计链表长度来实现链表。(本来想构造逆序数组，使用cnt作为数组编号查找，但是链表节点的val可能重复)</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;**
+ * 第一时间想到的就是先统计长度，然后遍历
+*&#x2F;
+class Solution &#123;
+public:
+    ListNode* trainingPlan(ListNode* head, int cnt) &#123;
+        int len&#x3D;0, i&#x3D;0;
+        ListNode* ans&#x3D;head;
+        while(head) &#123;
+            len++;
+            head&#x3D;head-&gt;next;
+        &#125;
+        while(ans) &#123;
+            i++;
+            if(i&#x3D;&#x3D;(len-cnt+1)) &#123;
+                return ans;
+            &#125;
+            ans&#x3D;ans-&gt;next;
+        &#125;
+        return ans;
+    &#125;
+&#125;;
+&#x2F;**
+ * 双指针：但是这章专题是双指针，利用前后指针间距实现倒第几个节点的查找
+*&#x2F;
+class Solution &#123;
+public:
+    ListNode* trainingPlan(ListNode* head, int cnt) &#123;
+        ListNode* former&#x3D;head, *latter&#x3D;head;
+        while(cnt--) &#123;
+            former&#x3D;former-&gt;next;&#x2F;&#x2F;间隔控制
+        &#125;
+        while(former) &#123;
+            latter&#x3D;latter-&gt;next;
+            former&#x3D;former-&gt;next;
+        &#125;
+        return latter;&#x2F;&#x2F;注意上边循环终止刚好是latter返回，不是latter-&gt;next
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h6 id="3、训练计划"><a href="#3、训练计划" class="headerlink" title="3、训练计划"></a>3、训练计划</h6><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h6 id="3、升序拼接链表"><a href="#3、升序拼接链表" class="headerlink" title="3、升序拼接链表"></a>3、升序拼接链表</h6><p>先遍历拼接，然后构造数组并排序，重新串联链表，返回链表。(需要几个重新指向头结点的指针等用的时候再回头定义。)还有就是注意l1为空时比较特殊。还有拼接之后l1就变长了，注意拼完立刻中断。</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
+public:
+    ListNode* trainningPlan(ListNode* l1, ListNode* l2) &#123;
+        ListNode* t1&#x3D;l1, * t2&#x3D;l1, * t3&#x3D;l1;
+        if(!l1) &#123;
+            t1&#x3D;t2&#x3D;t3&#x3D;l2;
+        &#125;
+        while(l1) &#123;
+            if(l1-&gt;next&#x3D;&#x3D;nullptr) &#123;&#x2F;&#x2F;这里双等号
+                l1-&gt;next&#x3D;l2;&#x2F;&#x2F;这里接上之后得终止，因为l1延长了，不然死循环
+                break;
+            &#125;
+            l1&#x3D;l1-&gt;next;
+        &#125;
+        vector&lt;int&gt; a;
+        while(t1) &#123;
+            a.push_back(t1-&gt;val);
+            t1&#x3D;t1-&gt;next;
+        &#125;
+        sort(a.begin(), a.end());
+        for(int i&#x3D;0;i&lt;a.size();i++) &#123;
+            t2-&gt;val&#x3D;a[i];
+            t2&#x3D;t2-&gt;next;
+        &#125;
+        return t3;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h6 id="4、训练计划"><a href="#4、训练计划" class="headerlink" title="4、训练计划"></a>4、训练计划</h6><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h6 id="4、链表交叉节点"><a href="#4、链表交叉节点" class="headerlink" title="4、链表交叉节点"></a>4、链表交叉节点</h6><p>一个锻炼项目只对应一个唯一的编号，所以这题只用找出相同的值就行了。而且从后往前找更方便。所以倒插，以最短为标准，分为不相交、交一部分、完全重叠三种情况。另外考虑链表为空的情况即可。</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
+public:
+    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) &#123;
+        vector&lt;int&gt; tmp1, tmp2;
+        if(!headA||!headB)  return NULL;
+        while(headA) &#123;
+            tmp1.insert(tmp1.begin(), headA-&gt;val);
+            headA&#x3D;headA-&gt;next;
+        &#125;
+        while(headB) &#123;
+            tmp2.insert(tmp2.begin(), headB-&gt;val);
+            headB&#x3D;headB-&gt;next;
+        &#125;
+        if(tmp1[0]!&#x3D;tmp2[0])    return NULL;
+        int i&#x3D;0;
+        int len&#x3D;(tmp1.size()&lt;&#x3D;tmp2.size()?tmp1.size():tmp2.size());
+        for(i;i&lt;len;i++) &#123;
+            if(tmp1[i]!&#x3D;tmp2[i]) &#123;
+                ListNode *ans&#x3D;new ListNode(tmp1[i-1]);
+                return ans;
+            &#125;
+            if(i&#x3D;&#x3D;len-1) &#123;
+                ListNode *ans&#x3D;new ListNode(tmp1[i]);
+                return ans;
+            &#125;
+        &#125;
+        return NULL;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h6 id="5、训练计划"><a href="#5、训练计划" class="headerlink" title="5、训练计划"></a>5、训练计划</h6><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -789,7 +867,11 @@ public:
 
 <h6 id="【小结】-2"><a href="#【小结】-2" class="headerlink" title="【小结】"></a>【小结】</h6><ul>
 <li>单链表节点删除就是节点的跳过串联</li>
+<li>单链表比较爱考的是倒序类问题</li>
+<li>两个链表的升序拼接，先串联，在借助数组排序</li>
+<li></li>
 </ul>
+<p><strong>双指针就是former和latter，主要要考虑的就是怎么移动的问题。</strong></p>
 <hr>
 <h5 id="四、栈-队列"><a href="#四、栈-队列" class="headerlink" title="四、栈&amp;队列"></a>四、栈&amp;队列</h5><h6 id="1、"><a href="#1、" class="headerlink" title="1、"></a>1、</h6><hr>
 <h5 id="五、模拟"><a href="#五、模拟" class="headerlink" title="五、模拟"></a>五、模拟</h5><h6 id="1、-1"><a href="#1、-1" class="headerlink" title="1、"></a>1、</h6><hr>
