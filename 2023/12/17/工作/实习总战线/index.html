@@ -630,7 +630,7 @@ public:
 </li>
 <li><p>‘size()’—vector&#x2F;string；’length’—string</p>
 </li>
-<li><p>‘substr(x1,x2)’—string—前闭后开</p>
+<li><p>‘substr(pos,len)’—string—起始位置，长度</p>
 </li>
 <li><p>string重载了运算符’+’</p>
 </li>
@@ -859,19 +859,120 @@ public:
     &#125;
 &#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h6 id="5、训练计划"><a href="#5、训练计划" class="headerlink" title="5、训练计划"></a>5、训练计划</h6><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h6 id="5、调整数组"><a href="#5、调整数组" class="headerlink" title="5、调整数组"></a>5、调整数组</h6><p>将奇数元素调到偶数元素前，奇数前插，偶数后插</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
+public:
+    vector&lt;int&gt; trainingPlan(vector&lt;int&gt;&amp; actions) &#123;
+        vector&lt;int&gt; ans;
+        for(int i&#x3D;0;i&lt;actions.size();i++) &#123;
+            if(actions[i]%2&#x3D;&#x3D;1) &#123;
+                ans.insert(ans.begin(),actions[i]);
+            &#125; else &#123;
+                ans.push_back(actions[i]);
+            &#125;
+        &#125;
+        return ans;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h6 id="6、查找总价格为目标值的两个商品"><a href="#6、查找总价格为目标值的两个商品" class="headerlink" title="6、查找总价格为目标值的两个商品"></a>6、查找总价格为目标值的两个商品</h6><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h6 id="6、查找总价格为目标值的两个商品"><a href="#6、查找总价格为目标值的两个商品" class="headerlink" title="6、查找总价格为目标值的两个商品"></a>6、查找总价格为目标值的两个商品</h6><p>最不用动脑子的肯定是双重循环遍历，但是去年十月和今年六月我真的一点长进都没有，超时。。。</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
+public:
+    vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; price, int target) &#123;
+        int former&#x3D;0, latter&#x3D;0;
+        vector&lt;int&gt; ans;
+        while(former&lt;price.size()-1) &#123;
+            latter&#x3D;former+1;
+            while(price[former]+price[latter]&lt;&#x3D;target&amp;&amp;latter&lt;price.size()) &#123;
+                if(price[former]+price[latter]&#x3D;&#x3D;target) &#123;
+                    ans.push_back(price[former]);
+                    ans.push_back(price[latter]);
+                    return ans;
+                &#125;
+                latter++;
+            &#125;
+            former++;
+        &#125;
+        return ans;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h6 id="7、字符串中的单词反转"><a href="#7、字符串中的单词反转" class="headerlink" title="7、字符串中的单词反转"></a>7、字符串中的单词反转</h6><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>前后两个指针，从两头到中间压缩，一个循环搞定</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
+public:
+    vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; price, int target) &#123;
+        int former&#x3D;0, latter&#x3D;price.size()-1;
+        vector&lt;int&gt; ans;
+        while(former&lt;latter) &#123;
+            if(price[former]+price[latter]&lt;target) &#123;
+                former++;
+            &#125; else if(price[former]+price[latter]&gt;target) &#123;
+                latter--;
+            &#125; else &#123;
+                ans.push_back(price[former]);
+                ans.push_back(price[latter]);
+                break;
+            &#125;
+        &#125;
+        return ans;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h6 id="7、字符串中的单词反转"><a href="#7、字符串中的单词反转" class="headerlink" title="7、字符串中的单词反转"></a>7、字符串中的单词反转</h6><p>借助一个暂时字符串变量和一个字符串容器进行中转，最后拼接。(注意前导零和尾零的处理比较特殊，也插，只不过元素为空，还是占用容器空间)</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
+public:
+    string reverseMessage(string message) &#123;
+        vector&lt;string&gt; s;
+        int n&#x3D;0;
+        while(n&lt;message.size()) &#123;
+            while(n&lt;message.size()&amp;&amp;message[n]&#x3D;&#x3D;&#39; &#39;) &#123;
+                n++;
+            &#125;
+            string tmp&#x3D;&quot;&quot;;
+            while(n&lt;message.size()&amp;&amp;message[n]!&#x3D;&#39; &#39;) &#123;
+                tmp+&#x3D;message[n];
+                n++;
+            &#125;
+            s.insert(s.begin(),tmp);
+        &#125;
+        string ans&#x3D;&quot;&quot;;
+        for(int i&#x3D;0;i&lt;s.size();i++) &#123;
+            if((i&lt;s.size()-1)&amp;&amp;s[i]!&#x3D;&quot;&quot;) &#123;
+                ans+&#x3D;s[i];
+                ans+&#x3D;&quot; &quot;;
+            &#125; else &#123;
+                ans+&#x3D;s[i];
+            &#125;
+        &#125;
+        return ans;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>但是时间复杂度是n²，而且这题在双指针这里，前指针往前移，后指针跟着截取，用substr截取。最后再去掉最后的空格。从后往前遍历保证了顺序是反的要求。</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
+public:
+    string reverseMessage(string message) &#123;
+        int len&#x3D;message.size();
+        string ans&#x3D;&quot;&quot;;
+        for(int i&#x3D;len-1;i&gt;&#x3D;0;i--) &#123;
+            if(message[i]!&#x3D;&#39; &#39;) &#123;
+                int right&#x3D;i;
+                while(i&gt;&#x3D;0&amp;&amp;message[i]!&#x3D;&#39; &#39;) &#123;
+                    i--;
+                &#125;
+                ans+&#x3D;message.substr(i+1,right-i)+&quot; &quot;;&#x2F;&#x2F;这样最后肯定会多一个空格
+            &#125;
+        &#125;
+        return ans.substr(0,ans.size()-1);&#x2F;&#x2F;截取一下
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h6 id="【小结】-2"><a href="#【小结】-2" class="headerlink" title="【小结】"></a>【小结】</h6><ul>
 <li>单链表节点删除就是节点的跳过串联</li>
 <li>单链表比较爱考的是倒序类问题</li>
 <li>两个链表的升序拼接，先串联，在借助数组排序</li>
-<li></li>
 </ul>
-<p><strong>双指针就是former和latter，主要要考虑的就是怎么移动的问题。</strong></p>
+<p><strong>双指针就是former和latter，主要要考虑的就是怎么移动。</strong></p>
 <hr>
 <h5 id="四、栈-队列"><a href="#四、栈-队列" class="headerlink" title="四、栈&amp;队列"></a>四、栈&amp;队列</h5><h6 id="1、"><a href="#1、" class="headerlink" title="1、"></a>1、</h6><hr>
 <h5 id="五、模拟"><a href="#五、模拟" class="headerlink" title="五、模拟"></a>五、模拟</h5><h6 id="1、-1"><a href="#1、-1" class="headerlink" title="1、"></a>1、</h6><hr>
