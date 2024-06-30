@@ -974,15 +974,157 @@ public:
 </ul>
 <p><strong>双指针就是former和latter，主要要考虑的就是怎么移动。</strong></p>
 <hr>
-<h5 id="四、栈-队列"><a href="#四、栈-队列" class="headerlink" title="四、栈&amp;队列"></a>四、栈&amp;队列</h5><h6 id="1、"><a href="#1、" class="headerlink" title="1、"></a>1、</h6><hr>
-<h5 id="五、模拟"><a href="#五、模拟" class="headerlink" title="五、模拟"></a>五、模拟</h5><h6 id="1、-1"><a href="#1、-1" class="headerlink" title="1、"></a>1、</h6><hr>
-<h5 id="六、查找"><a href="#六、查找" class="headerlink" title="六、查找"></a>六、查找</h5><h6 id="1、-2"><a href="#1、-2" class="headerlink" title="1、"></a>1、</h6><hr>
-<h5 id="七、搜索-回溯"><a href="#七、搜索-回溯" class="headerlink" title="七、搜索&amp;回溯"></a>七、搜索&amp;回溯</h5><h6 id="1、-3"><a href="#1、-3" class="headerlink" title="1、"></a>1、</h6><hr>
-<h5 id="八、分治"><a href="#八、分治" class="headerlink" title="八、分治"></a>八、分治</h5><h6 id="1、-4"><a href="#1、-4" class="headerlink" title="1、"></a>1、</h6><hr>
-<h5 id="九、排序"><a href="#九、排序" class="headerlink" title="九、排序"></a>九、排序</h5><h6 id="1、-5"><a href="#1、-5" class="headerlink" title="1、"></a>1、</h6><hr>
-<h5 id="十、动态规划（dp）"><a href="#十、动态规划（dp）" class="headerlink" title="十、动态规划（dp）"></a>十、动态规划（dp）</h5><h6 id="1、-6"><a href="#1、-6" class="headerlink" title="1、"></a>1、</h6><hr>
-<h5 id="十一、位运算"><a href="#十一、位运算" class="headerlink" title="十一、位运算"></a>十一、位运算</h5><h6 id="1、-7"><a href="#1、-7" class="headerlink" title="1、"></a>1、</h6><hr>
-<h5 id="十二、数学"><a href="#十二、数学" class="headerlink" title="十二、数学"></a>十二、数学</h5><h6 id="1、-8"><a href="#1、-8" class="headerlink" title="1、"></a>1、</h6><hr>
+<h5 id="四、栈-队列"><a href="#四、栈-队列" class="headerlink" title="四、栈&amp;队列"></a>四、栈&amp;队列</h5><h6 id="1、图书整理【简单】-1"><a href="#1、图书整理【简单】-1" class="headerlink" title="1、图书整理【简单】"></a>1、图书整理【简单】</h6><p>借助数组解决队列(不是栈)问题，0打底先删后取，迭代器判断。</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class CQueue &#123;
+public:
+    vector&lt;int&gt; a;
+    CQueue() &#123;
+        a.push_back(0);&#x2F;&#x2F;0打底，否则迭代器越界，也正好满足下面能够循环起来并最后返回-1
+    &#125;
+    
+    void appendTail(int value) &#123;
+        a.push_back(value);
+    &#125;
+    
+    int deleteHead() &#123;
+        if(a.begin()!&#x3D;a.end()-1) &#123;&#x2F;&#x2F;a.end()-1为最后一个元素
+            a.erase(a.begin());
+            return a[0];&#x2F;&#x2F;先删前面被取过的，再取，能循环起来。最后取完后数组里还剩一个被取过的，直接返回-1
+        &#125; else &#123;
+            return -1;
+        &#125;
+    &#125;
+&#125;;
+
+&#x2F;**
+ * Your CQueue object will be instantiated and called as such:
+ * CQueue* obj &#x3D; new CQueue();
+ * obj-&gt;appendTail(value);
+ * int param_2 &#x3D; obj-&gt;deleteHead();
+ *&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h6 id="2、最小栈【简单】"><a href="#2、最小栈【简单】" class="headerlink" title="2、最小栈【简单】"></a>2、最小栈【简单】</h6><p>借助数组处理栈，然后就是简单的入栈出栈，依次比较返回最小值</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class MinStack &#123;
+public:
+    &#x2F;** initialize your data structure here. *&#x2F;
+    vector&lt;int&gt; a;
+    MinStack() &#123;&#125;
+    
+    void push(int x) &#123;
+        a.push_back(x);
+    &#125;
+    
+    void pop() &#123;
+        a.erase(a.end()-1);
+    &#125;
+    
+    int top() &#123;
+        int len&#x3D;a.size();
+        return a[len-1];
+    &#125;
+    
+    int getMin() &#123;
+        int n&#x3D;INT_MAX, m&#x3D;a.size();
+        while(m--) &#123;
+            if(a[m]&lt;n) &#123;
+                n&#x3D;a[m];
+            &#125;
+        &#125;
+        return n;
+    &#125;
+&#125;;
+
+&#x2F;**
+ * Your MinStack object will be instantiated and called as such:
+ * MinStack* obj &#x3D; new MinStack();
+ * obj-&gt;push(x);
+ * obj-&gt;pop();
+ * int param_3 &#x3D; obj-&gt;top();
+ * int param_4 &#x3D; obj-&gt;getMin();
+ *&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h6 id="3、望远镜最高海拔【困难】"><a href="#3、望远镜最高海拔【困难】" class="headerlink" title="3、望远镜最高海拔【困难】"></a>3、望远镜最高海拔【困难】</h6><p>滑动窗口的最大值，跟栈倒是没太大关系，借助一个局部最大值变量和双指针操作数组；注意数组空的情况。</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
+public:
+    vector&lt;int&gt; maxAltitude(vector&lt;int&gt;&amp; heights, int limit) &#123;
+        vector&lt;int&gt; ans;
+        if(heights.size()&#x3D;&#x3D;0) &#123;
+            return ans;
+        &#125;
+        for(int former&#x3D;0;former&lt;&#x3D;heights.size()-limit;former++) &#123;
+            int latter&#x3D;former;
+            int max&#x3D;INT_MIN;
+            while(latter-former&lt;&#x3D;limit-1) &#123;
+                if(heights[latter]&gt;max) &#123;
+                    max&#x3D;heights[latter];
+                &#125;
+                latter++;
+            &#125;
+            ans.push_back(max);
+        &#125;
+        return ans;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h6 id="4、自助结算系统【中等】"><a href="#4、自助结算系统【中等】" class="headerlink" title="4、自助结算系统【中等】"></a>4、自助结算系统【中等】</h6><p>相当于第一题的简化版本。</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Checkout &#123;
+public:
+    vector&lt;int&gt; a;
+    Checkout() &#123;
+
+    &#125;
+    
+    int get_max() &#123;
+        if(a.size()&#x3D;&#x3D;0) &#123;
+            return -1;
+        &#125;
+        int max&#x3D;INT_MIN, n&#x3D;0;
+        while(n&lt;a.size()) &#123;
+            if(a[n]&gt;max) &#123;
+                max&#x3D;a[n];
+            &#125;
+            n++;
+        &#125;
+        return max;
+    &#125;
+    
+    void add(int value) &#123;
+        a.push_back(value);
+    &#125;
+    
+    int remove() &#123;
+        if(a.size()&#x3D;&#x3D;0) &#123;
+            return -1;
+        &#125;
+        int ans&#x3D;a[0];
+        a.erase(a.begin());
+        return ans;
+    &#125;
+&#125;;
+&#x2F;**
+ * Your Checkout object will be instantiated and called as such:
+ * Checkout* obj &#x3D; new Checkout();
+ * int param_1 &#x3D; obj-&gt;get_max();
+ * obj-&gt;add(value);
+ * int param_3 &#x3D; obj-&gt;remove();
+ *&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h6 id="【小结】-3"><a href="#【小结】-3" class="headerlink" title="【小结】"></a>【小结】</h6><ul>
+<li>begin() 函数，返回一个指向该数组<strong>首个元素</strong>的指针； end() 函数，返回一个指向数组中<strong>最后元素之后位置</strong>的指针；end()-1返回指向<strong>最后元素</strong>的指针。</li>
+<li>erase(x)中的参数x是迭代器指针；insert(x,y)中x是迭代器指针，y是元素值；push_back(x)中x是元素值。</li>
+<li>最大整数和最小整数—INT_MAX和INT_MIN。</li>
+<li>滑动窗口问题—借助双指针和临时最值。</li>
+</ul>
+<p><strong>栈与队列问题借助数组解决。</strong></p>
+<hr>
+<h5 id="五、模拟"><a href="#五、模拟" class="headerlink" title="五、模拟"></a>五、模拟</h5><h6 id="1、"><a href="#1、" class="headerlink" title="1、"></a>1、</h6><hr>
+<h5 id="六、查找"><a href="#六、查找" class="headerlink" title="六、查找"></a>六、查找</h5><h6 id="1、-1"><a href="#1、-1" class="headerlink" title="1、"></a>1、</h6><hr>
+<h5 id="七、搜索-回溯"><a href="#七、搜索-回溯" class="headerlink" title="七、搜索&amp;回溯"></a>七、搜索&amp;回溯</h5><h6 id="1、-2"><a href="#1、-2" class="headerlink" title="1、"></a>1、</h6><hr>
+<h5 id="八、分治"><a href="#八、分治" class="headerlink" title="八、分治"></a>八、分治</h5><h6 id="1、-3"><a href="#1、-3" class="headerlink" title="1、"></a>1、</h6><hr>
+<h5 id="九、排序"><a href="#九、排序" class="headerlink" title="九、排序"></a>九、排序</h5><h6 id="1、-4"><a href="#1、-4" class="headerlink" title="1、"></a>1、</h6><hr>
+<h5 id="十、动态规划（dp）"><a href="#十、动态规划（dp）" class="headerlink" title="十、动态规划（dp）"></a>十、动态规划（dp）</h5><h6 id="1、-5"><a href="#1、-5" class="headerlink" title="1、"></a>1、</h6><hr>
+<h5 id="十一、位运算"><a href="#十一、位运算" class="headerlink" title="十一、位运算"></a>十一、位运算</h5><h6 id="1、-6"><a href="#1、-6" class="headerlink" title="1、"></a>1、</h6><hr>
+<h5 id="十二、数学"><a href="#十二、数学" class="headerlink" title="十二、数学"></a>十二、数学</h5><h6 id="1、-7"><a href="#1、-7" class="headerlink" title="1、"></a>1、</h6><hr>
 <h3 id="3-2力扣hot100"><a href="#3-2力扣hot100" class="headerlink" title="3.2力扣hot100"></a>3.2力扣hot100</h3><h3 id="3-3力扣前300"><a href="#3-3力扣前300" class="headerlink" title="3.3力扣前300"></a>3.3力扣前300</h3><hr>
 <h2 id="4-八股准备"><a href="#4-八股准备" class="headerlink" title="4.八股准备"></a>4.八股准备</h2><h3 id="4-1仓库"><a href="#4-1仓库" class="headerlink" title="4.1仓库"></a>4.1仓库</h3><p>【①】<a target="_blank" rel="noopener" href="https://github.com/GYee/CV_interviews_Q-A">GYee：CV算法岗知识点及面试问答汇总，主要分为计算机视觉、机器学习、图像处理和 C++基础四大块</a></p>
 <p>【②】<a target="_blank" rel="noopener" href="https://github.com/kongyan66/CV-Algorithm-Interview-Notes">kongyan66：CV算法工程师自学路线&#x2F;秋招冲刺（python、C++、数据结构、传统图像、深度学习、目标检测等）</a></p>
