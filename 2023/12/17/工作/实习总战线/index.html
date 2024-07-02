@@ -1117,27 +1117,157 @@ public:
 </ul>
 <p><strong>栈与队列问题借助数组解决。</strong></p>
 <hr>
-<h4 id="五、模拟"><a href="#五、模拟" class="headerlink" title="五、模拟"></a>五、模拟</h4><h5 id="1、螺旋遍历二维数组【简单】"><a href="#1、螺旋遍历二维数组【简单】" class="headerlink" title="1、螺旋遍历二维数组【简单】"></a>1、螺旋遍历二维数组【简单】</h5><p>总感觉这题是简单不合理；</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="五、模拟"><a href="#五、模拟" class="headerlink" title="五、模拟"></a>五、模拟</h4><h5 id="1、螺旋遍历二维数组【简单】"><a href="#1、螺旋遍历二维数组【简单】" class="headerlink" title="1、螺旋遍历二维数组【简单】"></a>1、螺旋遍历二维数组【简单】</h5><p>总感觉这题是简单不合理；双重循环，外层一循环内层四循环；四边界约束缩减遍历(rb&#x3D;row_begin；re&#x3D;row_end；cb&#x3D;column_begin；ce&#x3D;column_end)</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
+public:
+    vector&lt;int&gt; spiralArray(vector&lt;vector&lt;int&gt;&gt;&amp; array) &#123;
+        vector&lt;int&gt; ans;
+        if(array.size()&#x3D;&#x3D;0) return ans;
+        int rb&#x3D;0, cb&#x3D;0, re&#x3D;array.size()-1, ce&#x3D;array[0].size()-1;&#x2F;&#x2F;下标，别忘记减一
+        while(1) &#123;
+            for(int i&#x3D;cb; i&lt;&#x3D;ce; i++) &#123;
+                ans.push_back(array[rb][i]);&#x2F;&#x2F;→
+            &#125;
+            if(++rb&gt;re) break;
+            for(int i&#x3D;rb; i&lt;&#x3D;re; i++) &#123;
+                ans.push_back(array[i][ce]);&#x2F;&#x2F;↓
+            &#125;
+            if(--ce&lt;cb) break;
+            for(int i&#x3D;ce; i&gt;&#x3D;cb; i--) &#123;
+                ans.push_back(array[re][i]);&#x2F;&#x2F;←
+            &#125;
+            if(--re&lt;rb) break;
+            for(int i&#x3D;re; i&gt;&#x3D;rb; i--) &#123;
+                ans.push_back(array[i][cb]);&#x2F;&#x2F;↑
+            &#125;
+            if(++cb&gt;ce) break;            
+        &#125;
+        return ans;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h5 id="2、验证图书取出顺序【中等】"><a href="#2、验证图书取出顺序【中等】" class="headerlink" title="2、验证图书取出顺序【中等】"></a>2、验证图书取出顺序【中等】</h5><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h5 id="2、验证图书取出顺序【中等】"><a href="#2、验证图书取出顺序【中等】" class="headerlink" title="2、验证图书取出顺序【中等】"></a>2、验证图书取出顺序【中等】</h5><p>类似四则运算或前缀后缀表达式转换，符号匹配；借助栈解决；先压入，再判断，相等则出栈，否则继续压入；前插，否则没办法取最后一个元素</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
+public:
+    bool validateBookSequences(vector&lt;int&gt;&amp; putIn, vector&lt;int&gt;&amp; takeOut) &#123;
+        if(takeOut.size()&#x3D;&#x3D;0)   return true;
+        if(putIn.size()&#x3D;&#x3D;0) return false;
+        vector&lt;int&gt; stack;
+        int j&#x3D;0;
+        for(int i&#x3D;0; i&lt;putIn.size(); i++) &#123;
+            stack.insert(stack.begin(), putIn[i]);
+            while(!stack.empty()&amp;&amp;takeOut[j]&#x3D;&#x3D;stack[0]) &#123;&#x2F;&#x2F;是and不是or
+                stack.erase(stack.begin());
+                j++;
+            &#125;
+        &#125;
+        return stack.empty();
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h6 id="【小结】-4"><a href="#【小结】-4" class="headerlink" title="【小结】"></a>【小结】</h6><ul>
-<li><p>模拟题—</p>
-</li>
-<li><p>螺旋遍历二维数组—</p>
-</li>
-<li></li>
+<li>螺旋遍历二维数组—四边界约束遍历</li>
+<li>数组—注意下标和大小</li>
+<li>vector容器的erase和remove—remove将等于value的元素放到vector的尾部，不减少vector的size—erase删除一个&#x2F;段元素，删除后原迭代器的位置不变</li>
+<li>vector容器为空与否—empty()函数—size()函数</li>
 </ul>
-<p><strong>是</strong></p>
+<p><strong>模拟题：仅使用较简单的算法和数据结构，按照题目的要求，一步步写出代码</strong></p>
 <hr>
-<h4 id="六、查找"><a href="#六、查找" class="headerlink" title="六、查找"></a>六、查找</h4><h5 id="1、"><a href="#1、" class="headerlink" title="1、"></a>1、</h5><hr>
-<h4 id="七、搜索-回溯"><a href="#七、搜索-回溯" class="headerlink" title="七、搜索&amp;回溯"></a>七、搜索&amp;回溯</h4><h5 id="1、-1"><a href="#1、-1" class="headerlink" title="1、"></a>1、</h5><hr>
-<h4 id="八、分治"><a href="#八、分治" class="headerlink" title="八、分治"></a>八、分治</h4><h5 id="1、-2"><a href="#1、-2" class="headerlink" title="1、"></a>1、</h5><hr>
-<h4 id="九、排序"><a href="#九、排序" class="headerlink" title="九、排序"></a>九、排序</h4><h5 id="1、-3"><a href="#1、-3" class="headerlink" title="1、"></a>1、</h5><hr>
-<h4 id="十、动态规划（dp）"><a href="#十、动态规划（dp）" class="headerlink" title="十、动态规划（dp）"></a>十、动态规划（dp）</h4><h5 id="1、-4"><a href="#1、-4" class="headerlink" title="1、"></a>1、</h5><hr>
-<h4 id="十一、位运算"><a href="#十一、位运算" class="headerlink" title="十一、位运算"></a>十一、位运算</h4><h5 id="1、-5"><a href="#1、-5" class="headerlink" title="1、"></a>1、</h5><hr>
-<h4 id="十二、数学"><a href="#十二、数学" class="headerlink" title="十二、数学"></a>十二、数学</h4><h5 id="1、-6"><a href="#1、-6" class="headerlink" title="1、"></a>1、</h5><hr>
+<h4 id="六、查找"><a href="#六、查找" class="headerlink" title="六、查找"></a>六、查找</h4><h5 id="1、查找相同元素【简单】"><a href="#1、查找相同元素【简单】" class="headerlink" title="1、查找相同元素【简单】"></a>1、查找相同元素【简单】</h5><p>寻找文件副本；sort先排序，相邻比较</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
+public:
+    int findRepeatDocument(vector&lt;int&gt;&amp; documents) &#123;
+        sort(documents.begin(), documents.end());
+        for(int i&#x3D;0; i&lt;documents.size(); i++) &#123;
+            if(documents[i]&#x3D;&#x3D;documents[i+1]) &#123;
+                return documents[i];
+            &#125;
+        &#125;
+        return 0;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="2、统计出现次数【简单】"><a href="#2、统计出现次数【简单】" class="headerlink" title="2、统计出现次数【简单】"></a>2、统计出现次数【简单】</h5><p>遍历</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
+public:
+    int countTarget(vector&lt;int&gt;&amp; scores, int target) &#123;
+        int ans&#x3D;0;
+        for(int i&#x3D;0; i&lt;scores.size(); i++) &#123;
+            if(scores[i]&#x3D;&#x3D;target) &#123;
+                ans++;&#x2F;&#x2F;加提前终止判断反而效果不好
+            &#125;
+        &#125;
+        return ans;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="3、缺席编号【简单】"><a href="#3、缺席编号【简单】" class="headerlink" title="3、缺席编号【简单】"></a>3、缺席编号【简单】</h5><p>点名；注意不是中间缺的情况；借助中间变量i完成</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
+public:
+    int takeAttendance(vector&lt;int&gt;&amp; records) &#123;
+        int i&#x3D;0;
+        for(i; i&lt;records.size(); i++) &#123;
+            if(records[i]!&#x3D;i) &#123;
+                return i;
+            &#125;
+        &#125;
+        return i;&#x2F;&#x2F;当顺序完全对的时候，没来的就是最后补一个
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="4、二维数组寻找目标值【中等】"><a href="#4、二维数组寻找目标值【中等】" class="headerlink" title="4、二维数组寻找目标值【中等】"></a>4、二维数组寻找目标值【中等】</h5><p>拼接为一维数组行不通；直接双循环查找(不多加上次提交的判断条件更好)</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
+public:
+    bool findTargetIn2DPlants(vector&lt;vector&lt;int&gt;&gt;&amp; plants, int target) &#123;
+        for(int i&#x3D;0; i&lt;plants.size(); i++) &#123;
+            for(int j&#x3D;0; j&lt;plants[0].size(); j++) &#123;
+                if(target&#x3D;&#x3D;plants[i][j])    return true;
+            &#125;
+        &#125;
+        return false;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="5、找最小元素【简单】"><a href="#5、找最小元素【简单】" class="headerlink" title="5、找最小元素【简单】"></a>5、找最小元素【简单】</h5><p>库存管理，直接sort</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
+public:
+    int stockManagement(vector&lt;int&gt;&amp; stock) &#123;
+        sort(stock.begin(),stock.end());
+        return stock[0];
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="6、寻找第一个单一字母【简单】"><a href="#6、寻找第一个单一字母【简单】" class="headerlink" title="6、寻找第一个单一字母【简单】"></a>6、寻找第一个单一字母【简单】</h5><p>双重循环暴力解法，统计每个字母出现的次数</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
+public:
+    char dismantlingAction(string arr) &#123;
+        int count&#x3D;0;
+        for(int i&#x3D;0;i&lt;arr.length();i++) &#123;
+            for(int j&#x3D;0;j&lt;arr.length();j++) &#123;
+                if(arr[i]&#x3D;&#x3D;arr[j]) &#123;
+                    count++;
+                &#125;
+                if(count&#x3D;&#x3D;2)    break;
+            &#125;
+            if(count&#x3D;&#x3D;1)    return arr[i];
+            count&#x3D;0;
+        &#125;
+        return &#39; &#39;;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="【小结】-5"><a href="#【小结】-5" class="headerlink" title="【小结】"></a>【小结】</h5><ul>
+<li>寻找重复元素—排序</li>
+<li>非严格递增—不排除相等情况的递增</li>
+<li>在一些循环类问题中，自以为的可以省时省内存的提前终止的判断语句都是冗余的</li>
+</ul>
+<hr>
+<h4 id="七、搜索-回溯"><a href="#七、搜索-回溯" class="headerlink" title="七、搜索&amp;回溯"></a>七、搜索&amp;回溯</h4><h5 id="1、"><a href="#1、" class="headerlink" title="1、"></a>1、</h5><hr>
+<h4 id="八、分治"><a href="#八、分治" class="headerlink" title="八、分治"></a>八、分治</h4><h5 id="1、-1"><a href="#1、-1" class="headerlink" title="1、"></a>1、</h5><hr>
+<h4 id="九、排序"><a href="#九、排序" class="headerlink" title="九、排序"></a>九、排序</h4><h5 id="1、-2"><a href="#1、-2" class="headerlink" title="1、"></a>1、</h5><hr>
+<h4 id="十、动态规划（dp）"><a href="#十、动态规划（dp）" class="headerlink" title="十、动态规划（dp）"></a>十、动态规划（dp）</h4><h5 id="1、-3"><a href="#1、-3" class="headerlink" title="1、"></a>1、</h5><hr>
+<h4 id="十一、位运算"><a href="#十一、位运算" class="headerlink" title="十一、位运算"></a>十一、位运算</h4><h5 id="1、-4"><a href="#1、-4" class="headerlink" title="1、"></a>1、</h5><hr>
+<h4 id="十二、数学"><a href="#十二、数学" class="headerlink" title="十二、数学"></a>十二、数学</h4><h5 id="1、-5"><a href="#1、-5" class="headerlink" title="1、"></a>1、</h5><hr>
 <h2 id="3-2力扣hot100"><a href="#3-2力扣hot100" class="headerlink" title="3.2力扣hot100"></a>3.2力扣hot100</h2><h2 id="3-3力扣前300"><a href="#3-3力扣前300" class="headerlink" title="3.3力扣前300"></a>3.3力扣前300</h2><hr>
 <h1 id="4-八股准备"><a href="#4-八股准备" class="headerlink" title="4.八股准备"></a>4.八股准备</h1><h2 id="4-1仓库"><a href="#4-1仓库" class="headerlink" title="4.1仓库"></a>4.1仓库</h2><p>【①】<a target="_blank" rel="noopener" href="https://github.com/GYee/CV_interviews_Q-A">GYee：CV算法岗知识点及面试问答汇总，主要分为计算机视觉、机器学习、图像处理和 C++基础四大块</a></p>
 <p>【②】<a target="_blank" rel="noopener" href="https://github.com/kongyan66/CV-Algorithm-Interview-Notes">kongyan66：CV算法工程师自学路线&#x2F;秋招冲刺（python、C++、数据结构、传统图像、深度学习、目标检测等）</a></p>
