@@ -1262,10 +1262,59 @@ public:
 <li>在一些循环类问题中，自以为的可以省时省内存的提前终止的判断语句都是冗余的</li>
 </ul>
 <hr>
-<h4 id="七、搜索-回溯"><a href="#七、搜索-回溯" class="headerlink" title="七、搜索&amp;回溯"></a>七、搜索&amp;回溯</h4><h5 id="1、层序遍历二叉树"><a href="#1、层序遍历二叉树" class="headerlink" title="1、层序遍历二叉树"></a>1、层序遍历二叉树</h5><p>彩灯装饰记录；</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="七、搜索-回溯"><a href="#七、搜索-回溯" class="headerlink" title="七、搜索&amp;回溯"></a>七、搜索&amp;回溯</h4><h5 id="1、层序遍历二叉树【中等】"><a href="#1、层序遍历二叉树【中等】" class="headerlink" title="1、层序遍历二叉树【中等】"></a>1、层序遍历二叉树【中等】</h5><p>彩灯装饰记录；借助队列先进后出实现二叉树层序遍历；也是考虑到树的表示方式不好一个一个取出节点，顺序也不好控制</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;**
+ * Definition for a binary tree node.
+ * struct TreeNode &#123;
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;
+ * &#125;;
+ *&#x2F;
+class Solution &#123;
+public:
+    vector&lt;int&gt; decorateRecord(TreeNode* root) &#123;
+        vector&lt;int&gt; ans;
+        if(!root)   return ans;
+        queue&lt;TreeNode *&gt; q;
+        q.push(root);
+        while(!q.empty()) &#123;
+            TreeNode *node &#x3D;q.front();&#x2F;&#x2F;fifo
+            q.pop();
+            ans.push_back(node-&gt;val);
+            if(node-&gt;left)  q.push(node-&gt;left);
+            if(node-&gt;right) q.push(node-&gt;right);
+        &#125;
+        return ans;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h5 id="2、"><a href="#2、" class="headerlink" title="2、"></a>2、</h5><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h5 id="2、层序遍历变形【简单】"><a href="#2、层序遍历变形【简单】" class="headerlink" title="2、层序遍历变形【简单】"></a>2、层序遍历变形【简单】</h5><p>彩灯装饰记录；额外借助一个临时数组；借助前面的父节点(们)衍生孩子的思想，控制中间分层</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
+public:
+    vector&lt;vector&lt;int&gt;&gt; decorateRecord(TreeNode* root) &#123;
+        vector&lt;vector&lt;int&gt;&gt; ans;
+        if(!root)   return ans;
+        queue&lt;TreeNode *&gt;q;
+        q.push(root);
+        while(!q.empty()) &#123;
+            vector&lt;int&gt; tmp;
+            &#x2F;&#x2F; for(int i&#x3D;0; i&lt;q.size(); i++) &#123;&#x2F;&#x2F;这样q.size变化
+            for(int i&#x3D;q.size(); i&gt;0; i--) &#123;
+                TreeNode *node&#x3D;q.front();
+                q.pop();
+                tmp.push_back(node-&gt;val);
+                if(node-&gt;left)  q.push(node-&gt;left);
+                if(node-&gt;right) q.push(node-&gt;right);
+            &#125;
+            ans.push_back(tmp);
+        &#125;
+        return ans;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h5 id="3、"><a href="#3、" class="headerlink" title="3、"></a>3、</h5><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -1301,6 +1350,7 @@ public:
 
 <h5 id="【小结】-6"><a href="#【小结】-6" class="headerlink" title="【小结】"></a>【小结】</h5><ul>
 <li>深度遍历—广度遍历(层序遍历)—(前)先序遍历—中序遍历—后序遍历</li>
+<li>层序遍历—</li>
 </ul>
 <hr>
 <h4 id="八、分治"><a href="#八、分治" class="headerlink" title="八、分治"></a>八、分治</h4><h5 id="1、"><a href="#1、" class="headerlink" title="1、"></a>1、</h5><hr>
