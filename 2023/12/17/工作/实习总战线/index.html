@@ -1316,13 +1316,77 @@ public:
     &#125;
 &#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h5 id="3、"><a href="#3、" class="headerlink" title="3、"></a>3、</h5><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h5 id="3、层序遍历再变型【中等】"><a href="#3、层序遍历再变型【中等】" class="headerlink" title="3、层序遍历再变型【中等】"></a>3、层序遍历再变型【中等】</h5><p>借助一个中间数组，借助一个标识符判断奇偶层，借助reverse函数</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
+public:
+    vector&lt;vector&lt;int&gt;&gt; decorateRecord(TreeNode* root) &#123;
+        vector&lt;vector&lt;int&gt;&gt; ans;
+        if(!root)   return ans;
+        queue&lt;TreeNode *&gt; q;
+        q.push(root);
+        int flag&#x3D;0;
+        while(!q.empty()) &#123;
+            vector&lt;int&gt; tmp;
+            flag++;
+            for(int i&#x3D;q.size(); i&gt;0; i--) &#123;
+                TreeNode *node&#x3D;q.front();
+                q.pop();
+                tmp.push_back(node-&gt;val);
+                if(node-&gt;left)  q.push(node-&gt;left);
+                if(node-&gt;right) q.push(node-&gt;right);
+            &#125;
+            if(flag%2&#x3D;&#x3D;0)   reverse(tmp.begin(), tmp.end());
+            ans.push_back(tmp);
+        &#125;
+        return ans;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h5 id="4、"><a href="#4、" class="headerlink" title="4、"></a>4、</h5><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h5 id="4、二叉树子结构【中等】"><a href="#4、二叉树子结构【中等】" class="headerlink" title="4、二叉树子结构【中等】"></a>4、二叉树子结构【中等】</h5><p>这题最后一句描述又给我一种语文是数学老师教的感觉；意思是初始为空树就没有子结构；回溯过程中还是可能走到nullptr的情况需要再说；递归结构；终止条件是B匹配完所有节点</p>
+<p>所以考虑的情况包括：</p>
+<ul>
+<li>A或B为空树；</li>
+<li>初始就能匹配上；</li>
+<li>初始匹配不上，递归到A 的左子树或右子树上。</li>
+</ul>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
+public:
+    bool isSubStructure(TreeNode* A, TreeNode* B) &#123;
+        return (A!&#x3D;NULL&amp;&amp;B!&#x3D;NULL)&amp;&amp;(comp(A,B)||isSubStructure(A-&gt;left,B)||isSubStructure(A-&gt;right,B));
+    &#125;
+    bool comp(TreeNode *A, TreeNode *B) &#123;
+        if(B&#x3D;&#x3D;NULL) return true;
+        else if(A&#x3D;&#x3D;NULL||A-&gt;val!&#x3D;B-&gt;val)    return false;
+        return (comp(A-&gt;left, B-&gt;left)&amp;&amp;comp(A-&gt;right, B-&gt;right));
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h5 id="5、"><a href="#5、" class="headerlink" title="5、"></a>5、</h5><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h5 id="5、翻转二叉树"><a href="#5、翻转二叉树" class="headerlink" title="5、翻转二叉树"></a>5、翻转二叉树</h5><p>回溯、递归调用，循环交换左右节点</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
+public:
+    TreeNode* mirrorTree(TreeNode* root) &#123;
+        if(!root)   return NULL;
+        TreeNode *tmp&#x3D;root-&gt;left;
+        root-&gt;left&#x3D;root-&gt;right;
+        root-&gt;right&#x3D;tmp;
+        mirrorTree(root-&gt;left);
+        mirrorTree(root-&gt;right);
+        return root;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h5 id="6、"><a href="#6、" class="headerlink" title="6、"></a>6、</h5><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h5 id="6、判断对称二叉树"><a href="#6、判断对称二叉树" class="headerlink" title="6、判断对称二叉树"></a>6、判断对称二叉树</h5><p>逐层判断；每个子树内部判断+子树间判断</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
+public:
+    bool checkSymmetricTree(TreeNode* root) &#123;
+        return (root&#x3D;&#x3D;nullptr)||(comp(root-&gt;left, root-&gt;right));
+    &#125;
+    bool comp(TreeNode *l, TreeNode *r) &#123;
+        if(!l&amp;&amp;!r)  return true;
+        if(!l||!r||(l-&gt;val!&#x3D;r-&gt;val))  return false;
+        return comp(l-&gt;left, r-&gt;right)&amp;&amp;comp(l-&gt;right,r-&gt;left);
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h5 id="7、"><a href="#7、" class="headerlink" title="7、"></a>7、</h5><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -1350,8 +1414,11 @@ public:
 
 <h5 id="【小结】-6"><a href="#【小结】-6" class="headerlink" title="【小结】"></a>【小结】</h5><ul>
 <li>深度遍历—广度遍历(层序遍历)—(前)先序遍历—中序遍历—后序遍历</li>
-<li>层序遍历—</li>
+<li>层序遍历—队列先进先出</li>
+<li>vector<int>的reverse(x,y)—x起始指针—y终止指针—直接修改数组</int></li>
+<li>symmetric—sei mai tri k—对称</li>
 </ul>
+<p><strong><a target="_blank" rel="noopener" href="https://blog.csdn.net/XMEHB/article/details/107133259">递归、迭代、分治、回溯、dp、贪心</a></strong></p>
 <hr>
 <h4 id="八、分治"><a href="#八、分治" class="headerlink" title="八、分治"></a>八、分治</h4><h5 id="1、"><a href="#1、" class="headerlink" title="1、"></a>1、</h5><hr>
 <h4 id="九、排序"><a href="#九、排序" class="headerlink" title="九、排序"></a>九、排序</h4><h5 id="1、-1"><a href="#1、-1" class="headerlink" title="1、"></a>1、</h5><hr>
