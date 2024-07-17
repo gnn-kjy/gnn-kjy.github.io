@@ -1071,7 +1071,795 @@ s 中至少存在一个单词。
 <p>(21)</p>
 <p>(22)</p>
 <p>(23)</p>
-<h2 id="7-17"><a href="#7-17" class="headerlink" title="7.17"></a>7.17</h2><h3 id="任务-1"><a href="#任务-1" class="headerlink" title="任务"></a>任务</h3><h3 id="专项练习-1"><a href="#专项练习-1" class="headerlink" title="专项练习"></a>专项练习</h3><h4 id="1、·真题·单选"><a href="#1、·真题·单选" class="headerlink" title="1、·真题·单选"></a>1、·真题·单选</h4><p>(1)</p>
+<h2 id="7-17"><a href="#7-17" class="headerlink" title="7.17"></a>7.17</h2><h3 id="任务-1"><a href="#任务-1" class="headerlink" title="任务"></a>任务</h3><p>【专项练习训练营】第2天</p>
+<p>✅专项练习<br>训练模块：数据结构<br>模块分类：数组、堆、图、队列、栈<br>题目数量：80道（会员题目）</p>
+<p>🟠编程练习<br>模块分类：栈&amp;队列、数组&amp;排序<br>题目数量：任选2道会员题</p>
+<p>训练时长：预估1.5小时</p>
+<p>请各位同学根据今天学习任务，登录牛客APP或官网，进入“题库”页面，选择专项练习进行刷题。 @所有人 </p>
+<h3 id="专项练习-1"><a href="#专项练习-1" class="headerlink" title="专项练习"></a>专项练习</h3><h4 id="1、堆·真题·单选"><a href="#1、堆·真题·单选" class="headerlink" title="1、堆·真题·单选"></a>1、堆·真题·单选</h4><p>(1)2021 中国电子云系统 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">下列关键字序列为堆的是
+A <span class="token number">60</span>，<span class="token number">70</span>，<span class="token number">65</span>，<span class="token number">50</span>，<span class="token number">32</span>，<span class="token number">100</span>
+B <span class="token number">65</span>，<span class="token number">100</span>，<span class="token number">70</span>，<span class="token number">32</span>，<span class="token number">50</span>，<span class="token number">60</span>
+C <span class="token number">100</span>，<span class="token number">60</span>，<span class="token number">70</span>，<span class="token number">50</span>，<span class="token number">32</span>，<span class="token number">65</span>
+D <span class="token number">32</span>，<span class="token number">50</span>，<span class="token number">100</span>，<span class="token number">70</span>，<span class="token number">65</span>，<span class="token number">60</span>
+正确答案：C
+你的答案：未作答
+官方解析：
+最大（最小）堆是一棵每一个节点的键值都不小于（大于）其孩子（如果存在）的键值的树。大顶堆是一棵完全二叉树，同时也是一棵最大树。小顶堆是一棵完全完全二叉树，同时也是一棵最小树。结果中， 是数组形式存储的树。只有C符合定义。
+知识点：堆<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(2)2021 远景智能 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">堆的形状是一颗什么树？
+A 完全二叉树
+B 满二叉树
+C 二叉排序树
+D 平衡二叉树
+正确答案：A
+你的答案：未作答
+官方解析：堆总是满足一下特性：
+<span class="token number">1</span><span class="token punctuation">.</span>堆中某个结点的值总是不大于或不小于其父结点的值。
+<span class="token number">2</span><span class="token punctuation">.</span>堆总是一棵完全二叉树。
+故选A。
+知识点：堆<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(3)2022 shopee Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">对数组<span class="token punctuation">[</span><span class="token number">45</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">47</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">,</span> <span class="token number">78</span><span class="token punctuation">,</span> <span class="token number">34</span><span class="token punctuation">]</span>构建一个大顶堆， 则结果是：
+A <span class="token punctuation">[</span><span class="token number">90</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">47</span><span class="token punctuation">,</span> <span class="token number">78</span><span class="token punctuation">,</span> <span class="token number">45</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">34</span><span class="token punctuation">]</span>
+B <span class="token punctuation">[</span><span class="token number">90</span><span class="token punctuation">,</span> <span class="token number">45</span><span class="token punctuation">,</span> <span class="token number">78</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">34</span><span class="token punctuation">,</span> <span class="token number">47</span><span class="token punctuation">]</span>
+C <span class="token punctuation">[</span><span class="token number">90</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">78</span><span class="token punctuation">,</span> <span class="token number">45</span><span class="token punctuation">,</span> <span class="token number">21</span><span class="token punctuation">,</span> <span class="token number">47</span><span class="token punctuation">,</span> <span class="token number">34</span><span class="token punctuation">]</span>
+D <span class="token punctuation">[</span><span class="token number">90</span><span class="token punctuation">,</span> <span class="token number">47</span><span class="token punctuation">,</span> <span class="token number">78</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">45</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">34</span><span class="token punctuation">]</span>
+正确答案：C
+你的答案：未作答
+官方解析：
+大根堆从最后开始最后一个非叶子节点开始，也即数组长度一半<span class="token operator">-</span><span class="token number">1</span>，为<span class="token number">47</span>，与其两个子节点比较，<span class="token number">78</span><span class="token operator">></span><span class="token number">47</span>，将<span class="token number">78</span>换上来。然后下一个非叶子节点<span class="token number">31</span>与<span class="token number">90</span>交换。然后下一个非叶子节点<span class="token number">45</span>与<span class="token number">90</span>交换。这样左边子树部分不满足堆的条件， 因为换下来的<span class="token number">45</span><span class="token operator">&lt;</span><span class="token number">50</span>，需要再交换位置。因此最终的序列是<span class="token punctuation">[</span><span class="token number">90</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">78</span><span class="token punctuation">,</span> <span class="token number">45</span><span class="token punctuation">,</span> <span class="token number">21</span><span class="token punctuation">,</span> <span class="token number">47</span><span class="token punctuation">,</span> <span class="token number">34</span><span class="token punctuation">]</span>，故选C。
+知识点：堆<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(4)2021 微众银行 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">堆是一种有用的数据结构，在以下排序码序列中小根堆是
+A <span class="token number">16</span><span class="token punctuation">,</span><span class="token number">72</span><span class="token punctuation">,</span><span class="token number">31</span><span class="token punctuation">,</span><span class="token number">23</span><span class="token punctuation">,</span><span class="token number">94</span><span class="token punctuation">,</span><span class="token number">53</span>
+B <span class="token number">94</span><span class="token punctuation">,</span><span class="token number">53</span><span class="token punctuation">,</span><span class="token number">31</span><span class="token punctuation">,</span><span class="token number">72</span><span class="token punctuation">,</span><span class="token number">16</span><span class="token punctuation">,</span><span class="token number">53</span>
+C <span class="token number">16</span><span class="token punctuation">,</span><span class="token number">53</span><span class="token punctuation">,</span><span class="token number">23</span><span class="token punctuation">,</span><span class="token number">94</span><span class="token punctuation">,</span><span class="token number">31</span><span class="token punctuation">,</span><span class="token number">72</span>
+D <span class="token number">16</span><span class="token punctuation">,</span><span class="token number">31</span><span class="token punctuation">,</span><span class="token number">23</span><span class="token punctuation">,</span><span class="token number">94</span><span class="token punctuation">,</span><span class="token number">53</span><span class="token punctuation">,</span><span class="token number">72</span>
+正确答案：D
+你的答案：未作答
+官方解析：
+父节点要比子节点小，一个个检查：
+A选项<span class="token number">23</span><span class="token operator">&lt;</span><span class="token number">72</span>；
+B选项<span class="token number">53</span><span class="token operator">&lt;</span><span class="token number">94</span><span class="token punctuation">;</span>
+C选项<span class="token number">31</span><span class="token operator">&lt;</span><span class="token number">94</span>。
+知识点：堆<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(5)2021 奇安信 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">已知关键码序列<span class="token number">6</span>，<span class="token number">9</span>，<span class="token number">12</span>，<span class="token number">19</span>，<span class="token number">28</span>，<span class="token number">20</span>，<span class="token number">16</span>，<span class="token number">22</span>，<span class="token number">23</span>，<span class="token number">30</span>是最小堆，插入关键码<span class="token number">7</span>，调整后得到的最小堆是？
+A <span class="token number">6</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">19</span><span class="token punctuation">,</span><span class="token number">28</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">16</span><span class="token punctuation">,</span><span class="token number">22</span><span class="token punctuation">,</span><span class="token number">23</span><span class="token punctuation">,</span><span class="token number">30</span>
+B <span class="token number">6</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token number">19</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">16</span><span class="token punctuation">,</span><span class="token number">22</span><span class="token punctuation">,</span><span class="token number">23</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">,</span><span class="token number">28</span>
+C <span class="token number">6</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">19</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">16</span><span class="token punctuation">,</span><span class="token number">22</span><span class="token punctuation">,</span><span class="token number">23</span><span class="token punctuation">,</span><span class="token number">28</span>
+D <span class="token number">6</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token number">19</span><span class="token punctuation">,</span><span class="token number">28</span><span class="token punctuation">,</span><span class="token number">29</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">16</span><span class="token punctuation">,</span><span class="token number">22</span><span class="token punctuation">,</span><span class="token number">23</span><span class="token punctuation">,</span><span class="token number">30</span>
+正确答案：B
+你的答案：未作答
+官方解析：
+首先将要插入的元素加入到堆的末尾，然后观察其与父节点的关系，父节点为<span class="token number">28</span>大于<span class="token number">7</span>，交换位置，此时<span class="token number">28</span>到了对的最末尾，排除AD。然后继续与父节点<span class="token number">9</span>交换位置，故选B。
+知识点：堆<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(6)2022 阿里巴巴 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">下列关键字序列为堆的是？
+A <span class="token number">100</span>，<span class="token number">60</span>，<span class="token number">70</span>，<span class="token number">50</span>，<span class="token number">32</span>，<span class="token number">65</span>
+B <span class="token number">60</span>，<span class="token number">70</span>，<span class="token number">65</span>，<span class="token number">50</span>，<span class="token number">32</span>，<span class="token number">100</span>
+C <span class="token number">65</span>，<span class="token number">100</span>，<span class="token number">70</span>，<span class="token number">32</span>，<span class="token number">50</span>，<span class="token number">60</span>
+D <span class="token number">70</span>，<span class="token number">65</span>，<span class="token number">100</span>，<span class="token number">32</span>，<span class="token number">50</span>，<span class="token number">60</span>
+正确答案：A
+你的答案：未作答
+官方解析：
+最大（最小）堆是一棵每一个节点的键值都不小于（大于）其孩子（如果存在）的键值的树。大顶堆是一棵完全二叉树，同时也是一棵最大树。小顶堆是一棵完全完全二叉树，同时也是一棵最小树。
+结果中， 是数组形式存储的树。只有A符合定义。
+知识点：堆<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(7)2022 腾讯 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">初始序列为<span class="token number">1</span> <span class="token number">8</span> <span class="token number">6</span> <span class="token number">2</span> <span class="token number">5</span> <span class="token number">4</span> <span class="token number">7</span> <span class="token number">3</span>一数组采用堆排序，当小根堆建立完毕时，堆所对应的二叉树的中序遍历是多少？
+A <span class="token number">8</span> <span class="token number">3</span> <span class="token number">2</span> <span class="token number">5</span> <span class="token number">1</span> <span class="token number">6</span> <span class="token number">4</span> <span class="token number">7</span>
+B <span class="token number">3</span> <span class="token number">2</span> <span class="token number">8</span> <span class="token number">5</span> <span class="token number">1</span> <span class="token number">4</span> <span class="token number">6</span> <span class="token number">7</span>
+C <span class="token number">3</span> <span class="token number">8</span> <span class="token number">2</span> <span class="token number">5</span> <span class="token number">1</span> <span class="token number">6</span> <span class="token number">7</span> <span class="token number">4</span>
+D <span class="token number">8</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">5</span> <span class="token number">1</span> <span class="token number">4</span> <span class="token number">7</span> <span class="token number">6</span>
+正确答案：A
+你的答案：未作答
+官方解析：初始化序列<span class="token number">1</span> <span class="token number">8</span> <span class="token number">6</span> <span class="token number">2</span> <span class="token number">5</span> <span class="token number">4</span> <span class="token number">7</span> <span class="token number">3</span>，小根堆就是要求节点的值小于其左右孩子节点的值，左右孩子的大小之间没有关系，那么排序后的小根堆为<span class="token number">1</span> <span class="token number">2</span> <span class="token number">4</span> <span class="token number">3</span> <span class="token number">5</span> <span class="token number">6</span> <span class="token number">7</span> <span class="token number">8</span>，中序遍历先遍历左孩子，然后访问根节点，最后访问右孩子，故结果为<span class="token number">8</span> <span class="token number">3</span> <span class="token number">2</span> <span class="token number">5</span> <span class="token number">1</span> <span class="token number">6</span> <span class="token number">4</span> <span class="token number">7</span>。
+知识点：堆<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(8)2021 奇安信 Java <strong>多选</strong></p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">关于堆数据结构，下面描述中正确的有
+A 可以用堆实现优先队列（priority_queue）
+B 使用堆可以实现排序算法，复杂度为N <span class="token operator">*</span> log N
+C 从M个元素中查找最小的N个元素时，使用大顶堆的效率比使用小顶堆更高
+D 堆数据结构可以用数组方式存储，存储的是一棵完全二叉树
+正确答案：ABCD
+你的答案：未作答
+官方解析：
+A选项，堆排序的时间复杂度符合优先队列要求，故可以使用堆实现优先队列；
+B选项，堆排序的时间复杂度为<span class="token function">O</span><span class="token punctuation">(</span>NlogN<span class="token punctuation">)</span>；
+C选项，可以建立一个大小为N个元素的大顶堆记录目前为止最小的N个元素，其中堆顶为这最小N个元素中最大的，后续若是遇到比堆顶更小的元素，说明堆顶不在这N个元素之内，弹出，将更小的新元素加入，直到遍历完M个元素，堆中就是最小的N个元素，这样的复杂度只有<span class="token function">O</span><span class="token punctuation">(</span>MlogN<span class="token punctuation">)</span>，比起小顶堆直接排序的<span class="token function">O</span><span class="token punctuation">(</span>MlogM<span class="token punctuation">)</span>要高效不少；
+D选项，堆可以使用完全二叉树的形式，用数组记录，再哪一层与数组下标有关。
+知识点：堆<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(9)2021 小米 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">现有一整型数组，a<span class="token punctuation">[</span><span class="token number">8</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">&#123;</span> <span class="token number">4</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token operator">&#125;</span>，现使用堆排序的方式原地对该数组进行升序排列。那么在进行第一轮排序结束之后，数组的顺序为
+A <span class="token number">8</span> <span class="token number">4</span> <span class="token number">7</span> <span class="token number">0</span> <span class="token number">5</span> <span class="token number">3</span> <span class="token number">9</span> <span class="token number">1</span>
+B <span class="token number">7</span> <span class="token number">8</span> <span class="token number">4</span> <span class="token number">0</span> <span class="token number">9</span> <span class="token number">1</span> <span class="token number">3</span> <span class="token number">5</span>
+C <span class="token number">8</span> <span class="token number">3</span> <span class="token number">7</span> <span class="token number">1</span> <span class="token number">0</span> <span class="token number">5</span> <span class="token number">4</span> <span class="token number">9</span>
+D <span class="token number">8</span> <span class="token number">4</span> <span class="token number">7</span> <span class="token number">0</span> <span class="token number">1</span> <span class="token number">5</span> <span class="token number">9</span> <span class="token number">3</span>
+正确答案：C
+你的答案：未作答
+官方解析：先按序列建堆，然后调整为大顶堆，<span class="token number">9</span>是序列的最大值，第一轮排序时，<span class="token number">9</span>为堆的根节点，<span class="token number">9</span>出堆，与堆的最末元素交换位置，此时堆再此调整为大顶堆，第一轮排序结束，即为<span class="token number">8</span> <span class="token number">3</span> <span class="token number">7</span> <span class="token number">1</span> <span class="token number">0</span> <span class="token number">5</span> <span class="token number">4</span> <span class="token number">9</span>
+知识点：堆<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(10)2021 伴鱼少儿英语 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">有一个小顶堆构建于数组之上 <span class="token punctuation">[</span><span class="token number">1</span>、<span class="token number">2</span>、<span class="token number">3</span>、<span class="token number">4</span>、<span class="token number">5</span>、<span class="token number">6</span>、<span class="token number">7</span>、<span class="token number">8</span>、<span class="token number">9</span><span class="token punctuation">]</span> 当删除了根节点<span class="token number">1</span>，调整后结果应该是
+A <span class="token punctuation">[</span><span class="token number">2</span>、<span class="token number">3</span>、<span class="token number">4</span>、<span class="token number">8</span>、<span class="token number">5</span>、<span class="token number">6</span>、<span class="token number">7</span>、<span class="token number">9</span><span class="token punctuation">]</span>
+B <span class="token punctuation">[</span><span class="token number">2</span>、<span class="token number">4</span>、<span class="token number">3</span>、<span class="token number">5</span>、<span class="token number">8</span>、<span class="token number">6</span>、<span class="token number">7</span>、<span class="token number">9</span><span class="token punctuation">]</span>
+C <span class="token punctuation">[</span><span class="token number">2</span>、<span class="token number">3</span>、<span class="token number">4</span>、<span class="token number">8</span>、<span class="token number">5</span>、<span class="token number">7</span>、<span class="token number">6</span>、<span class="token number">9</span><span class="token punctuation">]</span>
+D <span class="token punctuation">[</span><span class="token number">2</span>、<span class="token number">4</span>、<span class="token number">3</span>、<span class="token number">8</span>、<span class="token number">5</span>、<span class="token number">6</span>、<span class="token number">7</span>、<span class="token number">9</span><span class="token punctuation">]</span>
+正确答案：D
+你的答案：未作答
+官方解析：
+删除根节点<span class="token number">1</span>，<span class="token number">2</span>上升变成根节点，<span class="token number">2</span>的字节点中取较小的<span class="token number">4</span>代替<span class="token number">2</span>的位置，然后<span class="token number">4</span>的字节点取较小的<span class="token number">8</span>代替<span class="token number">4</span>的位置，为了维持完全二叉树的形状，<span class="token number">9</span>移动到之前<span class="token number">8</span>的位置，故删除之后的顺序应该是<span class="token number">24385679</span>，选C。
+知识点：堆<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2、图·真题·单选"><a href="#2、图·真题·单选" class="headerlink" title="2、图·真题·单选"></a>2、图·真题·单选</h4><p>(1)2021 小米 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">已知有向图，G <span class="token operator">=</span> <span class="token punctuation">(</span>V<span class="token punctuation">,</span> E<span class="token punctuation">)</span><span class="token punctuation">,</span> V <span class="token operator">=</span> <span class="token operator">&#123;</span>V1<span class="token punctuation">,</span>V2<span class="token punctuation">,</span>V3<span class="token punctuation">,</span>V4<span class="token punctuation">,</span>V5<span class="token operator">&#125;</span><span class="token punctuation">,</span> E <span class="token operator">=</span> <span class="token operator">&#123;&lt;</span>V1<span class="token punctuation">,</span>V4<span class="token operator">></span><span class="token punctuation">,</span><span class="token operator">&lt;</span>V1<span class="token punctuation">,</span> V2<span class="token operator">></span><span class="token punctuation">,</span><span class="token operator">&lt;</span>V2<span class="token punctuation">,</span> V4<span class="token operator">></span><span class="token punctuation">,</span> <span class="token operator">&lt;</span>V2<span class="token punctuation">,</span> V3<span class="token operator">></span><span class="token punctuation">,</span> <span class="token operator">&lt;</span>V4<span class="token punctuation">,</span> V3<span class="token operator">></span><span class="token punctuation">,</span> <span class="token operator">&lt;</span>V3<span class="token punctuation">,</span> V5<span class="token operator">></span><span class="token punctuation">,</span> <span class="token operator">&lt;</span>V4<span class="token punctuation">,</span> V5<span class="token operator">>&#125;</span>
+则G的拓扑序列为：
+A V1<span class="token punctuation">,</span>V2<span class="token punctuation">,</span>V3<span class="token punctuation">,</span>V4<span class="token punctuation">,</span>V5
+B V1<span class="token punctuation">,</span>V2<span class="token punctuation">,</span>V4<span class="token punctuation">,</span>V3<span class="token punctuation">,</span>V5
+C V1<span class="token punctuation">,</span>V2<span class="token punctuation">,</span>V3<span class="token punctuation">,</span>V5<span class="token punctuation">,</span>V4
+D V1<span class="token punctuation">,</span>V2<span class="token punctuation">,</span>V5<span class="token punctuation">,</span>V3<span class="token punctuation">,</span>V4
+正确答案：B
+你的答案：未作答
+官方解析：在图论中，由一个有向无环图的顶点组成的序列，当且仅当满足下列条件时，称为该图的一个拓扑排序（英语：Topological sorting）。 
+（<span class="token number">1</span>）每个顶点出现且只出现一次；
+（<span class="token number">2</span>）若A在序列中排在B的前面，则在图中不存在从B到A的路径。
+此拓扑排序的思想是：
+（<span class="token number">1</span>）从有向图中选取一个没有前驱的顶点，并输出之；
+（<span class="token number">2</span>）从有向图中删去此顶点以及所有以它为尾的弧；
+第一步： 删除V1，
+第二步： 可选的没有前驱的点只有V2
+第三步 ：下一步选择删除V2，可选的只有V4
+第四步： 下一步选择删除V4，可选的只有V3
+第五步： 下一步选择删除V5，可选的只有最后剩下V5
+所以排序为V1<span class="token punctuation">,</span>V2<span class="token punctuation">,</span>V4<span class="token punctuation">,</span>V3<span class="token punctuation">,</span>V5
+根据以上思路，可以推出只有答案B才是对的。
+知识点：图<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(2)2021 奇安信 后端开发</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">下列算法中基于图论的图像分割方法是
+A 区域生长法
+B 分水岭算法
+C Graph Cut
+D Mask R<span class="token operator">-</span>CNN
+正确答案：C
+你的答案：未作答
+官方解析：raph Cut（图形切割）应用于计算机视觉领域用来有效的解决各种低级计算机视觉问题，例如图像平滑（image smoothing）、立体应对问题（stereo correspondence problem）、图像分割（image segmentation）。
+GraphCut利用最小割最大流算法进行图像的分割，可以将图像分割为前景和背景。使用该算法时需要在前景和背景处各画几笔作为输入，算法将建立各个像素点与前景背景相似度的赋权图，并通过求解最小切割区分前景和背景。
+故选C。
+知识点：图<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(3)2022 奇虎360 Java</p>
+<img src="https://uploadfiles.nowcoder.com/files/20221130/0_1669813876780/2022360.png" alt="img" style="zoom: 67%;"> 
+
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">AOV网如下，拓扑序列是？
+A V6<span class="token punctuation">,</span> V4<span class="token punctuation">,</span> V2<span class="token punctuation">,</span> V1<span class="token punctuation">,</span> V3<span class="token punctuation">,</span> V5
+B V6<span class="token punctuation">,</span> V1<span class="token punctuation">,</span> V4<span class="token punctuation">,</span> V3<span class="token punctuation">,</span> V2<span class="token punctuation">,</span> V5
+C V1<span class="token punctuation">,</span> V2<span class="token punctuation">,</span> V3<span class="token punctuation">,</span> V4<span class="token punctuation">,</span> V5<span class="token punctuation">,</span> V6
+D V2<span class="token punctuation">,</span> V1<span class="token punctuation">,</span> V3<span class="token punctuation">,</span> V5<span class="token punctuation">,</span> V4<span class="token punctuation">,</span> V6
+正确答案：A
+你的答案：未作答
+官方解析：
+拓扑排序首先选择没有入度的，V6，V2都可以，故排除B选项；
+假设选择了V2，但是V1还有V4的入度，故V2后不能接V1，排除D选项；
+假设选择了V6，剩下的没有入度的V2和V4都可以，不能接V1，故排除A选项。选择V4以后，剩余没有入度的只有V2，然后删除V2，剩下没有入度的只有V1，最后剩下V3<span class="token operator">-></span>V5，故选C。
+知识点：图<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(4)2021 360 后端开发</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">在一个具有n个顶点的有向图中，若所有顶点的出度之和为s，则所有顶点的入度之和为
+A s<span class="token operator">-</span><span class="token number">1</span>
+B s
+C s<span class="token operator">+</span><span class="token number">1</span>
+D n
+正确答案：B
+你的答案：未作答
+官方解析：有向图的每一条边都有一个始顶点和一个终顶点，在有向图中所有顶点的出度之和等于入度之和，故选B。
+知识点：图<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(5)2021 微众银行 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">如果某图的邻接矩阵是对角线元素均为零的上三角矩阵，则此图是
+A 有向完全图
+B 连通图
+C 强连通图
+D 有向无环图
+正确答案：D
+你的答案：未作答
+官方解析：对角线元素为零<span class="token punctuation">,</span>说明没有回路<span class="token punctuation">,</span>上三角矩阵说明这个图是有向的<span class="token punctuation">(</span>注<span class="token punctuation">:</span>无向图的邻接矩阵是对称矩阵<span class="token punctuation">)</span><span class="token punctuation">,</span>综上<span class="token punctuation">:</span>为有向无环图。
+知识点：图<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(6)2021 远景智能 后端开发</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">对有n 个顶点、 e 条边且使用邻接表存储的有向图进行广度优先遍历，其算法的时间复杂度是
+A <span class="token function">O</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span>
+B <span class="token function">O</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+C <span class="token function">O</span><span class="token punctuation">(</span>n<span class="token operator">+</span>e<span class="token punctuation">)</span>
+D <span class="token function">O</span><span class="token punctuation">(</span>ne<span class="token punctuation">)</span>
+正确答案：C
+你的答案：未作答
+官方解析：广度优先遍历时，也是每个顶点表结点和每个边表结点均查找一次，每个顶点进入队列一次。 所以是选C<span class="token punctuation">.</span>
+知识点：图<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(7)2021 哔哩哔哩 后端开发</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">下面哪一方法可以判断出一个有向图是否有环（回路<span class="token punctuation">)</span>
+A 求节点的度
+B 拓扑排序
+C 求最短路径
+D 求关键路径
+正确答案：B
+你的答案：未作答
+官方解析：利用拓扑排序算法可以判定有向图中是否存在有向回路<span class="token punctuation">,</span>即在拓扑排序算法结束后如果还有顶点没有输出<span class="token punctuation">,</span>则说明剩下这些结点都还有前驱<span class="token punctuation">,</span>它们构成一个有向回路，故选B。
+知识点：图<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(8)2022 阿里巴巴 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">以下使用了贪心算法的是
+A KMP算法
+B 希尔排序算法
+C Floyd算法
+D Dijkstra算法
+正确答案：D
+你的答案：未作答
+官方解析：采用贪心策略，需要满足两个性质：贪心选择性质和最优子结构性质。
+求最小生成树的Prim和Kruskal都是漂亮的贪心算法。贪心法的应用算法有Dijkstra的单源最短路径和Chvatal的贪心集合覆盖启发式
+知识点：图<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(9)2021 猿辅导 后端开发</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">一个含有n个顶点和e条边的有向图，在其邻接矩阵存储结构中共有（）个零元素。
+A e
+B <span class="token number">2</span>e
+C n<span class="token operator">^</span><span class="token number">2</span><span class="token operator">-</span><span class="token number">2</span>e
+D n<span class="token operator">^</span><span class="token number">2</span><span class="token operator">-</span>e
+正确答案：D
+你的答案：未作答
+官方解析：有向图有几条边，邻接矩阵中就有几个元素非零，因此零元素有n<span class="token operator">^</span><span class="token number">2</span><span class="token operator">-</span>e个。
+知识点：图<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(10)2021 远景智能 后端开发</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">有权值分别为<span class="token number">11</span>，<span class="token number">8</span>，<span class="token number">6</span>，<span class="token number">2</span>，<span class="token number">5</span>的叶子结点生成一棵哈夫曼树，它的带权路径长度为
+A <span class="token number">24</span>
+B <span class="token number">73</span>
+C <span class="token number">48</span>
+D <span class="token number">53</span>
+正确答案：B
+你的答案：未作答
+官方解析：树的形状如下：
+                <span class="token number">32</span>
+                <span class="token number">11</span> <span class="token number">21</span>
+                <span class="token number">8</span> <span class="token number">13</span>
+                <span class="token number">6</span> <span class="token number">7</span>
+                <span class="token number">2</span> <span class="token number">5</span>
+                故它的带权长度为<span class="token number">11</span><span class="token operator">*</span><span class="token number">1</span><span class="token operator">+</span><span class="token number">8</span><span class="token operator">*</span><span class="token number">2</span><span class="token operator">+</span><span class="token number">6</span><span class="token operator">*</span><span class="token number">3</span><span class="token operator">+</span><span class="token number">2</span><span class="token operator">*</span><span class="token number">4</span><span class="token operator">+</span><span class="token number">5</span><span class="token operator">*</span><span class="token number">4</span><span class="token operator">=</span><span class="token number">73</span>，故选B。
+知识点：图<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(11)2021 伴鱼 后端开发</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">设无向图G中的边的集合E<span class="token operator">=&#123;</span><span class="token punctuation">(</span>a，b<span class="token punctuation">)</span>，<span class="token punctuation">(</span>a，e<span class="token punctuation">)</span>，<span class="token punctuation">(</span>a，c<span class="token punctuation">)</span>，<span class="token punctuation">(</span>b，e<span class="token punctuation">)</span>，<span class="token punctuation">(</span>e，d<span class="token punctuation">)</span>，<span class="token punctuation">(</span>d，f<span class="token punctuation">)</span>，<span class="token punctuation">(</span>f，c<span class="token punctuation">)</span><span class="token operator">&#125;</span>，则从顶点a出发进行深度优先遍历可以得到的一种顶点序列为<span class="token punctuation">(</span> <span class="token punctuation">)</span>
+A aedfcb
+B acfebd
+C aebcfd
+D aedfbc
+正确答案：A
+你的答案：未作答
+官方解析：A是可以的
+                B的话f后面应该是d<span class="token punctuation">,</span>不应该是e
+                C的话b后面应该是d<span class="token punctuation">,</span>不应该是c
+                D的话f后面应该是c<span class="token punctuation">,</span>不应该是b
+知识点：图<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(12)2021 360 后端开发</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">在下列有关图的说法中正确的是
+A 在有向图结构中，顶点可以没有任何前趋和后继
+B 在有向图中，各顶点的入度之和等于各顶点的出度之和
+C 具有n个顶点的无向图最多有<span class="token function">n</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>条边，最少有<span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>条边
+D 在无向图中，边的条数是结点度数之和
+正确答案：B
+你的答案：未作答
+官方解析：A选项：有向图中定点必须要有前驱和后继；
+                C选项：最少有<span class="token number">0</span>条边，n个顶点的联通图最少n<span class="token operator">-</span><span class="token number">1</span>条边；
+                D选项，在无向图中，边的条数是结点度数之和的二分之一。
+知识点：图<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(13)2021 百度 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">设有<span class="token number">6</span>个结点的⽆向图，该图⾄少应有（）条边，才能确保是⼀个连通图？
+A <span class="token number">8</span>
+B <span class="token number">11</span>
+C <span class="token number">6</span>
+D <span class="token number">5</span>
+正确答案：D
+你的答案：未作答
+官方解析：已知有N个结点的无向图，该图至少应有<span class="token punctuation">(</span>N<span class="token operator">-</span>l<span class="token punctuation">)</span>条边才能确保是一个连通图，最多含有<span class="token punctuation">(</span><span class="token function">N</span><span class="token punctuation">(</span>N<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>／<span class="token number">2</span><span class="token punctuation">)</span>条边。
+因为有两种图，一种是完全连通图，一种是连通图。 完全图是指任意两个结点之间都有一个边相连<span class="token punctuation">,</span>也就是结点两两相连；连通图是指任意两个结点之间都有一个路径相连，也就是说只要有连线能相通就好。故选D。
+知识点：图<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(14)2022 shopee虾皮信息 后端开发 <strong>多选</strong></p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">如果一个无向图的边集E<span class="token operator">=&#123;</span><span class="token punctuation">(</span>a，b<span class="token punctuation">)</span>，<span class="token punctuation">(</span>a，e<span class="token punctuation">)</span>，<span class="token punctuation">(</span>a，c<span class="token punctuation">)</span>，<span class="token punctuation">(</span>b，e<span class="token punctuation">)</span>，<span class="token punctuation">(</span>e，d<span class="token punctuation">)</span>，<span class="token punctuation">(</span>d，f<span class="token punctuation">)</span>，<span class="token punctuation">(</span>f，c<span class="token punctuation">)</span><span class="token operator">&#125;</span>，则从a顶点出发进行广度优先搜索的可能的顶点序列为
+A abecdf
+B aecbfd
+C aebcdf
+D acebfd
+正确答案：ACD
+你的答案：未作答
+官方解析：a连接着bce三个顶点，因此a后面直接跟bce的任意顺序都行，但如果先遍历e再遍历c，则b、c、e三个顶点都遍历完成后要先遍历与e相连接的顶点，再遍历与c相连接的顶点，因此f不可能在d之前（d与e相连，f与c相连）
+知识点：图<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(15)2022 人人网 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span class="token number">2022</span> 人人网 Java
+一个含有n个顶点和e条边的简洁无向图，在其邻接矩阵存储结构中共有多少个零元素
+A e
+B <span class="token number">2</span>e
+C n<span class="token operator">^</span><span class="token number">2</span><span class="token operator">-</span>e
+D n<span class="token operator">^</span><span class="token number">2</span><span class="token operator">-</span><span class="token number">2</span>e
+正确答案：D
+你的答案：未作答
+官方解析：因为有n个顶点，所以有n<span class="token operator">*</span>n个元素，<span class="token number">2</span><span class="token operator">*</span>e个非零元素（无向图，对称），所以有n<span class="token operator">*</span>n<span class="token operator">-</span><span class="token number">2</span><span class="token operator">*</span>e个零元素
+知识点：图<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(16)2021 微众银行 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">设某无向图中有n个节点e条边，则建立该图邻接表的时间复杂度为
+A <span class="token function">O</span><span class="token punctuation">(</span>n<span class="token operator">+</span>e<span class="token punctuation">)</span>
+B <span class="token function">O</span><span class="token punctuation">(</span>n<span class="token operator">^</span><span class="token number">2</span><span class="token punctuation">)</span>
+C <span class="token function">O</span><span class="token punctuation">(</span>ne<span class="token punctuation">)</span>
+D <span class="token function">O</span><span class="token punctuation">(</span>n<span class="token operator">^</span><span class="token number">3</span><span class="token punctuation">)</span>
+正确答案：A
+你的答案：未作答
+官方解析：若采用邻接链表存储，建立邻接表或逆邻接表时，
+若输入的顶点信息即为顶点的编号，则时间复杂度为<span class="token function">O</span><span class="token punctuation">(</span>n<span class="token operator">+</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+若输入的顶点信息不是顶点的编号，需要通过查找才能得到顶点在图中的位置，则时间复杂度为<span class="token function">O</span><span class="token punctuation">(</span>n<span class="token operator">*</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+故选B。
+知识点：图<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(17)2021 小米 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">下面关于图的说法中，正确的有：
+A 可以使用邻接表或邻接矩阵来存储图；
+B 对有n 个顶点、 e 条边且使用邻接表存储的有向图进行广度优先遍历的时间复杂度是<span class="token function">O</span><span class="token punctuation">(</span>n<span class="token operator">+</span>e<span class="token punctuation">)</span>；
+C 没有回路的连通图也是树；
+D 一个确定的有向无环图有且只有一种拓扑排序
+正确答案：ABC
+你的答案：未作答
+官方解析：
+A选项，邻接表和邻接矩阵都是图的存储方式；
+B选项，邻接表形式存储时，每个顶点均需搜索一次，每次结点被入队一次，出队一次，所以时间复杂度是 <span class="token function">O</span><span class="token punctuation">(</span>V<span class="token punctuation">)</span>，但是遍历某个顶点所有邻接点的复杂度是 <span class="token function">O</span><span class="token punctuation">(</span>ei<span class="token punctuation">)</span><span class="token punctuation">,</span> ei为第 i 条链表的弧的条数，也就是邻接点个数，所以查找所有邻接点的复杂度为 <span class="token function">O</span><span class="token punctuation">(</span>e1 <span class="token operator">+</span> e2 <span class="token operator">+</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token operator">+</span> en<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">O</span><span class="token punctuation">(</span>E<span class="token punctuation">)</span><span class="token punctuation">,</span> 加上对每个结点进行入队出队的复杂度 <span class="token function">O</span><span class="token punctuation">(</span>V<span class="token punctuation">)</span><span class="token punctuation">,</span> 所以总的时间复杂度为<span class="token function">O</span><span class="token punctuation">(</span>E <span class="token operator">+</span> V<span class="token punctuation">)</span>；
+C选项，树是连通的且没有回路。
+D选项，一个有向无环图可能有多种拓扑排序。
+知识点：图<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(18)2021 小米 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">已知图的邻接矩阵表示为<span class="token operator">&#123;&#123;</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token operator">&#125;</span><span class="token punctuation">,</span><span class="token operator">&#123;</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token operator">&#125;</span><span class="token punctuation">,</span><span class="token operator">&#123;</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token operator">&#125;</span><span class="token punctuation">,</span><span class="token operator">&#123;</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token operator">&#123;</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token operator">&#125;</span><span class="token punctuation">,</span><span class="token operator">&#123;</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token operator">&#125;&#125;</span>，那么从顶点<span class="token number">4</span>（顶点的索引从<span class="token number">0</span>开始）开始做广度优先遍历，得到图的节点的遍历序列为
+A <span class="token number">023145</span>
+B <span class="token number">430152</span>
+C <span class="token number">532401</span>
+D <span class="token number">431205</span>
+正确答案：B
+你的答案：未作答
+官方解析：根据邻接矩阵，顶点<span class="token number">4</span>只和顶点<span class="token number">3</span>有连接，顶点另外还连接了顶点<span class="token number">015</span>，然后顶点<span class="token number">1</span>连接了顶点<span class="token number">2</span>，但是因为是从顶点<span class="token number">4</span>出发的广度优先搜索，所以<span class="token number">105</span>必须连在一起（顺序不用管），故选B。
+知识点：图<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(19)2021 远景智能 后端开发 <strong>多选</strong></p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">下面算法中可以判断出一个有向图是否有环的是：
+A 求最短路径
+B 深度优先遍历
+C 广度优先搜索
+D 拓扑排序
+正确答案：BD
+你的答案：未作答
+官方解析：有向图是否有环的判定算法，主要有深度优先和拓扑排序两种方法，所以答案选 BD
+知识点：图<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(20)2022 shopee Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">如果一个无向图的边集E<span class="token operator">=&#123;</span><span class="token punctuation">(</span>a，b<span class="token punctuation">)</span>，<span class="token punctuation">(</span>a，e<span class="token punctuation">)</span>，<span class="token punctuation">(</span>a，c<span class="token punctuation">)</span>，<span class="token punctuation">(</span>b，e<span class="token punctuation">)</span>，<span class="token punctuation">(</span>e，d<span class="token punctuation">)</span>，<span class="token punctuation">(</span>d，f<span class="token punctuation">)</span>，<span class="token punctuation">(</span>f，c<span class="token punctuation">)</span><span class="token operator">&#125;</span>，则从a顶点出发进行广度优先搜索的可能的顶点序列为
+A abecdf
+B aecbfd
+C aebcfd
+D acebfd
+正确答案：ACD
+你的答案：未作答
+官方解析：a连接着bce三个顶点，因此a后面直接跟bce的任意顺序都行，但如果先遍历e再遍历c，则b、c、e三个顶点都遍历完成后要先遍历与e相连接的顶点，再遍历与c相连接的顶点，因此f不可能在d之前（d与e相连，f与c相连），故选ACD。
+知识点：图<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="3、队列·真题·单选"><a href="#3、队列·真题·单选" class="headerlink" title="3、队列·真题·单选"></a>3、队列·真题·单选</h4><p>(1)2021 阿里巴巴 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">下面关于队列和栈的描述正确的选项
+A 栈是先进先出的数据结构
+B 队列是先进先出的数据结构
+C 栈内元素可以随机访问
+D 队列内的元素可以随机访问
+正确答案：B
+你的答案：未作答
+官方解析：A选项，栈是先进后出的数据结构；CD选项，栈和队列都不允许随机访问。
+知识点：队列<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(2)2022 shopee Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">设栈S和队列Q的初始状态为空，元素e1、e2、e3、e4、e5、e6依次通过栈S，每一个元素出栈后立即进入队列Q，若<span class="token number">6</span>个元素出队列的序列是e2、e4、e3、e6、e5、e1，则栈S的容量至少应该是？
+A <span class="token number">6</span>
+B <span class="token number">4</span>
+C <span class="token number">3</span>
+D <span class="token number">2</span>
+正确答案：C
+你的答案：未作答
+官方解析：每操作一次 栈的状态是 e1
+                                      e1 e2
+                                      e1
+                                      e1 e3
+                                      e1 e3 e4
+                                      e1 e3
+                                      e1 
+                                      e1 e5
+                                      e1 e5 e6
+                                      e1 e5
+                                      e1
+                                      空
+		所以要求最小值应该为 <span class="token number">3</span>
+知识点：队列<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(3)2021 360 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">设有一个大小为<span class="token number">6</span>的顺序循环队列，采用少用一个存储单元的策略来区分队满与队空。若当前front<span class="token operator">=</span><span class="token number">2</span>，rear<span class="token operator">=</span><span class="token number">5</span>，则最多还可入队的元素个数是？
+A <span class="token number">0</span>
+B <span class="token number">2</span>
+C <span class="token number">4</span>
+D <span class="token number">5</span>
+正确答案：B
+你的答案：未作答
+官方解析：rear在<span class="token number">5</span>，经过循环队列的<span class="token number">6</span>、<span class="token number">1</span>之后就与front相遇，因此还能加入<span class="token number">2</span>个元素。
+知识点：队列<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(4)2022 阿里巴巴 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">有一个用数组C<span class="token punctuation">[</span><span class="token number">1</span>…m<span class="token punctuation">]</span>表示的环形队列，m为数组的长度。假设f为队头元素在数组中的位置，r为队尾元素的后一位置（按照顺时针方向）。若是队列非空，则计算队列中元素个数的公式应该为？
+A <span class="token punctuation">(</span>m<span class="token operator">+</span>r<span class="token operator">-</span>f<span class="token punctuation">)</span>mod m
+B r<span class="token operator">-</span>f
+C <span class="token punctuation">(</span>m<span class="token operator">-</span>r<span class="token operator">+</span>f<span class="token punctuation">)</span> mod m
+D <span class="token punctuation">(</span>m<span class="token operator">-</span>r<span class="token operator">-</span>f<span class="token punctuation">)</span> mod m
+正确答案：A
+你的答案：未作答
+官方解析：分情况讨论：
+                <span class="token number">1</span><span class="token punctuation">.</span> 若f<span class="token operator">&lt;</span>r<span class="token operator">&lt;=</span>m<span class="token punctuation">,</span> 则有r<span class="token operator">-</span>f <span class="token operator">&lt;</span>m，即队尾没有超出边界，则为r<span class="token operator">-</span>f
+                <span class="token number">2</span><span class="token punctuation">.</span> 若r<span class="token operator">&lt;</span>f<span class="token operator">&lt;=</span>m<span class="token punctuation">,</span> r<span class="token operator">-</span>f <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">,</span> 即队尾超出边界m，那么应为m<span class="token operator">+</span>r <span class="token operator">-</span>f
+                综合两种情况，得到答案 <span class="token punctuation">(</span>m<span class="token operator">+</span>r<span class="token operator">-</span>f<span class="token punctuation">)</span> mod m
+知识点：队列<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(5)2021 小米 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">一个由<span class="token number">7</span>维数组<span class="token punctuation">(</span>数组索引从<span class="token number">0</span>开始<span class="token punctuation">)</span>构成的循环队列，队头索引为<span class="token number">3</span>，队尾索引为<span class="token number">6</span>，如果先入队两个元素，再出队两个元素后，队头和队尾的索引分别是
+A <span class="token number">5</span>和<span class="token number">1</span>
+B <span class="token number">1</span>和<span class="token number">5</span>
+C <span class="token number">4</span>和<span class="token number">2</span>
+D <span class="token number">2</span>和<span class="token number">4</span>
+正确答案：A
+你的答案：未作答
+官方解析：<span class="token number">6</span> <span class="token operator">+</span> <span class="token number">2</span> <span class="token operator">=</span> <span class="token number">8</span>
+                <span class="token number">8</span> <span class="token operator">%</span> <span class="token number">7</span> <span class="token operator">=</span> <span class="token number">1</span> <span class="token punctuation">(</span>rear<span class="token punctuation">)</span>
+                <span class="token number">3</span> <span class="token operator">+</span> <span class="token number">2</span> <span class="token operator">=</span> <span class="token number">5</span> 
+                <span class="token number">5</span> <span class="token operator">%</span> <span class="token number">7</span> <span class="token operator">=</span> <span class="token number">5</span> <span class="token punctuation">(</span>front<span class="token punctuation">)</span>
+知识点：队列<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(6)2021 奇安信 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">循环队列的队满条件为
+A ring<span class="token punctuation">.</span><span class="token keyword">end</span><span class="token operator">%</span>maxsize <span class="token operator">==</span> ring<span class="token punctuation">.</span>front
+B <span class="token punctuation">(</span>ring<span class="token punctuation">.</span><span class="token keyword">end</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">%</span>maxsize <span class="token operator">==</span> ring<span class="token punctuation">.</span>front
+C <span class="token punctuation">(</span>ring<span class="token punctuation">.</span><span class="token keyword">end</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">%</span>maxsize <span class="token operator">==</span> ring<span class="token punctuation">.</span>front<span class="token operator">+</span><span class="token number">1</span>
+D <span class="token punctuation">(</span>ring<span class="token punctuation">.</span><span class="token keyword">end</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">%</span>maxsize <span class="token operator">==</span> <span class="token punctuation">(</span>ring<span class="token punctuation">.</span>front<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">%</span>maxsize
+正确答案：B
+你的答案：未作答
+官方解析：约定循环队列的队头指针指示队头元素在数组中实际位置的前一个位置，队尾指针指示队尾元素在数组中的实际位置。当队尾指针“绕一圈”后赶上队头指针时，视为队满。
+知识点：队列<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(7)2021 哔哩哔哩 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">用俩个栈模拟实现一个队列，如果栈的容量分别是O和<span class="token function">P</span><span class="token punctuation">(</span>O<span class="token operator">></span>P<span class="token punctuation">)</span><span class="token punctuation">,</span>那么模拟实现的队列最大容量是多少？
+A O<span class="token operator">+</span>P
+B <span class="token number">2</span>O<span class="token operator">+</span><span class="token number">1</span>
+C <span class="token number">2</span>P<span class="token operator">+</span><span class="token number">1</span>
+D <span class="token number">2</span>O<span class="token operator">-</span><span class="token number">1</span>
+正确答案：C
+你的答案：未作答
+官方解析：最后p和o全部出栈，不能有p<span class="token operator">+</span><span class="token number">1</span>在p前面的情况，必须保证先进先出，所以p全部出栈时是<span class="token number">1</span>、<span class="token number">2</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>p，o比p大，我们暂且存p<span class="token operator">+</span><span class="token number">1</span>个就是从p<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token number">2</span>p<span class="token operator">+</span><span class="token number">1</span>，出栈后放入p中，只能放<span class="token number">2</span>p<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>p<span class="token operator">+</span><span class="token number">2</span>，此时o中还剩个p<span class="token operator">+</span><span class="token number">1</span>，现在我们已经得到<span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">.</span>p，再将o中的p<span class="token operator">+</span><span class="token number">1</span>出栈，再将之前o压到p中的元素出栈，可以得到<span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token number">2</span>p<span class="token operator">+</span><span class="token number">1</span>；如果o中再多存一个，存到<span class="token number">2</span>p<span class="token operator">+</span><span class="token number">2</span>的话，那最后o中就会剩p<span class="token operator">+</span><span class="token number">2</span>和p<span class="token operator">+</span><span class="token number">1</span>，出栈的时候p<span class="token operator">+</span><span class="token number">2</span>在p<span class="token operator">+</span><span class="token number">1</span>前面，不符合队列的先进先出了，所以最多只能到<span class="token number">2</span>p<span class="token operator">+</span><span class="token number">1</span>
+知识点：队列<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(8)2021 360 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">下列关于顺序存储的循环队列的说法，正确的一项是
+A 在直接使用顺序存储的循环队列时，仍存在类似于使用顺序队列时存在的“假溢出”问题
+B 在直接使用顺序存储的循环队列时，若有队头指针与队尾指针指向同一单元，则此时队列为空
+C 在直接使用顺序存储的循环队列时，若有队头指针与队尾指针指向同一单元，则此时队列为满
+D 在直接使用顺序存储的循环队列时，队头指针与队尾指针的逻辑循环均可使用取模运算来实现
+正确答案：D
+你的答案：未作答
+官方解析：在顺序队列操作中，假溢出的现象为：当元素被插入到数组中下标最大的位置上之后，队列的空间就用尽了，尽管此时数组的低端还有空闲空间。所以A错。
+在这种循环队列中，队列满时，front 与tail也是相等的。所以BC错。
+知识点：队列<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(9)2021 远景智能 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">使用一个长度最大为<span class="token number">150</span>的队列，对满二叉树进行广度优先遍历时，能够容纳的二叉树的最大深度（第一层深度为<span class="token number">1</span>）为（）
+A <span class="token number">8</span>
+B <span class="token number">10</span>
+C <span class="token number">9</span>
+D <span class="token number">7</span>
+正确答案：A
+你的答案：未作答
+官方解析：满二叉树每一层的结点个数为（第一层深度为<span class="token number">1</span>）第n层的节点数：<span class="token number">2</span><span class="token operator">^</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>如果使用<span class="token number">150</span>的队列进行广度优先遍历，则每一层的节点数不大于<span class="token number">150</span>，<span class="token number">2</span><span class="token operator">^</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>≤<span class="token number">150</span>，<span class="token number">2</span><span class="token operator">^</span><span class="token number">7</span><span class="token operator">=</span><span class="token number">128</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token operator">^</span><span class="token number">8</span><span class="token operator">=</span><span class="token number">256</span>，n<span class="token operator">-</span><span class="token number">1</span>最多为<span class="token number">7</span>，所以最大深度n<span class="token operator">=</span><span class="token number">8</span><span class="token punctuation">.</span>
+知识点：队列<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(10)2021 奇安信 Java <strong>多选</strong></p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">关于栈和队列，下列说法正确的有
+A 可以使用队列模拟栈，但栈不能模拟队列
+B 栈和队列都不支持随机访问
+C 栈是一种树形数据结构
+D 栈具有后进先出的特征
+正确答案：BD
+你的答案：未作答
+官方解析：A选项，栈和队列都可以相互模拟；
+                C选项，栈和队列都是线性数据结构。
+                故选BD。
+知识点：队列<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="4、栈·真题·单选"><a href="#4、栈·真题·单选" class="headerlink" title="4、栈·真题·单选"></a>4、栈·真题·单选</h4><p>(1)2021 小米 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">假设有一个栈，元素依次进栈的顺序是A<span class="token punctuation">,</span>B<span class="token punctuation">,</span>C<span class="token punctuation">,</span>D<span class="token punctuation">,</span>E。下列不可能的出栈顺序是
+A E<span class="token punctuation">,</span>D<span class="token punctuation">,</span>C<span class="token punctuation">,</span>B<span class="token punctuation">,</span>A
+B A<span class="token punctuation">,</span>B<span class="token punctuation">,</span>C<span class="token punctuation">,</span>D<span class="token punctuation">,</span>E
+C B<span class="token punctuation">,</span>C<span class="token punctuation">,</span>D<span class="token punctuation">,</span>E<span class="token punctuation">,</span>A
+D E<span class="token punctuation">,</span>A<span class="token punctuation">,</span>B<span class="token punctuation">,</span>C<span class="token punctuation">,</span>D
+正确答案：D
+你的答案：未作答
+官方解析：进一个出一个的序列为B
+                AB进栈B出栈C进栈出栈D进栈出栈E进栈出栈A出栈的序列为D
+                全部进栈再出栈的序列为A，栈为先进后出的数据结构，无论如何都不会出现D的情况，故选D
+知识点：栈<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(2)2021 小米 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">以下哪一个不是栈的基本运算？
+A 删除栈顶元素
+B 删除栈底的元素
+C 判断栈是否为空
+D 将栈置为空栈
+正确答案：B
+你的答案：未作答
+官方解析：栈是一种特殊的线性表，只能在固定的一端进行插入和删除操作。允许插入和删除的一端称为栈顶<span class="token punctuation">(</span>TOP<span class="token punctuation">)</span>，另一端称为栈底<span class="token punctuation">(</span>BOTTOM<span class="token punctuation">)</span>。一个新元素只能从栈顶一端进入，删除时，只能删除栈顶的元素。因此不能直接删除栈底的元素。
+知识点：栈<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(3)2022 阿里巴巴 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">一个栈的入栈序列为abcde，则不可能的输出序列为哪个？
+A edcba
+B dceab
+C decba
+D abedc
+正确答案：B
+你的答案：未作答
+官方解析： e已经进栈了，a不可能比b先出栈，故选B。
+知识点：栈<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(4)2022 阿里巴巴 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">设有四个元素A、B、C、D顺序进栈，在进栈过程中可以出栈，出栈次序错误的排列是？
+A ABCD
+B ACDB
+C DCAB
+D ACBD
+正确答案：C
+你的答案：未作答
+官方解析：A：A进A出，B进B出，C进C出，D进D出。
+                 B：A进A出，B进，C进C出，D进D出，B出。
+                 D：A进A出，BC进CB出，D进D出。
+知识点：栈<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(5)2022 美团 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">设栈S和队列Q的初始状态均为空，元素a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>c<span class="token punctuation">,</span>d<span class="token punctuation">,</span>e<span class="token punctuation">,</span>f<span class="token punctuation">,</span>g依次进⼊栈S。若每个元素出栈后⽴即进⼊队列Q，且<span class="token number">7</span>个元素出队的顺序是b<span class="token punctuation">,</span>d<span class="token punctuation">,</span>c<span class="token punctuation">,</span>f<span class="token punctuation">,</span>e<span class="token punctuation">,</span>a<span class="token punctuation">,</span>g，则栈S的容量⾄少是？
+A <span class="token number">2</span>
+B <span class="token number">3</span>
+C <span class="token number">4</span>
+D <span class="token number">5</span>
+正确答案：B
+你的答案：未作答
+官方解析：ABCDEF依次进栈，出列的顺序为CDBFEA，栈的特点是后进先出
+                A进栈，（栈内为A）
+                B进栈，（栈内为A，B）
+                C进栈，（栈内为A，B，C）
+                C出栈，（栈内为 A，B）
+                B出栈，（栈内为A）
+                E进栈，（栈内为A，E）
+                F进栈，（栈内为A，E，F）
+                F出栈，（栈内为A，E）
+                E出栈，（栈内为A）
+                A出栈，
+                所以容量至少要有<span class="token number">3</span>
+知识点：栈<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(6)2022 星环科技 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">栈S最多能容纳<span class="token number">4</span>个元素。现在<span class="token number">6</span>个元素按A、B、C、D、E、F的顺序进栈，下列哪一个序列不是可能的出栈序列？
+A A、B、C、D、E、F
+B A、F、E、D、C、B
+C C、B、E、D、A、F
+D C、D、B、E、F、A
+正确答案：B
+你的答案：未作答
+官方解析：A的操作为，A入栈，出栈，B入栈，出栈，C入栈，出栈，D入栈，出栈，E入栈，出栈，F入栈，出栈，
+                B的操作为，A先入栈，然后出栈，接着BCDEF，然后出栈，但是由于S最多容纳<span class="token number">4</span>个元素，所以不可能实现。
+                C的操作为，ABC入栈，C出栈，B出栈，DE入栈，E出栈，D出栈，A出栈，F入栈，F出栈
+                D的操作为，ABC入栈，C出栈，D入栈，D出栈，B出栈，E入栈，E出栈，F入栈，F出栈，A出栈
+知识点：栈<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(7)2022 京东 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">栈S1，S2<span class="token punctuation">,</span>大小分别是<span class="token number">2</span>，<span class="token number">1</span>。先进栈A，再进栈B。栈满再出，A、B、C、D依次进栈，则出栈顺序是？
+A BCDA
+B BACD
+C CDAB
+D DCAB
+正确答案：A
+你的答案：未作答
+官方解析：因为要求栈满才能出，因此A进入S1，B进入S2，此时S1不能出，但是S2可以出，因此B出栈，然后C和D进栈，因此C要在D之前出去，因此C进入S2，D进入S1，刚好填满两个栈，依次出栈刚好是CDA，故选A。
+知识点：栈<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(8)2021 阿里巴巴 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">栈中有元素abcdef，每次出栈可以选择一个或者两个元素出栈，当有两个元素出栈时可以选择其中一个重新入栈，当所有元素为空，那么可能的出栈方式有（ ）种？
+A <span class="token number">22</span>
+B <span class="token number">21</span>
+C <span class="token number">32</span>
+D <span class="token number">20</span>
+正确答案：C
+你的答案：未作答
+官方解析：当只有一个元素a时，只有<span class="token number">1</span>种出栈方式；
+                当只有两个元素ab时，有<span class="token number">2</span>种出栈方式，（ba正常出栈，ab先出两个，再把b加入栈中）；
+                当只有三个元素abc时，可考虑先出元素c，那么ab有两种方式，可以考虑先出cb，然后将c加入回栈中，剩下的ac也有两种方式，总共<span class="token number">4</span>种；
+                按照此规律，每增加一个元素，就会在上一个的基础上增加<span class="token number">2</span>倍的出栈方式，当元素个数为<span class="token number">6</span>时，有<span class="token number">32</span>种方式，选A。
+知识点：栈<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(9)2021 百度 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">若栈 S1 中保存整数，栈 S2 中保存运算符，函数 <span class="token function">F</span><span class="token punctuation">(</span><span class="token punctuation">)</span>依次执行下述各步操作： 
+（<span class="token number">1</span>）从 S1 中依次弹出两个操作数 a 和 b； 
+（<span class="token number">2</span>）从 S2 中弹出一个运算符 op； 
+（<span class="token number">3</span>）执行相应的运算 b op a； 
+（<span class="token number">4</span>）将运算结果压人 S1 中。 
+假定 S1 中的操作数依次是 <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span>（<span class="token number">2</span> 在栈顶），S2 中的运算符依次是<span class="token operator">*</span><span class="token punctuation">,</span> <span class="token operator">-</span> <span class="token punctuation">,</span> <span class="token operator">+</span>（<span class="token operator">+</span>在栈顶）。调 用 <span class="token number">3</span> 次 <span class="token function">F</span><span class="token punctuation">(</span><span class="token punctuation">)</span>后，S1 栈顶保存的值是<span class="token operator">?</span>
+A <span class="token number">12</span>
+B <span class="token operator">-</span><span class="token number">12</span>
+C <span class="token number">9</span>
+D <span class="token operator">-</span><span class="token number">9</span>
+正确答案：A
+你的答案：未作答
+官方解析：S1第一次 弹出 a<span class="token punctuation">,</span>b  即 <span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span>  S2 弹出 “ <span class="token operator">+</span>”   操作为 b <span class="token operator">+</span> a   即 （<span class="token number">3</span> <span class="token operator">+</span> <span class="token number">2</span>） 压入 S1  现在 S1 为 <span class="token number">3</span> <span class="token number">9</span> <span class="token number">5</span>
+                S1第二次弹出 a<span class="token punctuation">,</span>b    即 <span class="token number">5</span> ，<span class="token number">9</span>  S2弹出<span class="token string">"-"</span>  操作为 b <span class="token operator">-</span> a      即（<span class="token number">9</span><span class="token operator">-</span><span class="token number">5</span>） 压入S1 现在 S1 为  <span class="token number">3</span> <span class="token number">4</span>
+                S1第三次弹出a<span class="token punctuation">,</span>b 即 <span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span>   S2弹出 “<span class="token operator">*</span>” 操作为 b<span class="token operator">*</span>a   即  <span class="token number">3</span><span class="token operator">*</span><span class="token number">4</span>   压入S 现在S1 为 <span class="token number">12</span>
+                所以三次后S1 栈顶为<span class="token number">12</span>
+知识点：栈<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(10)2021 小米 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">若元素a、b、c、d、e、f 依次进栈，允许进栈、退栈操作交替进行，但不允许连续三次进行退栈操作，则不可能得到的出栈序列有
+A a f e d c b
+B a b c d e f
+C a b c f e d
+D b a e f c d
+正确答案：ACD
+你的答案：未作答
+官方解析：首先判定逻辑，将入栈标记为<span class="token number">1</span>，<span class="token number">2</span>，<span class="token number">3</span>……所以某数出栈时栈内只会有比他小的数并且按顺序排列好。所以得结论，出栈时任意数右边比他小的数组成的子序列必将降序。ABCD逻辑都对，继续判定题目要求，不能连续出栈<span class="token number">3</span>次。那就找连续降序序列。B中连续降序序列大小为<span class="token number">5</span>，故不符合。
+知识点：栈<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="在线编程-1"><a href="#在线编程-1" class="headerlink" title="在线编程"></a>在线编程</h3><h4 id="1、栈、队列·NB1-11"><a href="#1、栈、队列·NB1-11" class="headerlink" title="1、栈、队列·NB1-11"></a>1、栈、队列·NB1-11</h4><p><strong>(1)最大体重的牛</strong></p>
+<p>农村的阿牛非常喜欢养牛，他想设计一个数据结构来存储他的牛，每头牛都有一个不同的编号和对应的体重。阿牛希望可以在常数时间内得到最重的一头牛的体重，还能随时加入、删除和查询牛的信息。你能帮助阿牛设计这个数据结构吗？</p>
+<p>题目描述：</p>
+<p>设计一个支持 push ，pop ，top 操作，并能在常数时间内检索到最大权值的牛的体重的数据结构。</p>
+<p>实现 MaxCowStack 类：</p>
+<p>MaxCowStack() 初始化堆栈对象。<br>void push(int id, int weight) 将编号为 id 且体重为 weight 的牛推入堆栈。</p>
+<p>void pop() 删除堆栈顶部的元素。</p>
+<p>int top() 获取堆栈顶部的体重。</p>
+<p>int getMax() 获取最重一头牛的体重。</p>
+<p><strong>示例1</strong></p>
+<p>输入：</p>
+<pre class="line-numbers language-none"><code class="language-none">[&quot;MaxCowStack&quot;,&quot;push&quot;,&quot;push&quot;,&quot;push&quot;,&quot;getMax&quot;,&quot;pop&quot;,&quot;top&quot;,&quot;getMax&quot;],[[],[1,2],[2,3],[3,1],[],[],[],[]]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>返回值：</p>
+<pre class="line-numbers language-none"><code class="language-none">[-1,-1,-1,-1,3,-1,3,3]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>说明：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">前四个操作没有获取元素，用-1占位，并连续将三个元素加入到栈中；然后获取最大值3；弹出栈顶元素，继续用-1占位；然后获取栈顶元素3；最后获取最大值3.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>备注：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">op数组中的字符串表示各种操作：
+MaxCowStack表示创建栈；
+push表示加入栈中；
+pop表示从栈中弹出元素；
+top表示获取栈中元素；
+getMax表示获取栈中元素最大值；
+前三个操作后的结果都用-1占位，后两个操作得到相应的结果。
+val数组，val[i].size() &#x3D; 2，val[i][0]表示牛的编号，val[i][1]表示牛的体重
+1 &lt;&#x3D; id, weight &lt;&#x3D; 2^31 - 1
+pop、top 和 getMax 操作总是在 非空栈 上调用
+push, pop, top, and getMax最多被调用 3 * 10^4 次<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>(2)牛群的秘密通信</strong></p>
+<p>在一个远离人类的世界中，有一群牛正在进行秘密通信。它们使用一种特殊的括号组合作为加密通信的形式。每一组加密信息均包括以下字符：’(‘,’{‘,’[‘,’)’,’}’,’]’。</p>
+<p>加密信息需要满足以下有效性规则：</p>
+<ol>
+<li>每个左括号必须使用相同类型的右括号闭合。</li>
+<li>左括号必须以正确的顺序闭合。</li>
+<li>每个右括号都有一个对应的相同类型的左括号。</li>
+</ol>
+<p>编写一个函数，给定一个字符串 s，判断这群牛的加密通信是否有效。</p>
+<p><strong>示例1</strong></p>
+<p>输入：</p>
+<pre class="line-numbers language-none"><code class="language-none">&quot;(&#123;&#125;)&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>返回值：</p>
+<pre class="line-numbers language-none"><code class="language-none">true<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>示例2</strong></p>
+<p>输入：</p>
+<pre class="line-numbers language-none"><code class="language-none">&quot;)&#123;&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>返回值：</p>
+<pre class="line-numbers language-none"><code class="language-none">false<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>备注：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">字符串 s：包含加密通信括号组合的字符串，仅由 &#39;(&#39;，&#39;)&#39;，&#39;&#123;&#39;，&#39;&#125;&#39;，&#39;[&#39;，&#39;]&#39; 组成，字符串长度在 1 到 10^5 之间。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(3)</p>
+<p>(4)</p>
+<p>(5)</p>
+<p>(6)</p>
+<p>(7)</p>
+<p>(8)</p>
+<p>(9)</p>
+<p>(10)</p>
+<p>(11)</p>
+<h4 id="2、数组、排序·NB1-18"><a href="#2、数组、排序·NB1-18" class="headerlink" title="2、数组、排序·NB1-18"></a>2、数组、排序·NB1-18</h4><p><strong>(1)草原牛群集合</strong></p>
+<p>在草原上，有一群牛分散在不同的位置，他们用整数表示每头牛的位置坐标。牧民召唤了一只牧犬来驱赶牛群。当牧犬在某个位置时，牠会发出召唤牛群集合的信号（用一个整数 val 表示），此时，与牧犬相同位置的所有牛将会集合到其他位置。你需要移除数组中与 val 相同的元素，并返回移动后的数组与剩余元素数量。</p>
+<p>要求在原数组的基础上完成移除任务，不引入额外的数组空间。操作的空间复杂度必须为 O(1)。牛群的顺序可以改变。不用考虑新数组长度之外的位置元素。</p>
+<p><strong>示例1</strong></p>
+<p>输入：</p>
+<pre class="line-numbers language-none"><code class="language-none">[2, 1, 3, 1, 1, 5],1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>返回值：</p>
+<pre class="line-numbers language-none"><code class="language-none">3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>备注：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">必须在原数组上修改，不返回原数组，但要检验。
+0 &lt;&#x3D; nums.length &lt;&#x3D; 100
+0 &lt;&#x3D; nums[i] &lt;&#x3D; 100
+0 &lt;&#x3D; val &lt;&#x3D; 100<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>(2)草原上的牛群</strong></p>
+<p>在一片广阔的草原上，有一群牛正在享受美味的青草。我们可以用一个升序排列的数组 nums 表示这群牛的位置（用整数表示）。由于草原太大，相同位置可能有多头牛，但是牧人希望得知这片草原上不同位置上有多少个牛群。所以他需要你去计算这片草原上不同位置的牛群有多少，并将数组修改为只包含这些不同的位置，且顺序保持一致，然后返回草原上在不同位置的牛群的数量。</p>
+<p><strong>示例1</strong></p>
+<p>输入：</p>
+<pre class="line-numbers language-none"><code class="language-none">[1, 1, 3, 3, 5, 6]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>返回值：</p>
+<pre class="line-numbers language-none"><code class="language-none">4<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>备注：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">注意事项：你需要在原数组的基础上完成修改，不引入额外的数组空间。操作的空间复杂度必须为 O(1)。你需要返回草原上不同位置的牛群数量，该数量是数组 nums 修改后的长度。
+1 &lt;&#x3D; nums.length &lt;&#x3D; 5 * 10^4
+0 &lt;&#x3D; nums[i] &lt;&#x3D; 200<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(3)</p>
+<p>(4)</p>
+<p>(5)</p>
+<p>(6)</p>
+<p>(7)</p>
+<p>(8)</p>
+<p>(9)</p>
+<p>(10)</p>
+<p>(11)</p>
+<p>(12)</p>
+<p>(13)</p>
+<p>(14)</p>
+<p>(15)</p>
+<p>(16)</p>
+<p>(17)</p>
+<p>(18)</p>
+<h2 id="7-18"><a href="#7-18" class="headerlink" title="7.18"></a>7.18</h2><h3 id="任务-2"><a href="#任务-2" class="headerlink" title="任务"></a>任务</h3><h3 id="专项练习-2"><a href="#专项练习-2" class="headerlink" title="专项练习"></a>专项练习</h3><h4 id="1、·真题·单选"><a href="#1、·真题·单选" class="headerlink" title="1、·真题·单选"></a>1、·真题·单选</h4><p>(1)</p>
 <pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>(2)</p>
@@ -1161,7 +1949,35 @@ s 中至少存在一个单词。
 <p>(10)</p>
 <pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h4 id="4、·真题·单选"><a href="#4、·真题·单选" class="headerlink" title="4、·真题·单选"></a>4、·真题·单选</h4><p>(1)</p>
+<h3 id="在线编程-2"><a href="#在线编程-2" class="headerlink" title="在线编程"></a>在线编程</h3><h4 id="1、·NB1"><a href="#1、·NB1" class="headerlink" title="1、·NB1-"></a>1、·NB1-</h4><p>(1)</p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(2)</p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(3)</p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h4 id="2、·NB1"><a href="#2、·NB1" class="headerlink" title="2、·NB1-"></a>2、·NB1-</h4><p>(1)</p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(2)</p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(3)</p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h2 id="7-19"><a href="#7-19" class="headerlink" title="7.19"></a>7.19</h2><h3 id="任务-3"><a href="#任务-3" class="headerlink" title="任务"></a>任务</h3><h3 id="专项练习-3"><a href="#专项练习-3" class="headerlink" title="专项练习"></a>专项练习</h3><h4 id="1、·真题·单选-1"><a href="#1、·真题·单选-1" class="headerlink" title="1、·真题·单选"></a>1、·真题·单选</h4><p>(1)</p>
 <pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>(2)</p>
@@ -1191,7 +2007,475 @@ s 中至少存在一个单词。
 <p>(10)</p>
 <pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id><a href="#" class="headerlink" title></a></h3><h3 id="在线编程-1"><a href="#在线编程-1" class="headerlink" title="在线编程"></a>在线编程</h3>
+<h4 id="2、·真题·单选-1"><a href="#2、·真题·单选-1" class="headerlink" title="2、·真题·单选"></a>2、·真题·单选</h4><p>(1)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(2)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(3)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(4)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(5)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(6)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(7)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(8)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(9)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(10)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="3、·真题·单选-1"><a href="#3、·真题·单选-1" class="headerlink" title="3、·真题·单选"></a>3、·真题·单选</h4><p>(1)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(2)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(3)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(4)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(5)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(6)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(7)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(8)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(9)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(10)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="在线编程-3"><a href="#在线编程-3" class="headerlink" title="在线编程"></a>在线编程</h3><h4 id="1、·NB1-1"><a href="#1、·NB1-1" class="headerlink" title="1、·NB1-"></a>1、·NB1-</h4><p>(1)</p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(2)</p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(3)</p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h4 id="2、·NB1-1"><a href="#2、·NB1-1" class="headerlink" title="2、·NB1-"></a>2、·NB1-</h4><p>(1)</p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(2)</p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(3)</p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h2 id="7-20"><a href="#7-20" class="headerlink" title="7.20"></a>7.20</h2><h3 id="任务-4"><a href="#任务-4" class="headerlink" title="任务"></a>任务</h3><h3 id="专项练习-4"><a href="#专项练习-4" class="headerlink" title="专项练习"></a>专项练习</h3><h4 id="1、·真题·单选-2"><a href="#1、·真题·单选-2" class="headerlink" title="1、·真题·单选"></a>1、·真题·单选</h4><p>(1)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(2)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(3)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(4)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(5)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(6)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(7)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(8)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(9)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(10)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="2、·真题·单选-2"><a href="#2、·真题·单选-2" class="headerlink" title="2、·真题·单选"></a>2、·真题·单选</h4><p>(1)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(2)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(3)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(4)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(5)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(6)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(7)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(8)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(9)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(10)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="3、·真题·单选-2"><a href="#3、·真题·单选-2" class="headerlink" title="3、·真题·单选"></a>3、·真题·单选</h4><p>(1)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(2)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(3)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(4)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(5)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(6)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(7)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(8)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(9)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(10)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="在线编程-4"><a href="#在线编程-4" class="headerlink" title="在线编程"></a>在线编程</h3><h4 id="1、·NB1-2"><a href="#1、·NB1-2" class="headerlink" title="1、·NB1-"></a>1、·NB1-</h4><p>(1)</p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(2)</p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(3)</p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h4 id="2、·NB1-2"><a href="#2、·NB1-2" class="headerlink" title="2、·NB1-"></a>2、·NB1-</h4><p>(1)</p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(2)</p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(3)</p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h2 id="7-21"><a href="#7-21" class="headerlink" title="7.21"></a>7.21</h2><h3 id="任务-5"><a href="#任务-5" class="headerlink" title="任务"></a>任务</h3><h3 id="专项练习-5"><a href="#专项练习-5" class="headerlink" title="专项练习"></a>专项练习</h3><h4 id="1、·真题·单选-3"><a href="#1、·真题·单选-3" class="headerlink" title="1、·真题·单选"></a>1、·真题·单选</h4><p>(1)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(2)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(3)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(4)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(5)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(6)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(7)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(8)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(9)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(10)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="2、·真题·单选-3"><a href="#2、·真题·单选-3" class="headerlink" title="2、·真题·单选"></a>2、·真题·单选</h4><p>(1)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(2)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(3)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(4)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(5)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(6)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(7)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(8)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(9)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(10)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="3、·真题·单选-3"><a href="#3、·真题·单选-3" class="headerlink" title="3、·真题·单选"></a>3、·真题·单选</h4><p>(1)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(2)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(3)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(4)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(5)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(6)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(7)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(8)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(9)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(10)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="在线编程-5"><a href="#在线编程-5" class="headerlink" title="在线编程"></a>在线编程</h3><h4 id="1、·NB1-3"><a href="#1、·NB1-3" class="headerlink" title="1、·NB1-"></a>1、·NB1-</h4><p>(1)</p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(2)</p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(3)</p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h4 id="2、·NB1-3"><a href="#2、·NB1-3" class="headerlink" title="2、·NB1-"></a>2、·NB1-</h4><p>(1)</p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(2)</p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(3)</p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h2 id="7-22"><a href="#7-22" class="headerlink" title="7.22"></a>7.22</h2><h3 id="任务-6"><a href="#任务-6" class="headerlink" title="任务"></a>任务</h3><h3 id="专项练习-6"><a href="#专项练习-6" class="headerlink" title="专项练习"></a>专项练习</h3><h4 id="1、·真题·单选-4"><a href="#1、·真题·单选-4" class="headerlink" title="1、·真题·单选"></a>1、·真题·单选</h4><p>(1)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(2)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(3)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(4)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(5)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(6)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(7)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(8)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(9)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(10)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="2、·真题·单选-4"><a href="#2、·真题·单选-4" class="headerlink" title="2、·真题·单选"></a>2、·真题·单选</h4><p>(1)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(2)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(3)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(4)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(5)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(6)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(7)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(8)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(9)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(10)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="3、·真题·单选-4"><a href="#3、·真题·单选-4" class="headerlink" title="3、·真题·单选"></a>3、·真题·单选</h4><p>(1)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(2)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(3)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(4)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(5)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(6)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(7)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(8)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(9)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(10)</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="在线编程-6"><a href="#在线编程-6" class="headerlink" title="在线编程"></a>在线编程</h3><h4 id="1、·NB1-4"><a href="#1、·NB1-4" class="headerlink" title="1、·NB1-"></a>1、·NB1-</h4><p>(1)</p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(2)</p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(3)</p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h4 id="2、·NB1-4"><a href="#2、·NB1-4" class="headerlink" title="2、·NB1-"></a>2、·NB1-</h4><p>(1)</p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(2)</p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(3)</p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 
             </div>
             <hr/>
