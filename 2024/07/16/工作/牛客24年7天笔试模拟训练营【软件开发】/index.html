@@ -2732,35 +2732,172 @@ D
 A选项，冒泡排序最好情况时间为<span class="token function">O</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span>，最坏为<span class="token function">O</span><span class="token punctuation">(</span>n<span class="token operator">^</span><span class="token number">2</span><span class="token punctuation">)</span>；
 C选项，选择排序最好情况与最坏情况都是<span class="token function">O</span><span class="token punctuation">(</span>n<span class="token operator">^</span><span class="token number">2</span><span class="token punctuation">)</span>。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="6、链表·真题·单选"><a href="#6、链表·真题·单选" class="headerlink" title="6、链表·真题·单选"></a>6、链表·真题·单选</h4><p>(1)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="6、链表·真题·单选"><a href="#6、链表·真题·单选" class="headerlink" title="6、链表·真题·单选"></a>6、链表·真题·单选</h4><p>(1)2022 人人网 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">设指针q指向单链表中结点A，指针p指向单链表中结点A的后继结点B，指针s指向被插入的结点x，则在结点A和结点B插入结点X的操作序列是？
+A
+s<span class="token punctuation">.</span>next<span class="token operator">=</span>p<span class="token punctuation">.</span>next<span class="token punctuation">;</span> p<span class="token punctuation">.</span>next<span class="token operator">=</span>s<span class="token punctuation">;</span>
+B
+q<span class="token punctuation">.</span>next<span class="token operator">=</span>s<span class="token punctuation">;</span> s<span class="token punctuation">.</span>next<span class="token operator">=</span>p<span class="token punctuation">;</span>
+C
+p<span class="token punctuation">.</span>next<span class="token operator">=</span>s<span class="token punctuation">.</span>next<span class="token punctuation">;</span> s<span class="token punctuation">.</span>next<span class="token operator">=</span>p<span class="token punctuation">;</span>
+D
+p<span class="token punctuation">.</span>next<span class="token operator">=</span>s<span class="token punctuation">;</span> s<span class="token punctuation">.</span>next<span class="token operator">=</span>q<span class="token punctuation">;</span>
+正确答案：B
+你的答案：未作答
+官方解析：
+因为在这里A节点的后继已经被p指针记录了，所以不必担心丢失。可以先断开链接，再指向。
+一般情况下，中间结点要先指向后继节点，才能断开链接。故选B。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>(2)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>(2)2021 奇安信 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">单链表中指针p指向节点m，若要删除m之后的结点（若存在），则需修改指针的操作为
+A
+p<span class="token operator">-></span>next<span class="token operator">=</span>p<span class="token operator">-></span>next<span class="token operator">-></span>next
+B
+p<span class="token operator">=</span>p<span class="token operator">-></span>next
+C
+p<span class="token operator">=</span>p<span class="token operator">-></span>next<span class="token operator">-></span>next
+D
+p<span class="token operator">-></span>next<span class="token operator">=</span>p
+正确答案：A
+你的答案：未作答
+官方解析：
+直接将节点m的next指针指向它后一位节点的后一位。
+知识点：链表<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>(3)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>(3)2022 人人网 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">在以下哪个操作中，数组比链表更快？
+A
+原地逆序
+B
+头部插入
+C
+返回头结点
+D
+返回随机结点
+正确答案：D
+你的答案：未作答
+官方解析：A<span class="token punctuation">.</span>原地逆序如果是双向链表会比数组快 B<span class="token punctuation">.</span>头部插入，链表只需要操作一个指针插入即可，数组需要一个一个挪 C<span class="token punctuation">.</span>返回头节点，评论说是一样快，所以要看更快不行 D<span class="token punctuation">.</span>数组返回比链表一个个快，给个下标就行，数组是连续存储，一次性分配很多内存空间，非常好找 链表因为元素不连续，而是靠指针指向下一个元素的位置，所以不存在数组的扩容问题；如果知道某一元素的前驱和后驱，操作指针即可删除该元素或者插入新元素，时间复杂度<span class="token function">O</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>。但是正因为存储空间不连续，你无法根据一个索引算出对应元素的地址，所以不能随机访问；而且由于每个元素必须存储指向前后元素位置的指针，会消耗相对更多的储存空间。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>(4)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>(4)2021 小米 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">带头结点的循环双向链表（头指针记为L）为空的判定条件是：
+A
+L<span class="token operator">==</span>NULL
+B
+L<span class="token operator">-></span>next<span class="token operator">==</span>L
+C
+L<span class="token operator">-></span>next<span class="token operator">==</span>NULL
+D
+L<span class="token operator">-></span>prior<span class="token operator">==</span>NULL
+正确答案：B
+你的答案：未作答
+官方解析：首先题目假设是带头节点，所以题目中至少包含一个节点，带头循环双向链表为空表示只有当前头结点。
+由于给定链表是循环的，不可能出现L<span class="token punctuation">.</span>prior <span class="token operator">==</span> NULL或L<span class="token punctuation">.</span>next <span class="token operator">==</span> NULL的情况。所以C、D错。
+由于链表是带头节点的链表，L <span class="token operator">!=</span>NULL，所以A错。
+B表示当前链表只有头结点，无其他节点，符合题意，选择B选项。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>(5)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>(5)2021 小米 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">在双向链表中，删除指针p所指向的结点时需要的操作是
+A
+p<span class="token operator">-></span>next<span class="token operator">-></span>prior<span class="token operator">=</span>p<span class="token operator">-></span>prior p<span class="token operator">-></span>prior<span class="token operator">-></span>next<span class="token operator">=</span>p<span class="token operator">-></span>next
+B
+p<span class="token operator">-></span>next<span class="token operator">=</span>p<span class="token operator">-></span>next<span class="token operator">-></span>next p<span class="token operator">-></span>next<span class="token operator">-></span>prior<span class="token operator">=</span>p
+C
+p<span class="token operator">-></span>prior<span class="token operator">-></span>next<span class="token operator">=</span>p p<span class="token operator">-></span>prior<span class="token operator">=</span>p<span class="token operator">-></span>prior<span class="token operator">-></span>prior
+D
+p<span class="token operator">-></span>prior<span class="token operator">=</span>p<span class="token operator">-></span>next<span class="token operator">-></span>next p<span class="token operator">-></span>next<span class="token operator">=</span>p<span class="token operator">-></span>prior<span class="token operator">-></span>prior
+正确答案：A
+你的答案：未作答
+官方解析：
+如图所示：
+说明：p<span class="token operator">-></span>prior <span class="token operator">=</span> o   p<span class="token operator">-></span>next <span class="token operator">=</span> <span class="token function">q</span><span class="token punctuation">(</span>“<span class="token operator">=</span>”代表指向，不代表赋值<span class="token punctuation">)</span>
 
-<p>(6)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+则p<span class="token operator">-></span>prior<span class="token operator">-></span>next <span class="token operator">=</span> o<span class="token operator">-></span>next
 
-<p>(7)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+删除节点两步走：
 
-<p>(8)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+q<span class="token operator">-></span>prior <span class="token punctuation">(</span>p<span class="token operator">-></span>next<span class="token operator">-></span>prior<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">o</span><span class="token punctuation">(</span>p<span class="token operator">-></span>prior<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//让q的前指针指向p的前节点</span>
 
-<p>(9)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+o<span class="token operator">-></span><span class="token function">next</span><span class="token punctuation">(</span>p<span class="token operator">-></span>prior<span class="token operator">-></span>next<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">q</span><span class="token punctuation">(</span>p<span class="token operator">-></span>next<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//o的后指针指向p的后节点（把原来的p跳了）</span>
 
-<p>(10)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+即：让p的前后节点连在一起<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://uploadfiles.nowcoder.com/images/20230204/0_1675500981821/5A7B3516E673558B2B2EB389E91596F7" alt="img"></p>
+<p>(6)2021 百度 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">在⼀个带头结点的单链表HL 中，若要在第⼀个元素之前插⼊⼀个由指针p 指向的结点，则执⾏？
+A
+p<span class="token punctuation">.</span>next <span class="token operator">=</span> HI <span class="token punctuation">;</span>p <span class="token operator">=</span>HL <span class="token punctuation">;</span>
+B
+p<span class="token punctuation">.</span>next <span class="token operator">=</span> HL <span class="token punctuation">;</span>HL <span class="token operator">=</span>p <span class="token punctuation">;</span>
+C
+HL <span class="token operator">=</span>p<span class="token punctuation">;</span> p<span class="token punctuation">.</span>next <span class="token operator">=</span>HL <span class="token punctuation">;</span>
+D
+p<span class="token punctuation">.</span>next <span class="token operator">=</span> HL<span class="token punctuation">.</span>next<span class="token punctuation">;</span>HL<span class="token punctuation">.</span>next <span class="token operator">=</span>p<span class="token punctuation">;</span>
+正确答案：D
+你的答案：未作答
+官方解析：
+第一个元素之前有一个头指针。首先p<span class="token operator">-></span>next <span class="token operator">=</span> HL <span class="token operator">-></span> next
+再将头指针指向当前的首个元素 HL <span class="token operator">-></span> next <span class="token operator">=</span> p<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(7)2022 小米 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">在一个单链表中，用指针p节点替代指针q节点的下一个节点<span class="token punctuation">(</span>下一个节点不是最后一个节点<span class="token punctuation">)</span>，则执行
+A
+p<span class="token operator">-></span>next <span class="token operator">=</span> q<span class="token operator">-></span>next <span class="token operator">-></span> next<span class="token punctuation">;</span> q<span class="token operator">-></span>next <span class="token operator">=</span> q<span class="token operator">-></span>next<span class="token operator">-></span>next<span class="token punctuation">;</span> q<span class="token operator">-></span>next <span class="token operator">=</span> p<span class="token punctuation">;</span>
+B
+q<span class="token operator">-></span>next <span class="token operator">=</span> q<span class="token operator">-></span>next<span class="token operator">-></span>next<span class="token punctuation">;</span> p<span class="token operator">-></span>next <span class="token operator">=</span> q<span class="token operator">-></span>next<span class="token punctuation">;</span> q<span class="token operator">-></span>next <span class="token operator">=</span> p<span class="token punctuation">;</span>
+C
+p<span class="token operator">-></span>next <span class="token operator">=</span> q<span class="token operator">-></span>next<span class="token operator">-></span>next<span class="token punctuation">;</span> q<span class="token operator">-</span>next<span class="token operator">-></span> <span class="token operator">=</span> p<span class="token punctuation">;</span> q<span class="token operator">-></span>next <span class="token operator">=</span> q<span class="token operator">-></span>next<span class="token operator">-></span>next<span class="token punctuation">;</span>
+D
+q<span class="token operator">-</span>next<span class="token operator">-></span> <span class="token operator">=</span> p<span class="token punctuation">;</span> q<span class="token operator">-></span>next <span class="token operator">=</span> q<span class="token operator">-></span>next<span class="token operator">-></span>next<span class="token punctuation">;</span> p<span class="token operator">-></span>next <span class="token operator">=</span> q<span class="token operator">-></span>next <span class="token operator">-></span> next <span class="token punctuation">;</span>
+正确答案：B
+你的答案：未作答
+官方解析：q<span class="token operator">-></span>next<span class="token operator">=</span>q<span class="token operator">-></span>next<span class="token operator">-></span>next 删除q的下一个点
+p<span class="token operator">-></span>next <span class="token operator">=</span> q<span class="token operator">-></span>next<span class="token punctuation">,</span>q<span class="token operator">-></span>next<span class="token operator">=</span>p 将p插入q后面，实现对原来q<span class="token operator">-></span>next的替换<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(8)2022 小米 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">单向链表已经可以实现非连续存储，为什么还需要双向链表？
+A
+双向链表更稳定
+B
+双向链表删除前驱节点更方便
+C
+双向链表中的任意一个结点都可以直接访问前驱结点和后继结点
+D
+双向链表复杂度更低
+正确答案：B
+你的答案：未作答
+官方解析：
+C选项，双向链表可以删除前驱结点，删除更加方便。
+B明显错误，首尾结点分别没办法直接定位到前驱和后驱结点。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(9)2021 小米 Java <strong>多选</strong></p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">下列关于顺序表和链表的说法中，正确的有：
+A
+顺序表中，逻辑上相邻的元素，对应的物理存储位置也相邻；
+B
+从长度为N的表中找出第i个元素时，顺序表的时间复杂度为<span class="token function">O</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>，链表的时间复杂度为<span class="token function">O</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span>；
+C
+顺序表需要预先分配存储空间，在静态存储分配情形下，一旦存储空间装满就不能扩充；链表则只需要在插入元素时申请存储空间，只要内存还有空间就可以分配；
+D
+存储同样的数据，顺序表和链表占用的存储空间大小相同；
+正确答案：ABC
+你的答案：未作答
+官方解析：
+D选项，链表要分配指针的空间，故存储空间更大。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(10)2022 shopee Java <strong>多选</strong></p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">关于翻转一个长度为n的单向链表，以下说法中正确的是　
+A
+可以在<span class="token function">O</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>的常量级别空间复杂度完成
+B
+时间复杂度最低可以是<span class="token function">O</span><span class="token punctuation">(</span>N<span class="token punctuation">)</span>
+C
+可以通过递归的方式实现
+D
+以上都不正确
+正确答案：ABC
+你的答案：未作答
+官方解析：
+翻转链表可以使用双指针在链表上直接操作，空间复杂度为<span class="token function">O</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>；时间复杂度不管是递归还是迭代都要遍历整个链表，故选ABC。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="在线编程-2"><a href="#在线编程-2" class="headerlink" title="在线编程"></a>在线编程</h3><h4 id="1、哈希·NB1-19"><a href="#1、哈希·NB1-19" class="headerlink" title="1、哈希·NB1-19"></a>1、哈希·NB1-19</h4><p><strong>(1)牛名生成器</strong></p>
 <p>农场主有一套牛名生成器，它通过输入数字（2-9），可以生成一系列可能的牛名。生成器的数字到字母的映射如下（与电话九键相同）。注意 1 不对应任何字母。</p>
@@ -2909,7 +3046,920 @@ C选项，选择排序最好情况与最坏情况都是<span class="token functi
 
 
 
-<h2 id="7-19"><a href="#7-19" class="headerlink" title="7.19"></a>7.19</h2><h3 id="任务-3"><a href="#任务-3" class="headerlink" title="任务"></a>任务</h3><h3 id="专项练习-3"><a href="#专项练习-3" class="headerlink" title="专项练习"></a>专项练习</h3><h4 id="1、·真题·单选"><a href="#1、·真题·单选" class="headerlink" title="1、·真题·单选"></a>1、·真题·单选</h4><p>(1)</p>
+<h2 id="7-19"><a href="#7-19" class="headerlink" title="7.19"></a>7.19</h2><h3 id="任务-3"><a href="#任务-3" class="headerlink" title="任务"></a>任务</h3><p>【专项练习训练营】第4天</p>
+<p>✅专项练习<br>训练模块：计算机基础<br>模块分类：网络基础、编译和体系结构<br>题目数量：50道（会员题）</p>
+<p>🟠编程练习<br>模块分类：二叉树<br>题目数量：任选3道（会员题）</p>
+<p>训练时长：预1.5小时</p>
+<p>请各位同学根据今天学习任务，登录牛客APP或官网，进入“题库”页面，选择专项练习进行刷题 @所有人 </p>
+<h3 id="专项练习-3"><a href="#专项练习-3" class="headerlink" title="专项练习"></a>专项练习</h3><h4 id="1、网络基础·真题·单选"><a href="#1、网络基础·真题·单选" class="headerlink" title="1、网络基础·真题·单选"></a>1、网络基础·真题·单选</h4><p>(1)2021 360 大数据开发工程师</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">UDP是传输层进行端到端连接的主要协议之一<span class="token punctuation">,</span>以下不属于UDP特点的是
+A
+面向无连接
+B
+不可靠服务
+C
+全双工传输模式
+D
+提供可靠服务
+正确答案：D
+官方解析：UDP：面向非连接、传输不可靠、用于传输少量数据<span class="token punctuation">(</span>数据包模式<span class="token punctuation">)</span>、速度快。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(2)2022 百度 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">在HTTP协议中，请求消息使用<span class="token punctuation">(</span> <span class="token punctuation">)</span>方法用于通过Internet发送大量数据，没有长度的限制。
+A
+get
+B
+post
+C
+put
+D
+head
+正确答案：B
+官方解析：POST请求理论上也是不限制大小的<span class="token punctuation">,</span>真正对其大小进行限制的是服务器的处理程序能力。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(3)2022 小米 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">下面关于网络协议错误的是
+A
+传输控制协议<span class="token punctuation">(</span>TCP<span class="token punctuation">)</span>，面向连接，提供可靠的数据传输。
+B
+用户数据报协议（UDP），无连接，提供不可靠的数据传输。
+C
+TCP和UDP协议都属于传输层协议。
+D
+Socket通信只能使用TCP协议进行通信。
+正确答案：D
+官方解析：Socket通信UDP与TCP均可。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(4)2022 百度 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">在Java EE中的MVC设计模式中，<span class="token punctuation">(</span> <span class="token punctuation">)</span>负责接受客户端的请求数据
+A
+JavaBean
+B
+JSP
+C
+Servlet
+D
+HTML
+正确答案：C
+官方解析：Servlet（Server Applet）是Java Servlet的简称，称为小服务程序或服务连接器，用Java编写的服务器端程序，具有独立于平台和协议的特性，主要功能在于交互式地浏览和生成数据，生成动态Web内容。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(5)2022 百度 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">在Java EE中，Servlet是在服务器端运行，以处理客户端请求而做出的响应的程序，下列选项中属于Servlet生命周期阶段的是
+A
+加载和实例化
+B
+初始化和服务
+C
+销毁
+D
+其他全部选项
+正确答案：D
+你的答案：未作答
+官方解析：
+servlet的生命周期顾名思义就是从servlet出现到消亡<span class="token punctuation">(</span>销毁<span class="token punctuation">)</span>的全过程。 主要分为以下几个阶段<span class="token punctuation">:</span> 加载类—<span class="token operator">></span>实例化<span class="token punctuation">(</span>为对象分配空间<span class="token punctuation">)</span>—<span class="token operator">></span>初始化<span class="token punctuation">(</span>为对象的属性赋值<span class="token punctuation">)</span>—<span class="token operator">></span>请求响应<span class="token punctuation">(</span>服务阶段<span class="token punctuation">)</span>—<span class="token operator">></span>销毁 ，故选D。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(6)2022 小米 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">关于TCP协议和UDP协议的描述错误的是
+A
+开始传输实际数据之前TCP的客户端和服务器端必须通过三次握手建立连接
+B
+UDP协议保证数据按序发送，按序到达，提供超时重传来保证可靠性
+C
+TCP有流量控制和拥塞控制
+D
+UDP可以支持一对一，多对多，一对多的通信
+正确答案：B
+你的答案：未作答
+官方解析：
+B选项，UDP提供不可靠的服务。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(7)2022 百度 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">在Java Web开发中，如果某个数据需要跨多个请求存在，则数据应该存储在什么中？
+A
+session
+B
+page
+C
+request
+D
+Response
+正确答案：A
+你的答案：未作答
+官方解析：存储在session中的数据可以接受多个请求。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(8)2021 360 大数据开发工程师</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">在internet流媒体播放时<span class="token punctuation">,</span>为了提高传输速率<span class="token punctuation">,</span>使用的端到端连接协议是
+A
+tcp
+B
+ip
+C
+http
+D
+udp
+正确答案：D
+官方解析：udp协议处于传输层，无连接，不可靠，不纠错，所以速度快，视频音频中稍微错一点数据不会对用户有很大的影响，故选D。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(9)2022 百度 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">在开发Java Web应用程序的时候，HTTP请求消息使用Get或POET方法以便在WEB上传输数据，下列关于GET和POST 方法描述正确的是
+A
+POST请求的数据在地址栏不可见
+B
+GET请求提交的数据在理论上没有长度限制
+C
+POST请求对发送的数据的长度限制在<span class="token number">240</span>——<span class="token number">255</span>个字符
+D
+GET请求提交数据更加安全
+正确答案：A
+官方解析：
+BC选项，GET请求提交的数据有长度限制，POST的请求理论上才没有；
+D选项，GET请求用于检索服务器的数据，而POST请求用于将数据提交到服务器中，并且服务器也会改变本地的数据状态。POST请求可以用于发送敏感信息。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(10)2022 shopee 大数据开发工程师</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">关于cookie和session描述错误的是
+A
+cookie保存在客户端浏览器中，而session保存在服务器上
+B
+cookie不是很安全，别人可以分析存放在本地的cookie并进行cookie欺骗
+C
+session是有有效期的，而cookie则没有有效期
+D
+如果浏览器禁用了cookie，session机制不会失效
+正确答案：C
+官方解析：http协议是一种无状态的协议，浏览器对服务器的每一次请求都是独立的。为了使得web能够产生一些动态信息，就需要保存”状态”，而cookie和session机制就是为了解决http协议无状态而产生。
+<span class="token number">1</span>、Cookie和Session都是会话技术，Cookie是运行在客户端，Session是运行在服务器端。
+<span class="token number">2</span>、Cookie有大小限制以及浏览器在存cookie的个数也有限制，Session是没有大小限制和服务器的内存大小有关。
+<span class="token number">3</span>、Cookie有安全隐患，通过拦截或本地文件找得到你的cookie后可以进行攻击。
+<span class="token number">4</span>、Session是保存在服务器端上会存在一段时间才会消失，如果session过多会增加服务器的压力。
+故选C。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(11)2022 环球星宇 大数据开发工程师</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">在 TCP 拥塞控制机制中，当拥塞窗口小于阈值时，拥塞窗口呈
+A
+线性增长
+B
+指数增长
+C
+指数后退
+D
+随机变化
+正确答案：B
+官方解析：
+在执行慢开始算法时，拥塞窗口cwnd的初始值为<span class="token number">1</span>。以后发送方每收到一个对新报文段的确认ACK。就把拥塞窗口值增加<span class="token number">1</span>，然后开始下一轮的传输。因此拥塞窗口cwnd随着传输轮次按指数规律增长。当拥塞窗口cwnd增长到慢开始门限值ssthresh时，就改为执行拥塞避免算法，拥塞窗口按线性规律增长。故选B。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(12)2022 百度 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">利用三层结构搭建某网上书店系统，设计用户登陆界面，如果你是设计人员，你将在三层结构的<span class="token punctuation">(</span> <span class="token punctuation">)</span>中实现？
+A
+模型层
+B
+表示层
+C
+数据访问层
+D
+业务逻辑层
+正确答案：B
+官方解析：
+表示层向上对应用层服务，向下接受来自会话层的服务。表示层为在应用过程之间传送的信息提供表示方法的服务，它只关心信息发出的语法和语义，故选B。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(13)2022 环球星宇 大数据开发工程师</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">在TCP通讯中，客户端主动关闭连接，服务端因为代码缺陷未关闭连接，则在服务端，连接的状态为
+A
+CLOSE_WAIT
+B
+FIN_WAIT_2
+C
+SYN_RCVD
+D
+TIME_WAIT
+正确答案：A
+你的答案：未作答
+官方解析：主动断开连接的一方，即客户端发送 FIN 报文，进入 FIN_WAIT_1 状态。服务端收到 FIN 报文后，返回 ACK 报文，表示确认应答，然后进入 CLOSE_WAIT 状态，等待应用层关闭连接。服务端因为代码缺陷没有关闭连接，就一直处于 CLOSE_WAIT 状态。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(14)2022 小米 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">在描述信息传输中bps表示的是
+A
+每秒传输的字节数
+B
+每秒传输的指令数
+C
+每秒传输的字数
+D
+每秒传输的位数
+正确答案：D
+官方解析：bps是bits per second的缩写<span class="token punctuation">,</span>表示比特<span class="token operator">/</span>秒<span class="token punctuation">,</span>也就是位<span class="token operator">/</span>秒的意思<span class="token punctuation">.</span>即一秒钟传输多少位<span class="token punctuation">,</span>位是计算机数据中的最小单位<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(15)2021 腾讯音乐 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">在关系数据库系统中，为了简化用户的查询操作，而又不增加数据的存储空间，常用的方法是创建
+A
+http<span class="token punctuation">:</span><span class="token comment">//127.0.0.1:8080/myjsp/forward.jsp</span>
+B
+http<span class="token punctuation">:</span><span class="token comment">//127.0.0.1:8080/myjsp/index.jsp</span>
+C
+http<span class="token punctuation">:</span><span class="token comment">//127.0.0.1:8080/myjsp/index.htm</span>
+D
+http<span class="token punctuation">:</span><span class="token comment">//127.0.0.1:8080/myjsp/forward.htm</span>
+正确答案：A
+你的答案：未作答
+官方解析：forward和redirect是最常问的两个问题： forward，服务器获取跳转页面内容传给用户，用户地址栏不变 redirect，是服务器向用户发送转向的地址，redirect后地址栏变成新的地址 因此这个题是A<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(16)2022 shopee 大数据开发工程师</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">网站shopee<span class="token punctuation">.</span>com，在其浏览器中输入https<span class="token punctuation">:</span><span class="token comment">//shopee.com/并按回车，直到shopee网站首页显示在其浏览器中，请问：在此过程中，按照TCP/IP网络模型，应用层都用到了哪些协议？</span>
+A
+HTTP<span class="token punctuation">,</span> TCP
+B
+HTTP<span class="token punctuation">,</span> DNS
+C
+HTTP<span class="token punctuation">,</span> IP<span class="token punctuation">,</span> DNS
+D
+HTTP<span class="token punctuation">,</span> DNS<span class="token punctuation">,</span> IP<span class="token punctuation">,</span> ARP<span class="token punctuation">,</span> TCP
+正确答案：B
+官方解析：只有HTTP和DNS属于应用层协议，TCP输出传输层协议，IP和ARP属于网络层协议。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(17)<strong>多选</strong></p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">数据结构中的算法是对待特定问题求解步骤的一种描述，它是指令有限的序列，其中每一条指令表示一个或多个操作，算法一般具有如下哪些特点
+A
+确定性
+B
+可行性
+C
+有穷性
+D
+鲁棒性
+正确答案：ABC
+你的答案：未作答
+官方解析：算法是对特定问题求解步骤的一种描述，它是指令的有限序列，其中每一个指令
+    表示一个或多个操作
+    <span class="token number">2</span>）算法的特性
+        ①有穷性
+            一个算法必须保证有限步之后结束
+        ②确定性
+            算法中每一条指令必须有确切的含义
+        ③可行性
+            算法中所有操作都必须通过已经实现的操作进行运算
+        ④输入
+            一个算法有<span class="token number">0</span>个或多个输入
+        ⑤输出
+            一个算法有一个或多个输出
+知识点：网络基础、Makefile<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(18)2022 shopee 大数据开发工程师 <strong>多选</strong></p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">以下描述正确的有
+A
+Http协议所使用的运输层协议是UDP
+B
+Https的默认端口号是<span class="token number">443</span>
+C
+TCP注重数据可靠性，UDP注重数据传输快
+D
+传输层提供端到端的可靠报文传递和错误恢复
+正确答案：BCD
+你的答案：未作答
+官方解析：
+HTTP协议使用的传输层协议为TCP，默认端口号为<span class="token number">443</span>，相较于DUP，TCP提供端到端的可靠的数据传输，故选BCD。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(19)<strong>多选</strong></p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">程序的三种基本控制结构是
+A
+重复
+B
+选择
+C
+调用
+D
+顺序
+正确答案：ABD
+你的答案：未作答
+官方解析：程序的三种基本控制结构是顺序、 选择和循环 <span class="token punctuation">(</span>重复<span class="token punctuation">)</span>。 子程序只是程序设计一 种方法<span class="token punctuation">,</span>递归则是一种算法<span class="token punctuation">,</span>都算不上是控制结构。
+知识点：网络基础、Makefile<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(20)2021 小米 嵌入式软件工程师 <strong>多选</strong></p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span class="token punctuation">[</span>host@test <span class="token operator">~</span><span class="token punctuation">]</span># ping <span class="token number">10.0</span><span class="token punctuation">.</span><span class="token number">0.1</span>
+PING <span class="token number">10.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token punctuation">(</span><span class="token number">10.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token punctuation">)</span> <span class="token function">56</span><span class="token punctuation">(</span><span class="token number">84</span><span class="token punctuation">)</span> bytes of data<span class="token punctuation">.</span>
+<span class="token number">64</span> bytes from <span class="token number">10.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token punctuation">:</span> icmp_seq<span class="token operator">=</span><span class="token number">1</span> ttl<span class="token operator">=</span><span class="token number">64</span> <span class="token keyword">time</span><span class="token operator">=</span><span class="token number">0.023</span> ms
+<span class="token punctuation">[</span>host@test <span class="token operator">~</span><span class="token punctuation">]</span># telnet <span class="token number">10.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">666</span>
+Trying <span class="token number">10.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+telnet<span class="token punctuation">:</span> connect to address <span class="token number">10.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token punctuation">:</span> Connection refused
+telnet提示Connection refused的可能是什么
+A
+<span class="token number">10.0</span><span class="token punctuation">.</span><span class="token number">0.1</span>机器的<span class="token number">666</span>端口上服务不正常
+B
+telnet不能侦测udp协议端口
+C
+<span class="token number">10.0</span><span class="token punctuation">.</span><span class="token number">0.1</span>机器的防火墙限制了<span class="token number">666</span>端口的访问
+D
+其余选项都不对
+正确答案：ABC
+你的答案：未作答
+官方解析：
+根据提示，ping <span class="token number">10.0</span><span class="token punctuation">.</span><span class="token number">0.1</span>正常，但是telnet <span class="token number">10.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> <span class="token number">666</span>却遇到错误，因此AC选项均有可能。
+同时talnet是基于TCP的，不能侦测UDP协议端口，因此B选项也正确。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(21)2022 shopee 大数据开发工程师 <strong>多选</strong></p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">关于TCP建立连接三次握手，说法正确的是
+A
+三次握手是客户端与服务器建立TCP建立时发送的三个TCP报文
+B
+三次握手可以有客户端发起 也可以有服务端发起
+C
+三次握手的最后一次的TCP报文在发送ACK命令时，可以携带消息体，前面两次不能携带消息体
+D
+TCP三次握手包含SYN_SEND 、SYN_RCVD、TIME_WAIT、ESTABLISHED 状态
+正确答案：AC
+你的答案：未作答
+官方解析：
+B选项，三次握手只能由客户端发起；
+D选项，TIME_WAIT为TCP断开连接四次挥手的状态。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(22)2022 shopee 大数据开发工程师</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">下面关于TCP描述，正确的是：
+A
+连接同一个server端口，理论上client最大的同时TCP连接数是<span class="token number">65535</span>（client所在机器只有一个ipv4地址）
+B
+将一块数据通过TCP成功发送到对方，对方拿到的这块数据和发送方肯定一模一样
+C
+系统可以用四元组<span class="token punctuation">(</span><span class="token keyword">local</span> ip<span class="token punctuation">,</span> <span class="token keyword">local</span> port<span class="token punctuation">,</span>remote ip<span class="token punctuation">,</span>remote port<span class="token punctuation">)</span>唯一标识一条TCP连接
+D
+server只监听一个端口，理论上server最大的同时TCP连接数是<span class="token number">65535</span>（server所在机器只有一个ipv4地址）
+正确答案：AC
+你的答案：未作答
+官方解析：
+B选项，对方拿到的数据会经过多层协议包装，不会和发送方一模一样；
+D选项，server端单机最大tcp连接数约为<span class="token number">2</span>的<span class="token number">48</span>次方。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(23)<strong>多选</strong></p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">以下属于应用层协议的是  
+A
+DNS
+B
+HTTP
+C
+TCP
+D
+SMTP
+正确答案：ABD
+你的答案：未作答
+官方解析：
+ABD都是应用层协议，C是传输层协议。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(24)<strong>多选</strong></p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">如下关于变长数组的使用描述正确的有
+A
+函数中变长数组的长度一旦确定，其值在函数生命周期结束前都不会改变
+B
+避免数组长度值过大引起栈溢出
+C
+变长数组可以在任何函数中使用
+D
+变长数组在使用时先判断一个初步的长度范围
+正确答案：BCD
+你的答案：未作答
+官方解析：任何长度需要运行时才能确定的数组<span class="token punctuation">,</span>都是变长数组。这里的变长指的是数组的长度是在运行时才能决定<span class="token punctuation">,</span>但一旦决定在数组的生命周期内就不会再变，A选项并非函数的生命周期。
+知识点：C<span class="token operator">++</span>、网络基础、Makefile<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(25)2021 360 大数据开发工程师</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">在网络通信中生成一个socket描述符<span class="token punctuation">,</span>需要使用的参数有
+A
+IPPRTO_UDP
+B
+SOCK_DGRAM
+C
+AF_INET
+D
+SOCK_PORT
+正确答案：ABC
+你的答案：未作答
+官方解析：对于<span class="token function">socket</span><span class="token punctuation">(</span>AF_INET<span class="token punctuation">,</span> SOCK_RAW<span class="token punctuation">,</span> IPPROTO_IP<span class="token punctuation">)</span><span class="token punctuation">,</span>其原型为
+<span class="token keyword">int</span> socket <span class="token punctuation">(</span><span class="token keyword">int</span> domain<span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token keyword">type</span><span class="token punctuation">,</span> <span class="token keyword">int</span> protocol<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">1</span> 参数protocol用来指明所要接收的协议包，如果是象<span class="token function">IPPROTO_TCP</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span>这种非<span class="token number">0</span>、非<span class="token number">255</span>的协议，当操作系统内核碰到ip头中protocol域和创建socket所使用参数protocol相同的IP包，就会交给这个raw socket来处理，因此，一般来说，要想接收什么样的数据包，就应该在参数protocol里来指定相应的协议。当内核向此raw socket交付数据包的时候，是包括整个IP头的，并且已经是重组好的IP包。
+<span class="token number">2</span> 如果protocol是<span class="token function">IPPROTO_RAW</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span>，这时候，这个socket只能用来发送IP包，而不能接收任何的数据。发送的数据需要自己填充IP包头，并且自己计算校验和。
+<span class="token number">3</span> 对于protocol为<span class="token number">0</span>（IPPROTO_IP<span class="token punctuation">)</span>的raw socket。用于接收任何的IP数据包。其中的校验和和协议分析由程序自己完成。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(26)<strong>多选</strong></p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">以下属于main函数参数的是
+A
+argc
+B
+envp
+C
+main
+D
+argv
+正确答案：ABD
+你的答案：未作答
+官方解析：main函数有三个参数，argc、argv和envp，它的标准写法如下：
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span>char <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>char <span class="token operator">*</span>envp<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">**</span> <span class="token keyword">int</span> argc，存放了命令行参数的个数。
+char argv<span class="token punctuation">[</span><span class="token punctuation">]</span>，是个字符串的数组，每个元素都是一个字符指针，指向一个字符串，即命令行中的每一个参数。
+char envp<span class="token punctuation">[</span><span class="token punctuation">]</span>，也是一个字符串的数组，这个数组的每一个元素是指向一个环境变量的字符指针。
+知识点：C<span class="token operator">++</span>、网络基础、Makefile<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2、编译和体系结构·真题·单选"><a href="#2、编译和体系结构·真题·单选" class="headerlink" title="2、编译和体系结构·真题·单选"></a>2、编译和体系结构·真题·单选</h4><p>(1)2021 小米 安卓工程师</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">冯诺依曼结构的计算机硬件逻辑组成中，不包含以下哪个模块
+A
+编译器
+B
+控制器
+C
+输入设备
+D
+输出设备
+正确答案：A
+你的答案：未作答
+官方解析：冯诺依曼结构五个部件：输入设备 输出设备 存储器 控制器 运算器<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(2)2021 360 安卓工程师</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">在计算机系统拥有的各种软硬件资源中，内存是属于：
+A
+可重用资源
+B
+不可重用资源
+C
+临界资源
+D
+独占资源
+正确答案：A
+你的答案：未作答
+官方解析：内存是计算机中重要的部件之一，它是与CPU进行沟通的桥梁。计算机中所有程序的运行都是在内存中进行的。内存也被称为内存储器，其作用是用于暂时存放CPU中的运算数据，以及与硬盘等外部存储器交换的数据。内存在读操作时内存可以为多个进程所同时共享，属于共享资源，而在写操作时只能是互斥访问，属于临界资源。故本题答案选择A选项。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(3)2021 百度 嵌入式软件工程师</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">分页存储管理将进程的逻辑地址空间分成若干个页，并为各页加以编号，从<span class="token number">0</span>开始，若某一计算机主存按字节编址，逻辑地址和物理地址都是<span class="token number">32</span>位，页表项大小为<span class="token number">4</span>字节，若使用一级页表的分页存储管理方式，逻辑地址结构为页号（<span class="token number">20</span>位），页内偏移量（<span class="token number">12</span>位），则页的大小是（  ）？页表最大占用（  ）？
+A
+<span class="token number">4</span>KB，<span class="token number">4</span>MB
+B
+<span class="token number">5</span>KB，<span class="token number">5</span>MB
+C
+<span class="token number">6</span>KB，<span class="token number">6</span>MB
+D
+<span class="token number">7</span>KB，<span class="token number">7</span>MB
+正确答案：A
+你的答案：未作答
+官方解析：
+页的大小<span class="token operator">=</span>页内偏移量的大小<span class="token operator">=</span><span class="token number">2</span><span class="token operator">^</span><span class="token number">12</span>B<span class="token operator">=</span><span class="token number">4</span>KB
+页表项个数<span class="token operator">=</span><span class="token number">2</span><span class="token operator">^</span><span class="token number">20</span>
+页表占用字节<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">^</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">4</span>B<span class="token operator">=</span><span class="token number">4</span>MB<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(4)2021 远景智能 嵌入式软件工程师</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">下列四种存储器中，存取速度最快的是（ ）
+A
+硬盘
+B
+RAM
+C
+U盘
+D
+CD<span class="token operator">-</span>ROM
+正确答案：B
+你的答案：未作答
+官方解析：选项A是计算机的组成部分<span class="token punctuation">,</span>系统和各种软件的存放媒介<span class="token punctuation">,</span>速度较快<span class="token punctuation">;</span>选项B用于数据的预先提取和保存<span class="token punctuation">,</span>速度很快<span class="token punctuation">;</span>选项C作为一种外部设备<span class="token punctuation">,</span>可以长期进行数据的存放<span class="token punctuation">,</span>速度慢<span class="token punctuation">;</span>选项D只能进行读取操作<span class="token punctuation">,</span>不能保存数据<span class="token punctuation">,</span>速度一般。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(5)2021 远景智能 嵌入式软件工程师</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">假设某一虚拟存储系统采用先进先出（FIFO）页面淘汰算法，有一个进程在内存中占<span class="token number">3</span>页（开始时内存为空），当访问如下页面序号（<span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span>）后，会产生几次缺页？
+A
+<span class="token number">4</span>
+B
+<span class="token number">5</span>
+C
+<span class="token number">6</span>
+D
+<span class="token number">7</span>
+正确答案：B
+你的答案：未作答
+官方解析：初始内存为空
+访问<span class="token number">1</span>，内存没有，缺页，添加，此时内存有<span class="token number">1</span>
+访问<span class="token number">2</span>，内存没有，缺页，添加，此时内存有<span class="token number">1</span>，<span class="token number">2</span>
+访问<span class="token number">3</span>，内存没有，缺页，添加，此时内存有<span class="token number">1</span>，<span class="token number">2</span>，<span class="token number">3</span>
+访问<span class="token number">1</span>，内存有
+访问<span class="token number">2</span><span class="token punctuation">.</span>   内存有
+访问<span class="token number">4</span>，内存没有，缺页，根据FIFO原则，<span class="token number">1</span>出<span class="token number">4</span>进，此时内存有<span class="token number">4</span>，<span class="token number">2</span>，<span class="token number">3</span>
+访问<span class="token number">2</span>，内存有
+访问<span class="token number">3</span>，内存有
+访问<span class="token number">5</span>，内存没有，缺页，根据FIFO原则，<span class="token number">2</span>出<span class="token number">5</span>进，此时内存有<span class="token number">4</span>，<span class="token number">5</span>，<span class="token number">3</span>
+访问<span class="token number">3</span>，内存有
+访问<span class="token number">4</span>，内存有
+访问<span class="token number">5</span>，内存有
+综上所述，缺页次数为<span class="token number">5</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(6)2021 小米 安卓工程师</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">C<span class="token operator">++</span>文件生成exe文件的正确步骤为
+A
+预处理、汇编、编译和链接
+B
+编译、预处理、汇编和链接
+C
+预处理、编译、汇编和链接
+D
+预处理、编译、链接和汇编
+正确答案：C
+你的答案：未作答
+官方解析：预处理：宏展开等操作编译：C<span class="token operator">++</span>代码生成汇编代码汇编：汇编代码生成二进制文件链接：链接库文件<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(7)2021 远景智能 嵌入式软件工程师</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">在多级存储体系中，“cache<span class="token operator">&amp;</span>主存”结构的作用是解决什么问题
+A
+主存容量不足
+B
+主存与辅存速度不匹配
+C
+辅存与CPU速度不匹配
+D
+主存与CPU速度不匹配
+正确答案：D
+你的答案：未作答
+官方解析：本题考查Cache的作用。 高速存储器能以极高的速率进行数据的访问，但因其价格高昂，如果计算机的主存储器完全由这种高速存储器组成则会大大增加计算机的成本。为了很好地解决主存与CPU速度不匹配的这个问题，采用了“Cache―主存”结构，即在主存与CPU之间增加一层小容量的高速存储器Cache。这利用了程序的局部性原理。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(8)2022 芯海科技 数字IC前端设计</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">下列电路中属于时序逻辑电路的是<span class="token punctuation">(</span><span class="token punctuation">)</span>
+A
+译码器；
+B
+计数器；
+C
+编码器；
+D
+数据选择器
+正确答案：B
+你的答案：未作答
+官方解析：时序逻辑电路是包含触发器的电路，译码器、编码器和数据选择器都是组合逻辑，不包含触发器；<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(9)2022 华为海思 数字IC前端设计</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">为实现占空比<span class="token number">50</span><span class="token operator">%</span>三分频时钟，下面描述的电路，正确的是
+A
+用待分频时钟上升沿采样计数，产生占空比<span class="token number">1</span><span class="token operator">/</span><span class="token number">3</span>的分频时钟A；用待分频时钟上升沿采样计数，产生<span class="token number">1</span>个占空比<span class="token number">2</span><span class="token operator">/</span><span class="token number">3</span>的分频时钟；把A与B相或得到<span class="token number">50</span><span class="token operator">%</span>占空比时钟。
+B
+用待分频时钟上升沿采样计数，产生占空比<span class="token number">1</span><span class="token operator">/</span><span class="token number">3</span>的分频时钟A；用待分频时钟下降沿采样计数，产生<span class="token number">1</span>个占空比<span class="token number">1</span><span class="token operator">/</span><span class="token number">3</span>的分频时钟；把A与B相与得到<span class="token number">50</span><span class="token operator">%</span>占空比时钟。
+C
+用待分频时钟上升沿采样计数，产生占空比<span class="token number">1</span><span class="token operator">/</span><span class="token number">3</span>的分频时钟A；用待分频时钟下降沿采样计数，产生<span class="token number">1</span>个占空比<span class="token number">1</span><span class="token operator">/</span><span class="token number">3</span>的分频时钟；把A与B相或得到<span class="token number">50</span><span class="token operator">%</span>占空比时钟。
+D
+用待分频时钟上升沿采样计数，产生占空比<span class="token number">1</span><span class="token operator">/</span><span class="token number">3</span>的分频时钟A；用待分频时钟上升沿采样计数，产生<span class="token number">1</span>个占空比<span class="token number">2</span><span class="token operator">/</span><span class="token number">3</span>的分频时钟；把A与B相与得到<span class="token number">50</span><span class="token operator">%</span>占空比时钟。
+正确答案：B
+你的答案：未作答
+官方解析：三分频占空比<span class="token number">50</span><span class="token operator">%</span>的时钟，先采上升沿实现占空比<span class="token number">1</span><span class="token operator">/</span><span class="token number">3</span>的分频时钟A，再采下降沿实现占空比<span class="token number">1</span><span class="token operator">/</span><span class="token number">3</span>的分频时钟B，两者相与即可。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(10)2022 芯海科技 数字IC前端设计</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">组合逻辑电路的冒险现象是由于<span class="token punctuation">(</span><span class="token punctuation">)</span>引起的
+A
+电路未达到最简；
+B
+电路存在延时；
+C
+逻辑门类型不同；
+D
+电路有多个输出
+正确答案：B
+你的答案：未作答
+官方解析：
+信号在器件内部通过连线和逻辑单元时，都有一定的延时。延时的大小与连线的长短和逻辑单元的数目有关，同时还受器件的制造工艺、工作电压、温度等条件的影响。信号的高低电平转换也需要一定的过渡时间。由于存在这两方面因素，多路信号的电平值发生变化时，在信号变化的瞬间，组合逻辑的输出有先后顺序，并不是同时变化，往往会出现一些不正确的尖峰信号，这些尖峰信号称为<span class="token string">"毛刺"</span>。如果一个组合逻辑电路中有<span class="token string">"毛刺"</span>出现，就说明该电路存在冒险。故选B。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(11)2021 哔哩哔哩 安卓工程师</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">考虑以下C语言代码<span class="token punctuation">:</span>
+<span class="token keyword">unsigned</span> short usi<span class="token operator">=</span><span class="token number">65535</span>
+short si<span class="token operator">=</span>usi
+执行_上述程序段后，si 的值是
+A
+<span class="token operator">-</span><span class="token number">1</span>
+B
+<span class="token operator">-</span><span class="token number">32767</span>
+C
+<span class="token operator">-</span><span class="token number">32768</span>
+D
+<span class="token operator">-</span><span class="token number">65535</span>
+正确答案：A
+你的答案：未作答
+官方解析：
+<span class="token keyword">unsigned</span> short <span class="token number">65535</span>的源码为<span class="token punctuation">:</span><span class="token number">1111</span> <span class="token number">1111</span> <span class="token number">1111</span> <span class="token number">1111</span> ，在C语言中正数的源码即是补码；
+short  <span class="token number">65535</span>表示上述补码中第一个<span class="token number">1</span>为符号位（负数），剩下的<span class="token number">15</span>个<span class="token number">1</span>按位取反<span class="token operator">+</span><span class="token number">1</span>得源码：
+<span class="token number">1000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0001</span> 即表示为：<span class="token operator">-</span><span class="token number">1</span>
+故综上所述，答案为A<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(12)2022 芯海科技 数字IC前端设计</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">有一个FIFO设计，输入时钟<span class="token number">100</span>MHz，输出时钟<span class="token number">70</span>MHz，输入数据模式固定，其中<span class="token number">1000</span>个时钟中有<span class="token number">700</span>个时钟写传输连续数据。为了避免FIFO下溢<span class="token operator">/</span>上溢，FIFO最小深度是多少
+A
+<span class="token number">270</span>
+B
+<span class="token number">1170</span>
+C
+<span class="token number">360</span>
+D
+<span class="token number">420</span>
+正确答案：D
+你的答案：未作答
+官方解析：要求fifo的最小深度，则要考虑写数据最快的情况，<span class="token number">1000</span>个时钟中有<span class="token number">700</span>个时钟写传输连续数据，那么在两个<span class="token number">1000</span>时钟的传输中，写传输最快的情况是：
+第<span class="token number">1</span> <span class="token operator">~</span> 第<span class="token number">300</span>时钟IDLE
+第<span class="token number">301</span> <span class="token operator">~</span> 第<span class="token number">1000</span>时钟写传输
+第<span class="token number">1001</span> <span class="token operator">~</span> 第<span class="token number">1700</span>时钟写传输
+第<span class="token number">1701</span> <span class="token operator">~</span> 第<span class="token number">2000</span>时钟IDLE
+连续传输最快需要<span class="token number">700</span><span class="token operator">*</span><span class="token number">2</span><span class="token operator">=</span><span class="token number">1400</span>个时钟周期
+写入<span class="token number">1400</span>个时钟周期需要花费的时间：t <span class="token operator">=</span>（<span class="token number">1</span><span class="token operator">/</span><span class="token number">100</span>Mhz） <span class="token operator">*</span> <span class="token number">1400</span>
+在t时间里，读出的数据为：t <span class="token operator">/</span>（<span class="token number">1</span><span class="token operator">/</span><span class="token number">70</span>Mhz）<span class="token operator">=</span> <span class="token number">980</span>
+未读出的数据量为：<span class="token number">1400</span><span class="token operator">-</span><span class="token number">980</span><span class="token operator">=</span><span class="token number">420</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(13)2022 华为海思 数字IC前端设计</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">关于冯诺依曼结构和哈佛结构的描述中，错误的是（）？
+A
+冯诺依曼接口中程序计数器负责提供程序执行所需要的地址
+B
+哈佛结构中取指令和执行不能完全重叠
+C
+冯诺依曼结构的计算机中数据和程序共用一个存储空间
+D
+哈佛结构的计算机在一个机器周期内科同时获得指令和操作数
+正确答案：B
+你的答案：未作答
+官方解析：哈佛结构由于程序和数据存储器在两个分开的物理空间中，因此取指和执行能完全重叠，哈佛结构与冯诺依曼结构的区别就是哈佛结构中数据与指令分开存储，可以同时获取。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(14)2021 哔哩哔哩 安卓工程师</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">目前主流 PC，读取 <span class="token number">50</span>G 内存需要的时间大概量级是
+A
+<span class="token number">10</span>微秒
+B
+<span class="token number">10</span>毫秒
+C
+<span class="token number">10</span>秒
+D
+<span class="token number">10</span>分钟
+正确答案：C
+你的答案：未作答
+官方解析：
+目前主流PC内存读取速度每秒到达几百M或者G的级别，故应选C。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(15)2022 芯海科技 数字IC前端设计</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">下图为组合逻辑Y<span class="token operator">=</span><span class="token function">f</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span>B<span class="token punctuation">,</span>C<span class="token punctuation">,</span>D<span class="token punctuation">)</span>的真值表，请根据此真值表在下列答案中选择Y的逻辑表达式：
+A
+C' <span class="token operator">*</span> D <span class="token operator">+</span> A <span class="token operator">*</span> D
+B
+A <span class="token operator">*</span> C <span class="token operator">+</span> D
+C
+A <span class="token operator">*</span> C <span class="token operator">+</span> A' <span class="token operator">*</span> D
+D
+A <span class="token operator">*</span> C <span class="token operator">+</span> C' <span class="token operator">*</span> D
+正确答案：D
+你的答案：未作答
+官方解析：
+根据真值表结果代入四个选项，选D。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<img src="https://uploadfiles.nowcoder.com/files/20221206/0_1670309703602/ic1.png" alt="img" style="zoom: 33%;">
+
+<p>(16)2022 华为海思 数字IC前端设计</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">有关功耗，以下说法不正确的是
+A
+电压越大，工作频率越高，其动态功耗越高
+B
+低功耗设计的目标就是采用各种优化技术和方法，在各个设计目标之间找到最佳的结合点
+C
+设计层次越高，功耗优化所能达到的效果越好
+D
+芯片单位面积的动态功耗和静态功耗随着工艺的发展呈下降趋势
+正确答案：D
+你的答案：未作答
+官方解析：随着工艺的上升，晶体管阈值降低，漏电流变大，静态功耗变大。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(17)2022 华为海思 数字IC前端设计</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">以下关于flase<span class="token operator">-</span>path，正确的是
+A
+一般异步电路可以设置为flase<span class="token operator">-</span>path。
+B
+一般模拟IP和系统的互联接口都可以设置为flase<span class="token operator">-</span>path。
+C
+一般同步复位可以设置为flase<span class="token operator">-</span>path
+D
+两个不同频率之间的接口一定可以设置为flase<span class="token operator">-</span>path。
+正确答案：A
+你的答案：未作答
+官方解析：false_path是不希望工具分析的路径，一般是异步路径，即跨时钟域的路径。另外一种是与电路正常工作不相关的电路，比如测试逻辑的电路等。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(18)2022 华为海思 数字IC前端设计</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">下面的选项中关于宏定义的说法不正确的是？
+A
+宏定义文件最好放在一个文件中集中管理，防止出现不同项目需要修改为不同的宏定义值，但是却漏改了某些地方的情况出现。
+B
+综合的时候，define可以跨文件列表生效
+C
+如果模块中有很多宏定义，在模块的文件列表最后需要undef掉使用的宏，防止和其他模块的宏定义冲突。
+D
+仿真时如果出现宏定义冲突，后面的define值会覆盖前面的define值。
+正确答案：C
+你的答案：未作答
+官方解析：A对。宏定义最好放到同一个文件中集中管理，比如放到para<span class="token punctuation">.</span>v中，使用的时候
+<span class="token keyword">include</span> “para<span class="token punctuation">.</span>v”调用即可。
+B对<span class="token punctuation">.</span>define可以跨文件使用，<span class="token keyword">parameter</span>可以跨<span class="token keyword">module</span>使用，<span class="token keyword">localparam</span>只能在本<span class="token keyword">module</span>使用。
+C错，把不希望下面使用的宏undef掉。
+D对，后面的宏会覆盖前面的宏。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(19)2022 华为海思 数字IC前端设计</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">哪些情况下不会产生latch电路<span class="token punctuation">(</span> <span class="token punctuation">)</span><span class="token operator">?</span>
+A
+组合逻辑中条件不全的<span class="token keyword">case</span>语句没有<span class="token keyword">default</span>赋值
+B
+时序逻辑中<span class="token keyword">if</span>选择语句，没有<span class="token keyword">else</span>部分表达
+C
+使用<span class="token keyword">if</span>选择语句的组合逻辑没有<span class="token keyword">else</span>部分表达
+D
+使用<span class="token keyword">case</span>选择语句的组合逻辑没有<span class="token keyword">else</span>表达
+正确答案：B
+你的答案：未作答
+官方解析：时序电路有记忆功能，不会产生锁存器，锁存器一般在组合逻辑中<span class="token keyword">case</span>写不全， <span class="token keyword">else</span>写不全，或者敏感列表写不全。    <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(20)2022 shopee 安卓工程师 <strong>多选</strong></p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">下列关于PC机性能的叙述中，哪些是正确的
+A
+逻辑结构相同时，CPU主频越高，速度就越快
+B
+总线的传输速率与总线的数据线宽带、总线工作频率等有关
+C
+通常cache容量越大，访问cache的命中率就越高
+D
+主存的存取周期越长，存取速度就越快
+正确答案：ABC
+你的答案：未作答
+官方解析：
+主存的存取周期越长，存取速度就越慢，故D选项错误。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(21)2022 shopee 安卓工程师 <strong>多选</strong></p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">编译程序工作时，通常有以下哪些阶段
+A
+词法分析
+B
+语法分析
+C
+中间代码生成
+D
+目标代码生成
+正确答案：ABCD
+你的答案：未作答
+官方解析：
+编译程序也叫编译系统，是把用高级语言编写的面向过程的源程序翻译成目标程序的语言处理程序。 编译程序把一个源程序翻译成目标程序的工作过程分为五个阶段：词法分析；语法分析；中间代码生成；代码优化；目标代码生成，故选ABCD。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(22)2022 远景智能 安卓工程师 <strong>多选</strong></p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">堆栈溢出一般是由什么原因导致的？
+A
+函数代码长度过长
+B
+循环的递归调用
+C
+大数据结构的局部变量
+D
+代码运行时错误
+正确答案：BC
+你的答案：未作答
+官方解析：堆溢出常见情景如下：
+<span class="token number">1</span>，堆内存分配过小：可通过<span class="token operator">-</span>Xms2048m <span class="token operator">-</span>Xmx2048m调整堆内存
+<span class="token number">2</span>，线程数过大，超过了操作系统限制
+栈溢出常见情景如下：
+递归调用方法，会创建大量栈帧，直至溢出。
+故选BC。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(23)2021 小米 安卓工程师</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">下面哪种方法可以避免编译器对结构体进行对齐优化
+A
+<span class="token keyword">struct</span> <span class="token operator">&#123;</span>
+<span class="token keyword">unsigned</span> char head
+<span class="token keyword">unsigned</span> char sector
+<span class="token keyword">unsigned</span> char cylinder
+<span class="token operator">&#125;</span>
+B
+<span class="token keyword">struct</span> <span class="token operator">&#123;</span>
+<span class="token keyword">unsigned</span> char head
+<span class="token keyword">unsigned</span> char sector
+<span class="token keyword">unsigned</span> char cylinder
+<span class="token operator">&#125;</span><span class="token function">__attribute__</span><span class="token punctuation">(</span><span class="token punctuation">(</span>pack<span class="token punctuation">)</span><span class="token punctuation">)</span>
+C
+<span class="token keyword">struct</span> <span class="token operator">&#123;</span>
+<span class="token keyword">unsigned</span> char head
+<span class="token keyword">unsigned</span> char sector
+<span class="token keyword">unsigned</span> char cylinder
+<span class="token operator">&#125;</span><span class="token function">__attribute__</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">packed</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+D
+<span class="token keyword">struct</span> <span class="token operator">&#123;</span>
+<span class="token keyword">unsigned</span> char head
+<span class="token keyword">unsigned</span> char sector
+<span class="token keyword">unsigned</span> char cylinder
+<span class="token operator">&#125;</span><span class="token function">__attribute__</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">aligned</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+正确答案：CD
+你的答案：未作答
+官方解析：加上<span class="token function">__attribute__</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">packed</span><span class="token punctuation">)</span><span class="token punctuation">)</span>，可以防止编译器对结构进行字节对齐优化。
+使用<span class="token function">__attribute__</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">aligned</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">0</span>为对齐字节数<span class="token punctuation">)</span>，强制编译器按照<span class="token number">0</span>字节对齐。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(24)2021 奇安信 安卓工程师 <strong>多选</strong></p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">以下关于符号连接与硬连接的说法， 正确的是
+A
+创建符号连接时，将创建一个inode
+B
+创建硬连接时，将创建一个inode
+C
+删除符号连接源文件后， 连接文件还可继续访问
+D
+删除硬连接源文件后， 连接文件还可继续访问
+正确答案：AD
+你的答案：未作答
+官方解析：Linux中包括两种链接：硬链接<span class="token punctuation">(</span>Hard Link<span class="token punctuation">)</span>和软链接<span class="token punctuation">(</span>Soft Link<span class="token punctuation">)</span><span class="token punctuation">,</span>软链接又称为符号链接（Symbolic link）。
+
+硬链接 
+硬链接是文件的别名。从技术上讲<span class="token punctuation">,</span>他们公用一个<span class="token function">inode</span><span class="token punctuation">(</span>inode中包含了一个文件的所有必要的信息，说inode就是文件也是没有问题的<span class="token punctuation">)</span>。 
+
+由于linux下的文件是通过索引节点（Inode）来识别文件，硬链接也可以认为是一个指向文件索引节点的指针，系统并不为它重新分配inode<span class="token punctuation">,</span>
+
+每添加一个一个硬链接，文件的链接数就加<span class="token number">1</span><span class="token punctuation">,</span> 删除一个则链接数减<span class="token number">1</span>。
+
+大多数系统不允许创建一个目录的硬链接。在允许创建目录硬链接的系统上，只有超级用户才能才能这样做。
+
+不能创建跨文件系统<span class="token punctuation">(</span>分区<span class="token punctuation">)</span>的硬链接（这些限制在POSIX中都不是强制性的）。
+软链接（符号链接）
+ 软链接是一种特殊的文件类型<span class="token punctuation">,</span>其中包含对另一个 文件<span class="token operator">/</span>目录 以 绝对<span class="token operator">/</span>相对 路径形式的引用<span class="token punctuation">.</span>
+
+ 软链接可以看做是对一个文件的间接指针<span class="token punctuation">,</span>相当于windows下的快捷方式。
+
+软链接没有任何文件系统的限制，任何用户可以创建指向  文件<span class="token operator">/</span>目录 的符号链接。甚至可以跨越不同机器、不同网络对文件进行链接。
+
+创建文件的软链接时，软链接会使用一个新的inode，所以软链接的inode号和文件的inode号不同<span class="token punctuation">(</span>表明他们是两个不同的文件<span class="token punctuation">)</span>，
+
+软链接的inode里存放着指向文件的路径，删除源文件，软链接也无法使用了，因为文件的路径不存在了；删除软链接对原文件没有任何影响。
+
+当我们再次创建这个文件时（文件名与之前的相同），软链接又会重新指向这个文件（inode号与之前的不同了），而硬链接不会受其影响<span class="token punctuation">.</span>
+当然软链接也有硬链接没有的缺点，因为链接文件包含有原文件的路径信息，所以当原文件从一个目录下移到其他目录中，再访问链接文件，系统就找不到了，
+
+而硬链接就没有这个缺陷，你想怎么移就怎么移；还有它要系统分配额外的空间用于建立新的索引节点和保存原文件的路径。
+知识点：编译和体系结构<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="在线编程-3"><a href="#在线编程-3" class="headerlink" title="在线编程"></a>在线编程</h3><h4 id="1、二叉树·NB1-32"><a href="#1、二叉树·NB1-32" class="headerlink" title="1、二叉树·NB1-32"></a>1、二叉树·NB1-32</h4><p><strong>(1)牛群的最大高度</strong></p>
+<p>农场里有一群牛，牛群的成员分布在山坡上，形成了一个二叉树结构。每头牛都有一个高度值，表示它在山坡上的高度。请你编写一个程序，找出牛群中的最高牛。</p>
+<p>说明：最高牛是指高度值最大的牛。</p>
+<p><strong>示例1</strong></p>
+<p>输入：</p>
+<pre class="line-numbers language-none"><code class="language-none">&#123;1, 2, 3, #, #, 4, 5&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>返回值：</p>
+<pre class="line-numbers language-none"><code class="language-none">5<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>示例2</strong></p>
+<p>输入：</p>
+<pre class="line-numbers language-none"><code class="language-none">&#123;1, 2, 3&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>返回值：</p>
+<pre class="line-numbers language-none"><code class="language-none">3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>备注：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">输入包含一个二叉树，表示牛群的分布。二叉树由一组整数表示，其中 # 表示空节点。节点按层序遍历的顺序给出。
+二叉树节点数[1, 100]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>(2)牛群的相似结构</strong></p>
+<p>农场里有两群牛，每群牛的成员分布在山坡上，形成了一个二叉树结构。每头牛都有一个编号，表示它在牛群中的身份。请你编写一个程序，判断这两个牛群的结构是否相同。</p>
+<p>如果两个牛群在结构上相同，并且牛的编号具有相同的值，则认为它们的结构是相同的。</p>
+<p><strong>示例1</strong></p>
+<p>输入：</p>
+<pre class="line-numbers language-none"><code class="language-none">&#123;1, #, 2&#125;,&#123;1, #, 2&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>返回值：</p>
+<pre class="line-numbers language-none"><code class="language-none">true<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>示例2</strong></p>
+<p>输入：</p>
+<pre class="line-numbers language-none"><code class="language-none">&#123;1, 2, 3, 4, 5, 6, 7&#125;,&#123;1, 2, 3, 4, 5, 6, 8&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>返回值：</p>
+<pre class="line-numbers language-none"><code class="language-none">false<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>示例3</strong></p>
+<p>输入：</p>
+<pre class="line-numbers language-none"><code class="language-none">&#123;1, #, 2&#125;,&#123;1, 2, #&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>返回值：</p>
+<pre class="line-numbers language-none"><code class="language-none">false<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>备注：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">两个牛群上的节点数目都在范围 [0, 100] 内0 &lt;&#x3D; Node.val &lt;&#x3D; 10^4#表示空节点<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>(3)相逆叶子</strong></p>
+<p>在一片牧场上，农场主人种植了两棵大树，每棵树的叶子上都住着一头牛。树的叶子按从左到右的顺序排列形成一个叶值序列，每个叶子上的牛都有其特定的编号。</p>
+<p>现在农场主人想要知道，这两棵树的叶子（牛的编号）是否刚好为逆序。也就是说，第一棵树从左到右的叶子顺序，是否与第二棵树从右到左的叶子顺序一致。</p>
+<p>如果是，则返回 true；否则返回 false。</p>
+<p><strong>示例1</strong></p>
+<p>输入：</p>
+<pre class="line-numbers language-none"><code class="language-none">&#123;1,2,3&#125;,&#123;1,3,2&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>返回值：</p>
+<pre class="line-numbers language-none"><code class="language-none">true<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>示例2</strong></p>
+<p>输入：</p>
+<pre class="line-numbers language-none"><code class="language-none">&#123;3,2,1&#125;,&#123;1,2,3&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>返回值：</p>
+<pre class="line-numbers language-none"><code class="language-none">false<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>备注：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">给定的两棵树结点数在 [1, 200] 范围内
+给定的两棵树上的值在 [0, 200] 范围内<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="7-20"><a href="#7-20" class="headerlink" title="7.20"></a>7.20</h2><h3 id="任务-4"><a href="#任务-4" class="headerlink" title="任务"></a>任务</h3><h3 id="专项练习-4"><a href="#专项练习-4" class="headerlink" title="专项练习"></a>专项练习</h3><h4 id="1、·真题·单选"><a href="#1、·真题·单选" class="headerlink" title="1、·真题·单选"></a>1、·真题·单选</h4><p>(1)</p>
 <pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>(2)</p>
@@ -2999,7 +4049,7 @@ C选项，选择排序最好情况与最坏情况都是<span class="token functi
 <p>(10)</p>
 <pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="在线编程-3"><a href="#在线编程-3" class="headerlink" title="在线编程"></a>在线编程</h3><h4 id="1、·NB1"><a href="#1、·NB1" class="headerlink" title="1、·NB1-"></a>1、·NB1-</h4><p>(1)</p>
+<h3 id="在线编程-4"><a href="#在线编程-4" class="headerlink" title="在线编程"></a>在线编程</h3><h4 id="1、·NB1"><a href="#1、·NB1" class="headerlink" title="1、·NB1-"></a>1、·NB1-</h4><p>(1)</p>
 <p><strong>代码</strong></p>
 <pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -3027,7 +4077,7 @@ C选项，选择排序最好情况与最坏情况都是<span class="token functi
 
 
 
-<h2 id="7-20"><a href="#7-20" class="headerlink" title="7.20"></a>7.20</h2><h3 id="任务-4"><a href="#任务-4" class="headerlink" title="任务"></a>任务</h3><h3 id="专项练习-4"><a href="#专项练习-4" class="headerlink" title="专项练习"></a>专项练习</h3><h4 id="1、·真题·单选-1"><a href="#1、·真题·单选-1" class="headerlink" title="1、·真题·单选"></a>1、·真题·单选</h4><p>(1)</p>
+<h2 id="7-21"><a href="#7-21" class="headerlink" title="7.21"></a>7.21</h2><h3 id="任务-5"><a href="#任务-5" class="headerlink" title="任务"></a>任务</h3><h3 id="专项练习-5"><a href="#专项练习-5" class="headerlink" title="专项练习"></a>专项练习</h3><h4 id="1、·真题·单选-1"><a href="#1、·真题·单选-1" class="headerlink" title="1、·真题·单选"></a>1、·真题·单选</h4><p>(1)</p>
 <pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>(2)</p>
@@ -3117,7 +4167,7 @@ C选项，选择排序最好情况与最坏情况都是<span class="token functi
 <p>(10)</p>
 <pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="在线编程-4"><a href="#在线编程-4" class="headerlink" title="在线编程"></a>在线编程</h3><h4 id="1、·NB1-1"><a href="#1、·NB1-1" class="headerlink" title="1、·NB1-"></a>1、·NB1-</h4><p>(1)</p>
+<h3 id="在线编程-5"><a href="#在线编程-5" class="headerlink" title="在线编程"></a>在线编程</h3><h4 id="1、·NB1-1"><a href="#1、·NB1-1" class="headerlink" title="1、·NB1-"></a>1、·NB1-</h4><p>(1)</p>
 <p><strong>代码</strong></p>
 <pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -3145,7 +4195,7 @@ C选项，选择排序最好情况与最坏情况都是<span class="token functi
 
 
 
-<h2 id="7-21"><a href="#7-21" class="headerlink" title="7.21"></a>7.21</h2><h3 id="任务-5"><a href="#任务-5" class="headerlink" title="任务"></a>任务</h3><h3 id="专项练习-5"><a href="#专项练习-5" class="headerlink" title="专项练习"></a>专项练习</h3><h4 id="1、·真题·单选-2"><a href="#1、·真题·单选-2" class="headerlink" title="1、·真题·单选"></a>1、·真题·单选</h4><p>(1)</p>
+<h2 id="7-22"><a href="#7-22" class="headerlink" title="7.22"></a>7.22</h2><h3 id="任务-6"><a href="#任务-6" class="headerlink" title="任务"></a>任务</h3><h3 id="专项练习-6"><a href="#专项练习-6" class="headerlink" title="专项练习"></a>专项练习</h3><h4 id="1、·真题·单选-2"><a href="#1、·真题·单选-2" class="headerlink" title="1、·真题·单选"></a>1、·真题·单选</h4><p>(1)</p>
 <pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>(2)</p>
@@ -3235,7 +4285,7 @@ C选项，选择排序最好情况与最坏情况都是<span class="token functi
 <p>(10)</p>
 <pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="在线编程-5"><a href="#在线编程-5" class="headerlink" title="在线编程"></a>在线编程</h3><h4 id="1、·NB1-2"><a href="#1、·NB1-2" class="headerlink" title="1、·NB1-"></a>1、·NB1-</h4><p>(1)</p>
+<h3 id="在线编程-6"><a href="#在线编程-6" class="headerlink" title="在线编程"></a>在线编程</h3><h4 id="1、·NB1-2"><a href="#1、·NB1-2" class="headerlink" title="1、·NB1-"></a>1、·NB1-</h4><p>(1)</p>
 <p><strong>代码</strong></p>
 <pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -3250,124 +4300,6 @@ C选项，选择排序最好情况与最坏情况都是<span class="token functi
 
 
 <h4 id="2、·NB1-2"><a href="#2、·NB1-2" class="headerlink" title="2、·NB1-"></a>2、·NB1-</h4><p>(1)</p>
-<p><strong>代码</strong></p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(2)</p>
-<p><strong>代码</strong></p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(3)</p>
-<p><strong>代码</strong></p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<h2 id="7-22"><a href="#7-22" class="headerlink" title="7.22"></a>7.22</h2><h3 id="任务-6"><a href="#任务-6" class="headerlink" title="任务"></a>任务</h3><h3 id="专项练习-6"><a href="#专项练习-6" class="headerlink" title="专项练习"></a>专项练习</h3><h4 id="1、·真题·单选-3"><a href="#1、·真题·单选-3" class="headerlink" title="1、·真题·单选"></a>1、·真题·单选</h4><p>(1)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(2)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(3)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(4)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(5)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(6)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(7)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(8)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(9)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(10)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h4 id="2、·真题·单选-3"><a href="#2、·真题·单选-3" class="headerlink" title="2、·真题·单选"></a>2、·真题·单选</h4><p>(1)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(2)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(3)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(4)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(5)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(6)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(7)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(8)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(9)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(10)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h4 id="3、·真题·单选-3"><a href="#3、·真题·单选-3" class="headerlink" title="3、·真题·单选"></a>3、·真题·单选</h4><p>(1)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(2)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(3)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(4)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(5)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(6)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(7)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(8)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(9)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(10)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="在线编程-6"><a href="#在线编程-6" class="headerlink" title="在线编程"></a>在线编程</h3><h4 id="1、·NB1-3"><a href="#1、·NB1-3" class="headerlink" title="1、·NB1-"></a>1、·NB1-</h4><p>(1)</p>
-<p><strong>代码</strong></p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(2)</p>
-<p><strong>代码</strong></p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(3)</p>
-<p><strong>代码</strong></p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<h4 id="2、·NB1-3"><a href="#2、·NB1-3" class="headerlink" title="2、·NB1-"></a>2、·NB1-</h4><p>(1)</p>
 <p><strong>代码</strong></p>
 <pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
