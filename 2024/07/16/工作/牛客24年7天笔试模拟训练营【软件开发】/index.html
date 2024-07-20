@@ -3959,7 +3959,808 @@ D
 <p><strong>代码</strong></p>
 <pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h2 id="7-20"><a href="#7-20" class="headerlink" title="7.20"></a>7.20</h2><h3 id="任务-4"><a href="#任务-4" class="headerlink" title="任务"></a>任务</h3><h3 id="专项练习-4"><a href="#专项练习-4" class="headerlink" title="专项练习"></a>专项练习</h3><h4 id="1、·真题·单选"><a href="#1、·真题·单选" class="headerlink" title="1、·真题·单选"></a>1、·真题·单选</h4><p>(1)</p>
+<h2 id="7-20"><a href="#7-20" class="headerlink" title="7.20"></a>7.20</h2><h3 id="任务-4"><a href="#任务-4" class="headerlink" title="任务"></a>任务</h3><p>【专项练习训练营】第5天</p>
+<p>✅专项练习<br>训练模块：计算机基础<br>模块分类：操作系统、数据库、linux<br>题目数量：49道（会员题）</p>
+<p>🟠编程练习<br>模块分类：二分&amp;分治、双指针<br>题目数量：任选3道</p>
+<p>训练时长：预估1小时</p>
+<p>请各位同学根据今天学习任务，登录牛客APP或官网，进入“题库”页面，选择专项练习进行刷题@所有人 </p>
+<h3 id="专项练习-4"><a href="#专项练习-4" class="headerlink" title="专项练习"></a>专项练习</h3><h4 id="1、操作系统·真题·单选"><a href="#1、操作系统·真题·单选" class="headerlink" title="1、操作系统·真题·单选"></a>1、操作系统·真题·单选</h4><p>(1)2022 360金融 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">Java程序的并发机制是
+A
+多线程
+B
+多接口
+C
+多平台
+D
+多态性
+正确答案：A
+你的答案：未作答
+官方解析：Java是通过多线程实现并发机制的。多线程是指一个程序中包含多个执行流， 多线程程序设计的含义是可以将程序任务分成几个并行的子任务。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(2)2022 自如 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">下面关于线程同步说法错误的是
+A
+用户模式和内核模式下同步方式不同
+B
+对于临界区的访问适用于单进程中线程间的同步
+C
+事件对象适用于多个进程间的各线程实现同步
+D
+互斥对象也只适用于单进程中线程间的同步
+正确答案：D
+你的答案：未作答
+官方解析：用户模式下的同步构造不涉及cpu模式切换，速度快，但是仅限于单个进程。内核对象同步会导致cpu模式切换，代价比较大，但是支持多个进程间的同步。
+只要把临界区置于<span class="token function">P</span><span class="token punctuation">(</span>sem<span class="token punctuation">)</span>和<span class="token function">V</span><span class="token punctuation">(</span>sem<span class="token punctuation">)</span>之间，即可实现进程间的互斥。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(3)2022 小米 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">下面关于死锁，描述错误的是？
+A
+多个进程竞争资源出现了循环等待可能造成该组进程死锁
+B
+死锁状态一定是不安全状态
+C
+杀掉死锁环中的一个进程或多个进程，可以打破死锁环
+D
+在一个系统中，有多个进程在同时申请同一个资源，其中一个进程永远得不到资源使用，一定是发生了死锁
+正确答案：D
+你的答案：未作答
+官方解析：
+D选项可能是调度的优先级不够。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(4)2022 星环科技 嵌入式软件工程师</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">下列哪一种进程间的通信方式不能传递大量信息
+A
+共享内存
+B
+消息缓冲
+C
+信箱通信
+D
+信号量及P、V操作
+正确答案：D
+你的答案：未作答
+官方解析：P、V操作只是低级通信原语<span class="token punctuation">,</span>不能承担进程间大量信息的交换任务。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(5)2021 猿辅导 嵌入式软件工程师</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">假如有两个线程，都需要申请锁m1、m2，并且都执行以下操作时，请问哪种操作可能带来死锁？
+A
+<span class="token function">lock</span><span class="token punctuation">(</span>m1<span class="token punctuation">)</span> <span class="token function">lock</span><span class="token punctuation">(</span>m2<span class="token punctuation">)</span> <span class="token function">unlock</span><span class="token punctuation">(</span>m1<span class="token punctuation">)</span> <span class="token function">unlock</span><span class="token punctuation">(</span>m2<span class="token punctuation">)</span>
+B
+<span class="token function">lock</span><span class="token punctuation">(</span>m1<span class="token punctuation">)</span> <span class="token function">lock</span><span class="token punctuation">(</span>m2<span class="token punctuation">)</span> <span class="token function">unlock</span><span class="token punctuation">(</span>m2<span class="token punctuation">)</span> <span class="token function">lock</span><span class="token punctuation">(</span>m2<span class="token punctuation">)</span> <span class="token function">unlock</span><span class="token punctuation">(</span>m1<span class="token punctuation">)</span> <span class="token function">unlock</span><span class="token punctuation">(</span>m2<span class="token punctuation">)</span>
+C
+<span class="token function">lock</span><span class="token punctuation">(</span>m1<span class="token punctuation">)</span> <span class="token function">lock</span><span class="token punctuation">(</span>m2<span class="token punctuation">)</span> <span class="token function">unlock</span><span class="token punctuation">(</span>m1<span class="token punctuation">)</span> <span class="token function">lock</span><span class="token punctuation">(</span>m1<span class="token punctuation">)</span> <span class="token function">unlock</span><span class="token punctuation">(</span>m2<span class="token punctuation">)</span> <span class="token function">unlock</span><span class="token punctuation">(</span>m1<span class="token punctuation">)</span>
+D
+<span class="token function">lock</span><span class="token punctuation">(</span>m1<span class="token punctuation">)</span> <span class="token function">lock</span><span class="token punctuation">(</span>m2<span class="token punctuation">)</span> <span class="token function">unlock</span><span class="token punctuation">(</span>m1<span class="token punctuation">)</span> <span class="token function">unlock</span><span class="token punctuation">(</span>m2<span class="token punctuation">)</span> <span class="token function">lock</span><span class="token punctuation">(</span>m1<span class="token punctuation">)</span> <span class="token function">unlock</span><span class="token punctuation">(</span>m1<span class="token punctuation">)</span>
+正确答案：C
+你的答案：未作答
+官方解析：设t1是线程<span class="token number">1</span>，t2是线程<span class="token number">2</span>
+对于C选项：
+第一步
+t1拿到m1<span class="token punctuation">,</span>t2没拿到就等
+第二步
+t1拿到m2<span class="token punctuation">,</span>t2干等直到t1把m1释放
+第三步
+t1释放m1<span class="token punctuation">,</span> t2终于拿到了m1
+第四步
+t1要拿m1<span class="token punctuation">,</span> t2要拿到m2<span class="token punctuation">.</span>死锁因为想拿的都在对方手里<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(6)2022 小米 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">下面哪种情况不会触发进程调度？
+A
+正在运行的进程所分配的时间片结束
+B
+正在运行的进程访问一个临界区时，保护此临界区的互斥信号量已经被其他进程加锁
+C
+当一个进程执行了一条转移指令后
+D
+当一个进程创建了一个新进程时
+正确答案：C
+你的答案：未作答
+官方解析：就绪状态 <span class="token operator">>>></span> 运行状态 <span class="token punctuation">(</span>这个过程会出现任务调度<span class="token punctuation">)</span>
+A<span class="token punctuation">.</span> 当任务完成之后，就会从从运行状态转换为就绪状态。
+B<span class="token punctuation">.</span>当进程访问临界区时，其他进程加锁，那么他就处于就绪状态<span class="token punctuation">,</span>当其他程序释放所之后，他就会进入运行状态
+C<span class="token punctuation">.</span>当一个进程执行了一条转移指令后，这里我们举例：中断就是一个转移指令，当我们产生中断时程序会从运行状态变为阻塞状态，并不会引起任务调度
+D<span class="token punctuation">.</span>当我们创建一个新的进程时，新的进程处于就绪状态<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(7)2021 猿辅导 嵌入式软件工程师</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">在多核计算机中，检索一个大型整数集中是否存在某给定的整数，当该整数集为以下哪种数据结构时，使用多线程算法比使用单线程算法具有显著的时间优势
+A
+有序数组
+B
+单链表
+C
+完全二叉树
+D
+散列表
+正确答案：C
+你的答案：未作答
+官方解析：
+多线程，由于共享进程的资源，因此多个线程之间可以相互协作，而ABD都是线性存储的结构，使用m个线程同时工作，然而，使用二叉树的话体现得是非线性结构的多路查找，因此选C。
+知识点：操作系统<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(8)2022 小米 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">关于进程内存空间描述错误的是？
+A
+函数参数，局部变量自动分配在栈上。
+B
+栈的空间大小是有限制的，当函数调用层次过深时会出现栈溢出。
+C
+在堆上分配的内存需要程序主动释放。
+D
+程序结束时，在堆上分配的没有释放的内存会造成泄漏。
+正确答案：D
+你的答案：未作答
+官方解析：对于现代操作系统，泄露的内存会被操作系统自动释放，叫内存自动回收。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(9)2022 小米 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">下面的情况属于抢占式调度的是
+A
+进程从运行状态转到等待状态
+B
+进程从运行状态转到就绪状态
+C
+进程从运行状态转到终止状态
+D
+其他都不是
+正确答案：B
+你的答案：未作答
+官方解析：
+抢占式调度是把正在运行的进程从CPU上拿下来，给优先级更高的进程使用，故原本的进程会从运行状态转到就绪状态，选B。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(10)2022 星环科技 嵌入式软件工程师</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">下列哪一种磁盘驱动调度算法可能引起磁头臂频繁大幅度移动
+A
+先来先服务算法
+B
+最短寻道时间优先算法
+C
+扫描算法
+D
+旋转调度算法
+正确答案：A
+你的答案：未作答
+官方解析：<span class="token number">1</span>、先来先服务 FCFS
+根据进程请求的先后顺序进行调度。
+优点：公平、算法简单，每个进程的请求都可以得到满足，不会出现某进程的长期请求得不到处理的情况。
+缺点：没有对寻道算法进行优化，可能出现频繁大幅移动，平均寻道时间可能比较长。
+<span class="token number">2</span>、最短寻道时间有限 SSTF
+算法选择要求访问的磁盘与当前磁头所在的磁道距离最近，这样每次的寻道时间最短，但不能保证平均寻道时间最短。
+<span class="token number">3</span>、扫描算法 SCAN 
+优先考虑磁头当前的移动方向，然后是访问的磁道和当前磁道的距离。又称为电梯调度算法。
+<span class="token number">4</span>、单向扫描算法 CSCAN
+算法规定磁头只能做单向移动。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(11)2021 猿辅导 嵌入式软件工程师</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">磁盘高级格式化时不进行以下哪项操作：
+A
+设置引导块
+B
+设置磁盘分区
+C
+设置根目录
+D
+设置空文件系统
+正确答案：B
+你的答案：未作答
+官方解析：
+B选项设置磁盘分区是低级格式化。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(12)2021 腾讯 Java <strong>多选</strong></p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">以下选项属于进程间通信的是
+A
+管道
+B
+套接字
+C
+内存
+D
+消息队列
+正确答案：ABD
+你的答案：未作答
+官方解析：进程中的几种通信方式： <span class="token number">1</span>）管道：管道是一种半双工的通信方式，数据只能单向流动。而且只能在具有血缘关系（父子进程之间）的的进程间使用。 <span class="token number">2</span>）信号量：信号量是一个计数器，可以用来控制多个进程对共享资源的访问 <span class="token number">3</span>）消息队列：消息队列是由消息组成的链表，存放在内核中，并由消息队列标识符标识 <span class="token number">4</span>）信号：信号是有一种比较复杂的通信方式，用于通知接收进程某一事件已经发生 <span class="token number">5</span>）共享内存：共享内存就是映射一段能被其他进程所访问的内存，这段共享内存由一个进程创建，但多个进程都可以访问 <span class="token number">6</span>）套接字：即Socket，是一种通信机制，凭借这种机制，客户<span class="token operator">/</span>服务器系统的开发工作既可以在本地单机上进行，也可以跨网络进行<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(13)2021 奇安信 嵌入式软件工程师 <strong>多选</strong></p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">线程与进程的区别<span class="token operator">?</span>
+A
+一个程序至少有一个进程，一个进程至少有一个线程
+B
+线程的划分尺度小于进程，使得多线程程序的并发性高
+C
+进程在执行过程中拥有独立的内存单元，而多个线程共享内存，从而极大地提高了程序的运行效率
+D
+多线程的意义在于一个应用程序中，有多个执行部分可以同时执行。但操作系统并没有将多个线程看做多个独立的应用，来实现进程的调度和管理以及资源分配
+正确答案：ABCD
+你的答案：未作答
+官方解析：线程与进程的区别如下<span class="token punctuation">:</span>
+<span class="token number">1</span>、进程是资源分配的最小单位，线程是资源调度的最小单位。
+<span class="token number">2</span>、线程是在进程下运行的。一个进程可以包含多个线程。
+<span class="token number">3</span>、进程有自己的独立地址空间，每启动一个进程，系统就会为它分配地址空间。而线程是共享进程中的数据的，使用相同的地址空间。
+<span class="token number">4</span>、同一进程下不同线程间数据容易共享，不同进程间数据很难共享。
+<span class="token number">5</span>、线程之间没有单独的地址空间，一个线程死掉，整个进程也死掉。而一个进程死掉并不会对另外一个进程造成影响。
+因此选ABCD。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(14)2021 小米 嵌入式软件工程师 <strong>多选</strong></p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">Unix系统中，哪些可以用于进程间的通信
+A
+Socket
+B
+共享内存
+C
+消息队列
+D
+信号量
+正确答案：ABCD
+你的答案：未作答
+官方解析：
+Unix有<span class="token number">6</span>大通信的方法，分别是：Socket、管道、信号、信号量、消息队列、共享内存，因此选ABCD。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(15)2022 小米 Java <strong>多选</strong></p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">系统中进程间通信可以通过
+A
+套接字（Socket）
+B
+管道（Pipe）
+C
+共用一个<span class="token punctuation">.</span>so共享库
+D
+信号<span class="token punctuation">(</span>SIGNAL）
+正确答案：ABD
+你的答案：未作答
+官方解析：
+常见的进程间通信：
+<span class="token number">1</span><span class="token punctuation">.</span> 管道pipe：管道是一种半双工的通信方式，数据只能单向流动，而且只能在具有亲缘关系的进程间使用。进程的亲缘关系通常是指父子进程关系。
+<span class="token number">2</span><span class="token punctuation">.</span> 命名管道FIFO：有名管道也是半双工的通信方式，但是它允许无亲缘关系进程间的通信。
+<span class="token number">4</span><span class="token punctuation">.</span> 消息队列MessageQueue：消息队列是由消息的链表，存放在内核中并由消息队列标识符标识。消息队列克服了信号传递信息少、管道只能承载无格式字节流以及缓冲区大小受限等缺点。
+<span class="token number">5</span><span class="token punctuation">.</span> 共享存储SharedMemory：共享内存就是映射一段能被其他进程所访问的内存，这段共享内存由一个进程创建，但多个进程都可以访问。共享内存是最快的 IPC 方式，它是针对其他进程间通信方式运行效率低而专门设计的。它往往与其他通信机制，如信号两，配合使用，来实现进程间的同步和通信。
+<span class="token number">6</span><span class="token punctuation">.</span> 信号量Semaphore：信号量是一个计数器，可以用来控制多个进程对共享资源的访问。它常作为一种锁机制，防止某进程正在访问共享资源时，其他进程也访问该资源。因此，主要作为进程间以及同一进程内不同线程之间的同步手段。
+<span class="token number">7</span><span class="token punctuation">.</span> 套接字Socket：套解口也是一种进程间通信机制，与其他通信机制不同的是，它可用于不同及其间的进程通信。
+<span class="token number">8</span><span class="token punctuation">.</span> 信号 <span class="token punctuation">(</span> sinal <span class="token punctuation">)</span> ： 信号是一种比较复杂的通信方式，用于通知接收进程某个事件已经发生。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(16)2021 美团 嵌入式软件工程师 <strong>多选</strong></p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">单处理系统中，进程P1<span class="token punctuation">,</span>P2<span class="token punctuation">,</span>P3处于就绪队列，进程P4，P6处于等待队列，P5正占用处理器运行，以下对接下来的运行合理的分析是
+A
+OS应按照选定的某种策略从进程P1<span class="token punctuation">,</span>P2<span class="token punctuation">,</span>P3中选择下一个占用CPU的进程。
+B
+P5突然失去对CPU的使用权，有可能是时间片到了，强迫其暂时释放使用权。
+C
+P4，P6处于等待队列，有可能是进程在运行中出现主存读写错误造成的。
+D
+P5突然失去对CPU的使用权，有可能是出现了优先级别更高的进程，强迫其暂时释放使用权。
+正确答案：ABCD
+你的答案：未作答
+官方解析：
+下一个进程应该中就绪队列中选择，因此A正确；
+根据进程管理策略，使用时间片管理的方案，时间片到了则会失去对CPU的使用权，重新排队，因此B正确；
+读写错误可能引起中断而导致进程等待，因此C正确；
+根据进行优先级抢占管理策略，出现更高优先级的就绪队列会抢占正在使用CPU的进程使用CPU的机会，因此D正确。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(17)2022 小米 Java <strong>多选</strong></p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">下面关于文件系统，描述不正确的是？
+A
+进程终止后，这个进程所打开的文件也会被系统删除
+B
+删除一个文件，同时会删除与此文件对应的文件控制块
+C
+一个文件在磁盘上存放的磁盘块必须是相邻的
+D
+符号连接所连接的文件被删除后，符号连接也会消失
+正确答案：ACD
+你的答案：未作答
+官方解析：
+A <span class="token punctuation">.</span> 进程终止时，进程独有的内存空间会被释放，但是一些共享资源不会被释放。
+B<span class="token punctuation">.</span>  正确。
+C<span class="token punctuation">.</span>  一个文件在磁盘上不一定是连续的地址，但是在进程空间中，通过页表的地址映射可以使得数据是连续的。
+D<span class="token punctuation">.</span>  符号连接的文件被删除后，链接只是被认为是“死链接”，并没有被删除。 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(18)2021 奇安信 嵌入式软件工程师 <strong>多选</strong></p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">一个进程从执行状态转换到阻塞状态的可能原因是本进程
+A
+时间片完
+B
+需要等待其他进程的执行结果
+C
+执行了V操作
+D
+执行了P操作
+正确答案：BD
+你的答案：未作答
+官方解析：运行态：进程占用CPU，并在CPU上运行；
+就绪态：进程已经具备运行条件，但是CPU还没有分配过来；
+阻塞态：进程因等待某件事发生而暂时不能运行； 进程在一生中，都处于上述<span class="token number">3</span>中状态之一。
+运行<span class="token operator">---</span>》就绪： 时间片用完。
+就绪<span class="token operator">---</span>》运行：运行的进程的时间片用完，调度就转到就绪队列中选择合适的进程分配CPU
+运行<span class="token operator">---</span>》阻塞：发生了I<span class="token operator">/</span>O请求或等待某件事的发生
+阻塞<span class="token operator">---</span>》就绪<span class="token punctuation">:</span>进程所等待的事件发生，就进入就绪队列
+P操作是阻塞作用
+V操作是唤醒作用<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(19)2021 腾讯 Java <strong>多选</strong></p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">下面能让线程停止执行的有
+A
+<span class="token function">sleep</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+B
+<span class="token function">stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+C
+<span class="token function">notify</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+D
+<span class="token function">synchronized</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+正确答案：ABD
+你的答案：未作答
+官方解析：sleep：导致此线程暂停执行指定时间 stop<span class="token punctuation">:</span> 这个方法将终止所有未结束的方法，包括run方法。 <span class="token function">synchronized</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>对象锁<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2、数据库·真题·单选"><a href="#2、数据库·真题·单选" class="headerlink" title="2、数据库·真题·单选"></a>2、数据库·真题·单选</h4><p>(1)2021 光汇石油 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">提供Java存取数据库能力的包是
+A
+java<span class="token punctuation">.</span>sql
+B
+java<span class="token punctuation">.</span>awt
+C
+java<span class="token punctuation">.</span>lang
+D
+java<span class="token punctuation">.</span>swing
+正确答案：A
+你的答案：未作答
+官方解析：java<span class="token punctuation">.</span>lang   提供利用 Java 编程语言进行程序设计的基础类
+java<span class="token punctuation">.</span>sql 提供使用 JavaTM 编程语言访问并处理存储在数据源（通常是一个关系数据库）中的数据的 API。 
+java<span class="token punctuation">.</span>awt是一个软件包，包含用于创建用户界面和绘制图形图像的所有分类。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(2)2022 百度 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">ＪＳＰ标准标签库<span class="token punctuation">(</span>ＪＳＴＬ<span class="token punctuation">)</span>提供的主要标签库中，其中<span class="token punctuation">(</span> <span class="token punctuation">)</span>可用于操作数据库。
+A
+核心标签库
+B
+Ｉ１８Ｎ与格式化标签库
+C
+ＸＭＬ标签库
+D
+ＳＱＬ标签库
+正确答案：D
+你的答案：未作答
+官方解析：Database access <span class="token punctuation">(</span>SQL<span class="token punctuation">)</span>支持JSP对数据库的操作<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(3)2022 百果园Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">在使用JDBC API实现查询数据时，执行过程中以下接口或类的使用顺序正确的是？
+<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>Connection
+<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>DriverManager
+<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>ResultSet
+<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>Statement
+A
+<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>
+B
+<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>
+C
+<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+D
+<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>
+正确答案：C
+你的答案：未作答
+官方解析：DriverManager加载数据库驱动
+Connection获得数据库连接
+Statement获得执行SQL语句的PreparedStatement或者Statement
+处理ResultSet结果集<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(4)2022 自如 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">假如有两个表的连接是这样的： table_1 INNER JOIN table_2 其中table_1和table_2是两个具有公共属性的表，这种连接会生成哪种结果集？
+A
+包括table_1中的所有行，不包括table_2的不匹配行
+B
+包括table_2中的所有行，不包括table_1的不匹配行
+C
+包括和两个表的所有行
+D
+只包括table_1和table_2满足条件的行
+正确答案：D
+你的答案：未作答
+官方解析：某些情况下，需要把数字数据类型显示为相应的文本名称，这就碰到了多表连接建立记录集的问题。多表连接的类型主要有left <span class="token keyword">join</span>、right <span class="token keyword">join</span>和iinner <span class="token keyword">join</span>。其主要区别如下：①left <span class="token function">join</span><span class="token punctuation">(</span>左联接），返回包括左表中的所有记录和右表中联结字段相等的记录；②right <span class="token function">join</span><span class="token punctuation">(</span>右联接<span class="token punctuation">)</span>，返回包括右表中的所有记录和左表中联结字段相等的记录；
+③inner <span class="token function">join</span><span class="token punctuation">(</span>等值连接<span class="token punctuation">)</span>，只返回两个表中联结字段相等的行。因此本题采用inner <span class="token keyword">join</span>，结果集将返回包括table1和<span class="token keyword">table</span> <span class="token number">2</span>都满足条件的行。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(5)2021 腾讯音乐 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">在关系数据库系统中，为了简化用户的查询操作，而又不增加数据的存储空间，常用的方法是创建
+A
+表<span class="token punctuation">(</span><span class="token keyword">table</span><span class="token punctuation">)</span>
+B
+游标<span class="token punctuation">(</span>cursor<span class="token punctuation">)</span>
+C
+视图<span class="token punctuation">(</span>view<span class="token punctuation">)</span>
+D
+索引<span class="token punctuation">(</span>index<span class="token punctuation">)</span>
+正确答案：C
+你的答案：未作答
+官方解析：数据库试图具有以下几个作用：简化用户操作；使用户能以多种角度看待同一数据；支持重构数据库的逻辑独立性；视图能够提供安全保护同时不增加数据的储存空间<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(6)2022 百果园Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">下面使用JDBC的纯Java方式建立数据库连接并关闭，出现错误的行是？
+  <span class="token function">publicstaticvoidmain</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span>args<span class="token punctuation">)</span><span class="token operator">&#123;</span>
+  Connection conn<span class="token operator">=</span><span class="token keyword">null</span><span class="token punctuation">;</span>
+  try<span class="token operator">&#123;</span>
+  Class<span class="token punctuation">.</span><span class="token function">forName</span><span class="token punctuation">(</span><span class="token string">"com.microsoft.sqlserver.jdbc.SQLServerDriver"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//1</span>
+  <span class="token operator">&#125;</span><span class="token function">catch</span><span class="token punctuation">(</span>NotFoundClassException e<span class="token punctuation">)</span><span class="token operator">&#123;</span><span class="token comment">//2</span>
+  System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"找不到驱动类"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token operator">&#125;</span>
+  try<span class="token operator">&#123;</span>
+  conn<span class="token operator">=</span>DriverManager<span class="token punctuation">.</span><span class="token function">getConnection</span><span class="token punctuation">(</span><span class="token string">"jdbc:sqlserver:localhost:1433;DatabaseName=stu"</span><span class="token punctuation">,</span><span class="token string">"sa"</span><span class="token punctuation">,</span><span class="token string">"bdqn"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//3</span>
+  <span class="token operator">&#125;</span><span class="token function">catch</span><span class="token punctuation">(</span>SQLException e<span class="token punctuation">)</span><span class="token operator">&#123;</span><span class="token comment">//4</span>
+  System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"连接不正确"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token operator">&#125;</span>finally<span class="token operator">&#123;</span>
+  <span class="token comment">//关闭连接</span>
+  <span class="token operator">&#125;</span>
+  <span class="token operator">&#125;</span>
+A
+<span class="token number">1</span>
+B
+<span class="token number">2</span>
+C
+<span class="token number">3</span>
+D
+<span class="token number">4</span>
+正确答案：B
+你的答案：未作答
+官方解析：
+Connection conn<span class="token operator">=</span><span class="token keyword">null</span>，找不到驱动类，故选B。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(7)2022 科大讯飞 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">以下对JDBC事务描述错误的是
+A
+JDBC事务属于JAVA事务的一种
+B
+JDBC事务属于容器事务类型
+C
+JDBC事务可以保证操作的完整性和一致性
+D
+JDBC事务是由Connection发起的，并由Connection控制
+正确答案：B
+你的答案：未作答
+官方解析：Java事务三种类型<span class="token punctuation">:</span>JDBC事务、JTA（Java Transaction API）事务、容器事务
+JDBC 事务是用 Connection 对象控制的。JDBC Connection 接口（ java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>Connection ）提供了两种事务模式：自动提交和手工提交。 java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>Connection 提供了以下控制事务的方法：
+容器事务主要是J2EE应用服务器提供的，容器事务大多是基于JTA完成，这是一个基于JNDI的，相当复杂的API实现。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(8)2022 法大大Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">下列属于关系型数据库的是
+A
+Oracle
+B
+MySql
+C
+IMS
+D
+MongoDB
+正确答案：AB
+你的答案：未作答
+官方解析：IMS（Information Management System ）数据库是IBM公司开发的两种数据库类型之一<span class="token punctuation">;</span> 一种是关系数据库，典型代表产品：DB2； 另一种则是层次数据库，代表产品：IMS层次数据库。 非关系型数据库有MongoDB、memcachedb、Redis等。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(9)2022 小米 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">关于数据库中的索引，描述正确的是
+A
+索引可以减少查找次数，加快查找速度
+B
+索引对于插入，删除操作的速度提升也很明显
+C
+索引比较占用空间，中大型的表不适合用索引
+D
+创建索引时建议选择唯一值较多的列
+正确答案：AD
+你的答案：未作答
+官方解析：
+B选项，索引只能增加查询速度，对增删改的影响很大，因此要涉及维护索引；
+C选项，中大型表更需要使用索引加速查找。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(10)2021 腾讯 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">以下关于子查询和Group By的描述正确的有
+A
+没有出现在Group By子句后面的列名不能出现在Select字句非合计函数表达式中
+B
+在Select子句的后面，只能有两种类型的表达式，一种是合计函数，一种是出现在Group By子句后面的列名
+C
+不能在子查询中包含Order By 子句
+D
+如果子查询的结果为空，那么外查询条件始终不会成立
+正确答案：ABCD
+你的答案：未作答
+官方解析：group by：在select子句中只能有两种类型表达式，一种是合计函数，一种是出现在group by子句后面的列名，没有出现在group by子句后面的列名不可以出现在select 子句的非合计函数表达式中。如果在select语句中没有出现group by子句，则不能在select子句中同时出现单个列名和合计函数的混合现象。如果要限制分组中的数据，则可以使用having子句而不能使用where子句<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="3、Linux·真题·单选"><a href="#3、Linux·真题·单选" class="headerlink" title="3、Linux·真题·单选"></a>3、Linux·真题·单选</h4><p>(1)2022 shopee Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">linux系统中如果要列出一个目录下的所有文件，可以使用下面哪个命令<span class="token operator">+</span>参数
+A
+ls <span class="token operator">-</span>l
+B
+ls <span class="token operator">-</span>a
+C
+ls <span class="token operator">-</span>d
+D
+ls <span class="token operator">-</span>t
+正确答案：B
+你的答案：未作答
+官方解析：<span class="token number">1</span><span class="token punctuation">.</span> 命令格式：
+
+ls <span class="token punctuation">[</span>选项<span class="token punctuation">]</span> <span class="token punctuation">[</span>目录名<span class="token punctuation">]</span>
+
+<span class="token number">2</span><span class="token punctuation">.</span> 命令功能：
+
+列出目标目录中所有的子目录和文件。
+
+<span class="token number">3</span><span class="token punctuation">.</span> 常用参数：
+
+<span class="token operator">-</span>a<span class="token punctuation">,</span> –all 列出目录下的所有文件，包括以 <span class="token punctuation">.</span> 开头的隐含文件
+
+<span class="token operator">-</span>A 同<span class="token operator">-</span>a，但不列出“<span class="token punctuation">.</span>”<span class="token punctuation">(</span>表示当前目录<span class="token punctuation">)</span>和“<span class="token punctuation">.</span><span class="token punctuation">.</span>”<span class="token punctuation">(</span>表示当前目录的父目录，即上一级目录<span class="token punctuation">)</span>。
+
+<span class="token operator">-</span>c  配合 <span class="token operator">-</span>lt：根据 ctime 排序及显示 ctime <span class="token punctuation">(</span>文件状态最后更改的时间<span class="token punctuation">)</span>配合 <span class="token operator">-</span>l：显示 ctime 但根据名称排序否则：根据 ctime 排序
+
+<span class="token operator">-</span>C 每栏由上至下列出项目
+
+–color<span class="token punctuation">[</span><span class="token operator">=</span>WHEN<span class="token punctuation">]</span> 控制是否使用色彩分辨文件。WHEN 可以是'never'、'<span class="token important">always</span>'或'auto'其中之一
+
+<span class="token operator">-</span>d<span class="token punctuation">,</span> –directory 将目录象文件一样显示，而不是显示其下的文件。
+
+<span class="token operator">-</span>D<span class="token punctuation">,</span> –dired 产生适合 Emacs 的 dired 模式使用的结果
+
+<span class="token operator">-</span>f 对输出的文件不进行排序，<span class="token operator">-</span>aU 选项生效，<span class="token operator">-</span>lst 选项失效
+
+<span class="token operator">-</span>g 类似 <span class="token operator">-</span>l<span class="token punctuation">,</span>但不列出所有者
+
+<span class="token operator">-</span>G<span class="token punctuation">,</span> –no<span class="token operator">-</span>group 不列出任何有关组的信息
+
+<span class="token operator">-</span>h<span class="token punctuation">,</span> –human<span class="token operator">-</span>readable 以容易理解的格式列出文件大小 <span class="token punctuation">(</span>例如 <span class="token number">1</span>K <span class="token number">234</span>M <span class="token number">2</span>G<span class="token punctuation">)</span>
+
+–si 类似 <span class="token operator">-</span>h<span class="token punctuation">,</span>但文件大小取 <span class="token number">1000</span> 的次方而不是 <span class="token number">1024</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(2)2022 小米 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">下面哪个Linux命令不能用于查看文件内容<span class="token operator">?</span>
+A
+file
+B
+vim
+C
+cat
+D
+more
+正确答案：A
+你的答案：未作答
+官方解析：A：cat主要有三大功能：
+<span class="token number">1</span><span class="token punctuation">.</span>一次显示整个文件。$ cat filename
+<span class="token number">2</span><span class="token punctuation">.</span>从键盘创建一个文件。$ cat <span class="token operator">></span> filename  
+   只能创建新文件<span class="token punctuation">,</span>不能编辑已有文件<span class="token punctuation">.</span>
+<span class="token number">3</span><span class="token punctuation">.</span>将几个文件合并为一个文件： <span class="token kernel-function property">$cat</span> file1 file2 <span class="token operator">></span> file
+D<span class="token punctuation">:</span>分屏显示文本文件
+less <span class="token punctuation">[</span>options<span class="token punctuation">]</span> <span class="token punctuation">[</span>file<span class="token operator">-</span>list<span class="token punctuation">]</span>
+less与more类似，但比more更加完善<span class="token punctuation">,</span> more以一页一页的显示方便使用者逐页阅读
+B选项，vim可以打开文件进行查看或者编辑。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(3)2022 小米 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">下面哪个操作系统不使用Linux内核<span class="token operator">?</span>
+A
+Android
+B
+MacOS
+C
+Ubuntu
+D
+RedHat
+正确答案：B
+你的答案：未作答
+官方解析：macos 使用 unix 内核不是 linux 内核<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(4)2022 shopee Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">使用 shell 命令 将某个文件夹下的所有txt 文件全部找到，并删除 。
+A
+find <span class="token operator">/</span>i <span class="token operator">-</span><span class="token keyword">type</span> f <span class="token operator">-</span>name <span class="token string">"*.txt"</span> <span class="token operator">-</span>exec rm <span class="token operator">-</span>rf <span class="token operator">&#123;&#125;</span> \
+B
+find <span class="token operator">/</span>i <span class="token operator">-</span><span class="token keyword">type</span> f <span class="token operator">-</span>name <span class="token string">"*.txt"</span> <span class="token operator">-</span>exec rm <span class="token operator">-</span>rf
+C
+find <span class="token operator">/</span>i <span class="token operator">-</span><span class="token keyword">type</span> f <span class="token operator">-</span>name <span class="token string">"*.txt"</span> <span class="token operator">-</span>print <span class="token operator">|</span> xargs <span class="token operator">-</span>t <span class="token operator">-</span>i cp <span class="token operator">&#123;&#125;</span> <span class="token operator">&#123;&#125;</span><span class="token punctuation">.</span>bak
+D
+find <span class="token operator">/</span>i <span class="token operator">-</span><span class="token keyword">type</span> f <span class="token operator">-</span>name <span class="token string">"*.txt"</span> <span class="token operator">&amp;&amp;</span> rm <span class="token operator">-</span>rf <span class="token operator">&#123;&#125;</span> \
+正确答案：A
+你的答案：未作答
+官方解析：find pathname <span class="token operator">-</span>options <span class="token punctuation">[</span><span class="token operator">-</span>print <span class="token operator">-</span>exec <span class="token operator">-</span>ok<span class="token punctuation">]</span> 
+pathname    find命令所查找的目录路径。 
+<span class="token operator">-</span>print      find命令将匹配的文件输出到标准输出。 
+<span class="token operator">-</span>exec       find命令对匹配的文件执行该参数所给出的shell命令。 
+<span class="token operator">-</span>ok 和<span class="token operator">-</span> exec的作用相同，只不过以一种更为安全的模式来执行该参数所给出的shell命令，在执行每一个命令之前，都会给出提示，让用户来确定是否执行<span class="token punctuation">.</span> 
+<span class="token number">1</span><span class="token punctuation">.</span> <span class="token operator">-</span>name   按照文件名查找文件 
+<span class="token number">2</span><span class="token punctuation">.</span> <span class="token operator">-</span>perm   按照文件权限来查找文件 
+<span class="token number">3</span><span class="token punctuation">.</span> <span class="token operator">-</span>mtime <span class="token operator">-</span>n <span class="token operator">+</span>n   按照文件的更改时间来查找文件，<span class="token operator">-</span>n表示文件更改时间距现在n天以内，<span class="token operator">+</span>n表示文件更改时间距现在n天以前。 
+<span class="token number">4</span><span class="token punctuation">.</span> <span class="token operator">-</span>newer file1  查找更改时间比文件file1新的文件。 
+<span class="token number">5</span><span class="token punctuation">.</span> <span class="token operator">-</span><span class="token keyword">type</span>   查找某一类型的文件 
+  b <span class="token operator">-</span> 块设备文件。 
+  d <span class="token operator">-</span> 目录。 
+  c <span class="token operator">-</span> 字符设备文件。 
+  p <span class="token operator">-</span> 管道文件。 
+  l <span class="token operator">-</span> 符号链接文件。 
+  f <span class="token operator">-</span> 普通文件。 
+<span class="token number">6</span><span class="token punctuation">.</span> 使用<span class="token operator">-</span>size选项 <span class="token punctuation">,</span>按文件的大小查找文件的<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(5)2022 自如 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">在Linux系统中，可以用来查找可执行文件的是？
+    <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>whereis
+    <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>locate
+    <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>which
+    <span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token keyword">type</span>
+    <span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>find
+A
+<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+B
+<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+C
+<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+D
+<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+正确答案：D
+你的答案：未作答
+官方解析：
+whereis可以搜索可执行文件、联机帮助文件、源代码文件
+locate所有文件
+which可执行文件
+<span class="token keyword">type</span> <span class="token operator">-</span>p相当于which
+find 路径 <span class="token operator">-</span>name加文件名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(6)2022 小米 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">Linux系统中关于进程与线程的描述错误的是
+A
+进程是处于执行期的程序以及相关资源的总称
+B
+内核调度的对象是线程<span class="token punctuation">,</span>而不是进程
+C
+当进程处于TASK_UNINTERRUPTIBLE状态时可以被杀死
+D
+线程被视为一个与其他进程共享某些资源的进程
+正确答案：C
+你的答案：未作答
+官方解析：
+TASK_UNINTERRUPTIBLE 是不可中断的睡眠，故选C。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(7)2022 人人网 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">Linux中，一个端口能够接受tcp链接数量的理论上限是？
+A
+<span class="token number">1024</span>
+B
+<span class="token number">65535</span>
+C
+<span class="token number">65535</span><span class="token operator">*</span><span class="token number">65535</span>
+D
+无上限
+正确答案：D
+你的答案：未作答
+官方解析：一个端口可以建立的连接数量没有理论上限<span class="token punctuation">,</span>上限就是你系统的性能<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(8)2022 小米 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">Linux内核中的同步机制的描述正确的是
+A
+原子操作绝不会在执行完毕前被任何其他任务或事件打断，通常用于实现资源的引用计数
+B
+读写信号量适于在读多写少的情况下使用
+C
+自旋锁与互斥锁有点类似，都不会引起调用者睡眠
+D
+自旋锁使用者一般保持锁时间非常短
+正确答案：ABD
+你的答案：未作答
+官方解析：C选项，互斥锁会引起调用者睡眠，也就是切换线程，把CPU让位给其他线程；而自旋锁不会，自旋锁可以理解为<span class="token keyword">while</span>循环，一直在轮询是否满足执行条件<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(9)2022 小米 Java</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">Linux操作系统支持多种文件类型<span class="token punctuation">,</span> 下面的描述正确的是
+A
+普通文件也称为常规文件，是 Linux 中最一般格式的文件，包括系统文件、用户文件和库函数
+B
+目录文件的内容来自应用程序和数据
+C
+字符设备<span class="token punctuation">:</span> 提供连续的数据流，应用程序可以顺序读取，通常不支持随机存取
+D
+块设备：应用程序可以随机访问设备数据，程序可自行确定读取数据的位置
+正确答案：ACD
+你的答案：未作答
+官方解析：目录是一种特殊的文件<span class="token punctuation">,</span>它仅包含欲访问存放于其中的文件或目录所必需的信息。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(10)2021 百度 嵌入式软件工程师</p>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">有一个日志文件Test<span class="token punctuation">.</span>txt，其中每行的内容是服务器的mac地址，下面哪个命令可以找到次数最多的前<span class="token number">5</span>个mac和出现的次数
+A
+cat Test<span class="token punctuation">.</span>txt <span class="token operator">|</span> count <span class="token operator">-</span>n <span class="token operator">|</span> sort <span class="token operator">-</span>rn <span class="token operator">|</span> head <span class="token operator">-</span>n <span class="token number">5</span>
+B
+sort Test<span class="token punctuation">.</span>txt <span class="token operator">|</span> uniq <span class="token operator">-</span>c <span class="token operator">|</span> sort <span class="token operator">-</span>rn <span class="token operator">|</span> head <span class="token operator">-</span>n <span class="token number">5</span>
+C
+cat Test<span class="token punctuation">.</span>txt <span class="token operator">|</span> sort <span class="token operator">|</span> uniq <span class="token operator">-</span>c <span class="token operator">|</span> sort <span class="token operator">-</span>rn <span class="token operator">|</span> head <span class="token operator">-</span>n <span class="token number">5</span>
+D
+uniq <span class="token operator">-</span>c Test<span class="token punctuation">.</span>txt <span class="token operator">|</span> sort <span class="token operator">-</span>nr <span class="token operator">|</span> top <span class="token operator">-</span>n <span class="token number">5</span>
+正确答案：BC
+你的答案：未作答
+官方解析：
+sort为排序输出；
+cat为逆序输出；
+uniq为去重；
+sort <span class="token operator">-</span>rn为按照数字降序排序；
+head <span class="token operator">-</span>n <span class="token number">5</span>为输出前<span class="token number">5</span>行；
+top <span class="token operator">-</span>n <span class="token number">5</span>为显示更新<span class="token number">5</span>次后退出；
+因此应该选择对日志条目排序或者逆序去重后再根据数量重新排序后输出前<span class="token number">5</span>行，应选BC。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="在线编程-4"><a href="#在线编程-4" class="headerlink" title="在线编程"></a>在线编程</h3><h4 id="1、二分和分治·NB1-9"><a href="#1、二分和分治·NB1-9" class="headerlink" title="1、二分和分治·NB1-9"></a>1、二分和分治·NB1-9</h4><p><strong>(1)牛的体重排序</strong></p>
+<p>在一个牧场中，有两个牛群，牛群A和牛群B，分别有m头和n头牛。每头牛都有一个独特的体重，体重由一个整数表示。</p>
+<p>牛群A和牛群B的牛都按照体重从小到大进行排序。你的任务是找出这两个牛群的所有牛的体重的中位数。</p>
+<p>请你设计一个算法，使得算法的时间复杂度为O(log (m+n))。</p>
+<p><strong>示例1</strong></p>
+<p>输入：</p>
+<pre class="line-numbers language-none"><code class="language-none">[100, 300],[200]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>返回值：</p>
+<pre class="line-numbers language-none"><code class="language-none">200.00000<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>说明：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">合并体重 &#x3D; [100,200,300] ，中位数 200<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>备注：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">weightsA.length &#x3D;&#x3D; m
+weightsB.length &#x3D;&#x3D; n
+0 &lt;&#x3D; m &lt;&#x3D; 2000
+0 &lt;&#x3D; n &lt;&#x3D; 2000
+1 &lt;&#x3D; m + n &lt;&#x3D; 4000
+0 &lt;&#x3D; weightsA[i], weightsB[i] &lt;&#x3D; 10^6<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>(2)三个牛群中位数</strong></p>
+<p>在农场里，农民们有三个牛群，每个牛群里的牛数量不同。农民们将每个牛群牛的体重按照从小到大的顺序记录在不同的数组中。现在农民们想要知道，如果将这三个牛群合并在一起，那么中位数是多少。请你编写一个程序，找出这三个正序数组的中位数。</p>
+<p>算法的时间复杂度应该为 O(log (m+n+p)) ，其中m、n、p分别为三个数组的长度。</p>
+<p><strong>示例1</strong></p>
+<p>输入：</p>
+<pre class="line-numbers language-none"><code class="language-none">[1,3],[2],[4,5]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>返回值：</p>
+<pre class="line-numbers language-none"><code class="language-none">3.00000<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>说明：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">合并数组 &#x3D; [1,2,3,4,5] ，中位数 3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>备注：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">herd1.length &#x3D;&#x3D; m
+herd2.length &#x3D;&#x3D; n
+herd3.length &#x3D;&#x3D; p
+0 &lt;&#x3D; m,n,p &lt;&#x3D; 1000
+1 &lt;&#x3D; m + n + p &lt;&#x3D; 3000
+0 &lt;&#x3D; herd1[i], herd2[i], herd3[i] &lt;&#x3D; 10000<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(3)</p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h4 id="2、双指针·NB1-8"><a href="#2、双指针·NB1-8" class="headerlink" title="2、双指针·NB1-8"></a>2、双指针·NB1-8</h4><p>(1)牛的回文编号</p>
+<p>在一个农场中，农夫使用整数来标识他的牛群。农夫发现，有些牛的编号在正序（从左向右）和倒序（从右向左）读都是一样的，他觉得这很有趣。现在农夫给你一个整数 x ，表示一头牛的编号，如果这个编号是一个回文数，返回 true ；否则，返回 false 。</p>
+<p><strong>示例1</strong></p>
+<p>输入：</p>
+<pre class="line-numbers language-none"><code class="language-none">1331<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>返回值：</p>
+<pre class="line-numbers language-none"><code class="language-none">true<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>示例2</strong></p>
+<p>输入：</p>
+<pre class="line-numbers language-none"><code class="language-none">123<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>返回值：</p>
+<pre class="line-numbers language-none"><code class="language-none">false<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>备注：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">0 &lt;&#x3D; x &lt;&#x3D; 2^31 - 1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(2)</p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(3)</p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h2 id="7-21"><a href="#7-21" class="headerlink" title="7.21"></a>7.21</h2><h3 id="任务-5"><a href="#任务-5" class="headerlink" title="任务"></a>任务</h3><h3 id="专项练习-5"><a href="#专项练习-5" class="headerlink" title="专项练习"></a>专项练习</h3><h4 id="1、·真题·单选"><a href="#1、·真题·单选" class="headerlink" title="1、·真题·单选"></a>1、·真题·单选</h4><p>(1)</p>
 <pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>(2)</p>
@@ -4049,7 +4850,7 @@ D
 <p>(10)</p>
 <pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="在线编程-4"><a href="#在线编程-4" class="headerlink" title="在线编程"></a>在线编程</h3><h4 id="1、·NB1"><a href="#1、·NB1" class="headerlink" title="1、·NB1-"></a>1、·NB1-</h4><p>(1)</p>
+<h3 id="在线编程-5"><a href="#在线编程-5" class="headerlink" title="在线编程"></a>在线编程</h3><h4 id="1、·NB1"><a href="#1、·NB1" class="headerlink" title="1、·NB1-"></a>1、·NB1-</h4><p>(1)</p>
 <p><strong>代码</strong></p>
 <pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -4077,7 +4878,7 @@ D
 
 
 
-<h2 id="7-21"><a href="#7-21" class="headerlink" title="7.21"></a>7.21</h2><h3 id="任务-5"><a href="#任务-5" class="headerlink" title="任务"></a>任务</h3><h3 id="专项练习-5"><a href="#专项练习-5" class="headerlink" title="专项练习"></a>专项练习</h3><h4 id="1、·真题·单选-1"><a href="#1、·真题·单选-1" class="headerlink" title="1、·真题·单选"></a>1、·真题·单选</h4><p>(1)</p>
+<h2 id="7-22"><a href="#7-22" class="headerlink" title="7.22"></a>7.22</h2><h3 id="任务-6"><a href="#任务-6" class="headerlink" title="任务"></a>任务</h3><h3 id="专项练习-6"><a href="#专项练习-6" class="headerlink" title="专项练习"></a>专项练习</h3><h4 id="1、·真题·单选-1"><a href="#1、·真题·单选-1" class="headerlink" title="1、·真题·单选"></a>1、·真题·单选</h4><p>(1)</p>
 <pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>(2)</p>
@@ -4167,7 +4968,7 @@ D
 <p>(10)</p>
 <pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="在线编程-5"><a href="#在线编程-5" class="headerlink" title="在线编程"></a>在线编程</h3><h4 id="1、·NB1-1"><a href="#1、·NB1-1" class="headerlink" title="1、·NB1-"></a>1、·NB1-</h4><p>(1)</p>
+<h3 id="在线编程-6"><a href="#在线编程-6" class="headerlink" title="在线编程"></a>在线编程</h3><h4 id="1、·NB1-1"><a href="#1、·NB1-1" class="headerlink" title="1、·NB1-"></a>1、·NB1-</h4><p>(1)</p>
 <p><strong>代码</strong></p>
 <pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -4182,124 +4983,6 @@ D
 
 
 <h4 id="2、·NB1-1"><a href="#2、·NB1-1" class="headerlink" title="2、·NB1-"></a>2、·NB1-</h4><p>(1)</p>
-<p><strong>代码</strong></p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(2)</p>
-<p><strong>代码</strong></p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(3)</p>
-<p><strong>代码</strong></p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<h2 id="7-22"><a href="#7-22" class="headerlink" title="7.22"></a>7.22</h2><h3 id="任务-6"><a href="#任务-6" class="headerlink" title="任务"></a>任务</h3><h3 id="专项练习-6"><a href="#专项练习-6" class="headerlink" title="专项练习"></a>专项练习</h3><h4 id="1、·真题·单选-2"><a href="#1、·真题·单选-2" class="headerlink" title="1、·真题·单选"></a>1、·真题·单选</h4><p>(1)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(2)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(3)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(4)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(5)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(6)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(7)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(8)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(9)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(10)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h4 id="2、·真题·单选-2"><a href="#2、·真题·单选-2" class="headerlink" title="2、·真题·单选"></a>2、·真题·单选</h4><p>(1)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(2)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(3)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(4)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(5)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(6)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(7)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(8)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(9)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(10)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h4 id="3、·真题·单选-2"><a href="#3、·真题·单选-2" class="headerlink" title="3、·真题·单选"></a>3、·真题·单选</h4><p>(1)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(2)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(3)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(4)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(5)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(6)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(7)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(8)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(9)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(10)</p>
-<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="在线编程-6"><a href="#在线编程-6" class="headerlink" title="在线编程"></a>在线编程</h3><h4 id="1、·NB1-2"><a href="#1、·NB1-2" class="headerlink" title="1、·NB1-"></a>1、·NB1-</h4><p>(1)</p>
-<p><strong>代码</strong></p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(2)</p>
-<p><strong>代码</strong></p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(3)</p>
-<p><strong>代码</strong></p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<h4 id="2、·NB1-2"><a href="#2、·NB1-2" class="headerlink" title="2、·NB1-"></a>2、·NB1-</h4><p>(1)</p>
 <p><strong>代码</strong></p>
 <pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
